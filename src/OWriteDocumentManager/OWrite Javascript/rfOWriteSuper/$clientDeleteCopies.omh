@@ -1,0 +1,4 @@
+OK message Warning (Icon,Cancel button) {This will delete copies of master documents that were created when saving documents from the browser. Any changes made while editing documents in the browser will be lost and documents are restored to their original state. Continue?}
+If not(msgcancelled())
+	Do method $cinst.$serverDeleteCopies
+End If

@@ -1,0 +1,27 @@
+{
+	"ident": 1078,
+	"order": 16414,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 27,
+		"objlink": 262145,
+		"text": "Calculation to be executed when clicked (optional)",
+		"textcolor": "kColorWindowText",
+		"top": 46,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 256
+	}
+}

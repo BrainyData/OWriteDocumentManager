@@ -1,0 +1,14 @@
+;  overide this method to load all the properties     ;; called by $construct and revert button
+;  after loading your properties call the inherited method
+;  example:
+;  Do $cinst.$loadProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
+;  Do inherited
+
+Do $cinst.$loadProperty(ivEditObjRef.$curfirstindent.$ref,refFirstIndent)
+Do $cinst.$loadProperty(ivEditObjRef.$curleftindent.$ref,refLeftIndent)
+Do $cinst.$loadProperty(ivEditObjRef.$currightindent.$ref,refRightIndent)
+Do $cinst.$loadProperty_list(ivEditObjRef.$curalign.$ref,refAlignment,ivAlignmentList)
+Do $cinst.$loadProperty_list(ivEditObjRef.$curlinespacing.$ref,refLineSpacing,ivLineSpacingList)
+Do $cinst.$loadProperty(ivEditObjRef.$curspacebefore.$ref,refSpaceBefore)
+Do $cinst.$loadProperty(ivEditObjRef.$curspaceafter.$ref,refSpaceAfter)
+Do $cinst.$loadProperty(ivEditObjRef.$curtabs.$ref,refTabs)

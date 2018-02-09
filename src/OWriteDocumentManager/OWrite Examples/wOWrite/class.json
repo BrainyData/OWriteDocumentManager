@@ -1,0 +1,376 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 92,
+	"superclass": "OSpell2.wSpellSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1114,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cvIsFirstGloss",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue"
+		},
+		{
+			"name": "cvToolGap",
+			"order": 7,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "pick(sys(6)='M'|sys(6)='X',12,4)"
+		},
+		{
+			"name": "cvUnique",
+			"order": 3,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "kModeChange",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "testFirstSel",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "testID",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "testLastSel",
+			"order": 6,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivDocumentsList",
+			"order": 3,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivEdit",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Edit.$ref"
+		},
+		{
+			"name": "ivExportPath",
+			"order": 20,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivFontList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivFontName",
+			"order": 9,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivFontSize",
+			"order": 10,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivFontSizeList",
+			"order": 4,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivGroupList",
+			"order": 19,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivIsExport",
+			"order": 21,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivIsListData",
+			"order": 30,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivLastObjIdent",
+			"order": 14,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivLoadedGroup",
+			"order": 8,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivLoadedName",
+			"order": 16,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivLoadedSeq",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivNavigateHistory",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivOWrite",
+			"order": 27,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Reference to the OWrite control or object to be used for export"
+		},
+		{
+			"name": "ivPictChecksumList",
+			"order": 26,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "List used for maintaining image checksums for image comparisons"
+		},
+		{
+			"name": "ivReadOnly",
+			"order": 17,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivScale",
+			"order": 22,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivScaleList",
+			"order": 15,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivScreenDPI",
+			"order": 23,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivScreenDPIList",
+			"order": 25,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivScreenDPIText",
+			"order": 24,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivSpllSession",
+			"order": 11,
+			"type": "kObject",
+			"subtype": "oOWriteSession",
+			"sublen": 0
+		},
+		{
+			"name": "ivUseGlossary",
+			"order": 12,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivWatermarks",
+			"order": 13,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivWRefTools",
+			"order": 28,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "refProgressBar",
+			"order": 6,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.ProgressBar"
+		},
+		{
+			"name": "refScreenDPISlider",
+			"order": 29,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.LeftPanel.$objs.ScreenDPISlider"
+		},
+		{
+			"name": "refToolsHF",
+			"order": 18,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "reference to open tools palette when editing a header or footer CHANGE_V3A7"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2010-04-23 14:07:52",
+		"desc": "OWrite: *** Document Manager Example ***",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": false,
+		"forecolor": "kColor3DFace",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": true,
+		"height": 863,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 29,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2018-02-08 22:50:16",
+		"modelessdata": true,
+		"showascheckedout": true,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": {
+			"type": 0,
+			"calc": "Brainy Data Document Manager"
+		},
+		"toolbarnames": "tbOWrite",
+		"toolbaroptions": "kTBOptionShowText,kTBOptionVarTextWidth",
+		"toolbarpos": "kDockingAreaTop",
+		"top": 28,
+		"userinfo": "",
+		"usesheets": true,
+		"version": "4.61.00",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 1098,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": -1
+		},
+		"panes": [
+			{
+				"align": "kLeftJst",
+				"effect": "kBorderInset",
+				"hasborder": true,
+				"hassep": false,
+				"sizing": "kFixed",
+				"width": 157
+			},
+			{
+				"align": "kLeftJst",
+				"effect": "kBorderInset",
+				"hasborder": true,
+				"hassep": false,
+				"sizing": "kElastic",
+				"width": 60
+			}
+		]
+	}
+}

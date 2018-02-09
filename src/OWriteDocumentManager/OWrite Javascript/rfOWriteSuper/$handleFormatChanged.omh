@@ -1,0 +1,35 @@
+;  make sure the correct subform is shown for current document selection and tab
+Switch $cinst.$objs.FormatTabs.$currenttab
+	Case 1     ;; Text
+		Calculate newClassName as "rfOWFormatText"
+	Case 2     ;; Paragraph
+		Calculate newClassName as "rfOWFormatParagraph"
+	Case 3     ;; Object
+		Switch $cwind.$objs.jsOWrite.$curobjtype
+			Case kWriObjTypeCalc
+				Calculate newClassName as "rfOWFormatField"
+			Case kWriObjTypeCalcPict,kWriObjTypePict
+				Calculate newClassName as "rfOWFormatPicture"
+			Case kWriObjTypeTableCell
+				Calculate newClassName as "rfOWFormatTable"
+			Case kWriObjTypeInfo
+				Calculate newClassName as "rfOWFormatInfo"
+			Case kWriObjTypeTextbox
+				Calculate newClassName as "rfOWFormatTextbox"
+			Default
+				Calculate newClassName as "rfOWFormatNone"
+		End Switch
+	Case 4     ;; Document
+		Calculate newClassName as "rfOWFormatDocument"
+	Case 5
+		Calculate newClassName as "rfOWOptions"
+End Switch
+
+If newClassName<>$cinst.$objs.FormatSubform.$classname
+	;  change the class name which will make only the required controls visible
+	Calculate $cinst.$objs.FormatSubform.$classname as newClassName
+	;  work around a bug in the Omnis SDK (mark all interface controls as invisible)
+	Do $cinst.$objs.jsOWrite.$interfacevisibilitychanged(newClassName)
+End If
+
+Do method $cinst.$setButtonStates

@@ -1,0 +1,22 @@
+;  OWrite tells us that the current formatting has changed, update our formatting controls
+
+;  fetch the font family and typeface list     ;; CHANGE_V3
+Do iFRefOWrite.$getfontlist(iFmtFontFamilyList,iFRefOWrite.$curfont,iFRefOWrite.$curbold,iFRefOWrite.$curitalic,kTrue)
+Calculate iFmtFontTypefaceList as iFmtFontFamilyList.Typefaces
+;  update the enabled state of the bold and italic checkbox (not all fonts can have these styles
+Calculate refFmtBold.$enabled as iFRefOWrite.$curbold.$canassign
+Calculate refFmtItalic.$enabled as iFRefOWrite.$curitalic.$canassign
+
+;  update the style popup list     ;; CHANGE_V3
+Calculate styleName as iFRefOWrite.$curstylename
+Do iFmtStyleList.$search($ref.C1=styleName,kTrue,kFalse,kFalse,kFalse) Returns iFmtStyleList.$line
+
+;  fetch other formatting properties
+Calculate iFmtFontName as iFRefOWrite.$curfont
+Calculate iFmtFontSize as iFRefOWrite.$curfontsize
+Calculate iFRefFmtTextColor.$contents as iFRefOWrite.$curtextcolor
+Calculate iFRefFmtHighlightColor.$contents as iFRefOWrite.$curhighlight     ;; CHANGE_V3A8
+Calculate iViewScale as con(iFRefOWrite.$docscale,'%')
+
+;  redraw entire window which will also update controls that are linked directly to OWrite formatting properties
+Do $cinst.$redraw(kTrue,kFalse)

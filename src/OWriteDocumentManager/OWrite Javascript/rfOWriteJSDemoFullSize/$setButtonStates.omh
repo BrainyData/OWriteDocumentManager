@@ -1,0 +1,13 @@
+;  this method should be overwritten by sub-classes
+Do inherited
+;  set enabled state for our save button
+Calculate $cinst.$objs.btnSave.$visible as $cinst.$objs.jsOWrite.$modified
+;  set enabled state for our preview buttons (they only apply to some documents)
+Switch ivDocumentList.name
+	Case "Example: Tables - Pictures","Example: Tables - Invoice"
+		Calculate $cinst.$objs.btnPreview.$visible as not($cinst.$objs.jsOWrite.$evalcalcs)
+		Calculate $cinst.$objs.btnClearPreview.$visible as $cinst.$objs.jsOWrite.$evalcalcs
+	Default
+		Calculate $cinst.$objs.btnPreview.$visible as kFalse
+		Calculate $cinst.$objs.btnClearPreview.$visible as kFalse
+End Switch

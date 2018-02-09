@@ -1,0 +1,125 @@
+{
+	"classtype": "kTable",
+	"internalversion": 2,
+	"designtaskname": "Startup_Task",
+	"cvardefs": [
+		{
+			"name": "cvSampleData",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvSamplePickList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "_Bold_",
+			"order": 7,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue",
+			"desc": "Bold"
+		},
+		{
+			"name": "_Left_",
+			"order": 5,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse",
+			"desc": "Left Aligned"
+		},
+		{
+			"name": "_LF_",
+			"order": 3,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue",
+			"desc": "Line-Feed after item"
+		},
+		{
+			"name": "_NotSelected_",
+			"order": 10,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse",
+			"desc": "Initialy not selected"
+		},
+		{
+			"name": "_Plain_",
+			"order": 8,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse",
+			"desc": "Plain"
+		},
+		{
+			"name": "_Right_",
+			"order": 6,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue",
+			"desc": "Right Aligned"
+		},
+		{
+			"name": "_Selected_",
+			"order": 9,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue",
+			"desc": "Initialy selected"
+		},
+		{
+			"name": "_SP_",
+			"order": 4,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse",
+			"desc": "Space after item"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "___ROW1",
+			"order": 1,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "___ROW2",
+			"order": 2,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:49",
+		"desc": "OWrite: table for label records",
+		"editor": "",
+		"editordata": "",
+		"external": false,
+		"issupercomponent": false,
+		"moddate": "2016-01-15 20:57:42",
+		"showascheckedout": false,
+		"sqlclassname": "sOWriteLabels",
+		"userinfo": "",
+		"version": "4.00.09"
+	}
+}

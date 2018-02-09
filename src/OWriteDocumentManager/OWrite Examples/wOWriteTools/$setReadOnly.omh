@@ -1,0 +1,5 @@
+If pReadOnly
+	Disable fields {GroupFont,GroupAlignment,GroupDocument,GroupFields,GroupOtherFields}
+Else
+	Enable fields {GroupFont,GroupAlignment,GroupDocument,GroupFields,GroupOtherFields}
+End If

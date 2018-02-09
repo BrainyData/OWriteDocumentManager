@@ -1,0 +1,60 @@
+If cvPrintSelected
+	Calculate docName as con(ivGroupName,' Documentation')
+Else
+	Calculate docName as con(ivGroupName,' - ',ivDocName)
+End If
+Set reference saved to $cdevice()
+Switch cvOption
+	Case cDestDirectScreen     ;; Direct to screen
+		If cvPrintToFieldDirect     ;; CHANGE_20131108_1
+			Open window instance wOWriteScreenReport/CEN
+		Else
+			Calculate $cdevice as $devices.Screen
+			Calculate $prefs.$hideuntilcomplete as kTrue
+		End If
+		Do ivOWrite.$::print(docName,kFalse)
+	Case cDestDirectPrinter     ;; Direct to printer
+		Calculate $cdevice as $devices.Printer
+		Do ivOWrite.$::print(docName,kTrue)
+	Case cDestDirectPDF     ;; Direct to PDF
+		Calculate $cdevice as kDevPdf
+		Do $cdevice.$setparam(kDevPdfAll,ivPDFParams)     ;; CHANGE_2014_06_11__4
+		If cvPrintToMemory     ;; CHANGE_PDF_MEM_DEST begins
+			;  provide full notation to our method to be called upon completion
+			Do $cdevice.$setparam(kDevPdfFileName,con($cinst().$fullname,".$printToMemory(#)"))
+		Else
+			;  by clearing the name we force PDF Device to prompt the user with a put file dialog
+			Do $cdevice.$setparam(kDevPdfFileName,"")
+		End If
+		Do ivOWrite.$::print(docName,kTrue)
+		If cvPrintToMemory
+			;  put up a message that we received the memory output
+			;  we could now store the PDF data in a database or upload to a server using FTP, etc.
+			Yes/No message  {PDF output received. Size = [binlength(ivPdfMemoryOutput)] bytes.//Save to disk?}
+			If flag true
+				Calculate docName as "untitled.pdf"
+				Do FileOps.$putfilename(docName,"Select destination file name") Returns #F
+				If flag true
+					Do FileOps.$deletefile(docName)
+					Do file.$createfile(docName)
+					Do file.$writefile(ivPdfMemoryOutput)
+					Do file.$closefile()
+				End If
+			End If
+		End If     ;; CHANGE_PDF_MEM_DEST ends
+	Case cDestReportScreen     ;; Omnis report to screen
+		If cvPrintToFieldReport     ;; CHANGE_20131108_1
+			Open window instance wOWriteScreenReport/CEN
+		Else
+			Calculate $cdevice as $devices.Screen
+		End If
+		Do $clib.$reports.rOWrite.$open('*',ivOWrite.$ref,docName)
+	Case cDestReportPrinter     ;; Omnis report to printer
+		Calculate $cdevice as $devices.Printer
+		Do $clib.$reports.rOWrite.$open('*',ivOWrite.$ref,docName)
+	Case cDestReportPDF     ;; Omnis report to PDF
+		Calculate $cdevice as kDevPdf
+		Do $cdevice.$setparam(kDevPdfAll,ivPDFParams,kDevPdfFileName,"")     ;; empty name forces file prompt CHANGE_2014_06_11__4
+		Do $clib.$reports.rOWrite.$open('*',ivOWrite.$ref,docName)
+End Switch
+Calculate $cdevice as saved

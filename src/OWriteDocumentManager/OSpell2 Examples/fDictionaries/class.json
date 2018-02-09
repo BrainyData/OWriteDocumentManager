@@ -1,0 +1,20 @@
+{
+	"classtype": "kFile",
+	"internalversion": 1,
+	"estrecords": 1000,
+	"properties": {
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:45",
+		"desc": "OSpell2: stores DB based dictionaries",
+		"editor": "",
+		"editordata": "",
+		"external": false,
+		"filemode": "kClosed",
+		"moddate": "2015-09-03 09:39:57",
+		"odbcaccessmask": 0,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": "4.00.01"
+	}
+}

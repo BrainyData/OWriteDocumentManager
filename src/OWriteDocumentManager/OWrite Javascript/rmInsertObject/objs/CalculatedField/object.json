@@ -1,0 +1,16 @@
+{
+	"ident": 1002,
+	"order": 3,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 10400,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Calculated Field"
+		},
+		"userinfo": ""
+	}
+}

@@ -1,0 +1,68 @@
+[
+	{
+		"name": "seq",
+		"order": 1,
+		"desc": "",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "name",
+		"order": 2,
+		"desc": "",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "order",
+		"order": 3,
+		"desc": "",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "data",
+		"order": 4,
+		"desc": "",
+		"type": "kBinary",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "group",
+		"order": 5,
+		"desc": "",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "listData",
+		"order": 6,
+		"desc": "",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	}
+]

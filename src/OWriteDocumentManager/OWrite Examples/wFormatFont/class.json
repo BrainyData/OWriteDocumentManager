@@ -1,0 +1,232 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 3,
+	"superclass": "wFormatSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1075,
+	"lastgroupident": 0,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivFontFamilyList",
+			"order": 14,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Interface list for font families ;; CHANGE_V3A12"
+		},
+		{
+			"name": "ivFontSize",
+			"order": 6,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivFontSizeList",
+			"order": 5,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivFontTypefaceList",
+			"order": 15,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Interface list for a font family typefaces ;; CHANGE_V3A12"
+		},
+		{
+			"name": "ivStrikeThrough",
+			"order": 16,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivSubscript",
+			"order": 10,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivSuperscript",
+			"order": 9,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivUnderline",
+			"order": 8,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "refFontFamilyList",
+			"order": 26,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.FontFamilyList",
+			"desc": "Listbox for choosing font families ;; CHANGE_V3A12"
+		},
+		{
+			"name": "refFontSizeList",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.FontSizeList"
+		},
+		{
+			"name": "refFontTypefaceList",
+			"order": 27,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.FontTypefaceList",
+			"desc": "Listbox for choosing font typefaces ;; CHANGE_V3A12"
+		},
+		{
+			"name": "refHighlightColorButt",
+			"order": 29,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.HighlightColorButt",
+			"desc": "New button for selecting highlight color ;; CHANGE_V3A12"
+		},
+		{
+			"name": "refPreview",
+			"order": 28,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Preview"
+		},
+		{
+			"name": "refStrikeNone",
+			"order": 23,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.StrikeNone"
+		},
+		{
+			"name": "refSubscript",
+			"order": 22,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Subscript"
+		},
+		{
+			"name": "refSuperscript",
+			"order": 21,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Superscript"
+		},
+		{
+			"name": "refTextColorButt",
+			"order": 24,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.TextColorButt"
+		},
+		{
+			"name": "refUnderline",
+			"order": 20,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Underline"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": true,
+		"clickbehind": false,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2010-04-23 14:07:51",
+		"desc": "OWrite: formatting window used by all examples",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": false,
+		"external": false,
+		"forecolor": "kColor3DFace",
+		"growbox": false,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 373,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 878,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2018-02-08 23:15:49",
+		"modelessdata": true,
+		"showascheckedout": true,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": true,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": {
+			"type": 0,
+			"calc": "Format Font"
+		},
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionNone",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 179,
+		"userinfo": "",
+		"usesheets": false,
+		"version": "4.33.00",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 473,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

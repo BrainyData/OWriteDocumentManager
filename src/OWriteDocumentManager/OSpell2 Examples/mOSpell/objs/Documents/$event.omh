@@ -1,0 +1,7 @@
+Test for window open {wDocuments}
+If flag true
+	Bring window instance to front wDocuments
+Else
+	Do $topwind.$close()
+	Open window instance wDocuments/CEN
+End If

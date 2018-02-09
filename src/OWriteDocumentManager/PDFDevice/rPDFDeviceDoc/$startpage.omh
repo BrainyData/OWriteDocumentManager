@@ -1,0 +1,7 @@
+Do default
+Quit method
+If #P=1
+	Calculate $cinst.$orientation as kOrientLandscape
+Else
+	Calculate $cinst.$orientation as kOrientPortrait
+End If

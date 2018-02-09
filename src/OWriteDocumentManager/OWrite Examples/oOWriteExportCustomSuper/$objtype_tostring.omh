@@ -1,0 +1,1 @@
+Quit method con(pick(pObjType,kWriObjTypeNone,kWriObjTypeDoc,kWriObjTypePara,kWriObjTypePict,kWriObjTypeCalc,kWriObjTypeText,kWriObjTypeCalcPict,kWriObjTypeTextbox,kWriObjTypeChar,kWriObjTypeTable,kWriObjTypeTableRow,kWriObjTypeTableCell,kWriObjTypeHeadFoot,kWriObjTypeInfo))

@@ -1,0 +1,30 @@
+
+;  New for version 3     ;; CHANGE_V3A12
+;  version 3 now supports porper system style font family and typeface selection interface
+;  for selecting Omnis fonts and typefaces (Bold,Italic, etc)
+;  OWrite provides an interface list that can be used to display system font families and typefaces
+;  the list contains appropriate mappings to Omnis font names and the bold and italic styles
+
+;  get our interface list and select the current font family and typeface based on current OWrite property values
+;  Note: the list is returned sorted
+
+Do ivOWriteRef.$getfontlist(pListFontFamilies,ivEditObjRef.$curfont,ivEditObjRef.$curbold,ivEditObjRef.$curitalic,kTrue)     ;; CHANGE_V3 must get list from OWrite object
+If ivIsForFind
+	;  for find and replace we just keep the font families that are used in the document
+	Do pListFontFamilies.$search($ref.Used)
+	Do pListFontFamilies.$remove(kListKeepSelected)
+End If
+;  get our style list from the current family
+Calculate pListFontTypefaces as pListFontFamilies.Typefaces
+
+;  now load our two controls
+
+;  family
+Calculate propIsNull as isnull(ivEditObjRef.$curfont)
+Calculate pRefFontFamilies.$userinfo as pick(propIsNull,pListFontFamilies.C1,'#NULL')     ;; store the origional data in $userinfo so we can restore individual fields
+Do ivRefList.$add(pRefFontFamilies)     ;; store field in ref list for $modified
+
+;  typeface
+Calculate propIsNull as isnull(ivEditObjRef.$curbold)|isnull(ivEditObjRef.$curitalic)
+Calculate pRefFontTypefaces.$userinfo as pick(propIsNull,pListFontTypefaces.C1,'#NULL')     ;; store the origional data in $userinfo so we can restore individual fields
+Do ivRefList.$add(pRefFontTypefaces)     ;; store field in ref list for $modified

@@ -1,0 +1,21 @@
+{
+	"ident": 1015,
+	"order": 16,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10012,
+		"text": {
+			"type": 0,
+			"calc": "Redo"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "[ivFRefOWrite.$redotext]"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

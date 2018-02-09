@@ -1,0 +1,11 @@
+;  load sample data
+If not(ivSampleDataLoaded)
+	Calculate ivSampleDataLoaded as kTrue
+	Set read-only files {[pFileName]}
+	Set main file {[pFileName]}
+	Next
+	If flag false
+		Next
+	End If
+End If
+Quit method jst([con(pFileName,'.',pColumnName)],pFormatString)

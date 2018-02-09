@@ -1,0 +1,44 @@
+;  load window field with OWrite property value
+;       ;; we need to consider null values returned by OWrite and set fields with apropriate values
+;       ;; for example, we cannot assign NULL to a radio group as it would show the first button
+;       ;; as selected, so for radio groups we assign -1
+;       ;; also see method $control
+
+Calculate propIsNull as isnull(pPropRef)
+Calculate pFieldRef.$userinfo as pick(propIsNull,pPropRef,'#NULL')     ;; store the origional data in $userinfo so we can restore individual fields
+Do ivRefList.$add(pFieldRef)     ;; store field in ref list for $modified
+
+Switch pFieldRef.$objtype
+	Case kEntry,kMultilineEntry,kCombo
+		;  just assign it and gray out our entry box to show that it does not contain a valid value
+		Calculate $cinst.[pFieldRef.$dataname] as pick(propIsNull,pPropRef,kNullEntry)
+		Calculate pFieldRef.$fieldstyle as pick(propIsNull,'CtrlEditText','CtrlEditTextDis')
+	Case kCheckbox
+		;  just assign it and change our icons to show a no value icon
+		Calculate $cinst.[pFieldRef.$dataname] as pick(propIsNull,pPropRef,kNullCheckbox)
+		If (propIsNull&pFieldRef.$iconid=0)|(not(propIsNull)&pFieldRef.$iconid=11004)
+			Calculate pFieldRef.$iconid as pick(propIsNull,0,11004)
+		End If
+	Case kRadio
+		;  with radio buttons we need to update the entire group
+		Calculate $cinst.[pFieldRef.$dataname] as pick(propIsNull,pPropRef,kNullRadio)
+		If (propIsNull&pFieldRef.$iconid=0)|(not(propIsNull)&pFieldRef.$iconid=11007)
+			Set reference ref to pFieldRef
+			If ref.$container
+				Set reference parentRef to ref.$container
+			Else
+				Set reference parentRef to $cinst
+			End If
+			While ref.$dataname=pFieldRef.$dataname
+				;  assign the appropriate icon id
+				Calculate ref.$iconid as pick(propIsNull,ref.$deficonid,11007)     ;; CHANGE_V3
+				Set reference ref to parentRef.$objs.$next(ref)
+			End While
+		End If
+	Case kPushbutton     ;; this will have a button mode set to one of the pickers
+		Switch pFieldRef.$buttonmode
+			Case kBMcolorpicker     ;; that is all we use at the moment
+				Calculate pPropRef.$contents as pick(propIsNull,pPropRef,kNullColorPicker)
+		End Switch
+End Switch
+Do pFieldRef.$redraw()

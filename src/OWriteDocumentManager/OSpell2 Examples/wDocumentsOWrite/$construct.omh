@@ -1,0 +1,33 @@
+;  this window demonstrates the use of an OWrite field as a multi-line edit field
+;  for editing a plain text field stored in the database
+;  using the OWrite field enables auto-correct and spell-check as you type and context clicks to correct spelling
+;
+Set main file {fDocuments}
+Find first
+Do inherited
+
+;  PLACES OF INTEREST
+;
+;  $cinst.$event
+;       ;; enables the OWrite field during enter data
+;       ;; if you are using modeless windows you do not require this
+;
+;  $cinst.$getspelldata
+;       ;; this provides the title for the spell checker window
+;
+;  $cinst.$objs.OWrite.$construct
+;       ;; initializes the spell checker
+;
+;  $cinst.$objs.OWrite.$event
+;       ;; handles context spell-check on right-click
+;
+;  $cinst.$objs.OWrite.$dataname
+;       ;; specifies the DB field name
+;
+;  $cinst.$objs.OWrite.$datanametype
+;       ;; enables and specifies the document format for saving and loading to the DB field
+;
+;
+;  SUPER-CLASS
+;       ;; this window inherits from OSpell2.wSpellSuper which implements some common
+;       ;; functionality to enable spell checking on this window

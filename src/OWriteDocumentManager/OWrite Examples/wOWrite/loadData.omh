@@ -1,0 +1,23 @@
+;  load the document data for the selected document
+Do ivDocumentsList.$loadcols(seq)
+If seq
+	Single file find on fOWriteDoc.seq (Exact match) {seq}
+	If flag true
+		Calculate ivLoadedSeq as fOWriteDoc.seq
+		Calculate ivLoadedName as fOWriteDoc.name
+		Calculate ivLoadedGroup as fOWriteDoc.group
+		Do utilObj.$convertDocument(fOWriteDoc.data) Returns modified     ;; CHANGE_V3A10 - check if we have to do any manual conversion
+		If pLoadListData&binlength(fOWriteDoc.listData)
+			Do ivEdit.$loaddata(fOWriteDoc.listData,kWriFmtDefault,ivReadOnly,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+			Calculate ivIsListData as kTrue
+		Else If binlength(fOWriteDoc.data)
+			Do ivEdit.$loaddata(fOWriteDoc.data,kWriFmtDefault,ivReadOnly)
+			Calculate ivIsListData as kFalse
+		Else If binlength(fOWriteDoc.listData)
+			Do ivEdit.$loaddata(fOWriteDoc.listData,kWriFmtDefault,ivReadOnly,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+			Calculate ivIsListData as kTrue
+		End If
+		Do ivEdit.$modified.$assign(modified)     ;; CHANGE_V3A10  if document was converted mark it as modified
+		Redraw {ViewNormal,ViewLayout}     ;; this may change during document loading
+	End If
+End If

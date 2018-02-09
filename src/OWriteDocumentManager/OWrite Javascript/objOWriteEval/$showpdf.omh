@@ -1,0 +1,21 @@
+;  this example will produce a PDF file from the OWrite document
+;  for display on the client
+
+;  set the report destination to our PDF device
+Do $cdevice.$assign(kDevPdf)
+;  we are printing PDF to memory and are asking that the output is send to $ctask.$pdfoutput()
+Do $cdevice.$setparam(kDevPdfFileName,con("$iremotetasks.",$ctask().$name,".$pdfoutput(#)"))
+
+;  load and print the document
+Do $cinst.$loaddata(ivCallerRef.ivDocumentData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+Do $cinst.$pageview.$assign(kWriViewPageLayout)
+Do $cinst.$print("",kFalse)
+
+;  prepare an url that will fetch our PDF data for display on client
+TCPGetMyAddr  Returns addr
+Do $modes.$dotoolmethod(kEnvToolBrowser,160) Returns port     ;; Returnｓ the port Omnis is listening on ($prefs.$serverport is unreliable as it can be zero in which case Omnis chooses a port)
+Calculate addr as "127.0.0.1"
+Calculate url as con("http://",addr,":",port,"/ultra?OmnisServer='",addr,":",port,"'&OmnisLibrary=example&OmnisClass=rtGetPDF&PDFOwner=",$ctask().$name)
+;  show the url
+;  Send to trace log {$showpdf([url])}
+Quit method url

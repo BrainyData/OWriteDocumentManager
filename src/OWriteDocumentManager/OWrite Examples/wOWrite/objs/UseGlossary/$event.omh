@@ -1,0 +1,10 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	If ivUseGlossary
+		Do method startGlossary
+		If cvIsFirstGloss
+			Calculate cvIsFirstGloss as kFalse
+			Open window instance wGlossaryInfo/CEN
+		End If
+	Else
+		Do method stopGlossary
+	End If

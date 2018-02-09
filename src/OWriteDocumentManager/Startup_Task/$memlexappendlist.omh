@@ -1,0 +1,9 @@
+Begin reversible block
+	Set read/write files {fDictionaries}     ;; CHANGE_2014_10_16__1
+	Set main file {fDictionaries}
+End reversible block
+Find first
+While flag true
+	Do pList.$add(fDictionaries.name,kSpllLexTypeMemory)
+	Next
+End While

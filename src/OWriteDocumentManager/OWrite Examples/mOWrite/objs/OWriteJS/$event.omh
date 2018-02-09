@@ -1,0 +1,4 @@
+Do $remoteforms.rfOWriteJSDemoFullSize.$open('*')
+
+;  saving changes on the client will display the changes
+;  in the document on the server (creating a new document with the changes)

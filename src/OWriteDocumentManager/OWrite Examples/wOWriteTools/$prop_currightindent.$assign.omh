@@ -1,0 +1,4 @@
+Begin reversible block
+	Calculate $root.$prefs.$usecms as iFRefOWrite.$showcms
+End reversible block
+Calculate iFRefOWrite.$currightindent as pValue

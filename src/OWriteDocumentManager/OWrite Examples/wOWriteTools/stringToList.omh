@@ -1,0 +1,3 @@
+While len(pString)
+	Do pList.$add(strtok('pString',','))
+End While

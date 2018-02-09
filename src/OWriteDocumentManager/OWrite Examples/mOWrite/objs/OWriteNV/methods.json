@@ -1,0 +1,26 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "OWrite",
+				"order": 1,
+				"type": "kObject",
+				"subtype": ".OWrite.OWriteDoc",
+				"sublen": 0
+			},
+			{
+				"name": "saved",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

@@ -1,0 +1,4 @@
+On evClick     ;; Event Parameters - pRow( Itemreference ) CHANGE_2014_06_11__1
+	Calculate ivModified as kFalse
+	Send to trace log {imitating save (ivModified=[ivModified])}
+	Do method setFields

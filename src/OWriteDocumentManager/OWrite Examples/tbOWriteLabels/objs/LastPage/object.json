@@ -1,0 +1,21 @@
+{
+	"ident": 1010,
+	"order": 4,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 3001,
+		"text": {
+			"type": 0,
+			"calc": "Last"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Last Page"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

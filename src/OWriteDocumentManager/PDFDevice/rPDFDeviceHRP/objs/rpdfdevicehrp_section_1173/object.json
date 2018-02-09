@@ -1,0 +1,28 @@
+{
+	"ident": 1173,
+	"order": 78,
+	"objtype": "kSection",
+	"sectiontype": "kPositioning",
+	"properties": {
+		"backcolor": "kColorDefault",
+		"backpattern": 14,
+		"bordercolor": "RGB(0,0,0)",
+		"bottommargin": 0.0,
+		"effect": "kBorderNone",
+		"firstpage": false,
+		"forecolor": "kColorDefault",
+		"leftmargin": 0.0,
+		"lineno": 48,
+		"linestyle": 1,
+		"pagemode": "kNewpage",
+		"pagespacing": 0.0,
+		"printheight": 0.0,
+		"printif": "",
+		"rightmargin": 0.0,
+		"startmode": "kFollow",
+		"startspacing": 0.0,
+		"topmargin": 0.0,
+		"userecspacing": false,
+		"userinfo": ""
+	}
+}

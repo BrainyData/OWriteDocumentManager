@@ -1,0 +1,24 @@
+;  get picture of the specified page
+
+If sz
+	;  calculate the size, preserving aspect ratio
+	If ivKeepAspectRatio
+		Calculate ratio as ivOWriteRef.$::paperlength/ivOWriteRef.$::paperwidth
+		If ratio>1
+			Calculate height as sz
+			Calculate width as sz/ratio
+		Else
+			Calculate height as sz*ratio
+			Calculate width as sz
+		End If
+	Else
+		Calculate height as sz
+		Calculate width as sz
+	End If
+	;  get the picture
+	Do $iwindows.wOWrite.$objs.Edit.$picturefrompage(ivPageList.ivPage,width,height,ivPicture)
+	Calculate ivImageSize as binlength(ivPicture)
+	Do pictsize(ivPicture,ivImageWidth,ivImageHeight)
+	Do refImageInfo.$redraw()
+	Do refImage.$redraw()
+End If

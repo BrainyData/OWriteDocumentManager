@@ -1,0 +1,2 @@
+On evClick
+	Calculate $topwind.$ctarget.$curbold as not($cobj.$checked)

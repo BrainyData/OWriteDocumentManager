@@ -1,0 +1,2 @@
+;  called by OWrite.$event on an evSaveData event
+Calculate cvSavedDocument as ivDocument

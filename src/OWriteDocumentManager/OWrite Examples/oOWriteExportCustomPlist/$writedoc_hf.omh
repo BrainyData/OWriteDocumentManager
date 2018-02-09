@@ -1,0 +1,31 @@
+;  PURPOSE:     ;; export document header/footer info
+;  USAGE:     ;; called by ...$writedoc
+;  SUB-CLASSING:     ;; sub-class this method to export document header/footer info
+
+;  export header and footer document info as XML properties ---
+
+;  --- start Omnis TEXT buffer
+Do method $cinst.$buffer_start Returns #F
+If flag true
+	
+	;  --- start header/footer info dictionary
+	Text: {[ivIndent]<key>DocHeaderFooters</key>} (Linefeed)
+	Text: {[ivIndent]<dict>} (Linefeed)
+	
+	;  --- write document header/footer properties
+	Do method Indent (kTrue)
+	Do method $cinst.$buffer_property ("DocHeaderMargin","pridim",pDocHeaderMargin)
+	Do method $cinst.$buffer_property ("DocFooterMargin","pridim",pDocFooterMargin)
+	Do method $cinst.$buffer_property ("DocHeadFootOddEven","bool",pDocHeadFootOddEven)
+	Do method $cinst.$buffer_property ("DocHeadFootFirstPage","bool",pDocHeadFootFirstPage)
+	Do method Indent (kFalse)
+	
+	;  --- close header/footer info dictionary
+	Text: {[ivIndent]</dict>} (Linefeed)
+	
+	;  --- close Omnis text buffer     ;; if not nested, writes buffer to output
+	Do method $cinst.$buffer_end Returns #F
+	
+End If
+
+Quit method #F

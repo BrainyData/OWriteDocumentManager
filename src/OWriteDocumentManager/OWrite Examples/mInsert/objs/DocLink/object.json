@@ -1,0 +1,22 @@
+{
+	"ident": 1022,
+	"order": 3,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 0,
+		"macshortcutkey": "Cmnd+Shift+I",
+		"text": {
+			"type": 0,
+			"calc": "Document Link..."
+		},
+		"unixshortcutkey": "Ctrl+Shift+I",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": "Ctrl+Shift+I"
+	}
+}

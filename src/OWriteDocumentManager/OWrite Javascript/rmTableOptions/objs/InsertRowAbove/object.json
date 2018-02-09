@@ -1,0 +1,16 @@
+{
+	"ident": 1002,
+	"order": 1,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 20002,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Insert Row Above"
+		},
+		"userinfo": ""
+	}
+}

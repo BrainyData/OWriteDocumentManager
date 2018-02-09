@@ -1,0 +1,27 @@
+{
+	"ident": 1032,
+	"order": 16390,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 127,
+		"objlink": 0,
+		"text": "Selection Start",
+		"textcolor": "kColorWindowText",
+		"top": 172,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 79
+	}
+}

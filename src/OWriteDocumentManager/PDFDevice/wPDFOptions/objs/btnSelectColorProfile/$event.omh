@@ -1,0 +1,13 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do FileOps.$getfilename(path,"Select color profile","*.icc") Returns #F
+	If flag true
+		Do file.$openfile(path)
+		Do file.$readfile(bin)
+		Do file.$closefile()
+		If binlength(bin)
+			Calculate ivParams.PdfaOutputProfile as bin
+			Do FileOps.$splitpathname(path,,,ivParams.PdfaOutputInfo,)
+			Do refPdfaOutputInfo.$redraw()
+			Do method setControls
+		End If
+	End If

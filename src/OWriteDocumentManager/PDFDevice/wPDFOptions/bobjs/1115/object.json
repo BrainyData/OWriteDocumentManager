@@ -1,0 +1,27 @@
+{
+	"ident": 1115,
+	"order": 16411,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kRightJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelLarge",
+		"font": 2,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 17,
+		"left": 122,
+		"objlink": 65537,
+		"text": "Pict/Meta DPI:",
+		"textcolor": "kColorWindowText",
+		"top": 96,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 96
+	}
+}

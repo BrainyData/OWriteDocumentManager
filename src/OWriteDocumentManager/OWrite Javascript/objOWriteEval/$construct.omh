@@ -1,0 +1,6 @@
+
+;  make sure all loaded documents are evaluated local to this object and its methods that evaluated them
+Calculate $cinst.$evallocal as kTrue
+
+;  prep file classes that may feature in document calculations
+Set read-only files {fClients,fDictionaries,fDocuments,fPDFPicts}

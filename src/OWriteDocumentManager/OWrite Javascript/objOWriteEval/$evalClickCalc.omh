@@ -1,0 +1,6 @@
+;  called by remote form when the user clicks a clikable OWrite field
+
+;  set caller reference, some clicks require us to call $opendocument or $openurl of the caller instance
+Set reference ivCallerRef to pCallerRef
+;  evaluate the click calculation, returning the calculation result
+Quit method eval(pObjCalc)

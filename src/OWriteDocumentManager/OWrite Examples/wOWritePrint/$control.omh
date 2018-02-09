@@ -1,0 +1,6 @@
+On evClick
+	Do method setButtons
+On evDisabled
+	Do $cobj.$fieldstyle.$assign("CtrlEditTextDis")     ;; only get this for PDF info fields
+On evEnabled
+	Do $cobj.$fieldstyle.$assign("CtrlEditText")     ;; only get this for PDF info fields

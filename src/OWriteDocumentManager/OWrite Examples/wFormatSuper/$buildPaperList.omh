@@ -1,0 +1,15 @@
+Do pList.$define(Paper,PaperStr)
+Do pList.$add(kPaUsLetter,$constants.kPaUsLetter.$desc)
+Do pList.$add(kPaTabloid,$constants.kPaTabloid.$desc)
+Do pList.$add(kPaLedger,$constants.kPaLedger.$desc)
+Do pList.$add(kPaUsLegal,$constants.kPaUsLegal.$desc)
+Do pList.$add(kPaStatement,$constants.kPaStatement.$desc)
+
+Do pList.$add(kPaExecutive,$constants.kPaExecutive.$desc)
+Do pList.$add(kPaA3,$constants.kPaA3.$desc)
+Do pList.$add(kPaA4,$constants.kPaA4.$desc)
+Do pList.$add(kPaA5,$constants.kPaA5.$desc)
+Do pList.$add(kPaB4,$constants.kPaB4.$desc)
+Do pList.$add(kPaB5,$constants.kPaB5.$desc)
+
+Do pList.$add(kPaCustom,$constants.kPaCustom.$desc)

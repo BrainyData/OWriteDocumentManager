@@ -1,0 +1,35 @@
+Switch pAction
+	Case 'FirstPage','Btn01'
+		Do method execNavigate (0)
+	Case 'PreviousPage','Btn02'
+		Do method execNavigate (iEvalStartPage-1)
+	Case 'NextPage','Btn03'
+		Do method execNavigate (iEvalStartPage+1)
+	Case 'LastPage','Btn04'
+		Do method execNavigate (iEvalPageCount-1)     ;; start page must be one less then page count
+	Case 'SaveAs'
+		Do method execSaveAs
+	Case 'ImportLabel'
+		Do method execImportLabel
+	Case 'DeleteLabel'
+		Do method execDeleteLabel
+	Case 'PrintLabels'
+		Do method execPrint Returns #F
+	Case 'StartHere'
+		Calculate rowNo as pick(cInfoED.LabelGutterVert=0,refPreview.$firstselrow-int(refPreview.$firstselrow/2),refPreview.$firstselrow)
+		Calculate colNo as pick(cInfoED.LabelGutterHorz=0,refPreview.$firstselcol-int(refPreview.$firstselcol/2),refPreview.$firstselcol)
+		Calculate newStartLabel as (rowNo-1)*cInfoED.LabelsAcross+colNo-1
+		If newStartLabel<>iEvalStartLabel
+			Calculate iEvalStartLabel as newStartLabel
+			Do method previewRebuild
+		End If
+	Case 'EditDetails'
+		Do method execEditDetails
+	Case 'ApplyDetails'
+		;  called by wOWriteLabelDetails
+		Do method getRecordIndexFromLabel Returns ix
+		Calculate refDataList.[ix] as pData
+		Do method modContentChanged
+	Case 'ImportData'
+		Do method execImportData
+End Switch

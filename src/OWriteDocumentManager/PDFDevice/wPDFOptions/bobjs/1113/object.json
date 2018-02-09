@@ -1,0 +1,23 @@
+{
+	"ident": 1113,
+	"order": 16409,
+	"objtype": "kRect3D",
+	"properties": {
+		"backcolor": "kColorBackFill",
+		"backpattern": 1,
+		"bordercolor": "kColorFrame",
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"effect": "kBorderCtrlEdit",
+		"fieldstyle": "",
+		"forecolor": "kColorForeFill",
+		"height": 19,
+		"left": 435,
+		"linestyle": 1,
+		"objlink": 17039392,
+		"top": 1,
+		"userinfo": "",
+		"visible": true,
+		"width": 118
+	}
+}

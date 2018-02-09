@@ -1,0 +1,30 @@
+{
+	"ident": 1060,
+	"order": 16396,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 6,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 14,
+		"left": 7,
+		"objlink": 4,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#Indentation (\u001B\u000200000000#[iMeasure]\u001B\u000200000001#)"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 97,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 120
+	}
+}

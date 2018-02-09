@@ -1,0 +1,4 @@
+;  write the given text (already in XML format) as utf8 text to file
+
+Calculate utf8_xml_text as chartoutf8(pXMLText)
+Quit method $cinst.$writefile(utf8_xml_text)

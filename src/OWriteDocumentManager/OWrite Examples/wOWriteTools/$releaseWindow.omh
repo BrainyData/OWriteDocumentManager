@@ -1,0 +1,4 @@
+Calculate iUseCount as iUseCount-1
+If not(iUseCount)
+	Do $cinst.$close()
+End If

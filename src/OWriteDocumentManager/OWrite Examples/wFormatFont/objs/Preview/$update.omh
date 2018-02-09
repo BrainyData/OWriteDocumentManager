@@ -1,0 +1,18 @@
+If not(ivIsForFind)
+	Do $cfield.$disablescreenupdates()
+	Do $cfield.$active.$assign(kTrue)
+	Do $cfield.$enabled.$assign(kTrue)
+	
+	Do $cfield.$editstylename.$assign('Normal')
+	
+	;  centre align our text
+	Do $cfield.$curalign.$assign(1)
+	;  copy all relevent properties to preview
+	Do $cinst.$saveTo($cfield)
+	
+	Do $cfield.$editstylename.$assign('')
+	
+	Do $cfield.$enabled.$assign(kFalse)
+	;  Do $cfield.$active.$assign(kFalse)
+	Do $cfield.$enablescreenupdates()
+End If

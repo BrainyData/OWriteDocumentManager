@@ -1,0 +1,51 @@
+{
+	"classtype": "kObjectclass",
+	"internalversion": 77,
+	"superclass": ".OWrite.OWriteDoc",
+	"designtaskname": "rtOWriteJS",
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivCallerRef",
+			"order": 5,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "item reference to the caller (set by $evalClickCalc)"
+		},
+		{
+			"name": "ivEditMode",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "TO BE IMPLEMENTED: if true, instead of evaluating calculations, we collect info for editing the calculation"
+		},
+		{
+			"name": "ivEditParamsList",
+			"order": 3,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "TO BE IMPLEMENTED:"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2016-08-19 13:54:03",
+		"desc": "This objects function is to merge OWrite documents with data on the server",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"moddate": "2017-08-25 12:59:13",
+		"selfcontained": false,
+		"showascheckedout": true,
+		"userinfo": "",
+		"version": ""
+	}
+}

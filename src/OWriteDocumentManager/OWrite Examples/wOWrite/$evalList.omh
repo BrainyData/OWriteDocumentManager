@@ -1,0 +1,23 @@
+;  define our list from the supplied columns
+;       ;; the column names to not include the file class name so we must add them
+;       ;; we will prepare a string that defines our list by evaluating it using eval()
+Calculate defineString as con('theList.$define(',pDataColumns,')')
+Do eval(defineString)
+Begin reversible block
+	Set read-only files {[pDataTable]}
+	Set main file {[pDataTable]}
+	Set current list theList
+End reversible block
+Calculate fieldName as con(pDataTable,'.seq')
+Working message Evaluating Document/-1073735814,-1073735810;20;0;0 {Please wait while OWrite loads the data...}
+Build list from file on [fieldName]
+;  check if we have included the pictures from fPDFPicts
+;       ;; they are in RAW jpeg format so we must convert them to color shared
+If pos('fPDFPicts.pict',pDataColumns)
+	For theList.$line from 1 to theList.$linecount step 1
+		Redraw working message
+		Calculate theList.pict as pictconvto('JPEG',theList.pict,'CS24')
+	End For
+End If
+Close working message
+Quit method theList

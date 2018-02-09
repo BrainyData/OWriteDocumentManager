@@ -1,0 +1,21 @@
+{
+	"ident": 1008,
+	"order": 9,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 1615,
+		"text": {
+			"type": 0,
+			"calc": "Print"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Print documents to Screen, Printer or PDF"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

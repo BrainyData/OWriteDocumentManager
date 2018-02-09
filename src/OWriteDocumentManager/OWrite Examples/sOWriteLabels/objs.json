@@ -1,0 +1,72 @@
+[
+	{
+		"name": "OL_SEQ",
+		"ident": 32007,
+		"order": 1,
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"properties": {
+			"desc": "",
+			"nonull": false,
+			"primarykey": true,
+			"userinfo": ""
+		}
+	},
+	{
+		"name": "OL_NAME",
+		"ident": 32001,
+		"order": 2,
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"properties": {
+			"desc": "Label Name",
+			"nonull": false,
+			"primarykey": false,
+			"userinfo": ""
+		}
+	},
+	{
+		"name": "OL_NAME_UPPER",
+		"ident": 32005,
+		"order": 3,
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"properties": {
+			"desc": "Label Name in upper case",
+			"nonull": false,
+			"primarykey": false,
+			"userinfo": ""
+		}
+	},
+	{
+		"name": "OL_DESCRIPTION",
+		"ident": 32002,
+		"order": 4,
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 200,
+		"properties": {
+			"desc": "Label Description",
+			"nonull": false,
+			"primarykey": false,
+			"userinfo": ""
+		}
+	},
+	{
+		"name": "OL_DATA",
+		"ident": 32003,
+		"order": 5,
+		"type": "kRow",
+		"subtype": "",
+		"sublen": 0,
+		"properties": {
+			"desc": "Label Data",
+			"nonull": false,
+			"primarykey": false,
+			"userinfo": ""
+		}
+	}
+]

@@ -1,0 +1,19 @@
+
+;  CHANGE_V3A12 begins
+;  delete our old map
+Do FileOps.$deletefile(tvFontmapPath)
+;  see if it was a V2 map and change the name
+If tvFontmapIsV2
+	Calculate tvFontmapIsV2 as kFalse
+	Calculate tvFontmapPath as con(ivExamplesPath,"fontmap_v3")
+End If
+
+;  construct a row variable and load it with the params
+Do fontmapRow.$define(List,RestrictFonts)
+Do fontmapRow.$assigncols(pInList,pInRestrictFonts)
+;  write the fontmap to disk
+Calculate fontmapBin as OWrite.$listtobin(fontmapRow)
+Do fontmapFile.$createfile(tvFontmapPath)
+Do fontmapFile.$writefile(fontmapBin)
+Do fontmapFile.$closefile()
+;  CHANGE_V3A12 ends

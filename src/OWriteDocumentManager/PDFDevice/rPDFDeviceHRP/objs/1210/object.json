@@ -1,0 +1,24 @@
+{
+	"ident": 1210,
+	"order": 68,
+	"objtype": "kRoundrect",
+	"properties": {
+		"backcolor": "RGB(153,153,0)",
+		"backpattern": 1,
+		"bordercolor": "RGB(187,68,0)",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": true,
+		"forecolor": "kColorForeFill",
+		"height": 1.869,
+		"left": 14.145,
+		"lineno": 39,
+		"lineoffset": 0.282,
+		"linestyle": 3,
+		"printontop": false,
+		"userinfo": "",
+		"vertextend": false,
+		"width": 4.128
+	}
+}

@@ -1,0 +1,214 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 2,
+	"designtaskname": "Startup_Task",
+	"nextident": 1032,
+	"lastgroupident": 0,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "inCancelSearch",
+			"order": 9,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivDefaultStatusText",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"desc": "this is calculated from refStatusLabel"
+		},
+		{
+			"name": "ivFindList",
+			"order": 4,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivFindObj",
+			"order": 1,
+			"type": "kObject",
+			"subtype": ".OWrite.OWriteSearch",
+			"sublen": 0
+		},
+		{
+			"name": "ivFindText",
+			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 255
+		},
+		{
+			"name": "ivLastFindText",
+			"order": 7,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 255
+		},
+		{
+			"name": "ivSelectionShown",
+			"order": 16,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "refFindBkgFocusCancel",
+			"order": 14,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1028",
+			"desc": "find field with focus and cancel button: appearance background picture"
+		},
+		{
+			"name": "refFindBkgFocusNoCancel",
+			"order": 13,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1027",
+			"desc": "find field with focus and no cancel button: appearance background picture"
+		},
+		{
+			"name": "refFindBkgNoFocusCancel",
+			"order": 15,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1029",
+			"desc": "find field with no focus and cancel button: appearance background picture"
+		},
+		{
+			"name": "refFindBkgNoFocusNoCancel",
+			"order": 12,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1026",
+			"desc": "find field with no focus and no cancel button: appearance background picture"
+		},
+		{
+			"name": "refFindClear",
+			"order": 11,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnClear"
+		},
+		{
+			"name": "refFindText",
+			"order": 10,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.fldSearchText"
+		},
+		{
+			"name": "refOWrite",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cwind.$objs.Edit"
+		},
+		{
+			"name": "refSearchText",
+			"order": 8,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.fldSearchText"
+		},
+		{
+			"name": "refStatusLabel",
+			"order": 6,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1021",
+			"desc": "reference to our status label"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2011-04-15 11:10:56",
+		"desc": "OWrite: multi selection find example CHANGE_V3A8",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": true,
+		"forecolor": "kColor3DFace",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 59,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 530,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2015-09-03 09:53:27",
+		"modelessdata": true,
+		"showascheckedout": false,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": "",
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionNone",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 297,
+		"userinfo": "",
+		"usesheets": false,
+		"version": "4.32.00",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 748,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

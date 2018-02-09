@@ -1,0 +1,6 @@
+Do inherited
+
+;  load and prepare our device parameters
+Do method $cinst.$loadparams (pAssignFileName)
+;  print the report
+Do method $cinst.$printreport

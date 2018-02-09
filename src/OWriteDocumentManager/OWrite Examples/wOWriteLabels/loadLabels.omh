@@ -1,0 +1,8 @@
+Do iLabelsList.$definefromsqlclass('tOWriteLabels')
+Do iLabelsList.$buildList()
+Do iLabelsList.$setSmartList(kTrue)
+;  to clear all labels uncomment the two lines below
+;  Do iLabelsList.$sendall($ref.$selected.$assign(kTrue))
+;  Do iLabelsList.$remove(kListDeleteSelected)
+
+Do method setCurLabel (cCurLabel,kFalse)

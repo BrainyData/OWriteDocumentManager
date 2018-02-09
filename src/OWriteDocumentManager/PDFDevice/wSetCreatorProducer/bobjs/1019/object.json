@@ -1,0 +1,27 @@
+{
+	"ident": 1019,
+	"order": 16388,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kCenterJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "ExampleTitle",
+		"font": 6,
+		"fontsize": 18,
+		"fontstyle": "kItalic",
+		"forecolor": "kColorForeFill",
+		"height": 21,
+		"left": 8,
+		"objlink": 0,
+		"text": "PDF Device",
+		"textcolor": "RGB(0,0,0)",
+		"top": 38,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 195
+	}
+}

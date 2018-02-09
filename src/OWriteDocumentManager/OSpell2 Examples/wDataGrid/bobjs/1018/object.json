@@ -1,0 +1,30 @@
+{
+	"ident": 1018,
+	"order": 16386,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColor3DFace",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlInfo",
+		"font": 7,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 73,
+		"left": 182,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "To check the spelling, simply select Check Field... or Check Window... from the menu 'Spell'\rNOTE: This window overloads the methods $cancheckfield, $getspelldata, $setspelldata"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 8,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 382
+	}
+}

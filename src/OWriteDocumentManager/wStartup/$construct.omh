@@ -1,0 +1,12 @@
+;  load our Develeoper Preview document
+Begin reversible block
+	Set read-only files {fOWriteDoc}
+	Set main file {fOWriteDoc}
+End reversible block
+Set search as calculation {fOWriteDoc.group="OWrite"&fOWriteDoc.name="Startup"}
+Find first  (Use search)
+If flag true
+	Do $cinst.$objs.OWrite.$loaddata(fOWriteDoc.data,kWriFmtDefault,kTrue)
+Else
+	Do $cinst.$objs.OWrite.$loaddata("developer preview read-me is missing",kWriFmtText,kTrue)
+End If

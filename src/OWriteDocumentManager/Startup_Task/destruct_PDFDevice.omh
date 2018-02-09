@@ -1,0 +1,4 @@
+;  termination required for PDFDevice
+If tvCanDoPDF
+	;  termination code here
+End If

@@ -1,0 +1,7 @@
+Do PDF Device.$getfonterrors(errorList)
+If errorList.$linecount
+	Open trace log
+	For errorList.$line from 1 to errorList.$linecount step 1
+		Send to trace log {[errorList.ErrorText] Font in question is '[errorList.FontName]'}
+	End For
+End If

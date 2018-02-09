@@ -1,0 +1,2 @@
+Do ivOWriteSimple.$printdocument(ivDocument) Returns url
+Do $cinst.$showurl(url,'_PDFOutput')

@@ -1,0 +1,30 @@
+;  build list of fonts for the client interface
+;       ;; OWrite can build a list of fonts based on available fonts on the server
+;       ;; However, this list of fonts would not be web-safe
+
+If not(cvFontList.$linecount)     ;; only build once for all clients using class variable
+	If not(pBuildWebSaveFonts)
+		Do OWrite.$getfontlist(cvFontList,0,0,0,kTrue)
+	Else
+		;  RELEASE NOTE: web save fonts not currently stored with document which
+		;       ;; here we build a list of websave fonts (there are others that can be added)
+		;       ;; Note: OWrite can accept multiple font names seperate by commas
+		Do cvFontList.$define(FontName,DisplayName)
+		Do cvFontList.$add('Georgia, serif')
+		Do cvFontList.$add('Palatino Linotype, Book Antiqua, Palatino, serif')
+		Do cvFontList.$add('Times New Roman, Times, serif')
+		
+		Do cvFontList.$add('Arial,Helvetica,sans-serif')
+		Do cvFontList.$add('Arial Black, Gadget, sans-serif')
+		Do cvFontList.$add('Comic Sans MS, cursive, sans-serif')
+		Do cvFontList.$add('Impact, Charcoal, sans-serif')
+		Do cvFontList.$add('Lucida Sans Unicode, Lucida Grande, sans-serif')
+		Do cvFontList.$add('Tahoma, Geneva, sans-serif')
+		Do cvFontList.$add('Trebuchet MS, Helvetica, sans-serif')
+		Do cvFontList.$add('Verdana, Geneva, sans-serif')
+		
+		Do cvFontList.$add('Courier New, Courier, monospace')
+		Do cvFontList.$add('Lucida Console, Monaco, monospace')
+	End If
+End If
+Calculate ivFontList as cvFontList

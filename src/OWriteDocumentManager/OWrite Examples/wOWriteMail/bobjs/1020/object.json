@@ -1,0 +1,30 @@
+{
+	"ident": 1020,
+	"order": 16390,
+	"objtype": "kText",
+	"properties": {
+		"align": "kCenterJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelLarge",
+		"font": 2,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 50,
+		"left": 191,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "This example demonstrates how an OWrite document can be converted to HTML and send as an e-mail."
+		},
+		"textcolor": "kColorWindowText",
+		"top": 6,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 360
+	}
+}

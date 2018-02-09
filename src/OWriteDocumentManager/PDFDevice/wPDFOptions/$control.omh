@@ -1,0 +1,7 @@
+On evEnabled,evDisabled
+	Switch $cobj.$objtype
+		Case kEntry
+			Calculate $cobj.$fieldstyle as pick(pEventCode=evEnabled,'CtrlEditTextDis','CtrlEditText')
+		Case kDroplist
+			Calculate $cobj.$fieldstyle as pick(pEventCode=evEnabled,'CtrlEditTextDis','CtrlDropdownList')
+	End Switch

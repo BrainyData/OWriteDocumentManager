@@ -1,0 +1,40 @@
+;  make sure we work with same co-ordinates
+Calculate savedUseCms as $prefs.$usecms
+Calculate $prefs.$usecms as pOWrite.$showcms
+;  transfer the documents pagesetup info to our report
+Calculate $cinst.$orientation as pOWrite.$::orientation
+Calculate $cinst.$paper as pOWrite.$::paper
+If $cinst.$paper=kPaCustom
+	Calculate $cinst.$paperlength as pOWrite.$::paperlength
+	Calculate $cinst.$paperwidth as pOWrite.$::paperwidth
+End If
+;  use left and right margins to manipulate  left and right of our print object
+Calculate $cinst.$objs.Document.$left as pOWrite.$::leftmargin
+Calculate $cinst.$objs.Document.$width as $cinst.$paperwidth-pOWrite.$::leftmargin-pOWrite.$::rightmargin
+;  calculate the top and bottom margins
+;  we need to subtract our header and footer section from the margins
+Calculate $cinst.$topmargin as pOWrite.$::topmargin-$cinst.$secheight(kTrue)
+Calculate $cinst.$bottommargin as pOWrite.$::bottommargin-$cinst.$secheight(kFalse)
+;  make sure our header and footer text is centered according to page size
+Set reference objRef to $cinst.$objs.$findname('HeaderText')
+Calculate objRef.$left as ($cinst.$paperwidth-objRef.$width)/2
+Set reference objRef to $cinst.$objs.$findname('FooterText')
+Calculate objRef.$left as ($cinst.$paperwidth-objRef.$width)/2
+
+;  Calculate $cinst.$objs.HeaderText.$width as $cinst.$paperwidth
+;  Calculate $cinst.$objs.FooterText.$width as $cinst.$paperwidth
+;  fit our header and footer line dividers just inside our paper (1 cm)
+Calculate x as pick($prefs.$usecms,1/2.54,1)
+Set reference objRef to $cinst.$objs.$findident(1018)
+Calculate objRef.$left as x
+Calculate objRef.$width as $cinst.$paperwidth-x*2
+Set reference objRef to $cinst.$objs.$findident(1019)
+Calculate objRef.$left as x
+Calculate objRef.$width as $cinst.$paperwidth-x*2
+;  position our date and time objects 1 cms in from paper edge
+Set reference objRef to $cinst.$objs.$findident(1020)     ;; our date object (left side of header)
+Calculate objRef.$left as x
+Set reference objRef to $cinst.$objs.$findident(1016)     ;; our time object (right side of header)
+Calculate objRef.$left as $cinst.$paperwidth-x-objRef.$width
+;  tidy up
+Calculate $prefs.$usecms as savedUseCms

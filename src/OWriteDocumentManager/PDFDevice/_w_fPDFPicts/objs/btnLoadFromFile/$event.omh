@@ -1,0 +1,12 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do FileOps.$getfilename(path)
+	If len(path)
+		Do file.$openfile(path)
+		Do file.$readfile(bin)
+		Do file.$closefile()
+		Prepare for edit
+		Calculate fPDFPicts.pict as bin
+		Update files
+		Do $cinst.$redraw()
+		Calculate $cinst.$bobjs.1019.$text as con('Size: ',binlength(fPDFPicts.pict))
+	End If

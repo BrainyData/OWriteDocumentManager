@@ -1,0 +1,7 @@
+If $ctask.tvDebug
+	If cvIsFirstCall
+		Open trace log
+		Calculate cvIsFirstCall as kFalse
+	End If
+	Send to trace log {[$cclass().$name].[$cmethod().$name]: [pCode]/[pText]}
+End If

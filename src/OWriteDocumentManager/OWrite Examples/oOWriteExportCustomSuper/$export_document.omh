@@ -1,0 +1,38 @@
+;  PURPOSE:     ;; public method for exporting entire document
+;  USAGE:     ;; this method is called by the example export window when custom export is selected
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to override the output handling
+;  IMPLEMENTS:     ;; prepares output and calls ...$writedoc for the main export
+
+;  check document data version (this objects was written for binary data version 11)
+
+
+;  prepare the output and export ---
+
+Calculate ivIsMemoryOutput as len(pFilePath)=0
+If ivIsMemoryOutput
+	
+	;  --- we are outputing to memory, prepare variable
+	Calculate ivIsMemoryOutput as kTrue
+	Calculate ivMemoryOutput as #NULL
+	Calculate #F as kTrue
+	
+	;  --- call main export method
+	Do method $cinst.$writedoc (pDocData) Returns #F
+	
+Else
+	
+	;  --- we are outputing to file, create file
+	Do FileOps.$deletefile(pFilePath) Returns #F
+	Do $cinst.$createfile(pFilePath) Returns #F
+	
+	;  --- call main export method
+	If flag true
+		Do method $cinst.$writedoc (pDocData) Returns #F
+	End If
+	
+	;  close the output file
+	Do $cinst.$closefile()
+	
+End If
+
+Quit method #F

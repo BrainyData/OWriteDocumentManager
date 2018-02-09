@@ -1,0 +1,27 @@
+{
+	"ident": 1020,
+	"order": 16388,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kRightJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 6,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 13,
+		"objlink": 0,
+		"text": "Address;The client's full address",
+		"textcolor": "kColorWindowText",
+		"top": 81,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 137
+	}
+}

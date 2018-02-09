@@ -1,0 +1,11 @@
+Set reference ref to $cinst.[$cobj.$listname]
+Calculate data as pObjRef.$contents
+Do pList.$search(upp($ref.C1)=upp(data),kTrue,kFalse,kFalse,kFalse) Returns pList.$line
+If not(pList.$line)
+	;  partial match is allowed
+	Do pList.$search(pos(upp(data),upp($ref.C1))=1,kTrue,kFalse,kFalse,kFalse) Returns pList.$line
+End If
+If pList.$line
+	Calculate pObjRef.$contents as pList.C1
+	Calculate $cinst.[$cobj.$dataname] as pList.C1
+End If

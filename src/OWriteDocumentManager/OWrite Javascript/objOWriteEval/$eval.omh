@@ -1,0 +1,23 @@
+;  some example OWrite calculated fields call this method to evaluate fields by name instead of refering to database fields directly
+;       ;; this potentially provides additional levels of control, i.e. parameters for formatting results could be added to this call
+
+Switch pWhat
+	Case 'Title'
+		Quit method fClients.title
+	Case 'Name'
+		Quit method fClients.name
+	Case 'Address'
+		Quit method fClients.address
+	Case 'Picture'
+		Quit method fClients.picture
+	Case 'FullAddress'
+		Begin text block
+		Text: {{\rtf\b1} (Carriage return)
+		Text: {[con(fClients.title,' ',fClients.name)]\par} (Carriage return)
+		Text: {\b0} (Carriage return)
+		Text: {[replaceall(fClients.address,chr(13),'\par ')]} (Carriage return)
+		Text: {}}
+		End text block
+		Get text block data
+		Quit method data
+End Switch

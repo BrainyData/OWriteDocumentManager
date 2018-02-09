@@ -1,0 +1,12 @@
+On evClick
+	Switch $cobj().$name
+		Case "OWriteBinary","PlainText","UnicodeText","RTF","HTML"
+			Do $cinst.$setbuttons
+		Case "DocsList"
+			Do $cinst.$setbuttons
+		Case "Cancel"
+			Queue close [$cwind().$name]
+		Case "Export"
+			Do method export
+			Queue close [$cwind().$name]
+	End Switch

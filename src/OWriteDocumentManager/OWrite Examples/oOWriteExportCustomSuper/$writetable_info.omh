@@ -1,0 +1,16 @@
+
+Begin text block
+Text: {<selpos>[pSelPos]</selpos>} (Carriage return,Linefeed)
+Text: {<formatting>[pick(pFormat,'inline','behind','infront','wrap','split')]</formatting>} (Carriage return,Linefeed)
+Text: {<name>[utf8tochar(pName)]</name>} (Carriage return,Linefeed)
+Text: {<calc>[utf8tochar(pCalc)]</calc>} (Carriage return,Linefeed)
+Text: {<cellspacing>[pCellSpacing/1000]mm</cellspacing>} (Carriage return,Linefeed)
+Text: {<pageheaders>[pick(pPageHeaders,'off','on')]</pageheaders>} (Carriage return,Linefeed)
+Text: {<pagefooters>[pick(pPageFooters,'off','on')]</pagefooters>} (Carriage return,Linefeed)
+Text: {<autoextend>[pick(pAutoExtend,'off','on')]</autoextend>} (Carriage return,Linefeed)
+Text: {<multidatarows>[pick(pMultiDataRows,'off','on')]</multidatarows>} (Carriage return,Linefeed)
+Text: {<userdata>[bintohex(pUserData)]</userdata>} (Carriage return,Linefeed)
+Text: {<calcresult>[bintohex(OWrite.$listtobin(pCalcResult))]</calcresult>}
+End text block
+Get text block txt
+Do method $cinst.$writefile (txt)

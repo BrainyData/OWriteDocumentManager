@@ -1,0 +1,41 @@
+;  for this example we do not save the labels back to the database
+;  you need to finish implementing this table class and add the table to your database.
+;
+;  If you are using an Omnis datafile you can use list history features to find the changes
+;  and update your records, below is an example
+
+Quit method
+
+;  History List example (not tested)
+If $cinst.$smartlist<>kTrue     ;; Make sure this is a smartlist
+	Breakpoint {error cannot complete work if the list is not a smart list}
+End If
+
+Calculate savedLine as $cinst.$line
+Do $cinst.$includelines(kRowUpdated+kRowInserted+kRowDeleted)     ;; Filter the list to include changed, inserted, and deleted lines
+If $cinst.$linecount
+	Do $cinst.$includelines(kRowDeleted)     ;; Delete labels first
+	If $cinst.$linecount
+		For $cinst.$line from 1 to $cinst.$linecount step 1
+			;  *** find and delete your label record
+		End If
+	End For
+	Do $cinst.$includelines(kRowDeleted)     ;; Insert new labels
+	If $cinst.$linecount
+		For $cinst.$line from 1 to $cinst.$linecount step 1
+			;  *** insert a new label record
+		End If
+	End For
+	Do $cinst.$includelines(kRowUpdated)     ;; Insert new labels
+	If $cinst.$linecount
+		For $cinst.$line from 1 to $cinst.$linecount step 1
+			;  *** find and update your label record
+		End If
+	End For
+End For
+
+;  Filter the list back to all the visible lines (not the deleted lines)
+Do $cinst.$includelines(kRowUpdated+kRowInserted+kRowUnchanged)
+Do $cinst.$savelistwork()     ;; quick way to do $savelistdeletes(), $savelistinserts(), and $savelistupdates()
+
+Calculate $cinst.$line as savedLine

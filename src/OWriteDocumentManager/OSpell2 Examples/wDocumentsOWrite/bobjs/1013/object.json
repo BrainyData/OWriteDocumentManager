@@ -1,0 +1,30 @@
+{
+	"ident": 1013,
+	"order": 16388,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColor3DFace",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFright",
+		"fieldstyle": "CtrlInfo",
+		"font": 7,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 73,
+		"left": 181,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "To check out the OWrite background spell-check click 'Edit' to edit a record.\rYou can righ-click on words that are underlined red to correct them from a popup menu."
+		},
+		"textcolor": "kColorWindowText",
+		"top": 8,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 378
+	}
+}

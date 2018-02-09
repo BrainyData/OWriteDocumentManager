@@ -1,0 +1,1 @@
+Do $cwind.$execAction(pObj().$name)

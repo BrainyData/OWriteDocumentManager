@@ -1,0 +1,8 @@
+;  called by embeded document links or $owrite_export for HTML documents
+Switch sys(6)
+	Case 'X'
+		Calculate script as con('property target_URL : "',pURL,'"',kCr,'open location target_URL')
+		Do $root.$runapplescript(script,results)
+	Case 'W','N'
+		Launch program ,[pURL] (Do not quit Omnis)     ;; CHANGE_2015_02_25__1
+End Switch

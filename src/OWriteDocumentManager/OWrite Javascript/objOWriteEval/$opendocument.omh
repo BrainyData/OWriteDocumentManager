@@ -1,0 +1,6 @@
+;  the remote form or desktop window must implement this call
+If ivCallerRef.$opendocument.$cando
+	Quit method ivCallerRef.$opendocument(pDocName,pSubHeader,pText,pBookmark)
+Else
+	Quit method kFalse
+End If

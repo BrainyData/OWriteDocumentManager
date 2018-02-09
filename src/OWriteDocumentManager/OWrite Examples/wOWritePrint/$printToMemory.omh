@@ -1,0 +1,6 @@
+;  CHANGE_PDF_MEM_DEST
+;  called by PDF device after PDF output is complete when we are printing to memory
+;  this method is called prior to Omnis returning control to the method that executed the print
+
+;  we simply fetch the output into our binary variable
+Do PDF Device.$getmemoryoutput(pOutputId,ivPdfMemoryOutput)

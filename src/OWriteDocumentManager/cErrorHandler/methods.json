@@ -1,0 +1,28 @@
+[
+	{
+		"name": "ErrorHandler",
+		"ident": 0,
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pCode",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pText",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
+	}
+]

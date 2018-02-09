@@ -1,0 +1,30 @@
+{
+	"ident": 1183,
+	"order": 16440,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 318,
+		"objlink": 393217,
+		"text": {
+			"type": 14,
+			"calc": "[pick(binlength(ivParams.PdfaOutputProfile)>0,'{none selected}',con(binlength(ivParams.PdfaOutputProfile),' bytes'))]"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 208,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 205
+	}
+}

@@ -1,0 +1,11 @@
+;  assign property with value from the window field
+;       ;; we need to consider our NULL values here that we assigned during $loadProperty
+;       ;; this is for radio groups only
+
+Calculate value as $cinst.[pFieldRef.$dataname]
+If value=kNullRadio
+	Calculate pOutLong as #NULL
+Else If value
+	Do bitshiftl(value,pBitShift)
+	Calculate pOutLong as bitor(pOutLong,value)
+End If

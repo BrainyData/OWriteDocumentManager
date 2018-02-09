@@ -1,0 +1,25 @@
+{
+	"ident": 1139,
+	"order": 73,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 15,
+		"fontstyle": "kBold",
+		"height": -1,
+		"left": 0.785,
+		"lineno": 26,
+		"lineoffset": 0.175,
+		"printontop": false,
+		"text": "Gray Scales",
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"width": 3.985
+	}
+}

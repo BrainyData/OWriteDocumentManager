@@ -1,0 +1,8 @@
+If ivSizeToFit
+	If ivOWriteRef.$::orientation=kOrientLandscape
+		Calculate ivColWidth as (ivOWriteRef.$::paperlength-ivOWriteRef.$::leftmargin-ivOWriteRef.$::rightmargin)/ivColumns
+	Else
+		Calculate ivColWidth as (ivOWriteRef.$::paperwidth-ivOWriteRef.$::leftmargin-ivOWriteRef.$::rightmargin)/ivColumns
+	End If
+	Redraw {ColWidth}
+End If

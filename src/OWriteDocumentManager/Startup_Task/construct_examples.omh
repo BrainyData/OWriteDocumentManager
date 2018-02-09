@@ -1,0 +1,14 @@
+;  initialization required for our example library and data file
+
+;  install an error handler     ;; our error handler simply redirects all errors to the trace-log
+Load error handler cErrorHandler/ErrorHandler
+;  check studio version
+Do method checkStudio
+;  check if the externals are present
+Do method checkExternals
+;  open the example data
+Open data file (Do not close other data,Convert without user prompts,Full Unicode conversion) {[con(ivExamplesPath,ivExamplesName,'.df1')],example}
+Set default data file {fClients,fData,fDictionaries,fDocuments,fOWriteDoc,fOWriteHF,fPDFPicts}
+Set read/write files {fDictionaries,fDocuments}
+;  Install our example menu
+Install menu mExample

@@ -1,0 +1,13 @@
+;  Enter your initialization code here
+Calculate $root.$prefs.$usecms as pEditObjRef.$showcms
+Set reference ivEditObjRef to pEditObjRef.$ref
+;  build style list
+Do ivStyleList.$define(ivStyleName)
+Do ivEditObjRef.$getstylelist(ivStyleList)
+Do ivStyleList.$sort($ref.ivStyleName,kFalse)
+Do ivStyleList.$search($ref.ivStyleName=ivEditObjRef.$curstylename,kTrue,kFalse,kFalse,kFalse)
+Do ivStyleList.$loadcols()
+Calculate ivStyleListAfter as ivStyleList
+Calculate $cinst.$title as con('Format Style ',ivStyleName)
+;  load current styles properties
+Do method load

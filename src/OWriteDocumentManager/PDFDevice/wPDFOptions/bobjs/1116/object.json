@@ -1,0 +1,30 @@
+{
+	"ident": 1116,
+	"order": 16412,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelSmall",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 41,
+		"left": 257,
+		"objlink": 65537,
+		"text": {
+			"type": 14,
+			"calc": "DPI used to convert Macintosh Picts and Windows Meta files to RGB or JPEG images. Large DPI means better image quality but larger file size."
+		},
+		"textcolor": "kColorWindowText",
+		"top": 95,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 245
+	}
+}

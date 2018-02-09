@@ -1,0 +1,12 @@
+Set read/write files {fPDFPicts}
+Single file find on fPDFPicts.seq (Exact match) {1}
+
+Calculate pngImage as pictconvto(pictformat(fPDFPicts.pict),fPDFPicts.pict,"PNG")
+
+Do ivSampleImage.$define(pngImage,width,height,maxWidth,maxHeight)
+Calculate ivSampleImage.pngImage as bytecon(pngImage,"")
+Do pictsize(fPDFPicts.pict,ivSampleImage.width,ivSampleImage.height)
+Calculate ivSampleImage.maxWidth as 100000
+Calculate ivSampleImage.maxHeight as 100000
+
+;  Send to trace log {ivSampleImage.width=[ivSampleImage.width] - ivSampleImage.height=[ivSampleImage.height] - ivSampleImage.pngImage=[binlength(ivSampleImage.pngImage)] orig=[binlength(fPDFPicts.pict)]}

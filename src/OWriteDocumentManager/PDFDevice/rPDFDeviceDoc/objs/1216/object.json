@@ -1,0 +1,29 @@
+{
+	"ident": 1216,
+	"order": 33,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 15,
+		"fontstyle": "kBold",
+		"height": -1,
+		"left": 2.54,
+		"lineno": 72,
+		"lineoffset": 0.104,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "Background Image"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

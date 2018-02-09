@@ -1,0 +1,41 @@
+;  main find and replace method
+;  this method may be called repeatatly during a find or replace operation
+If not(ivStarted)
+	;  add text to history lists
+	Do method addHistorySearch
+	If pReplace
+		Do method addHistoryReplace
+	End If
+	;  initialize our find object
+	Do ivOWriteRef.$findinit(cvFindObj.$owriteobj,not(cvCurrentSelection)) Returns continue     ;; CHANGE_V3
+	If not(continue)
+		Sound bell
+		Quit method
+	End If
+	;  rember our current selection for later restoring
+	Calculate ivStarted as kTrue
+	Calculate ivFirst as kTrue
+	Calculate ivVScroll as ivOWriteRef.$vscroll
+	Calculate ivHScroll as ivOWriteRef.$hscroll
+	Calculate ivSelStart as ivOWriteRef.$firstsel
+	Calculate ivSelEnd as ivOWriteRef.$lastsel
+	Calculate ivSelObjID as ivOWriteRef.$curobjid
+End If
+;  action
+If pReplace
+	Do ivOWriteRef.$replace(cvFindObj.$owriteobj,cvReplaceObj.$owriteobj,pReplaceAll) Returns continue
+Else
+	Do ivOWriteRef.$findnext(cvFindObj.$owriteobj) Returns continue
+End If
+;  if continnue is true, we have found/replaced something and have stopped
+If continue
+	;  make sure our window does not obscure the current selection
+	Do method position
+Else
+	;  we are done, restore origional positions
+	Calculate ivStarted as kFalse
+	Calculate ivOWriteRef.$vscroll as ivVScroll
+	Calculate ivOWriteRef.$hscroll as ivHScroll
+	Do ivOWriteRef.$setselection(ivSelStart,ivSelEnd,ivSelObjID)
+	Sound bell
+End If

@@ -1,0 +1,27 @@
+;  overide this method to load all the properties     ;; called by $construct and revert button
+;  after loading your properties call the inherited method
+;  example:
+;  $cinst.$loadProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
+;  Do inherited
+
+Do $cinst.$loadProperty_font_fam_face(refFontFamilyList,refFontTypefaceList,ivFontFamilyList,ivFontTypefaceList)     ;; Load font family and style CHANGE_V3A12
+Do $cinst.$loadProperty_list(ivEditObjRef.$curfontsize.$ref,refFontSizeList,ivFontSizeList)
+Do $cinst.$loadProperty(ivEditObjRef.$curunderline.$ref,refUnderline)
+Do $cinst.$loadProperty(ivEditObjRef.$cursuperscript.$ref,refSuperscript)
+Do $cinst.$loadProperty(ivEditObjRef.$cursubscript.$ref,refSubscript)
+Do $cinst.$loadProperty(ivEditObjRef.$curstrikethrough.$ref,refStrikeNone)
+
+Do $cinst.$loadProperty_color(ivEditObjRef.$curtextcolor.$ref,refTextColorButt,#NULL)     ;; CHANGE_V3A12
+Do $cinst.$loadProperty_color(ivEditObjRef.$curhighlight.$ref,refHighlightColorButt,#NULL)     ;; CHANGE_V3A12
+
+If ivIsForFind
+Else
+	;  update our preview field after the load     ;; CHANGE_V3A12
+	Do refPreview.$docscale.$assign(ivOWriteRef.$docscale)     ;; CHANGE_v3 must get these properties from OWrite object
+	Do refPreview.$screendpi.$assign(ivOWriteRef.$screendpi)
+	Do refPreview.$papercolor.$assign(ivOWriteRef.$papercolor)
+	Do refPreview.$loaddata(con("The quick brown fox jumps over the lazy dog",chr(13),"1234567890"),kWriFmtText)
+	Do refPreview.$update()
+End If
+
+Do inherited

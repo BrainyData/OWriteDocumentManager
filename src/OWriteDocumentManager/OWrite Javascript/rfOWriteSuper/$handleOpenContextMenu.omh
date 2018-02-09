@@ -1,0 +1,27 @@
+
+
+Calculate pContextMenu.$objs.Insert.$enabled as pOWrite.$curobjtype=kWriObjTypeNone|pOWrite.$curobjtype=kWriObjTypeTableCell
+Calculate pContextMenu.$objs.Table.$enabled as pOWrite.$curobjtype=kWriObjTypeTableCell
+
+;  insert submenu
+Calculate curObjNone as pOWrite.$curobjtype=kWriObjTypeNone
+Calculate curObjNoneOrCell as pOWrite.$curobjtype=kWriObjTypeNone|pOWrite.$curobjtype=kWriObjTypeTableCell
+Calculate curObjNoneCellOrHF as pOWrite.$curobjtype=kWriObjTypeNone|pOWrite.$curobjtype=kWriObjTypeTableCell|pOWrite.$curobjtype=kWriObjTypeHeadFoot
+
+Calculate remoteMenu as pContextMenu.$objs.Insert.$remotemenu
+Calculate remoteMenu.$objs.PageBreak.$enabled as curObjNone
+Calculate remoteMenu.$objs.CalculatedField.$enabled as curObjNoneCellOrHF
+Calculate remoteMenu.$objs.CalculatedPicture.$enabled as curObjNone
+Calculate remoteMenu.$objs.SamplePicture.$enabled as curObjNoneCellOrHF
+Calculate remoteMenu.$objs.Table.$enabled as curObjNone
+Calculate remoteMenu.$objs.Date.$enabled as curObjNoneCellOrHF
+Calculate remoteMenu.$objs.Time.$enabled as curObjNoneCellOrHF
+Calculate remoteMenu.$objs.PageNumber.$enabled as curObjNoneCellOrHF
+Calculate remoteMenu.$objs.PageCount.$enabled as curObjNoneCellOrHF
+
+;  table submenu
+Calculate remoteMenu as pContextMenu.$objs.Table.$remotemenu
+Calculate remoteMenu.$objs.SplitCell.$enabled as pOWrite.$tableaction(kWriTblActSplitCellHorz,kFalse)
+Calculate remoteMenu.$objs.MergeCells.$enabled as pOWrite.$tableaction(kWriTblActMergeCells,kFalse)
+Calculate remoteMenu.$objs.AlignLeft.$enabled as pOWrite.$tableaction(kWriTblActAlignLeft,kFalse)
+Calculate remoteMenu.$objs.AlignRight.$enabled as pOWrite.$tableaction(kWriTblActAlignRight,kFalse)

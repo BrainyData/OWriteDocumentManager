@@ -1,0 +1,30 @@
+{
+	"ident": 1017,
+	"order": 16386,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColor3DFace",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlInfo",
+		"font": 8,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 37,
+		"left": 15,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "This example will next through all the records and check the document of each record."
+		},
+		"textcolor": "kColorWindowText",
+		"top": 15,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 475
+	}
+}

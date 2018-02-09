@@ -1,0 +1,20 @@
+If ivDisplayPDFInWindow
+	JavaScript: window.open(pResult)
+Else
+	Calculate theWidth as $cinst.$width
+	Calculate theHeight as $cinst.$height
+	;  preview element
+	Calculate $cinst.$objs.ctrlEmbedPdf.$left as 0
+	Calculate $cinst.$objs.ctrlEmbedPdf.$top as 0
+	Calculate $cinst.$objs.ctrlEmbedPdf.$height as theHeight
+	Calculate $cinst.$objs.ctrlEmbedPdf.$width as theWidth*80/100
+	Calculate $cinst.$objs.ctrlEmbedPdf.$html as con('<embed src="',pResult,'" width="100%" height="100%" style="2px solid rgb(0,96,0)">')
+	;  preview panel element
+	Calculate $cinst.$objs.ctrlEmbedPdfPanel.$left as theWidth*80/100
+	Calculate $cinst.$objs.ctrlEmbedPdfPanel.$top as 0
+	Calculate $cinst.$objs.ctrlEmbedPdfPanel.$height as theHeight
+	Calculate $cinst.$objs.ctrlEmbedPdfPanel.$width as theWidth*20/100
+	;  make both visible
+	Calculate $cinst.$objs.ctrlEmbedPdf.$visible as kTrue
+	Calculate $cinst.$objs.ctrlEmbedPdfPanel.$visible as kTrue
+End If

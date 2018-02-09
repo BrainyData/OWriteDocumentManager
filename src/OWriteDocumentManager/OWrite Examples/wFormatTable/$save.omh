@@ -1,0 +1,12 @@
+;  overide this method to save all the properties     ;; called by the apply button
+
+Do ivEditObjRef.$startundo()
+Calculate ivEditObjRef.$holdupdates as kTrue
+
+Do method saveTable
+Do method saveRow
+Do method saveColumn
+Do method saveCell
+
+Calculate ivEditObjRef.$holdupdates as kFalse
+Do ivEditObjRef.$endundo("Format Table")

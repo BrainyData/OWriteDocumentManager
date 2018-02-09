@@ -1,0 +1,19 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 16384,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "empty",
+				"order": 1,
+				"type": "kObject",
+				"subtype": "oOWriteSearch",
+				"sublen": 0
+			}
+		]
+	}
+]

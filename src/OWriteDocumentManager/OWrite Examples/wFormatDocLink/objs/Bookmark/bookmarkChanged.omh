@@ -1,0 +1,6 @@
+;  if a bookmark is specified clear the other search fields
+If len($cfield.$contents)
+	Calculate ivSubText as ''
+	Calculate ivSrchText as ''
+	Redraw {SubText,SrchText}
+End If

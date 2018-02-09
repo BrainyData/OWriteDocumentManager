@@ -1,0 +1,21 @@
+{
+	"ident": 1017,
+	"order": 10,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": "k16x16+2109",
+		"text": {
+			"type": 0,
+			"calc": "Data"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Import Tab Delimited Data"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

@@ -1,0 +1,5 @@
+Begin reversible block
+	Set current list ivList
+End reversible block
+Define list {fDocuments}
+Build list from file on fDocuments.seq

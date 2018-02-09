@@ -1,0 +1,9 @@
+Do $cinst.$objs.jsOWrite.$loadautosave(ivDocumentID,1,"Something happened the last time you edited this document and the document data was saved locally on the $. Do you wish to load this local copy instead of the server data?") Returns #F
+If flag false
+	;  if we have not loaded auto-save data, load the server data
+	;  we may also delete the auto-save data as the user did not want it
+	Do $cinst.$objs.jsOWrite.$deleteautosave(ivDocumentID)
+	Do $cinst.$objs.jsOWrite.$loaddata(ivDocumentID,1)
+End If
+;  $loaddata is an async operation, so no point doing anything here
+;  when all the data is loaded we will receive an evFormatChanged

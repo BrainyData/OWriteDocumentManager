@@ -1,0 +1,2 @@
+;  return reference of the OWrite spell session     ;; required by OSpell2.oSpellChecker.$checkfield
+Quit method ivSpllSession.$ref

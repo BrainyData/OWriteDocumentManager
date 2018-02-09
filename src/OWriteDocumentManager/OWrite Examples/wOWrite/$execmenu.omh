@@ -1,0 +1,4 @@
+Switch pOption
+	Case 'MultiFind'
+		Do $cinst.$objs.FindPanel.$visible.$assign(not($cinst.$objs.FindPanel.$visible))
+End Switch

@@ -1,0 +1,7 @@
+Test for window open {wDocumentsOWrite}
+If flag true
+	Bring window instance to front wDocumentsOWrite
+Else
+	Do $topwind.$close()
+	Open window instance wDocumentsOWrite/CEN
+End If

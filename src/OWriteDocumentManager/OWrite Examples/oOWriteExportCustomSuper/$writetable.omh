@@ -1,0 +1,43 @@
+;  TO BE INHERITED: implements iterating of table object
+
+
+;  must export our table data which is in the first row
+Calculate tableData as pObjs.C7
+If tableData.$linecount&tableData.C1=kWriObjTypeTable     ;; first column must be kWriObjTypeTable
+	
+	;  write any required data prior to writing table info and rows
+	Do method $cinst.$writeobj_table_prefix (pObjs)
+	
+	;  Table Info: Pos , Format , Name , Calc , CellSpacing , PageHeaders , PageFooters , AutoExtend , MultiDataRows , UserData , CalcResult
+	Do method $cinst.$writeobj_tableinfo (tableData.C4,tableData.C5,tableData.C28,tableData.C30,tableData.C34,$cinst.$getflag(tableData.C35,1),$cinst.$getflag(tableData.C35,2),$cinst.$getflag(tableData.C35,3),$cinst.$getflag(tableData.C35,4),tableData.C38,tableData.C41)
+	
+	;  output table rows belonging to this table
+	For pObjs.$line from pObjs.$line to pObjs.$linecount step 1
+		
+		If pObjs.C1=kWriObjTypeTableRow
+			
+			;  Objects , Data , Styles , TableRowType , TableRowFlags , TableRowEvalRow , TableRowSplitID
+			Do method $cinst.$writeobj_tablerow (pObjs.C2,pObjs.C3,pObjs.C4,pObjs.C6,pObjs.C8,pObjs.C9,pObjs.C10)
+			
+		Else
+			
+			;  if we have run out of table rows we are finished with this table, break to end of loop
+			Break to end of loop
+			
+		End If
+		
+	End For
+	
+	;  write any required data after writing table info and rows
+	Do method $cinst.$writeobj_table_postfix (pObjs)
+	
+Else If pObjs.$line<pObjs.$linecount
+	
+	;  if the table is not valid, position row to next row
+	Calculate pObjs.$line as pObjs.$line+1
+	
+End If     ;; end tableData.$linecount&...
+
+
+;  return first line past this table to calling method
+Quit method pObjs.$line

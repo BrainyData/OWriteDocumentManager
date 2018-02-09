@@ -1,0 +1,16 @@
+{
+	"ident": 1005,
+	"order": 4,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 20003,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Insert Column to the Right"
+		},
+		"userinfo": ""
+	}
+}

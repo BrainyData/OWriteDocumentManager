@@ -1,0 +1,21 @@
+{
+	"ident": 1029,
+	"order": 1,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": false,
+		"helpfile": 0,
+		"iconid": "k16x16+3002",
+		"text": {
+			"type": 0,
+			"calc": "Prev"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Show Previous Page"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

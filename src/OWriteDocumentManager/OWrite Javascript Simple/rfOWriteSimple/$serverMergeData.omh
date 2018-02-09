@@ -1,0 +1,2 @@
+;  call our non-visual document object to merge data
+Do ivOWriteSimple.$mergedata(ivDocument,kTrue) Returns ivDocument

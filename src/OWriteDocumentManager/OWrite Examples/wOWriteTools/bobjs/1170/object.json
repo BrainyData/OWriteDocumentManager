@@ -1,0 +1,20 @@
+{
+	"ident": 1170,
+	"order": 16415,
+	"objtype": "kLine",
+	"properties": {
+		"bordercolor": "kDarkGray",
+		"designactive": true,
+		"edgefloat": "kEFright",
+		"effect": "kBorderNone",
+		"fieldstyle": "",
+		"height": 189,
+		"left": 107,
+		"linestyle": 1,
+		"objlink": 6,
+		"top": 189,
+		"userinfo": "",
+		"visible": true,
+		"width": 209
+	}
+}

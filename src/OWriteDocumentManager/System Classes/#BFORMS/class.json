@@ -1,0 +1,24 @@
+{
+	"classtype": "kSystemtable",
+	"internalversion": 0,
+	"properties": {
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:43",
+		"desc": "",
+		"external": false,
+		"moddate": "2006-06-21 09:32:02",
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": "4.00.00"
+	},
+	"formats": [
+		"T",
+		"t",
+		"Y",
+		"y",
+		"O",
+		"1",
+		"[GREEN]O;[RED]O",
+		"[GREEN]Y;[RED]Y"
+	]
+}

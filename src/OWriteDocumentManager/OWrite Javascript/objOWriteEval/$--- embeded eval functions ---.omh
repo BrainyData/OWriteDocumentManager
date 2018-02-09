@@ -1,0 +1,30 @@
+;  --- the following functions may have been embeded as calculations in our example OWrite documents ---
+
+;  $nextrecord
+;       ;; called by the next link in the Calculated Fields document
+;       ;; load the next client record and evaluate the loaded document
+
+;  $previousrecord
+;       ;; called by the previous link in the Calculated Fields document
+;       ;; load the next client record and evaluate the loaded document
+
+;  $eval
+;       ;; some example OWrite calculated fields call this method to evaluate fields by name instead of refering to database fields directly
+;       ;; this potentially provides additional levels of control, i.e. parameters for formatting results could be added to this call
+
+;  $evalList
+;       ;; the "Tables - Picture" example document's table field calculation calls this method with information about
+;       ;; what data to load into a list befor returning the list to OWrite
+;       ;; Note: owrite table lists are stored in $ctask.OWRITE_TMP_VAR while the table is evaluated
+
+;  $evalListTotal
+;       ;; executes the Omnis totc function against the specified list column
+;       ;; Note: owrite table lists are stored in $ctask.OWRITE_TMP_VAR while the table is evaluated
+
+;  $openurl
+;       ;; used with clickable OWrite calculated fields to open web pages
+;       ;; NOTE: This function must be implemented by the remote form or desktop window as different actions are required
+
+;  $opendocument
+;       ;; used with clickable OWrite calculated fields to open OWrite documents
+;       ;; NOTE: This function must be implemented by the remote form or desktop window as different actions are required

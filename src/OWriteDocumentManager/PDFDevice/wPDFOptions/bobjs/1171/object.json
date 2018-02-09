@@ -1,0 +1,30 @@
+{
+	"ident": 1171,
+	"order": 16433,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelLarge",
+		"font": 2,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 17,
+		"left": 43,
+		"objlink": 458753,
+		"text": {
+			"type": 14,
+			"calc": "Security Options"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 8,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 151
+	}
+}

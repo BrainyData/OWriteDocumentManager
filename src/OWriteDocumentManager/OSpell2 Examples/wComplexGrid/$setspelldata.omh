@@ -1,0 +1,14 @@
+;  we need to update the data in the list
+Switch pFieldRef().$name
+	Case 'ComplexGrid'
+		Do method $cinst.$setlistcell (ivList.$ref,pUserData,pSpellData)
+		Do pFieldRef.$redraw()
+		Quit method
+	Case 'Title'
+		Calculate ivList.[ivList.$line].[2] as pSpellData
+		;  let it carry on so we call the inherited method
+	Case 'Text'
+		Calculate ivList.[ivList.$line].[3] as pSpellData
+		;  let it carry on so we call the inherited method
+End Switch
+Do inherited

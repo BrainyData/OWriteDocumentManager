@@ -1,0 +1,14 @@
+[
+	{
+		"name": "name",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "name",
+				"fieldlength": 12,
+				"uppercase": false
+			}
+		]
+	}
+]

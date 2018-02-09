@@ -1,0 +1,20 @@
+Set search as calculation {fOWriteDoc.name=ivDocumentList.name&fOWriteDoc.group=ivGroupList.group}
+Find first  (Use search)
+If flag true
+	If fOWriteDoc.listData.$linecount=0|(ivLoadOriginals&binlength(fOWriteDoc.data))
+		Do objOWrite.$loaddata(fOWriteDoc.data)
+		Do objOWrite.$savedata(ivDocumentData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+		Calculate ivDocumentID as con("fOWriteDoc_",fOWriteDoc.seq)
+		Calculate cvDocChildList as ivDocumentData
+	Else
+		Calculate ivDocumentData as fOWriteDoc.listData
+		Calculate ivDocumentID as con("fOWriteDoc_",fOWriteDoc.seq)
+		Calculate cvDocChildList as ivDocumentData.[1].DocChildList
+		For cvDocChildList.$line from 1 to cvDocChildList.$linecount step 1
+			If cvDocChildList.ObjType=2&pos("Typeface:",cvDocChildList.ObjData)>0
+				Calculate cvDebugText as cvDocChildList.ObjData
+			End If
+		End For
+	End If
+End If
+Quit method #F

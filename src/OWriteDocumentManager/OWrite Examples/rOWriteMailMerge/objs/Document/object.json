@@ -1,0 +1,27 @@
+{
+	"ident": 1003,
+	"order": 7,
+	"objtype": "kComponent",
+	"componentlib": "OWrite",
+	"componentctrl": "OWrite Report Object",
+	"properties": {
+		"dataname": "ivDocData",
+		"desgroup": 0,
+		"deslock": false,
+		"fitimages": true,
+		"headfootenabled": false,
+		"height": 1.303,
+		"ignorepagebreaks": false,
+		"ignorepos": true,
+		"left": 0.318,
+		"lineno": 7,
+		"lineoffset": 0.0,
+		"nolineifempty": false,
+		"noreload": false,
+		"totalsifnoline": false,
+		"userinfo": "",
+		"visible": true,
+		"watermarks": "",
+		"width": 16.157
+	}
+}

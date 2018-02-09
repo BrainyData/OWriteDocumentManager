@@ -1,0 +1,18 @@
+Do ivPaperList.$define(Number,Name,Length,Width)
+If $cwind.$objs.jsOWrite.$showcms
+	Do ivPaperList.$add(1,"US Letter",11*2.54,8.5*2.54)
+	Do ivPaperList.$add(4,"US Ledger",11*2.54,17*2.54)
+	Do ivPaperList.$add(5,"US Legal",14*2.54,8.5*2.54)
+	Do ivPaperList.$add(8,"A3",42.0,29.7)
+	Do ivPaperList.$add(9,"A4",29.7,21.0)
+	Do ivPaperList.$add(11,"A5",21.0,14.8)
+	Do ivPaperList.$add(16384,"Custom",29.7,21.0)
+Else
+	Do ivPaperList.$add(1,"US Letter",11,8.5)
+	Do ivPaperList.$add(4,"US Ledger",11,17)
+	Do ivPaperList.$add(5,"US Legal",14,8.5)
+	Do ivPaperList.$add(8,"A3",42.0/2.54,29.7/2.54)
+	Do ivPaperList.$add(9,"A4",29.7/2.54,21.0/2.54)
+	Do ivPaperList.$add(11,"A5",21.0/2.54,14.8/2.54)
+	Do ivPaperList.$add(16384,"Custom",29.7/2.54,21.0/2.54)
+End If

@@ -1,0 +1,2 @@
+On evAfter     ;; Event Parameters - pRow ( Itemreference )
+	Calculate cvFindObj.$text as cvFindText

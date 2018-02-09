@@ -1,0 +1,19 @@
+;  overide this method to save all the properties     ;; called by the apply button
+;  before saving your properties call the inherited method
+;  example:
+;  Do inherited
+;  Do $cinst.$saveProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
+
+Do inherited
+If ivPaperList.C1=kPaCustom     ;; 20090810_1_CHANGE
+	Do $cinst.$saveProperty(ivEditObjRef.$::paperlength.$ref,refPaperLength)
+	Do $cinst.$saveProperty(ivEditObjRef.$::paperwidth.$ref,refPaperWidth)
+Else
+	Do $cinst.$saveProperty(ivEditObjRef.$::paper.$ref,refPaperSize)
+End If
+Do $cinst.$saveProperty(ivEditObjRef.$::orientation.$ref,refOrientation)
+
+Do $cinst.$saveProperty(ivEditObjRef.$::leftmargin.$ref,refMgLeft)
+Do $cinst.$saveProperty(ivEditObjRef.$::topmargin.$ref,refMgTop)
+Do $cinst.$saveProperty(ivEditObjRef.$::rightmargin.$ref,refMgRight)
+Do $cinst.$saveProperty(ivEditObjRef.$::bottommargin.$ref,refMgBottom)

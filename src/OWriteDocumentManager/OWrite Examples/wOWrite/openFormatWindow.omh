@@ -1,0 +1,6 @@
+
+If tvStudio4
+	Do $windows.[pClassName].$open('*',kWindowCenterRelative,$cwind,ivEdit.$ref,ivEdit.$ref)
+Else
+	Do $windows.[pClassName].$open('*',kWindowCenter,ivEdit.$ref,ivEdit.$ref)
+End If
