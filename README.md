@@ -6,11 +6,14 @@ To build the library you will require the following external components by Brain
 
 The specific downloads are:
 
-https://www.brainydata.com/demos/software/jsowrite_examples.zip
+https://www.brainydata.com/demos/software/owrite_document_manager.zip
 https://www.brainydata.com/demos/software/jsowrite_demo_software_mac.zip
 https://www.brainydata.com/demos/software/jsowrite_demo_software_win.zip
 
 These downloads provide all files required for both desktop and javascript implementations. Please follow the accompanying installation notes.
+
+Please also refer to the online documentation for further information.
+https://www.brainydata.com/supportpublic/documentation.htm
 
 The latest OSpell2Interface.lbs library can be downloaded from a separate Github repository within this organization.
 
