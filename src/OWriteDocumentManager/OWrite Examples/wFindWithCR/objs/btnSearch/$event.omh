@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do iSearchObj.$search_with_cr(iOWriteRef,iSearchString) Returns result
-	If not(result)
-		OK message  {no match found}
-	End If

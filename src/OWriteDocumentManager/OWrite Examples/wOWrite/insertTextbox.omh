@@ -1,6 +1,0 @@
-If $root.$prefs.$usecms
-	Calculate sz as 5     ;; default size 5cms
-Else
-	Calculate sz as 2     ;; default size 2 inches
-End If
-Do ivEdit.$::insert(kWriObjTypeTextbox,"",kWriBordLine,kWriLineSolid,kBlack,1.00,sz,sz)

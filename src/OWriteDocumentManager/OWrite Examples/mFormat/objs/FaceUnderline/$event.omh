@@ -1,2 +1,0 @@
-On evClick
-	Calculate $topwind.$ctarget.$curunderline as not($cobj.$checked)

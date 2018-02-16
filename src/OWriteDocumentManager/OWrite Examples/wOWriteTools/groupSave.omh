@@ -1,5 +1,0 @@
-Calculate cShowGroupFont as $cinst.$objs.GroupFont.$visible
-Calculate cShowGroupAlignment as $cinst.$objs.GroupAlignment.$visible
-Calculate cShowGroupDocument as $cinst.$objs.GroupDocument.$visible
-Calculate cShowGroupFields as $cinst.$objs.GroupFields.$visible
-Calculate cShowGroupOtherFields as $cinst.$objs.GroupOtherFields.$visible

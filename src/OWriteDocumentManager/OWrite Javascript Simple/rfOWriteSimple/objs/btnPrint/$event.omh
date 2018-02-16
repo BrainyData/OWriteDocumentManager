@@ -1,3 +1,0 @@
-On evClick
-	;  save data with an async id so we can merge once the save is complete
-	Do $cinst.$objs.OWrite.$savedata('print')

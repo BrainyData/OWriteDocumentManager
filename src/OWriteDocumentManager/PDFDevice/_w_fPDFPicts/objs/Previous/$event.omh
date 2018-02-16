@@ -1,4 +1,0 @@
-On evClick
-	Previous
-	Do $cinst.$redraw()
-	Calculate $cinst.$bobjs.1019.$text as con('Size: ',binlength(fPDFPicts.pict))

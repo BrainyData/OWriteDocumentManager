@@ -1,4 +1,0 @@
-;  termination required for our example library and data file
-
-;  close our example data file
-Close data file {example}

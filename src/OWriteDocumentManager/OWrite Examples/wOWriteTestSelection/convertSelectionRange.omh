@@ -1,3 +1,0 @@
-Do ivOWrite.$convselection(ivStartSel,ivEndSel,ivSelObjID,ivRangeType,ivRangeTypeTo)
-Calculate ivRangeType as ivRangeTypeTo
-Do $cinst.$redraw()

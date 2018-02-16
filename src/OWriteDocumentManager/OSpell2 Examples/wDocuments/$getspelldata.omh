@@ -1,3 +1,0 @@
-;  we are only overriding this method so we can set the spell checker window title
-Calculate ivOSpellObj.$title as con('Document "',fDocuments.title,'"')
-Do inherited

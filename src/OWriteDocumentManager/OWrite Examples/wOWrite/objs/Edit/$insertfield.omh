@@ -1,9 +1,0 @@
-Do $cfield.$startundo()
-If pIsPicture
-	Do $cinst.$objs.Edit.$::insert(kWriObjTypePict,con(pDisplayName,';',pCalculation))
-Else
-	Do $cinst.$objs.Edit.$::insert(kWriObjTypeCalc,con(pDisplayName,';',pCalculation))
-	Calculate $cinst.$objs.Edit.$curobjstripempty as pStripEmptyLines
-End If
-Calculate $cinst.$objs.Edit.$curobjtooltip as pToolTip
-Do $cfield.$endundo("Insert Field")

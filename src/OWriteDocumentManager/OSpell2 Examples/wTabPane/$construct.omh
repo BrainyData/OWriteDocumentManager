@@ -1,9 +1,0 @@
-Set main file {fDocuments}
-Clear main file
-Next
-Calculate ivTab1Title as fDocuments.title
-Calculate ivTab1Text as fDocuments.text
-Next
-Calculate ivTab2Title as fDocuments.title
-Calculate ivTab2Text as fDocuments.text
-Do inherited

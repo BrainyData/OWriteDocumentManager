@@ -1,6 +1,0 @@
-;  load preview data
-Set read-only files {fClients,fDictionaries,fDocuments,fPDFPicts}
-Single file find on fClients.seq {1}
-Single file find on fDictionaries.seq {1}
-Single file find on fDocuments.seq {1}
-Single file find on fPDFPicts.seq {1}

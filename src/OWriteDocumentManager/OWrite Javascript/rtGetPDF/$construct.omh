@@ -1,3 +1,0 @@
-;  return PDF content to client
-Send to trace log {rtGetPDF}
-Quit method $iremotetasks.[pParams.PDFOwner].$pdfmime

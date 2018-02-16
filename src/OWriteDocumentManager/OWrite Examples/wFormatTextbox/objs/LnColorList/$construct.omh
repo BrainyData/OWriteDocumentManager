@@ -1,2 +1,0 @@
-Do $cinst.$buildColorList(ivLineColorList)
-Do ivLineColorList.$redefine(ivColor,ivColorTxt)

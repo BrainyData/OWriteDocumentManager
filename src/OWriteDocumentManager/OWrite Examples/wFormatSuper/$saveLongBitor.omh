@@ -1,9 +1,0 @@
-;  assign property with value from the window field
-;       ;; we need to consider our NULL values here that we assigned during $loadProperty
-
-Calculate value as $cinst.[pFieldRef.$dataname]
-If isnull(value)
-	Calculate pOutLong as #NULL
-Else If value
-	Calculate pOutLong as bitor(pOutLong,pBitValue)
-End If

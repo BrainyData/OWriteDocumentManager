@@ -1,4 +1,0 @@
-
-Do ivOWriteRef.$::insert(kWriObjTypeInfo,pType)
-Do ivOWriteRef.$firstsel.$assign(ivOWriteRef.$lastsel)
-Do ivOwnerWindow.$bringtofront()

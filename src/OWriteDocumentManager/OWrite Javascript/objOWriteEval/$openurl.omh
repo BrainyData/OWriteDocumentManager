@@ -1,6 +1,0 @@
-;  the remote form or desktop window must implement this call
-If ivCallerRef.$openurl.$cando
-	Quit method ivCallerRef.$openurl(pURL)
-Else
-	Quit method kFalse
-End If

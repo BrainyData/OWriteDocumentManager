@@ -1,4 +1,0 @@
-On evClick
-	;  save data with an async id so we can call the server once everything is stored in ivDocument
-	Do $cinst.$objs.OWrite.$savedata('save')
-	Do $cinst.$objs.btnSaveChanges.$enabled.$assign(kFalse)

@@ -1,3 +1,0 @@
-;  override this method if you are expecting custom parameters to be passed to $construct of this window
-;  these parameters (a row variable) will be passed to the first parameter of this method
-;  $loadParams is called before $initializeWindow

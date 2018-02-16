@@ -1,7 +1,0 @@
-Test for window open {wCheckData}
-If flag true
-	Bring window instance to front wCheckData
-Else
-	Do $topwind.$close()
-	Open window instance wCheckData/CEN
-End If

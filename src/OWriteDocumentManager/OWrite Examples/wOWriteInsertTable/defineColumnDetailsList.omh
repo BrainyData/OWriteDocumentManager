@@ -1,5 +1,0 @@
-;  define details list
-Do ivColumnDetailsList.$define(fieldName,headerText,rowText,footerText)
-
-;  make sure we are syncronized with column count     ;; we need a row for each table column
-Calculate ivColumnDetailsList.$linecount as ivColumns

@@ -1,2 +1,0 @@
-Do $cinst.$objs.GroupOtherFields.$addCustomField(pName,pCalculation,pDescription,pStripEmptyLines)
-Calculate $cinst.$objs.GroupOtherFields.$visible as kTrue

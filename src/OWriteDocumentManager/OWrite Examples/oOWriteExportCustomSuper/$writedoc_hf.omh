@@ -1,9 +1,0 @@
-;  PURPOSE:     ;; export document header/footer info
-;  USAGE:     ;; called by ...$writedoc
-;  SUB-CLASSING:     ;; sub-class this method to export document header/footer info
-
-;  super-class does nothing
-Quit method kTrue
-
-;  copy and paste line to your method to inherit parameters
-Send to trace log {[pDocHeaderMargin], [pDocFooterMargin], [pDocHeadFootOddEven], [pDocHeadFootFirstPage]}

@@ -1,6 +1,0 @@
-Prompt for input Please enter a name/Save As/[10503]/50 Returns newName (Cancel button,Prompt above entry)
-If #F&len(newName)
-	Calculate cInfoED.LabelType as newName
-	Calculate cInfo as cInfoED
-	Do method addLabel (newName,cInfoED)
-End If

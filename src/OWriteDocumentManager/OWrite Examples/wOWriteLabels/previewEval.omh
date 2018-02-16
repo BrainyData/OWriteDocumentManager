@@ -1,5 +1,0 @@
-;  label content require updating     ;; evaluate the document
-Calculate iEvalCurLabel as 0     ;; reset current label for evaluating
-Do refDataList.$sendall($ref.$selected.$assign(kFalse))     ;; deselect all rows, we will select rows that are displayed in $evalGetLabelData
-Do refPreview.$evalcalcs.$assign(kTrue)
-Do $cinst.$setRecordCount

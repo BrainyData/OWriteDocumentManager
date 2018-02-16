@@ -1,5 +1,0 @@
-On evClick
-	If $cobj.$checked
-		Do $cwind.$loadsampledata
-	End If
-	Calculate ivFRefOWrite.$evalcalcs as $cobj.$checked

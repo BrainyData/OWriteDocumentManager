@@ -1,6 +1,0 @@
-Test for window open {wComplexGrid}
-If flag true
-	Bring window instance to front wComplexGrid
-Else
-	Open window instance wComplexGrid/CEN
-End If

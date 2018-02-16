@@ -1,7 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do FileOps.$putfilename(path,"Select destinatoin file for PDF output.") Returns #F
-	If flag true
-		Do $cdevice.$assign(kDevPdf)
-		Do $cdevice.$setparam(kDevPdfFileName,path)
-		Do refScreenReport.$redirect(kFalse)
-	End If

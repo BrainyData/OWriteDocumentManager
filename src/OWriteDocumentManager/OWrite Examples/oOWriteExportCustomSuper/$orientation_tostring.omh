@@ -1,1 +1,0 @@
-Quit method con(pick(pOrientation,kOrientDefault,kOrientPortrait,kOrientLandscape,kOrientRotatedPortrait,kOrientRotatedLandscape))

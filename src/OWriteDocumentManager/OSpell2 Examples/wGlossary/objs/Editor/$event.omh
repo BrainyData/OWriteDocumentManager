@@ -1,7 +1,0 @@
-On evBefore     ;; Event Parameters - pRow ( Itemreference )
-	Do tvOSpellGlossary.$setfield(ivEditorRef)     ;; CHANGE_2014_06_11__1
-	
-On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
-	If not(ivModified)
-		Calculate ivModified as #MODIFIED
-	End If

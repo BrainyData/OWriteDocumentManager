@@ -1,6 +1,0 @@
-On evMouseDown     ;; Event Parameters - pRow ( Itemreference )
-	If iFRefOWrite.$curstrikethrough=1
-		Calculate iFRefOWrite.$curstrikethrough as 0
-		Do $cfield.$redraw()
-		Quit event handler (Pass to next handler)
-	End If

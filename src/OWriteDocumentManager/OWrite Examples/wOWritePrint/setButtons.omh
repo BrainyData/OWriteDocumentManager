@@ -1,8 +1,0 @@
-Calculate $cinst.$objs.PrintToMemory.$enabled as cvOption=cDestDirectPDF
-Calculate $cinst.$objs.PDFInfoTitle.$enabled as cvOption=cDestDirectPDF
-Calculate $cinst.$objs.PDFInfoAuthor.$enabled as cvOption=cDestDirectPDF
-Calculate $cinst.$objs.PDFInfoSubject.$enabled as cvOption=cDestDirectPDF
-Calculate $cinst.$objs.PDFInfoKeywords.$enabled as cvOption=cDestDirectPDF
-
-Calculate $cinst.$objs.PrintToFieldDirect.$enabled as cvOption=cDestDirectScreen
-Calculate $cinst.$objs.PrintToFieldReport.$enabled as cvOption=cDestReportScreen

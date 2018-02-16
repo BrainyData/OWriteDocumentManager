@@ -1,6 +1,0 @@
-Calculate lPosLeft as $cwind.$left+$cwind.$width+cvToolGap
-Calculate lPosTop as $cwind.$top
-
-Open window instance wOWriteTools/wOWriteTools/[lPosLeft]/[lPosTop]
-Set reference ivWRefTools to $iwindows.wOWriteTools
-Do ivWRefTools.$initializeWindow($cinst,ivEdit)

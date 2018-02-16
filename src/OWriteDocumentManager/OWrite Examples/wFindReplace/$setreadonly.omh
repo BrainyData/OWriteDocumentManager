@@ -1,9 +1,0 @@
-Calculate isEnabled as $cinst.$objs.Panes.$ispaneenabled(2)
-If pReadOnly=isEnabled
-	If pReadOnly
-		Calculate $cinst.$objs.Panes.$currenttab as 1
-		Do $cinst.$objs.Panes.$enablepane(2,kFalse)
-	Else
-		Do $cinst.$objs.Panes.$enablepane(2,kTrue)
-	End If
-End If

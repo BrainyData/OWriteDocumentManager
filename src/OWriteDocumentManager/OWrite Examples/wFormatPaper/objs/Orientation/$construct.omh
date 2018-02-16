@@ -1,3 +1,0 @@
-Do ivOrientList.$define(ivOrient,ivOrientStr)
-Do ivOrientList.$add(kOrientPortrait,"Portrait")
-Do ivOrientList.$add(kOrientLandscape,"Landscape")

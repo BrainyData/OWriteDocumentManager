@@ -1,3 +1,0 @@
-Send to trace log {$openurl([pURL])}
-Do $cinst.$showurl(pURL)
-Quit method ""     ;; return no action

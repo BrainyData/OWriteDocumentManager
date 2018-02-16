@@ -1,2 +1,0 @@
-On evClick
-	Do $cinst.$objs.formInsertField.$show()

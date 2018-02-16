@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	If ivDoUndoOnCancel     ;; CHANGE_2014_11_28__1
-		Do ivEditRef.$editundo()
-	End If
-	Queue close [$cwind().$name]

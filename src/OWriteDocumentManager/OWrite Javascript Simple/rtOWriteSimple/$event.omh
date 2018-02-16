@@ -1,4 +1,0 @@
-On evPost
-	If pPostData.Action='ReturnPDF'
-		Calculate pPostResult as $cinst.$pdfmime
-	End If

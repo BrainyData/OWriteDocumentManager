@@ -1,8 +1,0 @@
-Switch pFieldRef().$name
-	Case 'ComplexGrid'     ;; this will only ever be the case if pIsCheckWindow is kTrue
-		Do method $cinst.$nextlistcell (ivList.$ref,pUserData,pSpellData) Returns more
-		Calculate curRow as pUserData/256
-		Calculate ivOSpellObj.$title as ivList.[curRow].title
-		Quit method more
-End Switch
-Do inherited

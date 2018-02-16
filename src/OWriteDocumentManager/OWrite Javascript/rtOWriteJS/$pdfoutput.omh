@@ -1,2 +1,0 @@
-Do PDF Device.$getmemoryoutput(pOutputID,ivPdfBin)
-Send to trace log {$pdfoutput([binlength(ivPdfBin)])}

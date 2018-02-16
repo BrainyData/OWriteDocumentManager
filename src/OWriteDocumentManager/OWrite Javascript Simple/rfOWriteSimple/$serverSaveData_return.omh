@@ -1,2 +1,0 @@
-;  this method is called by Omnis after the server returned control to the client
-;  from a call to the $serverSaveData method

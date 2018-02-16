@@ -1,2 +1,0 @@
-Do tvOSpellChecker.$init     ;; initialize the spell checker object
-Do ivSpllSession.$init($cfield.$ref)     ;; initialize the OWrite spell session

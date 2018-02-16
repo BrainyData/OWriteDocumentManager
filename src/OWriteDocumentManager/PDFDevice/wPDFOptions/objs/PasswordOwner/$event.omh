@@ -1,9 +1,0 @@
-On evKey     ;; Event Parameters - pRow ( Itemreference )
-	Process event and continue
-	Calculate ivParams.OwnerPassword as $cfield.$contents
-	Do method setControlsSecurity
-On evAfter
-	Do method checkPassword (ivParams.OwnerPassword) Returns #F
-	If flag false
-		Quit event handler (Discard event)
-	End If

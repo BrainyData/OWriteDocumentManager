@@ -1,6 +1,0 @@
-On evClick
-	Calculate owrite.$::paper as ivPaperList.C2
-	Calculate ivPaperW as owrite.$::paperwidth
-	Calculate ivPaperL as owrite.$::paperlength
-	Redraw {PaperW,PaperL}
-	Quit event handler (Pass to next handler)

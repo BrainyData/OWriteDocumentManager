@@ -1,4 +1,0 @@
-Begin reversible block
-	Set read/write files {fPDFPicts}
-	Set main file {fPDFPicts}
-End reversible block

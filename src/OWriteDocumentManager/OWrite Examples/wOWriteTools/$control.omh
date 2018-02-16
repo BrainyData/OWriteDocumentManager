@@ -1,8 +1,0 @@
-On evAfter
-	If #ENTER|#RETURN|#CANCEL
-		Do method $setFocusOWrite
-		Quit event handler (Discard event)
-	End If
-On evClick,evMouseDown
-	Do method $setFocusOWrite
-	Quit event handler (Discard event)

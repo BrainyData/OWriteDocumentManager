@@ -1,3 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Calculate iFRefOWrite.$curleftindent as iFRefOWrite.$curleftindent+0.5
-	Quit event handler (Pass to next handler)

@@ -1,3 +1,0 @@
-;  call our eval document object to handle clicks on document links
-;       ;; Note: we must implement $opendocument and $openurl for clicks on document or webpage links (the object will call our functions)
-Quit method ivObjOWriteEval.$evalClickCalc($cinst(),pObjID,pObjName,pObjCalc)

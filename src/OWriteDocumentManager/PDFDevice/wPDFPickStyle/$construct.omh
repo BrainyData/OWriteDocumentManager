@@ -1,9 +1,0 @@
-;  Enter your initialization code here
-Calculate ivBold as bitand(pStyle,kBold)<>0
-Calculate ivItalic as bitand(pStyle,kItalic)<>0
-Calculate ivUnderline as bitand(pStyle,kUnderline)<>0
-Enter data
-If flag true
-	Calculate pStyle as ivBold*kBold+ivItalic*kItalic+ivUnderline*kUnderline
-End If
-Do $cinst.$close()

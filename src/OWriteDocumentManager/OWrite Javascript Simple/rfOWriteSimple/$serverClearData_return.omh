@@ -1,3 +1,0 @@
-;  load our data after a clear data call to the server
-Do $cinst.$objs.OWrite.$loaddata()
-Do $cinst.$objs.OWrite.$modified.$assign(kTrue)     ;; $loaddata clears modified state

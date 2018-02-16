@@ -1,6 +1,0 @@
-On evMoved,evResized
-	;  re-position tools palette
-	Calculate ivWRefTools.$left as $cwind.$left+$cwind.$width+cvToolGap
-	Calculate ivWRefTools.$top as $cwind.$top
-On default     ;; CHANGE_13FEB09_4
-	Do inherited

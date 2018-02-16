@@ -1,4 +1,0 @@
-On evClick
-	If pos("kWriSR",$cobj().$name)=1
-		Do method getSelectionRange
-	End If

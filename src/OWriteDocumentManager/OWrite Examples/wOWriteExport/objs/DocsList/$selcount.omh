@@ -1,2 +1,0 @@
-Do cvDocsList.$sendall(count.$assign(count+1),$ref.$selected)
-Quit method count

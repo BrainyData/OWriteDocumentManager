@@ -1,4 +1,0 @@
-;  size
-Do method $cinst.$loadProperty (ivEditObjRef.$curtblrowheight.$ref,refRowHeight)
-;  row behaviour
-Do method $cinst.$loadProperty (ivEditObjRef.$curtblrowtype.$ref,refRowTypeNone)

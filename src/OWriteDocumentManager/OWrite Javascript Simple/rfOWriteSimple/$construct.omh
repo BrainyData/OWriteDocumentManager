@@ -1,3 +1,0 @@
-;  Enter your initialization code here
-Do $cinst.$serverNewDocument()
-Do $cinst.$serverBuildFontList()

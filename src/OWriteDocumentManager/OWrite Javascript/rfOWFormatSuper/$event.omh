@@ -1,2 +1,0 @@
-On evSubFormToTop
-	Do $cwind.$objs.jsOWrite.$updatecontrols()

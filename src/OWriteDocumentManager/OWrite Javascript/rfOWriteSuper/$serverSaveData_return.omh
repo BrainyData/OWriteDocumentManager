@@ -1,2 +1,0 @@
-Do $cinst.$objs.jsOWrite.$deleteautosave(ivDocumentID)     ;; after a succesful save, delete the auto-save data for the document
-Do $cinst.$setButtonStates()

@@ -1,7 +1,0 @@
-Switch pObjType
-	Case kWriObjTypeText,kWriObjTypeChar
-		Do $cinst.$objs.jsOWrite.$insert(pObjType,pObjData,kWriInsertOver,con("Insert",pObjType)) Returns ok
-	Default
-		Do method $cinst.$owriteInsertObject (pObjType,pObjData) Returns ok
-End Switch
-Quit method ok

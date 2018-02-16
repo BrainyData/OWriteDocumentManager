@@ -1,3 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	;  enable/disable controls
-	Do method setControls

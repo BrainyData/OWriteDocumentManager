@@ -1,7 +1,0 @@
-;  Enter your termination code here
-If ivModified
-	Yes/No message Message (Icon,Sound bell) {Save changes?}
-	If flag true
-		Do method SaveDocument
-	End If
-End If

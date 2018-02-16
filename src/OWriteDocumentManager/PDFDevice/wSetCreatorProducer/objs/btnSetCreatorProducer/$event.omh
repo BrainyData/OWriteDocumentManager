@@ -1,9 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do PDF Device.$setcreatorandproducer(ivProductName,ivCompanyName) Returns result
-	If not(result)
-		OK message Invalid Creator/Producer {The creator or producer name may be no longer than 128 characters and must only contain printable ASCII characters.}
-	Else If result<0
-		OK message Error {Error [result] encountered when attempting to set Creator and Producer name.}
-	Else
-		Queue close [$cinst().$name]
-	End If

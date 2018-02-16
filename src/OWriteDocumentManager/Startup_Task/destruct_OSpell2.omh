@@ -1,7 +1,0 @@
-;  termination required for PDFDevice
-If tvCanDoSpell
-	If tvOSpellChecker.$validref()
-		Do tvOSpellChecker.$removemenu
-	End If
-	Close library {OSpell2}
-End If

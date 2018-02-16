@@ -1,6 +1,0 @@
-Test for window open {wDataGrid}
-If flag true
-	Bring window instance to front wDataGrid
-Else
-	Open window instance wDataGrid/CEN
-End If

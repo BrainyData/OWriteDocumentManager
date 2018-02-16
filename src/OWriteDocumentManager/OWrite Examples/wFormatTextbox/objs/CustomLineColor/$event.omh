@@ -1,3 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do $cinst.$selectColorInList(ivLineColorList,$cobj.$contents)
-	Redraw {LnColorList}

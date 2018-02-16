@@ -1,5 +1,0 @@
-;  for these examples we stick the files in the examples folder
-Do FileOps.$splitpathname($clib.$pathname,_drive,_dir,_file,_ext)
-Calculate fileName as con(_drive,_dir,pFileName)
-Do $cdevice.$setparam(kDevPdfFileName,fileName)
-Quit method fileName

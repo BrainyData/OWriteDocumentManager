@@ -1,3 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	Do method $viewChanged
-	Quit event handler (Pass to next handler)

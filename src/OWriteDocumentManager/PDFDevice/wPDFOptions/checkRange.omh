@@ -1,7 +1,0 @@
-If pValue<pMinValue
-	Calculate pValue as pMinValue
-	Do pObj.$redraw()
-Else If pValue>pMaxValue
-	Calculate pValue as pMaxValue
-	Do pObj.$redraw()
-End If

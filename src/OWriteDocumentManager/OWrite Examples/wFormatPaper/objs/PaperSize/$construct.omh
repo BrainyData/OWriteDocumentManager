@@ -1,2 +1,0 @@
-Do $cinst.$buildPaperList(ivPaperList)
-Do ivPaperList.$redefine(ivPaper,ivPaperStr)

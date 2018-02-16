@@ -1,5 +1,0 @@
-
-Calculate $cinst.$objs.btnSave.$enabled as ivModified
-
-;  we only enable first key handling (not the glossary list) for this example     ;; CHANGE_2014_06_11__1
-Do $ctask.tvOSpellGlossary.$setfield($ctarget,$cinst,kFalse,not(ivModified))

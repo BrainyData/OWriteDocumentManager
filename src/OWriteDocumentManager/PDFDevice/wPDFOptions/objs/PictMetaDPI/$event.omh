@@ -1,4 +1,0 @@
-On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
-	If not(#CANCEL)
-		Do method checkRange ($cobj.$ref,ivParams.PictMetaDPI,72,600)
-	End If

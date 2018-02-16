@@ -1,6 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do OWrite.$popupmenulist($cobj.$hwnd,ivFieldsMenuList,kTrue,0,0) Returns id
-	If id
-		Calculate ivFieldsMenuList.$line as id-100     ;; field ids are stored above 100 as the first 100 menu ids are reserved
-		Do method setColumnDetails (ivFieldsMenuList.menuText)
-	End If

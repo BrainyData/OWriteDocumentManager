@@ -1,6 +1,0 @@
-Test for window open {wFontMapping}
-If flag true
-	Bring window instance to front wFontMapping
-Else
-	Open window instance wFontMapping/CEN
-End If

@@ -1,2 +1,0 @@
-On evClick
-	Do method $cwind.$setOptions (ivLoadOriginals,ivDisplayPDFInWindow)

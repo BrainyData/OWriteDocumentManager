@@ -1,6 +1,0 @@
-;  In Omnis v3.3 combo boxes inside tab pane do not receive evAfter event when clicking on a user button
-;  as a work around, we load our variables from the contents of the fields
-Calculate cvFindText as findTextRef.$contents
-Calculate cvReplaceText as replaceTextRef.$contents
-Calculate cvFindObj.$text as cvFindText
-Calculate cvReplaceObj.$text as cvReplaceText

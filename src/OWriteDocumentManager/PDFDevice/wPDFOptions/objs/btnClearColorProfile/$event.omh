@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Calculate ivParams.PdfaOutputProfile as ''
-	Calculate ivParams.PdfaOutputInfo as ''
-	Do refPdfaOutputInfo.$redraw()
-	Do refPdfaOutputSize.$redraw()

@@ -1,8 +1,0 @@
-Do method getRecordIndexFromLabel Returns ix
-If ix
-	If tvStudio4
-		Do $windows.wOWriteLabelDetails.$open('*',kWindowCenterRelative,$cwind,$cwind,ix,refDataList.$ref,refPickListData.$ref)
-	Else
-		Do $windows.wOWriteLabelDetails.$open('*',kWindowCenter,$cwind,ix,refDataList.$ref,refPickList.$ref)
-	End If
-End If

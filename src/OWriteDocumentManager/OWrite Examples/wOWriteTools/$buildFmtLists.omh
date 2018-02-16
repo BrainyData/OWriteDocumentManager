@@ -1,8 +1,0 @@
-;  build our font size list
-Do iFmtFontSizeList.$define(iFmtFontSize)
-Do method stringToList (lFontSizes,iFmtFontSizeList)
-;  build our scale list
-Do iViewScaleList.$define(iViewScale)
-Do method stringToList (lScaleFactors,iViewScaleList)
-
-;  NOTE: Our font family and typeface lists are built in the method $formatChanged     ;; CHANGE_V3

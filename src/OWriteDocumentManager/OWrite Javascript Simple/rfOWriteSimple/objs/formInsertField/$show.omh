@@ -1,4 +1,0 @@
-Calculate cfield as $cfield.$name
-JavaScript: console.log('$show '+cfield);
-;  Calculate $cfield.$visible as kTrue
-Calculate $cinst.$objs.formInsertField.$visible as kTrue

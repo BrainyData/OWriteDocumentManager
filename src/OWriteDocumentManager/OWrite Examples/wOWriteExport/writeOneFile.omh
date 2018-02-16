@@ -1,4 +1,0 @@
-Do FileOps.$deletefile(pFilePath)
-Do lFile.$createfile(pFilePath)
-Do lFile.$writefile(pData)
-Do lFile.$closefile()

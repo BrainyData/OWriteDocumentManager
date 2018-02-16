@@ -1,9 +1,0 @@
-;  overide this method to load all the properties     ;; called by $construct and revert button
-;  after loading your properties call the inherited method
-;  example:
-;  Do $cinst.$loadProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
-;  Do inherited
-
-If pRedraw
-	Do $cinst.$redraw()
-End If

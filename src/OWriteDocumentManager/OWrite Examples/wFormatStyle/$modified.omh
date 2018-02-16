@@ -1,7 +1,0 @@
-Calculate ivEditObjRef.$editstylename as ivStyleName
-Calculate changed as ivFormatFont.$modified|ivFormatParagraph.$modified|ivFormatBullets.$modified     ;; CHANGE_28JUL08_1
-If not(changed)
-	Calculate changed as not(ivEditObjRef.$styleafter=ivStyleAfter)
-End If
-Calculate ivEditObjRef.$editstylename as ''
-Quit method changed

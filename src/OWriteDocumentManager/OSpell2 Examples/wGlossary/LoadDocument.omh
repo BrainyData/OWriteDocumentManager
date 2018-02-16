@@ -1,9 +1,0 @@
-Begin reversible block
-	Set read-only files {fData}
-	Set main file {fData}
-End reversible block
-Find first
-If flag true
-	Calculate ivDocumentData as fData.data
-	Do ivEditorRef.$redraw(kTrue,kTrue)
-End If

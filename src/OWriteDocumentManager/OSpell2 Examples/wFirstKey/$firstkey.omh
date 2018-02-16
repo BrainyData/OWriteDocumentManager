@@ -1,5 +1,0 @@
-;  called by our glossary object when it receives this event
-;  we use it to trap changes made to the data
-Calculate ivModified as kTrue
-Send to trace log {$firstkey received (ivModified=[ivModified])}
-Do method setFields     ;; CHANGE_2014_06_11__1

@@ -1,9 +1,0 @@
-If $cinst.$enterable
-	Switch pFieldRef().$name
-		Case 'Number'
-			Quit method kFalse
-		Case 'ComplexGrid'
-			Quit method kTrue
-	End Switch
-End If
-Do inherited

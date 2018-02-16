@@ -1,7 +1,0 @@
-Test for window open {wFirstKey}
-If flag true
-	Bring window instance to front wFirstKey
-Else
-	Do $topwind.$close()
-	Open window instance wFirstKey/CEN
-End If
