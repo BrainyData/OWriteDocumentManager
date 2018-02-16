@@ -1,0 +1,6 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	Do method bookmarkChanged
+On evAfter
+	If #MODIFIED
+		Do method bookmarkChanged
+	End If

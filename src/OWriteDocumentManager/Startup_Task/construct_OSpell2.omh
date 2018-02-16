@@ -1,0 +1,22 @@
+;  intialization required for OSpell2
+If tvCanDoSpell
+	
+	;  open the spell checker library     ;; CHANGE_2014_06_11__1 begins
+	Open library (Do not close others,Convert without user prompts) {[con(ivExamplesPath,'OSpell2Interface.lbs')],OSpell2}     ;; CHANGE_2018_02_01__1
+	;  fetch our global spell checker objects from the spell checker library
+	;  Note: tvOSpellChecker, tvOSpellGlossary and tvOSpellHandler are task variables of this task
+	Calculate tvOSpellChecker as $itasks.OSpell2.$fetchGlobalObject("oSpellChecker")
+	Calculate tvOSpellGlossary as $itasks.OSpell2.$fetchGlobalObject("oSpellGlossary")
+	Calculate tvOSpellHandler as $itasks.OSpell2.$fetchGlobalObject("oSpellHandler")
+	;  initialize objects
+	Do tvOSpellChecker.$installmenu
+	;  CHANGE_2014_06_11__1 ends
+	
+	;  if we want to store some dictionaries in a shared data file
+	;  we must install a handler for loading, saving and list building
+	;  in this example, our handler is this task which implements the $memlex... required methods
+	;  we must tell both spell checker objects about the handler
+	Do tvOSpellChecker.$setmemlexhandler($cinst)
+	Do tvOSpellHandler.$setmemlexhandler($cinst)
+	
+End If

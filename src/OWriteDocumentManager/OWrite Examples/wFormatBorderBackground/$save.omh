@@ -1,0 +1,34 @@
+;  overide this method to save all the properties     ;; called by the apply button
+
+Do ivEditObjRef.$startundo()
+Calculate ivEditObjRef.$holdupdates as kTrue
+
+;  set the apply to option
+;       ;; IMPORTANT! We must restore the apply to mode to kWriTblApplyCells when finished
+Calculate ivEditObjRef.$curtblapplymode as ivApplyToList.ivApplyTo
+
+;  save border style line style and size
+Do method $cinst.$saveProperty (ivEditObjRef.$curobjborderstyle.$ref,$cwind.$objs.BordNone)
+Do method $cinst.$saveProperty (ivEditObjRef.$curobjlinestyle.$ref,$cwind.$objs.LnSolid)
+Do method $cinst.$saveProperty (ivEditObjRef.$curobjlinesize.$ref,$cwind.$objs.LineSize)
+;  save frame options
+;       ;; frame options contain left/top/right/bottom options in the lo-word if the hi-word is zero (custom)
+;       ;; the hi-word contains a frame type of box/columns/rows or grid (zero = custom, see left/top/right/bottom)
+Do method $cinst.$saveLongBitshift (frameOptions,$cwind.$objs.FrameTypeCustom,4)
+If frameOptions=kWriFrameCustom     ;; CHANGE_V3A10
+	Do method $cinst.$saveLongBitor (frameOptions,$cwind.$objs.FrameLeft,kWriFrameLeft)
+	Do method $cinst.$saveLongBitor (frameOptions,$cwind.$objs.FrameTop,kWriFrameTop)
+	Do method $cinst.$saveLongBitor (frameOptions,$cwind.$objs.FrameRight,kWriFrameRight)
+	Do method $cinst.$saveLongBitor (frameOptions,$cwind.$objs.FrameBottom,kWriFrameBottom)
+End If
+Do method $cinst.$savePropertyLong (ivEditObjRef.$curobjframeoptions.$ref,frameOptions,-1)
+
+;  save line and background colors
+Do method $cinst.$saveProperty (ivEditObjRef.$curobjlinecolor.$ref,$cwind.$objs.CustomLineColor)
+Do method $cinst.$saveProperty (ivEditObjRef.$curobjfillcolor.$ref,$cwind.$objs.CustomFillColor)
+
+;  restore the apply mode kWriTblApplyCells     ;; IMPORTANT! This MUST be done
+Calculate ivEditObjRef.$curtblapplymode as kWriTblApplyCells
+
+Calculate ivEditObjRef.$holdupdates as kFalse
+Do ivEditObjRef.$endundo("Format Borders and Shading")

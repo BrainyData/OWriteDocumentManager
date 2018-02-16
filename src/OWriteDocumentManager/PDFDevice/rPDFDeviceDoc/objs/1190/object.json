@@ -1,0 +1,29 @@
+{
+	"ident": 1190,
+	"order": 48,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 12,
+		"fontstyle": "kPlain",
+		"height": 2.009,
+		"left": 2.54,
+		"lineno": 133,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "With PDFDevice, printing several reports to the same PDF file is simple. You open the device from notation, print your reports and then close the device.\r\rExample:"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

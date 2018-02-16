@@ -1,0 +1,4 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	;  CHANGE_V3A12 changes throughout
+	Do ivEditList.$remove(ivEditList.$line)
+	Do refEditList.$redraw(kTrue,kTrue)

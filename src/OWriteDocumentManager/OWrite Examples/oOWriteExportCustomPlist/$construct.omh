@@ -1,0 +1,7 @@
+;  PURPOSE:     ;; initialize object instance (i.e. set output format)
+
+;  call super-class first
+Do inherited
+
+;  set our output format
+Calculate ivBufferWriteFormat as kUniTypeUTF8

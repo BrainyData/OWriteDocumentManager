@@ -1,0 +1,1393 @@
+[
+	{
+		"name": "$==wPrintLabels==",
+		"ident": 1,
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$--initialization--",
+		"ident": 28,
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$construct",
+		"ident": 44,
+		"order": 3,
+		"pvardefs": [
+			{
+				"name": "pDataList",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pPickList",
+				"order": 2,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$initializeWindow",
+		"ident": 18,
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$getCurrentRecord",
+		"ident": 20,
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$setRecordCount",
+		"ident": 23,
+		"order": 6,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "cnt",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "fst",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lst",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$---event handling---",
+		"ident": 29,
+		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$canclose",
+		"ident": 42,
+		"order": 8,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$control",
+		"ident": 5,
+		"order": 9,
+		"pvardefs": [
+			{
+				"name": "pField",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"initval": "#NULL"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "ref",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 10,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$resizeTables",
+		"ident": 17,
+		"order": 11,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$setButtons",
+		"ident": 2,
+		"order": 12,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$---Menu/Toolbar---",
+		"ident": 39,
+		"order": 13,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$execMenu",
+		"ident": 21,
+		"order": 14,
+		"pvardefs": [
+			{
+				"name": "pMenuItem",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pAction",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "action",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "seqNo",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$execAction",
+		"ident": 37,
+		"order": 15,
+		"pvardefs": [
+			{
+				"name": "pAction",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pData",
+				"order": 7,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "colNo",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "ix",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "newStartLabel",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "recordNo",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "rowNo",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "seqNo",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "execNavigate",
+		"ident": 38,
+		"order": 16,
+		"pvardefs": [
+			{
+				"name": "pNewStartPage",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "execSaveAs",
+		"ident": 31,
+		"order": 17,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "newName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "execImportLabel",
+		"ident": 24,
+		"order": 18,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "DIR",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "DRIVE",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "EXT",
+				"order": 7,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lError",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lImportData",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "list",
+				"order": 16,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "LocalPath",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lResult",
+				"order": 3,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "lTheFile",
+				"order": 8,
+				"type": "kObject",
+				"subtype": ".FileOps.FileOps",
+				"sublen": 0
+			},
+			{
+				"name": "lTheFileName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "NAME",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objFirstSel",
+				"order": 13,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "objIdent",
+				"order": 12,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "objLastSel",
+				"order": 14,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "objName",
+				"order": 15,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objType",
+				"order": 11,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "execDeleteLabel",
+		"ident": 43,
+		"order": 19,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "message",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "execEditDetails",
+		"ident": 41,
+		"order": 20,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "ix",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "execPrint",
+		"ident": 22,
+		"order": 21,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "endPage",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "err",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "savedDevice",
+				"order": 3,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "savedPage",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "savedStatus",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "execImportData",
+		"ident": 47,
+		"order": 22,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "thePath",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$---evaluation---",
+		"ident": 25,
+		"order": 23,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$evalGetLabelData",
+		"ident": 10,
+		"order": 24,
+		"pvardefs": [
+			{
+				"name": "pLabelNo",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "barCode",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "contWidth",
+				"order": 5,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "recordNo",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "result",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "widthTwips",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$evalGetLabelList",
+		"ident": 16,
+		"order": 25,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "labelCount",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "tempList",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "---initialization---",
+		"ident": 26,
+		"order": 26,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "defineRow",
+		"ident": 3,
+		"order": 27,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 17,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "ContentCalc",
+				"order": 18,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"initval": "''",
+				"desc": "calculation used to clculate label content per row"
+			},
+			{
+				"name": "ContentCopies",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "1"
+			},
+			{
+				"name": "ContentMargin",
+				"order": 1,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "0.2"
+			},
+			{
+				"name": "FontBold",
+				"order": 31,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "FontItalic",
+				"order": 32,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "FontName",
+				"order": 29,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"initval": "\"Arial\""
+			},
+			{
+				"name": "FontSize",
+				"order": 30,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "12"
+			},
+			{
+				"name": "LabelGutterHorz",
+				"order": 8,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "LabelGutterVert",
+				"order": 9,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "LabelHeight",
+				"order": 7,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,1.5,4)"
+			},
+			{
+				"name": "LabelsAcross",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "3"
+			},
+			{
+				"name": "LabelsDown",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "7"
+			},
+			{
+				"name": "LabelType",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 30,
+				"initval": "kLabelTypeCustom"
+			},
+			{
+				"name": "LabelWidth",
+				"order": 6,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,2.8,6.5)"
+			},
+			{
+				"name": "PaperCms",
+				"order": 34,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "$root.$prefs.$usecms",
+				"desc": "Are the dimensions in centi-meters"
+			},
+			{
+				"name": "PaperHeight",
+				"order": 12,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,11,29.7)"
+			},
+			{
+				"name": "PaperMarginBottom",
+				"order": 16,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,0.25,0.6)"
+			},
+			{
+				"name": "PaperMarginLeft",
+				"order": 13,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,0.05,0.6)"
+			},
+			{
+				"name": "PaperMarginRight",
+				"order": 15,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,0.05,0.6)"
+			},
+			{
+				"name": "PaperMarginTop",
+				"order": 14,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,0.25,0.6)"
+			},
+			{
+				"name": "PaperOrient",
+				"order": 28,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "kOrientPortrait-1",
+				"desc": "we start at zero"
+			},
+			{
+				"name": "PaperType",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pick(PaperCms,kPaUsLetter,kPaA4)"
+			},
+			{
+				"name": "PaperWidth",
+				"order": 11,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"initval": "pick(PaperCms,8.5,21)"
+			}
+		]
+	},
+	{
+		"name": "---mod support---",
+		"ident": 27,
+		"order": 28,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "modTest",
+		"ident": 6,
+		"order": 29,
+		"pvardefs": [
+			{
+				"name": "pObj",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "changed",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "dataName",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "modContentChanged",
+		"ident": 12,
+		"order": 30,
+		"pvardefs": [
+			{
+				"name": "pDataName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "modLabelChanged",
+		"ident": 9,
+		"order": 31,
+		"pvardefs": [
+			{
+				"name": "pDataName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "modPaperChanged",
+		"ident": 11,
+		"order": 32,
+		"pvardefs": [
+			{
+				"name": "pDataName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "modNavigate",
+		"ident": 4,
+		"order": 33,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "newStartPage",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "---preview handling---",
+		"ident": 30,
+		"order": 34,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "contentCalcRebuild",
+		"ident": 45,
+		"order": 35,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "rowNo",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "previewScale",
+		"ident": 15,
+		"order": 36,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "paper_gap_pixels",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "12"
+			},
+			{
+				"name": "paper_height_pixels",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "paper_width_pixels",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "saved_usecms",
+				"order": 1,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "scale_x",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "scale_y",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "previewRebuild",
+		"ident": 8,
+		"order": 37,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "cellCalc",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "colCount",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "colNo",
+				"order": 9,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "colWidth",
+				"order": 6,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "empty_bin",
+				"order": 1,
+				"type": "kBinary",
+				"subtype": 0,
+				"sublen": 100000000
+			},
+			{
+				"name": "labelNo",
+				"order": 13,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "rowCount",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "rowHeight",
+				"order": 7,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "rowNo",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "savedCms",
+				"order": 14,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "selFirst",
+				"order": 11,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "selLast",
+				"order": 12,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "selObjID",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "tableCalc",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "previewEval",
+		"ident": 13,
+		"order": 38,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "enablePreview",
+		"ident": 7,
+		"order": 39,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "disablePreview",
+		"ident": 14,
+		"order": 40,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "---uitility---",
+		"ident": 32,
+		"order": 41,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "showMessage",
+		"ident": 19,
+		"order": 42,
+		"pvardefs": [
+			{
+				"name": "pMessage",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "getRecordIndexFromLabel",
+		"ident": 33,
+		"order": 43,
+		"pvardefs": [
+			{
+				"name": "pLabelNo",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "-1"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "cellCalc",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "recordNo",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "---label records---",
+		"ident": 35,
+		"order": 44,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "setCurLabel",
+		"ident": 46,
+		"order": 45,
+		"pvardefs": [
+			{
+				"name": "pLine",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pRedraw",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kTrue"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "loadLabels",
+		"ident": 34,
+		"order": 46,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "list",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "addLabel",
+		"ident": 36,
+		"order": 47,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pData",
+				"order": 2,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "NAME",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "updateLabel",
+		"ident": 40,
+		"order": 48,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "newBin",
+				"order": 3,
+				"type": "kBinary",
+				"subtype": 0,
+				"sublen": 100000000
+			},
+			{
+				"name": "oldBin",
+				"order": 2,
+				"type": "kBinary",
+				"subtype": 0,
+				"sublen": 100000000
+			},
+			{
+				"name": "oldInfo",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "savedLine",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	}
+]

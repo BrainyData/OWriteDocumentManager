@@ -1,0 +1,5 @@
+If pIndent
+	Calculate ivIndent as con(ivIndent,chr(9))
+Else
+	Calculate ivIndent as mid(ivIndent,1,len(ivIndent)-1)
+End If

@@ -1,0 +1,5 @@
+;  get data and selection of field
+;  $getspelldata(pFieldRef [Item reference],pSpellData [Field reference], pFirstSel [Number Long integer],pLastSel [Number Long integer],pUserData [Number Long integer],pIsCheckWindow [Boolean])
+;  we only overriding this method so we can set the spell checker window title
+Calculate ivOSpellObj.$title as 'Glossary Example Text'
+Do inherited

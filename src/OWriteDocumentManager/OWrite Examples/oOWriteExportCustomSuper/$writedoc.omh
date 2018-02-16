@@ -1,0 +1,67 @@
+;  PURPOSE:     ;; main method for exporting entire document
+;  USAGE:     ;; this method is called by the example export window when custom export is selected
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for the export
+;  IMPLEMENTS:     ;; prepares output and calls a number of export methods for exporting various document data
+
+;  output document ---
+
+;  --- basic properties
+;  DocVersion (C3)     ;; int - document version number (see $docversion_tostring)
+;  DocSelStart (C5)     ;; int - selection start position
+;  DocSelEnd (C6)     ;; int - selection end position
+;  DocPageView (C15)     ;; int - view mode one of the kWriView... constants)
+;  DocScale (C16)     ;; int - document view scale in percent
+;  DocUserData (C17)     ;; varied - user data (managed by developer)
+;  DocDefTab (C18)     ;; int - default tab position in micrometres (0.001 mm)
+;  DocFlags:EvalCalcs (C21:4)     ;; flag - specifies evaluation state of document at time of save
+Do method $cinst.$writedoc_info (pDocData.C3,pDocData.C5,pDocData.C6,pDocData.C15,pDocData.C16,pDocData.C17,pDocData.C18,$cinst.$getflag(pDocData.C21,4)) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+;  --- paper properties
+;  PaperOrientation (C7)     ;; int - orientation (one of the kOrient... constants)
+;  PaperSize (C8)     ;; int - the paper size ID (one of the kPa... constants)
+;  PaperLength (C9)     ;; int - length of paper in micrometres (0.001 mm)
+;  PaperWidth (C10)     ;; int - width of paper in micrometres (0.001 mm)
+;  PaperLeftMargin (C11)     ;; int - left paper margin in micrometres (0.001 mm)
+;  PaperRightMargin (C12)     ;; int - right paper margin in micrometres (0.001 mm)
+;  PaperTopMargin (C13)     ;; int - top paper margin in micrometres (0.001 mm)
+;  PaperBottomMargin (C14)     ;; int - bottom paper margin in micrometres (0.001 mm)
+;  DocFlags:PaperContinues (C21:3)     ;; flag - indicates if we have a continues single page
+Do method $cinst.$writedoc_paper (pDocData.C7,pDocData.C8,pDocData.C9,pDocData.C10,pDocData.C11,pDocData.C12,pDocData.C13,pDocData.C14,$cinst.$getflag(pDocData.C21,3)) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+;  --- header and footer properties
+;  DocHeaderMargin (C19)     ;; int - margin between header and top edge of paper in micrometres (0.001 mm)
+;  DocFooterMargin (C20)     ;; int - margin between footer and bottom edge of paper in micrometres (0.001 mm)
+;  DocFlags:HeadFootOddEven (C21:1)     ;; flag - if true, document has unique headers and footers for odd and even pages
+;  DocFlags:HeadFootFirstPage (C21:2)     ;; flag - if true, document has unique headers and footers for first page
+Do method $cinst.$writedoc_hf (pDocData.C19,pDocData.C20,$cinst.$getflag(pDocData.C21,1),$cinst.$getflag(pDocData.C21,2)) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+;  --- list of document styles
+;  DocStylesList (C4)     ;; list - the document's list of main styles (i.e. "Normal", "Heading 1", etc.)
+Calculate theList as pDocData.C4
+Do method $cinst.$writedoc_styles (theList) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+;  --- objects: headers and footers
+;  DocHFList (C23)     ;; list - the document's list of header and footer objects
+Calculate theList as pDocData.C23
+Do method $cinst.$writeobjs (theList,kGroupTypeHF) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+;  --- objects: main paragraphs and table rows
+;  DocChildList     ;; list - the document's list of root objects (paragraphs or table rows)
+Calculate theList as pDocData.C2
+Do method $cinst.$writeobjs (theList,kGroupTypeParaMain) Returns #F
+Quit method #F

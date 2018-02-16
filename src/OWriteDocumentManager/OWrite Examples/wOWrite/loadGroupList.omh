@@ -1,0 +1,21 @@
+;  build list of document groups in our database
+Begin reversible block
+	Set main file {fOWriteDoc}
+	Set current list ivGroupList
+End reversible block
+Do ivGroupList.$define(fOWriteDoc.seq,fOWriteDoc.group)
+Build list from file on fOWriteDoc.order
+;  remove duplicates
+Do ivGroupList.$cols.2.$removeduplicates(kTrue,kTrue)
+;  load requested record
+If len(pGroup)
+	Do ivGroupList.$search($ref.group=pGroup,kTrue,kFalse,kFalse,kFalse) Returns ivGroupList.$line
+	If not(ivGroupList.$line)
+		Calculate ivGroupList.$line as 1
+	End If
+Else
+	Calculate ivGroupList.$line as 1
+End If
+Redraw {GroupList}
+;  load documents for this group and show first document
+Do method loadDocumentsList (pDocSeq,ivGroupList.group)

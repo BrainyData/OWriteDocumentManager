@@ -1,0 +1,8 @@
+Switch pWhat
+	Case 'Table'
+		If tvStudio4
+			Do $windows.wOWriteInsertTable.$open('*',kWindowCenterRelative,$cwind,ivEdit.$ref)
+		Else
+			Do $windows.wOWriteInsertTable.$open('*',kWindowCenter,ivEdit.$ref)
+		End If
+End Switch

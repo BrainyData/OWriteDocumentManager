@@ -1,0 +1,10 @@
+;  Enter your initialization code here
+Set read/write files {fOWriteDoc}
+Set main file {fOWriteDoc}
+Do method buildFontList
+Do method loadSampleImage
+Do $cinst.$buildGroupList
+Do $cinst.$buildDocumentList
+Do $cinst.$serverLoadData
+
+Calculate ivSamplePlainText as con("While this option is set, documents that are modified and saved in the browser, will not be loaded. To load documents that were modified in the browser, uncheck this option.",chr(kWriCharReturn),"The mail-merge example outputs merged documents to a PDF file for display on the client. Select the mail-merge document above and click “Run Mail Merge” in the document.")

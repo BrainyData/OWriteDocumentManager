@@ -1,0 +1,5 @@
+If ivFindList.$linecount
+	Calculate refStatusLabel.$text as con(ivFindList.$line," out of ",ivFindList.$linecount," (press Esc key to close or Up and Down keys to move through found matches)")
+Else
+	Calculate refStatusLabel.$text as "No matches found (press Esc key to close)"
+End If

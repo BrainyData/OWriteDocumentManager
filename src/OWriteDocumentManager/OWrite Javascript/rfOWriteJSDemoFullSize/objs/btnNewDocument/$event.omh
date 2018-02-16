@@ -1,0 +1,17 @@
+On evClick
+	While len(newName)=0
+		JavaScript: newName = window.prompt(prompt,defaultName)
+		If len(newName)
+			;  check if it is a duplicate
+			Do ivDocumentList.$search($ref.C1=newName) Returns line
+			If line
+				Calculate defaultName as newName
+				Calculate prompt as "The name is in use. Please choose another."
+				Calculate newName as ""
+			End If
+		Else
+			Quit method
+		End If
+	End While
+	Calculate ivNewName as newName
+	Do method $cinst.$serverNewDocument

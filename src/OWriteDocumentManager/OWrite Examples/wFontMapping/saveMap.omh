@@ -1,0 +1,26 @@
+
+;  CHANGE_V3A12 changes throughout
+
+;  turn our edit list into list with proper columns for saving as a map
+Do ivFontmapList.$define(MasterFont)     ;; we start of with a single column
+For ivEditList.$line from 1 to ivEditList.$linecount step 1
+	Do ivFontmapList.$add()     ;; add an empty row
+	Calculate ivFontmapList.$line as ivFontmapList.$linecount
+	Calculate cur_col as 1
+	Calculate ivEditFontNames as ivEditList.C1
+	While len(ivEditFontNames)
+		If cur_col>ivFontmapList.$cols.$count
+			Do ivFontmapList.$cols.$add(con("Alternative",cur_col-1),kCharacter,kSimplechar,255)
+		End If
+		Calculate font_name as trim(strtok(nam(ivEditFontNames),','))
+		Calculate ivFontmapList.C[cur_col] as font_name
+		Calculate cur_col as cur_col+1
+	End While
+End For
+
+;  write the fontmap to disk
+Do method $ctask.$writefontmap (ivFontmapList,ivFontmapRestrictFonts)
+Do OWrite.$loadfontmap(ivFontmapList,ivFontmapRestrictFonts)
+
+;  inform all windows that the fontmap has changed
+Do $iwindows.$sendall($ref.$fontmapchanged(),$ref.$fontmapchanged.$cando)

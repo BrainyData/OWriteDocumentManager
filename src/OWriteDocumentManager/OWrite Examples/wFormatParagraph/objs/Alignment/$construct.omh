@@ -1,0 +1,5 @@
+Do ivAlignmentList.$define(ivAlignment,ivText)
+Do ivAlignmentList.$add(0,'Left')
+Do ivAlignmentList.$add(1,'Centered')
+Do ivAlignmentList.$add(2,'Right')
+Do ivAlignmentList.$add(3,'Justified')

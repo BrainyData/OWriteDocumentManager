@@ -1,0 +1,16 @@
+{
+	"ident": 1010,
+	"order": 5,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 10300,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Sample Picture"
+		},
+		"userinfo": ""
+	}
+}

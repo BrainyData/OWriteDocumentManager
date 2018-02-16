@@ -1,0 +1,20 @@
+;  browse through our sample data to demonstrate calculated fields
+If ivIsExport
+	;  method is called during export, return empty string
+	Quit method ""
+Else
+	Begin reversible block
+		Set main file {fClients}
+	End reversible block
+	If pNext
+		Next
+	Else
+		Previous
+	End If
+	;  update our document
+	If flag true
+		Calculate ivEdit.$evalcalcs as kTrue
+	Else
+		Calculate ivEdit.$evalcalcs as kFalse
+	End If
+End If

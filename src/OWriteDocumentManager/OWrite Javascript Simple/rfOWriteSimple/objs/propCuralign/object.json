@@ -1,0 +1,53 @@
+{
+	"ident": 1011,
+	"order": 11,
+	"objtype": "kComponent",
+	"componentlib": "jsOWrite",
+	"componentctrl": "OWrite Property Object",
+	"properties": {
+		"alpha": 255,
+		"backalpha": 255,
+		"backcolor": "kColorDefault",
+		"contextmenu": "",
+		"cssclassname": "",
+		"ctrliconid": "k32x32+13009",
+		"ctrltooltip": "Left~Center~Right~Justified",
+		"ctrlvalue": "0~1~2~3",
+		"ctrlwidth": 0,
+		"dataname": "",
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"disabledefaultcontextmenu": false,
+		"disablesystemfocus": false,
+		"dropmode": "kAcceptNone",
+		"enabled": true,
+		"events": "",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"labelleft": "",
+		"labelleftwidth": 0,
+		"labelright": "",
+		"objlink": 0,
+		"preventlayoutanimation": false,
+		"property": "$curalign",
+		"textcolor": "kColorDefault",
+		"tooltip": "",
+		"userinfo": "",
+		"visible": true
+	},
+	"screensizes": [
+		{
+			"name": "kSSZDesktop",
+			"left": 624,
+			"top": 1,
+			"width": 132,
+			"height": 32,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		}
+	]
+}

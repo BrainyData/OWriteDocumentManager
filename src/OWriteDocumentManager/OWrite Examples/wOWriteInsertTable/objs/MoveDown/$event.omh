@@ -1,0 +1,13 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	If ivColumnDetailsList.$line<ivColumnDetailsList.$linecount
+		Do curRow.$copydefinition(ivColumnDetailsList)
+		Do curRow.$assignrow(ivColumnDetailsList)
+		Calculate ivColumnDetailsList.$line as ivColumnDetailsList.$line+1
+		Do nextRow.$copydefinition(ivColumnDetailsList)
+		Do nextRow.$assignrow(ivColumnDetailsList)
+		Do ivColumnDetailsList.$assignrow(curRow)
+		Calculate ivColumnDetailsList.$line as ivColumnDetailsList.$line-1
+		Do ivColumnDetailsList.$assignrow(nextRow)
+		Calculate ivColumnDetailsList.$line as ivColumnDetailsList.$line+1
+		Redraw {ColumnDetails}
+	End If

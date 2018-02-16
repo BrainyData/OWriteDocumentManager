@@ -1,0 +1,80 @@
+;  called by embeded document links or $owrite_export for HTML documents
+If ivIsExport
+	;  return an html link
+	Calculate link as con(pDocName,".htm")
+	If len(pSubHeader)
+		Calculate link as con(link,"#",pSubHeader)
+	End If
+	;  see if we have to look in a different Product folder
+	If pos('/',pDocName)
+		Calculate link as con('../',link)     ;; we must go up a folder to load a different product's document
+	End If
+	Quit method link
+Else
+	;  see if we changing the current document
+	If len(pDocName)
+		;  save changes to current document
+		Do method saveData Returns #F
+		If flag false
+			Quit method kFalse
+		End If
+		;  see if we need to change document group
+		If pos('/',pDocName)
+			Calculate groupName as strtok(nam(pDocName),'/')
+			Do ivGroupList.$search($ref.group=groupName,kTrue,kFalse,kFalse,kFalse) Returns ivGroupList.$line
+			If not(ivGroupList.$line)
+				Quit method kFalse
+			End If
+			Do method loadDocumentsList (0,ivGroupList.group)
+			Redraw {GroupList}
+		End If
+		;  save current navigation poit for prev and next buttons
+		Do method $navigateSave
+		;  locate and load specified document
+		Do ivDocumentsList.$search($ref.name=pDocName,kTrue,kFalse,kFalse,kFalse) Returns ivDocumentsList.$line
+		Redraw {DocumentList}
+		Do method loadData
+	Else
+		;  link is for current document, just save current navigation point
+		Do method $navigateSave
+	End If
+	;  search for specific heading styles (the list of styles to search could be user defined)
+	If len(pSubHeader)     ;; position document at specified header
+		Calculate search.$text as pSubHeader
+		Calculate search.$curstylename as 'Heading 1'
+		Calculate search.$completeword as kFalse
+		Do ivEdit.$findinit(search.$owriteobj,kTrue)
+		Do ivEdit.$findnext(search.$owriteobj) Returns #F
+		If flag false
+			Calculate search.$curstylename as 'Heading 2'
+			Do ivEdit.$findinit(search.$owriteobj,kTrue)
+			Do ivEdit.$findnext(search.$owriteobj) Returns #F
+		End If
+		If flag false
+			Calculate search.$curstylename as 'Heading 3'
+			Do ivEdit.$findinit(search.$owriteobj,kTrue)
+			Do ivEdit.$findnext(search.$owriteobj) Returns #F
+		End If
+		If flag false
+			Calculate search.$curstylename as 'Property Name'
+			Do ivEdit.$findinit(search.$owriteobj,kTrue)
+			Do ivEdit.$findnext(search.$owriteobj) Returns #F
+		End If
+		If flag false
+			Calculate search.$curstylename as 'Constant Name'
+			Do ivEdit.$findinit(search.$owriteobj,kTrue)
+			Do ivEdit.$findnext(search.$owriteobj) Returns #F
+		End If
+	End If
+	;  the link contained search text, search entire document content for this text
+	If len(pText)
+		Calculate search.$text as pText
+		Calculate search.$curstylename as #NULL
+		Calculate search.$completeword as kFalse
+		Do ivEdit.$findinit(search.$owriteobj,kTrue)
+		Do ivEdit.$findnext(search.$owriteobj) Returns #F
+	End If
+	If len(pBookmark)     ;; CHANGE_2014_07_15__1 begins
+		Do ivEdit.$setselection(pBookmark,0,0,kWriSRBookmark)
+	End If     ;; CHANGE_2014_07_15__1 ends
+End If

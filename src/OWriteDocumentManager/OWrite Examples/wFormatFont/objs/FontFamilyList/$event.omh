@@ -1,0 +1,16 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	Calculate saved_typeface as ivFontTypefaceList.Typeface
+	Calculate ivFontTypefaceList as ivFontFamilyList.Typefaces
+	Do ivFontTypefaceList.$search($ref.Typeface=saved_typeface,kTrue,kFalse,kFalse,kFalse) Returns ivFontTypefaceList.$line
+	If not(ivFontTypefaceList.$line)
+		Calculate ivFontTypefaceList.$line as 1
+	End If
+	Do refFontTypefaceList.$redraw()
+	Quit event handler (Pass to next handler)
+On evMouseDown
+	;  prevent clicking on empty row
+	Calculate row as mouseover(kMLine)
+	If len(ivFontFamilyList.[row].Family)=0
+		Quit event handler (Discard event)
+	End If
+	Quit event handler (Pass to next handler)

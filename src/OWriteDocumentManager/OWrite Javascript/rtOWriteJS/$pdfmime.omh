@@ -1,0 +1,31 @@
+;  return binary data of PDF document as mime data asset to client
+Send to trace log {$pdfmime}
+If binlength(ivPdfBin)
+	Begin text block
+	Text: {content-type: application/pdf} (Carriage return,Linefeed)
+	Text: {content-length: [binlength(ivPdfBin)]} (Carriage return,Linefeed)
+	Text: {content-disposition: filename="[$cinst().$name]"} (Carriage return,Linefeed)
+	Text: (Carriage return,Linefeed)
+	End text block
+	Get text block htmlHeader
+	Calculate bin as bytecon(chartoutf8(htmlHeader),ivPdfBin)
+	Quit method bin
+Else
+	;  return some HTML we make up here
+	Begin text block
+	Text: {<html>} (Carriage return,Linefeed)
+	Text: {<body>} (Carriage return,Linefeed)
+	Text: {<p>Due to an unknown error, the server failed to generate the document</p>} (Carriage return,Linefeed)
+	Text: {</body>} (Carriage return,Linefeed)
+	Text: {</html>} (Carriage return,Linefeed)
+	End text block
+	Get text block html
+	;  create and add the header
+	Begin text block
+	Text: {content-type: text/html} (Carriage return,Linefeed)
+	Text: {content-length: [len(html)]} (Carriage return,Linefeed)
+	Text: (Carriage return,Linefeed)
+	End text block
+	Get text block htmlHeader
+	Quit method con(htmlHeader,html)
+End If

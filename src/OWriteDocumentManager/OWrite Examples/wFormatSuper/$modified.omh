@@ -1,0 +1,18 @@
+;  this method returns true if changes have been made
+;  if there are additional fields that need to be checked and are not dealt with by this method
+;  you should override this method and Do inherited followed by your checks
+;  only fields that were loaded by calling the $loadProperty... methods will be included
+;  example:
+;  Do inherited Returns modified
+;  If not(modified)
+;       ;; additional checks
+;  End If
+;  Quit method modified
+
+For ivRefList.$line from 1 to ivRefList.$linecount step 1
+	Do method dataChanged (ivRefList.C1) Returns modified
+	If modified
+		Quit method kTrue
+	End If
+End For
+Quit method kFalse

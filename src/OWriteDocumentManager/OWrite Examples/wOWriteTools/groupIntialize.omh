@@ -1,0 +1,7 @@
+Calculate cInIntialize as kTrue
+Calculate $cinst.$objs.GroupFont.$visible as cShowGroupFont
+Calculate $cinst.$objs.GroupAlignment.$visible as cShowGroupAlignment
+Calculate $cinst.$objs.GroupDocument.$visible as cShowGroupDocument
+Calculate $cinst.$objs.GroupFields.$visible as cShowGroupFields
+Calculate $cinst.$objs.GroupOtherFields.$visible as cShowGroupOtherFields
+Calculate cInIntialize as kFalse

@@ -1,0 +1,30 @@
+{
+	"ident": 1049,
+	"order": 16401,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 213,
+		"objlink": 131073,
+		"text": {
+			"type": 14,
+			"calc": "[ivEditObjRef.$curobjorigwidth]"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 130,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 40
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"ident": 1013,
+	"order": 14,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 20012,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Align Right"
+		},
+		"userinfo": ""
+	}
+}

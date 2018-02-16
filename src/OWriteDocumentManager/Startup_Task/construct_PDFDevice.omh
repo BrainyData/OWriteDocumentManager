@@ -1,0 +1,37 @@
+;  intialization required for PDFDevice
+If tvCanDoPDF
+	;  get all parameters in one call
+	Do $devices.[kDevPdf].$getparam(kDevPdfAll) Returns deviceParms
+	
+	;  provide a window for setting the advanced PDF Device properties
+	;  this must be an Omnis command line that is valid to execute from the $root as its context
+	Calculate deviceParms.Advanced as "$root.$libs.example.$windows.wPDFOptions.$openonce('PDFAOptions',kWindowCenter)"
+	;  set default destination file to prevent unwanted prompting
+	Calculate deviceParms.FileName as con(ivExamplesPath,"untitled.pdf")
+	;  set our Brainy Data watermark
+	Calculate deviceParms.Watermark as kTrue
+	Calculate deviceParms.WMAngle as 90
+	Calculate deviceParms.WMFont as "Georgia"
+	Calculate deviceParms.WMFontSize as 36
+	Calculate deviceParms.WMHorzPos as 1.5
+	Calculate deviceParms.WMVertPos as 20.0
+	Calculate deviceParms.WMText as "www.brainydata.com"
+	Calculate deviceParms.WMTextColor as rgb(221,221,221)
+	;  set default PDF settings
+	Calculate deviceParms.EmbedFonts as kTrue
+	Calculate deviceParms.ConvJPEG as kTrue
+	Calculate deviceParms.JPEGQuality as 75
+	Calculate deviceParms.ImgConvBest as kTrue
+	Calculate deviceParms.ImgStripDup as kTrue
+	Calculate deviceParms.ConvLinks as kTrue
+	;  set options for our document outline trees
+	;  all text objects that produce the following output will be added to the outline tree
+	Do OuList.$define(OuFontName,OuFontSize,OuFontStyle)
+	Do OuList.$add("Times New Roman",24,kBold)     ;; Heading 1
+	Do OuList.$add("Times New Roman",18,kBold)     ;; Heading 2
+	Do OuList.$add("Times New Roman",14,kBold)     ;; Heading 3
+	Calculate deviceParms.Outlines as OuList
+	
+	;  now write back the modified parameters
+	Do $devices.[kDevPdf].$setparam(kDevPdfAll,deviceParms)
+End If

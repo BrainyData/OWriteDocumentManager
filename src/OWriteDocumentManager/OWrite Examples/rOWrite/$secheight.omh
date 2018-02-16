@@ -1,0 +1,16 @@
+;  used to calculate header and footer section height
+;  this method relies on all objects in section are floating ($floating=kTrue)
+If pHeader
+	Set reference theSec to $cinst.$objs.$findname('Page header')
+	Set reference theNextSec to $cinst.$objs.$findname('Record')
+Else
+	Set reference theSec to $cinst.$objs.$findname('Page footer')
+	Set reference theNextSec to $cinst.$objs.$findname('End of report')
+End If
+Calculate lines as theNextSec.$lineno-theSec.$lineno-1
+If $prefs.$usecms
+	Calculate theHeight as lines*12*2.54/72
+Else
+	Calculate theHeight as lines*12/72
+End If
+Quit method theHeight

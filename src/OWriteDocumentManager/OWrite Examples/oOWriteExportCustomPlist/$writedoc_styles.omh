@@ -1,0 +1,32 @@
+;  PURPOSE:     ;; main method for exporting document styles (super styles)
+;  USAGE:     ;; this method is called by ...$writedoc
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for document styles
+;  IMPLEMENTS:     ;; iterates the list of document styles and calls ...$writestyles for each
+
+
+;  export XML document style array ---
+
+;  --- start Omnis TEXT buffer
+Do method $cinst.$buffer_start Returns #F
+If flag true
+	
+	;  --- write the array header
+	Text: {[ivIndent]<key>DocStyles</key>} (Linefeed)
+	Text: {[ivIndent]<array>} (Linefeed)
+	Do method Indent (kTrue)
+	
+	;  --- call superclass to iterate and export styles
+	Do $inherited.$writedoc_styles(pDocStyles) Returns #F
+	If flag false
+		Quit method kFalse
+	End If
+	
+	;  --- close array
+	Do method Indent (kFalse)
+	Text: {[ivIndent]</array>} (Linefeed)
+	
+	;  --- close Omnis text buffer     ;; writes buffer to output
+	Do method $cinst.$buffer_end Returns #F
+End If
+
+Quit method #F

@@ -1,0 +1,34 @@
+;  overide this method to save all the properties     ;; called by the apply button
+;  before saving your properties call the inherited method
+;  example:
+;  Do inherited
+;  Do $cinst.$saveProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
+
+Do inherited
+Do $cinst.$saveProperty(ivEditObjRef.$curobjfmt.$ref,refObjFmt)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjwdleft.$ref,refWDLeft)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjwdtop.$ref,refWDTop)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjwdright.$ref,refWDRight)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjwdbottom.$ref,refWDBottom)
+
+Do $cinst.$saveProperty(ivEditObjRef.$curobjheight.$ref,refHeight)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjwidth.$ref,refWidth)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjleftmargin.$ref,refMgLeft)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjtopmargin.$ref,refMgTop)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjrightmargin.$ref,refMgRight)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjbottommargin.$ref,refMgBottom)
+
+;  CHANGE_V3A10 begins
+;  $curobjdata is now obsolete and has been replaced by seperate properties
+Do $cinst.$saveProperty_calculations(refName,refDisplayName,refCalculation,#NULL,#NULL)
+;  CHANGE_V3A10 ends
+
+Do $cinst.$saveProperty(ivEditObjRef.$curobjtooltip.$ref,refTooltip)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjautosize.$ref,refAutoSize)
+
+Do $cinst.$saveProperty(ivEditObjRef.$curobjborderstyle.$ref,refBorderStyle)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjlinestyle.$ref,refLineStyle)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjlinesize.$ref,refLineWeight)
+
+Do $cinst.$saveProperty(ivEditObjRef.$curobjlinecolor.$ref,refLineColorButt)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjfillcolor.$ref,refFillColorButt)

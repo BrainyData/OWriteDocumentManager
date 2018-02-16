@@ -1,0 +1,26 @@
+;  check password and prompt user with recomendations if required
+If len(ivParams.OwnerPassword)=0&len(ivParams.UserPassword)>0
+	Yes/No message Security Options {Owner password is empty. Specifying a user password only may prevent owner access of the resulting PDF file. Continue?}
+	If flag false
+		Calculate refTabPane.$currenttab as 7
+		Quit method kFalse
+	End If
+End If
+;  special case for color button, page layout and mode
+Calculate ivParams.WMTextColor as refWMTextColor.$contents
+Calculate ivParams.WMFont as refWMFontName.$contents
+Calculate ivParams.PageLayout as refPageLayout.$contents
+Calculate ivParams.PageMode as refPageMode.$contents
+;  save security permissions
+Calculate permissionBits as pick(ivPermPrint,permissionBits,bitor(permissionBits,kDevPdfPermPrint))
+Calculate permissionBits as pick(ivPermModify,permissionBits,bitor(permissionBits,kDevPdfPermModify))
+Calculate permissionBits as pick(ivPermCopy,permissionBits,bitor(permissionBits,kDevPdfPermCopy))
+Calculate permissionBits as pick(ivPermFillFieldsComments,permissionBits,bitor(permissionBits,kDevPdfPermFillFieldsComments))
+Calculate permissionBits as pick(ivPermFillFields,permissionBits,bitor(permissionBits,kDevPdfPermFillFields))
+Calculate permissionBits as pick(ivPermExtract,permissionBits,bitor(permissionBits,kDevPdfPermExtract))
+Calculate permissionBits as pick(ivPermAssemble,permissionBits,bitor(permissionBits,kDevPdfPermAssemble))
+Calculate permissionBits as pick(ivPermPrintFull,permissionBits,bitor(permissionBits,kDevPdfPermPrintFull))
+Calculate ivParams.Permissions as permissionBits
+;  now save all the device parameters
+Do $devices.[kDevPdf].$setparam(kDevPdfAll,ivParams)
+Quit method kTrue

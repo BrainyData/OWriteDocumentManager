@@ -1,0 +1,2 @@
+;  called by $construct of mFormat to enable/disable menu lines
+Quit method kTrue

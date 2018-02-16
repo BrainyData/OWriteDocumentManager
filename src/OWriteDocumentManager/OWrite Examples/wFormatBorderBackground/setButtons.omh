@@ -1,0 +1,5 @@
+
+Calculate refFrameLeft.$enabled as ivFrameType=0
+Calculate refFrameTop.$enabled as ivFrameType=0
+Calculate refFrameRight.$enabled as ivFrameType=0
+Calculate refFrameBottom.$enabled as ivFrameType=0

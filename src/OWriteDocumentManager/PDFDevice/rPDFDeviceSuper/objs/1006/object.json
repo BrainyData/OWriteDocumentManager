@@ -1,0 +1,29 @@
+{
+	"ident": 1006,
+	"order": 6,
+	"objtype": "kText",
+	"properties": {
+		"align": "kCenterJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": true,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 20,
+		"fontstyle": "kBold",
+		"height": -1,
+		"left": 4.178,
+		"lineno": 2,
+		"lineoffset": 0.104,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "PDF Device Example"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 12.179
+	}
+}

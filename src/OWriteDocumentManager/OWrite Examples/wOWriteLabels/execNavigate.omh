@@ -1,0 +1,12 @@
+
+If pNewStartPage<0
+	Calculate pNewStartPage as 0
+Else If pNewStartPage>=iEvalPageCount
+	Calculate pNewStartPage as iEvalPageCount-1     ;; start page must be one less then page count
+End If
+
+If iEvalStartPage<>pNewStartPage
+	Calculate iEvalStartPage as pNewStartPage
+	Do $cinst.$setButtons()
+	Do method previewEval
+End If

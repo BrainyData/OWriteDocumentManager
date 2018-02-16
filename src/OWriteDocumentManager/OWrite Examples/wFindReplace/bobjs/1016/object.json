@@ -1,0 +1,27 @@
+{
+	"ident": 1016,
+	"order": 16386,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kRightJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 6,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 56,
+		"objlink": 65538,
+		"text": "Find what:",
+		"textcolor": "kColorWindowText",
+		"top": 10,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 76
+	}
+}

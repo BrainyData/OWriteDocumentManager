@@ -1,0 +1,6 @@
+If not(cFontSizeList.$linecount)
+	Do cFontSizeList.$define(iFontSize)
+	For iFontSize from 8 to 14 step 1
+		Do cFontSizeList.$add(iFontSize)
+	End For
+End If

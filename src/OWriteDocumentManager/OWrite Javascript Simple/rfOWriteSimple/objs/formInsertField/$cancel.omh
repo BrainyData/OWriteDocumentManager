@@ -1,0 +1,3 @@
+Calculate cfield as $cfield.$name
+JavaScript: console.log('$cancel '+cfield);
+Calculate $cinst.$objs.formInsertField.$visible as kFalse

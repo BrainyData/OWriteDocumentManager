@@ -1,0 +1,27 @@
+{
+	"ident": 1184,
+	"order": 16441,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelLarge",
+		"font": 2,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 17,
+		"left": 176,
+		"objlink": 393217,
+		"text": "RGB Color Profile Size",
+		"textcolor": "kColorWindowText",
+		"top": 206,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 140
+	}
+}

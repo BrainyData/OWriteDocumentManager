@@ -1,0 +1,12 @@
+Do FileOps.$getfilename(thePath,"Select Import File","*.txt") Returns #F
+If flag true
+	Do code method tOWriteLabels/$importLabelSampleData (thePath)
+	Do code method tOWriteLabels/$getLabelSampleData Returns refDataList
+	Do code method tOWriteLabels/$getLabelSamplePickList Returns refPickListData
+	;  update the label preview by simulating a clicks the field selection checkbox
+	Do method contentCalcRebuild
+	Do method previewRebuild
+	;  Do method modTest ($cinst.$objs.PickListSelected)
+	Do refPickList.$redraw()
+	Do $cinst.$setButtons()
+End If

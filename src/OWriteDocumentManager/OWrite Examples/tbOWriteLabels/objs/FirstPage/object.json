@@ -1,0 +1,21 @@
+{
+	"ident": 1007,
+	"order": 1,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 3000,
+		"text": {
+			"type": 0,
+			"calc": "First"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "First Page"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

@@ -1,0 +1,3 @@
+
+;  we now load the document when we receive the evFirstLoad event in the OWrite $event method
+;  Do $cinst.$serverLoadData_return()     ;; forces document loading under developer control

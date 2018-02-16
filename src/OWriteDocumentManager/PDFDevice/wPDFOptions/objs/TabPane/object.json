@@ -1,0 +1,113 @@
+{
+	"ident": 1016,
+	"order": 1,
+	"objtype": "kTabPane",
+	"properties": {
+		"active": true,
+		"alpha": 255,
+		"backcolor": "kColorWindow",
+		"backgroundtheme": "kBGThemeParent",
+		"backpattern": 0,
+		"candropcursor": 0,
+		"contextmenu": "",
+		"cursor": 0,
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"dragborder": false,
+		"dragiconid": 0,
+		"dragmode": "kNoDragging",
+		"dragrange": "kRangeAll",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFrightBottom",
+		"enabled": true,
+		"fieldstyle": "CtrlPushButton",
+		"font": 4,
+		"fontsize": 9,
+		"fontstyle": "kPlain",
+		"forecolor": "kColor3DFace",
+		"height": 389,
+		"helpfile": 0,
+		"imagenoroom": false,
+		"keyevents": false,
+		"left": 8,
+		"mouseevents": false,
+		"multirow": false,
+		"nodropcursor": 0,
+		"objlink": 0,
+		"rmouseevents": false,
+		"selectedtabcolor": "kColorDefault",
+		"showfocus": false,
+		"showimages": false,
+		"statusevents": false,
+		"tabcolor": "kColorDefault",
+		"taborient": "kTopTabs",
+		"tabstyle": "kDefaultPanes",
+		"textcolor": "kColorWindowText",
+		"tooltip": "",
+		"top": 9,
+		"userinfo": "",
+		"visible": true,
+		"width": 654
+	},
+	"multivalueproperties": {
+		"properties": [
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "General"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Watermark"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Background"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Document"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Bookmarks"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Compatibility"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Security"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,7 @@
+On evMouseDown     ;; Event Parameters - pRow( Itemreference )
+	Set reference ref to $cinst.$objs.$next($cobj)
+	Calculate ref.$visible as not(ref.$visible)
+	Do method $setFocusOWrite
+	Quit event handler (Discard event)
+On evMouseUp
+	Quit event handler (Discard event)

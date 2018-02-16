@@ -1,0 +1,5 @@
+;  transfer parameters from field's calculation to instance vars     ;; CHANGE_2014_07_15__1
+Calculate ivDocName as pDocName
+Calculate ivSubText as pSubText
+Calculate ivSrchText as pSrchText
+Calculate ivBookmark as pBookmark

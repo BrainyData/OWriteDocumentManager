@@ -1,0 +1,6 @@
+Set reference ivOWriteRef to pOWriteRef
+Do method defineColumnDetailsList
+Do method loadDataLists
+Do method calcCellWidth
+Do method calcMinRows
+Do method setFields

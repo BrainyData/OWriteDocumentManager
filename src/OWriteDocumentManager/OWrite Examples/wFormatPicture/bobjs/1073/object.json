@@ -1,0 +1,27 @@
+{
+	"ident": 1073,
+	"order": 16412,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 27,
+		"objlink": 196609,
+		"text": "Tool Tip (optional)",
+		"textcolor": "kColorWindowText",
+		"top": 112,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 120
+	}
+}

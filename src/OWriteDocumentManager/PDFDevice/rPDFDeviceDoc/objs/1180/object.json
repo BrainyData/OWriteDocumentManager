@@ -1,0 +1,29 @@
+{
+	"ident": 1180,
+	"order": 8,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 12,
+		"fontstyle": "kPlain",
+		"height": 2.045,
+		"left": 2.54,
+		"lineno": 9,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#NOTE:\u001B\u000200000000# You must quit Omnis prior to installing PDFDevice.\rCopy the PDFDevice external component to the XCOMP folder of your Omnis installation.\rLaunch Omnis and open the Print destination dialog from the File menu. The PDF device should be visible.\r"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

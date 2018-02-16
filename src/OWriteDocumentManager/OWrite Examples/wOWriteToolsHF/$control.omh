@@ -1,0 +1,15 @@
+On evClick
+	Switch $cobj().$name
+		Case 'btnInsertPgNum'
+			Do method insertInfoField (kWriObjTypeInfoPgNum)
+		Case 'btnInsertPgCnt'
+			Do method insertInfoField (kWriObjTypeInfoPgCnt)
+		Case 'btnInsertDate'
+			Do method insertInfoField (kWriObjTypeInfoDate)
+		Case 'btnInsertTime'
+			Do method insertInfoField (kWriObjTypeInfoTime)
+		Case 'btnNext'
+			Do method nextPrevHeaderFooter (kFalse)
+		Case 'btnPrev'
+			Do method nextPrevHeaderFooter (kTrue)
+	End Switch

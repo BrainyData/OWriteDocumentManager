@@ -1,0 +1,16 @@
+;  overide this method to save all the properties     ;; called by the apply button
+;  before saving your properties call the inherited method
+;  example:
+;  Do inherited
+;  Do $cinst.$saveProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
+
+Do inherited
+Do $cinst.$saveProperty(ivEditObjRef.$curobjwidth.$ref,refWidth)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjheight.$ref,refHeight)
+
+;  CHANGE_V3A10 begins
+;  $curobjdata is now obsolete and has been replaced by seperate properties
+Do $cinst.$saveProperty_calculations(refName,refDisplayName,refCalculation,refGenClicks,refClickCalculation)
+
+Do $cinst.$saveProperty(ivEditObjRef.$curobjstripempty.$ref,refStripEmpty)
+Do $cinst.$saveProperty(ivEditObjRef.$curobjtooltip.$ref,refTooltip)

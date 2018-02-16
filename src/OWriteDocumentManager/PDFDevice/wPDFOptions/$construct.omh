@@ -1,0 +1,24 @@
+;  hide version 2 panes if PDFDevice is version 1.x
+Calculate refTabPane.$currenttab as cvLastPane
+If not(tvCanDoBackgroundImage)
+	Do refTabPane.$showpane(cvPaneBackground,kFalse)
+End If
+If not($ctask.tvCanDoSecurity)
+	Do refTabPane.$showpane(cvPaneSecurity,kFalse)
+End If
+;  load font list
+Do ivWMFontList.$define(ivFontName)
+Do FontOps.$replistfonts(ivWMFontList)     ;; 2011_09_21_change_1
+Do ivWMFontList.$sort($ref.ivFontName)
+;  prepare outline lists
+Calculate cvOuFontList as ivWMFontList
+Do cvOuSizeList.$define(ivFontSize)
+Do cvOuSizeList.$add(10)
+Do cvOuSizeList.$add(12)
+Do cvOuSizeList.$add(15)
+Do cvOuSizeList.$add(18)
+Do cvOuSizeList.$add(24)
+Do cvOuSizeList.$add(36)
+Do cvOuSizeList.$add(72)
+;  load parameter values
+Do method loadParms

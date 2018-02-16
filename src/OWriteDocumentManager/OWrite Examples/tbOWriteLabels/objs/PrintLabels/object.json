@@ -1,0 +1,21 @@
+{
+	"ident": 1016,
+	"order": 11,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 1707,
+		"text": {
+			"type": 0,
+			"calc": "Print"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Print Labels"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

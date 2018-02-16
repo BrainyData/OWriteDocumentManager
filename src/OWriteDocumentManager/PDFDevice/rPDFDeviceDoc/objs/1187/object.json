@@ -1,0 +1,29 @@
+{
+	"ident": 1187,
+	"order": 10,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 12,
+		"fontstyle": "kPlain",
+		"height": 6.525,
+		"left": 2.54,
+		"lineno": 18,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "To use PDFDevice please use the supplied example library to familiarize yourself with the software and the steps required to use the device with your libraries.\r\rUnlike other Omnis devices, the main options dialog for the PDF device is implemented not as part of the external component, but as part of the Omnis library.\r\rWhen you view the PDF Parameters in the Omnis destination dialog you will only find the destination file name parameter and an Advanced button. The Advanced button must be linked to your own Omnis window for setting the advanced PDF options. The example library provides a fully functional window that you can copy to your library. In the $construct method of your startup task you must tell the device the full notation path to your window.\r\rExample:"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

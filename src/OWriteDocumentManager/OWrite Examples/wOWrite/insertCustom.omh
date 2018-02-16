@@ -1,0 +1,16 @@
+;  get the custom field name and description
+If tvStudio4
+	Do $windows.wOWriteInsertCustomField.$open('*',kWindowCenterRelative,$cwind,name,description,stripEmptyLines)
+Else
+	Do $windows.wOWriteInsertCustomField.$open('*',kWindowCenter,name,description,stripEmptyLines)
+End If
+If flag true
+	;  save current selection as RTF
+	Do ivEdit.$savedata(data_bin,kWriFmtRTF,kFalse,kWriSaveSelection,kTrue)     ;; CHANGE_2010_11_11_a // must save RTF to binary and convert to char
+	Calculate data as utf8tochar(data_bin)     ;; CHANGE_2010_11_11_a
+	;  surround the RTF with quotes
+	Calculate data as con('"',data,'"')
+	Do ivEdit.$::insert(kWriObjTypeCalc,con(name,';',data))
+	Calculate ivEdit.$curobjstripempty as stripEmptyLines
+	Do ivWRefTools.$addCustomField(name,data,description,stripEmptyLines)
+End If

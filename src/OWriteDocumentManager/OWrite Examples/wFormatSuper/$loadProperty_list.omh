@@ -1,0 +1,29 @@
+;  it is hard to manipulate lists via a controls dataname from a super class so we are given the list data as well
+
+Calculate propIsNull as isnull(pPropRef)
+Calculate pFieldRef.$userinfo as pick(propIsNull,pPropRef,'#NULL')     ;; store the origional data in $userinfo so we can restore individual fields
+Do ivRefList.$add(pFieldRef)     ;; store field in ref list for $modified
+
+;  OWrite property values handled by a list control are stored in column 1 of the list
+If propIsNull
+	Calculate pList.$line as 0
+Else
+	Do pList.$search($ref.C1=pPropRef,kTrue,kFalse,kFalse,kFalse) Returns pList.$line
+	If not(pList.$line)&len(pDefault)
+		Do pList.$search($ref.C1=pDefault,kTrue,kFalse,kFalse,kFalse) Returns pList.$line
+	End If
+End If
+Switch pFieldRef.$objtype
+	Case kCombo
+		If propIsNull
+			Calculate $cinst.[pFieldRef.$dataname] as kNullEntry
+			Calculate pFieldRef.$fieldstyle as 'CtrlEditTextDis'
+		Else If pList.$line
+			Calculate $cinst.[pFieldRef.$dataname] as pList.C1
+		Else If len(pDefault)     ;; CHANGE_2008_08_01(2) begins
+			Calculate $cinst.[pFieldRef.$dataname] as pDefault
+		Else
+			Calculate $cinst.[pFieldRef.$dataname] as pPropRef
+		End If     ;; CHANGE_2008_08_01(2) ends
+End Switch
+Do pFieldRef.$redraw()

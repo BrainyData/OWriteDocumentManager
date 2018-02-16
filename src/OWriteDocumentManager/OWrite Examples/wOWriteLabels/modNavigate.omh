@@ -1,0 +1,23 @@
+
+Switch pName
+	Case 'btnFirstPage'
+		Calculate newStartPage as 0
+	Case 'btnPreviousPage'
+		Calculate newStartPage as iEvalStartPage-1
+		If newStartPage<0
+			Calculate newStartPage as 0
+		End If
+	Case 'btnNextPage'
+		Calculate newStartPage as iEvalStartPage+1
+		If newStartPage>=iEvalPageCount
+			Calculate newStartPage as iEvalPageCount-1     ;; start page must be one less then page count
+		End If
+	Case 'btnLastPage'
+		Calculate newStartPage as iEvalPageCount-1     ;; start page must be one less then page count
+End Switch
+
+If iEvalStartPage<>newStartPage
+	Calculate iEvalStartPage as newStartPage
+	Do $cinst.$setButtons()
+	Do method previewEval
+End If

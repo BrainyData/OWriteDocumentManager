@@ -1,0 +1,4 @@
+;  Enter your initialization code here
+If pParams.$cols.$findname('PDFOwner')
+	Quit method $iremotetasks.[pParams.PDFOwner].$pdfmime
+End If

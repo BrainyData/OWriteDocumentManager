@@ -1,0 +1,27 @@
+Calculate lScreenHeight as sys(105)
+If $cwind.$top+$cwind.$height>lScreenHeight
+	;  first see if we can close a group below
+	Set reference lGroup to iFRefGroupLast
+	While 1
+		;  see if we can close this one
+		If lGroup().$name<>pCurGroup().$name
+			If lGroup.$visible
+				Calculate lGroup.$visible as kFalse
+				Quit method
+			End If
+		End If
+		;  get the next group object above
+		Switch lGroup().$name
+			Case 'GroupFont'
+				Quit method      ;; no more above
+			Case 'GroupAlignment'
+				Set reference lGroup to $cinst.$objs.GroupFont
+			Case 'GroupDocument'
+				Set reference lGroup to $cinst.$objs.GroupAlignment
+			Case 'GroupFields'
+				Set reference lGroup to $cinst.$objs.GroupDocument
+			Case 'GroupOtherFields'
+				Set reference lGroup to $cinst.$objs.GroupFields
+		End Switch
+	End While
+End If

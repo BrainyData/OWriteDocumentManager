@@ -1,0 +1,4 @@
+
+If len(#S1)
+	Send to trace log {SMTPSend status: [#S1]}
+End If

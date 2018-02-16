@@ -1,0 +1,11 @@
+
+Calculate refHtmlOmnisCompatible.$enabled as cvOption=kDestHTML
+Calculate refHtmlNoAutoSize.$enabled as cvOption=kDestHTML
+Calculate refHtmlNoMargins.$enabled as cvOption=kDestHTML
+Calculate refHtmlBaseTarget.$enabled as cvOption=kDestHTML
+Calculate refOWriteBinarySaveAsList.$enabled as cvOption=kDestOWriteBinary     ;; CHANGE_2015_11_03__1
+
+Calculate refExpCustom.$enabled as tvCanDoCustomExport     ;; CHANGE_2013_11_27_1
+
+Calculate cvExportSelected as refDocsList.$selcount>0
+Redraw {CurrentDoc,SelectedDocuments}

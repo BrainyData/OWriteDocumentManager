@@ -1,0 +1,6 @@
+Do iLabelsList.$setInsertValues()
+Calculate iLabelsList.OL_NAME as pName
+Calculate iLabelsList.OL_NAME_UPPER as upp(pName)
+Calculate iLabelsList.OL_DATA as pData
+Do iLabelsList.$dowork
+Do method setCurLabel (iLabelsList.$line,kTrue)

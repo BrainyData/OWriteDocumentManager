@@ -1,0 +1,171 @@
+{
+	"ident": 1025,
+	"order": 1,
+	"objtype": "kComponent",
+	"componentlib": "jsTabs",
+	"componentctrl": "Tab Control",
+	"properties": {
+		"align": "kCenterJst",
+		"alpha": 255,
+		"backalpha": 255,
+		"backcolor": "RGB(255,255,255)",
+		"baseedgealpha": 255,
+		"baseedgecolor": "kDarkGray",
+		"baseedgewidth": 0,
+		"canclickselectedtab": false,
+		"contextmenu": "",
+		"cssclassname": "",
+		"currenttab": 1,
+		"currenttabbackalpha": 255,
+		"currenttabbackcolor": "RGB(187,187,187)",
+		"currenttabbackiconid": 0,
+		"currenttabextra": 0,
+		"currenttabtextcolor": "kColorDefault",
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"disabledefaultcontextmenu": false,
+		"disabledtabtextcolor": "kColorDefault",
+		"disablesystemfocus": false,
+		"dropmode": "kAcceptNone",
+		"enabled": true,
+		"events": "evTabSelected",
+		"extratabspacing": 52,
+		"fieldstyle": "",
+		"fixedtabsize": false,
+		"font": 1,
+		"fontsize": 9,
+		"fontstyle": "kBold",
+		"hotcurrent": false,
+		"hottabbackalpha": 255,
+		"hottabbackcolor": "kGray",
+		"hottabbackiconid": 0,
+		"hottabtextcolor": "kColorDefault",
+		"linkedobject": "",
+		"maxfixedtabsize": 200,
+		"objlink": 0,
+		"preventlayoutanimation": false,
+		"side": "kJSTabsSideTop",
+		"tabbackalpha": 255,
+		"tabbackcolor": "RGB(221,221,221)",
+		"tabbackiconid": 0,
+		"tabbackstyle": "kJSTabsBackStyleColor",
+		"tabborderalpha": 255,
+		"tabbordercolor": "RGB(170,170,170)",
+		"tabborderradius": 0,
+		"tabborderwidth": 1,
+		"tabiconsize": 32,
+		"tablayout": "kJSTabsLayoutTextOnly",
+		"tabmenubackcolor": "kColorDefault",
+		"tabmenubackiconid": 0,
+		"tabmenudisabledtextcolor": "kColorDefault",
+		"tabmenuhotbackcolor": "kColorDefault",
+		"tabmenuhotbackiconid": 0,
+		"tabmenuhottextcolor": "kColorDefault",
+		"tabmenutextcolor": "kColorDefault",
+		"tabsjst": "kJSTabsJstLeftOrTop",
+		"tabspacing": 0,
+		"textcolor": "kDarkGray",
+		"tooltip": "",
+		"trackmenus": false,
+		"userinfo": "",
+		"visible": true
+	},
+	"multivalueproperties": {
+		"selected": 3,
+		"properties": [
+			{
+				"::tabiconid": 0,
+				"::tabtooltip": "",
+				"tabenabled": true,
+				"tabmenu": "",
+				"tabtext": "Layout & Size",
+				"tabvisible": true
+			},
+			{
+				"::tabiconid": 0,
+				"::tabtooltip": "",
+				"tabenabled": true,
+				"tabmenu": "",
+				"tabtext": "Data",
+				"tabvisible": true
+			},
+			{
+				"::tabiconid": 0,
+				"::tabtooltip": "",
+				"tabenabled": true,
+				"tabmenu": "",
+				"tabtext": "Border & Fill",
+				"tabvisible": true
+			}
+		]
+	},
+	"screensizes": [
+		{
+			"name": "kSSZDesktop",
+			"left": 0,
+			"top": -1,
+			"width": 383,
+			"height": 21,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs320x480Portrait",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs320x480Landscape",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs768x1024Portrait",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs768x1024Landscape",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs345x345",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs360x640Portrait",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		},
+		{
+			"name": "kSSZjs360x640Landscape",
+			"left": 0,
+			"top": 0,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		}
+	]
+}

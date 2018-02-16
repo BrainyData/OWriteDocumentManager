@@ -1,0 +1,22 @@
+;  print the given document to PDF and display on client
+
+;  set the report destination to our PDF device
+Do $cdevice.$assign(kDevPdf)
+;  we are printing PDF to memory and are asking that the output is send to $ctask.$pdfoutput()
+Do $cdevice.$setparam(kDevPdfFileName,con("$iremotetasks.",$ctask().$name,".$pdfoutput(#)"))
+
+;  load the document data
+Do $cinst.$loaddata(pDocumentData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+Do $cinst.$pageview.$assign(kWriViewPageLayout)     ;; for printing must be in page layout mode
+
+;  print the document
+Do $cinst.$print('',kFalse,kFalse,kFalse)
+
+;  prepare an url that will fetch our PDF data for display on client
+TCPGetMyAddr  Returns addr
+Calculate addr as "127.0.0.1"     ;; only when testing
+Do $modes.$dotoolmethod(kEnvToolBrowser,160) Returns port     ;; Returnｓ the port Omnis is listening on ($prefs.$serverport is unreliable as it can be zero in which case Omnis chooses a port)
+
+;  create the URL with the connection ID of our ctask
+Calculate url as con("http://",addr,":",port,"/ultra?OmnisServer='",addr,":",port,"'&OmnisLibrary=example&OmnisClass=rtOWriteSimple&PDFOwner=",$ctask().$name)
+Quit method url

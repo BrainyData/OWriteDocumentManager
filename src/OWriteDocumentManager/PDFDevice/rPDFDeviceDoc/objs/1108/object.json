@@ -1,0 +1,29 @@
+{
+	"ident": 1108,
+	"order": 36,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 12,
+		"fontstyle": "kPlain",
+		"height": 1.516,
+		"left": 2.54,
+		"lineno": 81,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "You may specify document information such as the document title, author and subject. This information will be stored in the PDF's document info section and can be viewed using Acrobat or other readers that can display the document info.\r"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"ident": 1020,
+	"order": 5,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": true,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 10,
+		"fontstyle": "kPlain",
+		"height": -1,
+		"left": 0.993,
+		"lineno": 2,
+		"lineoffset": 0.175,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "[#D]"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 2.258
+	}
+}

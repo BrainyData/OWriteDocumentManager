@@ -1,0 +1,16 @@
+{
+	"ident": 1010,
+	"order": 11,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 20008,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Merge Selected Cells"
+		},
+		"userinfo": ""
+	}
+}

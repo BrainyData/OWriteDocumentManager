@@ -1,0 +1,8 @@
+;  make sure our data has been saved
+Do method saveData Returns #F
+If flag true
+	Calculate ivEdit.$modified as kFalse     ;; work around for Omnis bug (duplicate calls to $canclose on Quit Omnis)
+	Quit method kTrue
+Else
+	Quit method kFalse
+End If

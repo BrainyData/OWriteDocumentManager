@@ -1,0 +1,19 @@
+
+Do refToolbar.$setEnabled('FirstPage',iEvalStartPage>0)
+Do refToolbar.$setEnabled('PreviousPage',iEvalStartPage>0)
+Do refToolbar.$setEnabled('NextPage',iEvalStartPage<(iEvalPageCount-1))
+Do refToolbar.$setEnabled('LastPage',iEvalStartPage<(iEvalPageCount-1))
+Do refToolbar.$setEnabled('DeleteLabel',iLabelsList.OL_NAME<>kLabelTypeCustom)
+Do refToolbar.$setEnabled('PrintLabels',refDataList.$linecount>0)
+
+Calculate refPickListUp.$enabled as refPickListData.$line>1
+Calculate refPickListDown.$enabled as refPickListData.$line>0&refPickListData.$line<refPickListData.$linecount
+
+Do cPaperList.$search($ref.C1=cInfoED.PaperType,kTrue,kFalse,kFalse,kFalse) Returns cPaperList.$line
+If not(cPaperList.$line)
+	Calculate cPaperList.$line as 1
+End If
+;
+Calculate iFontName as cInfoED.FontName
+;
+Calculate iFontSize as cInfoED.FontSize

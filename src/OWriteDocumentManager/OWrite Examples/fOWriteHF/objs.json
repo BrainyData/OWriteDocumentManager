@@ -1,0 +1,68 @@
+[
+	{
+		"name": "seq",
+		"order": 1,
+		"desc": "",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "header",
+		"order": 2,
+		"desc": "",
+		"type": "kBinary",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "main",
+		"order": 3,
+		"desc": "",
+		"type": "kBinary",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "footer",
+		"order": 4,
+		"desc": "",
+		"type": "kBinary",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "page_count",
+		"order": 5,
+		"desc": "",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "show_hf",
+		"order": 6,
+		"desc": "",
+		"type": "kBoolean",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	}
+]

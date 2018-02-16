@@ -1,0 +1,15 @@
+
+;  we will setup item reference to the data list and pick list that have been passed to us
+;  so these lists must stay alive after construct has finnished running
+
+;  pDataList should contain all the address details in whatever layout. We don't care.
+;       ;; pPickList will tell us how to retrieve the details.
+;  pPickList: This must be a two column list describing the data columns in pDataList that can be used
+;       ;; in Label printing. The first column should be the description that can be presented to the user
+;       ;; The second column must specify the column name that maps into pDataList
+
+Set reference refDataList to pDataList
+Set reference refPickListData to pPickList
+
+Do $cinst.$initializeWindow
+Do $cinst.$getCurrentRecord

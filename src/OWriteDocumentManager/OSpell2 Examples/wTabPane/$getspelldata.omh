@@ -1,0 +1,2 @@
+Do inherited
+Calculate ivOSpellObj.$title as fld(con('ivTab',$cinst.$objs.TabPane.$currenttab,'Title'))

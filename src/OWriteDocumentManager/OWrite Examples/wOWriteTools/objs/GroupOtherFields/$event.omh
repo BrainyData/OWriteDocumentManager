@@ -1,0 +1,4 @@
+On evHidden
+	Do method groupShownHidden ($cobj,kFalse)
+On evShown
+	Do method groupShownHidden ($cobj,kTrue)

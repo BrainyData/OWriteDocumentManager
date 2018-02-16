@@ -1,0 +1,4 @@
+;  size
+Do method $cinst.$saveProperty (ivEditObjRef.$curtblrowheight.$ref,refRowHeight)
+;  row behaviour
+Do method $cinst.$saveProperty (ivEditObjRef.$curtblrowtype.$ref,refRowTypeNone)

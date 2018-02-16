@@ -1,0 +1,22 @@
+{
+	"ident": 1051,
+	"order": 14,
+	"objtype": "kLine",
+	"properties": {
+		"bordercolor": "RGB(240,240,240)",
+		"desgroup": 0,
+		"deslock": false,
+		"effect": "kBorderNone",
+		"fieldstyle": "",
+		"floating": true,
+		"height": 0.0,
+		"left": 0.899,
+		"lineno": 34,
+		"lineoffset": 0.14,
+		"linestyle": 5,
+		"printontop": false,
+		"userinfo": "",
+		"vertextend": false,
+		"width": 5.504
+	}
+}

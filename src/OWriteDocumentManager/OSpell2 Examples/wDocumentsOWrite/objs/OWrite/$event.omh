@@ -1,0 +1,36 @@
+On evContextSpell
+	;  context click on misspelled word
+	;  pList will contain the suggested words
+	Calculate wordCount as pList.$linecount
+	If not(wordCount)
+		Do pList.$add('No suggestion')
+	End If
+	;  add additional options
+	Do pList.$add('')
+	Do pList.$add('Ignore')
+	Do pList.$add('Ignore all')
+	Do pList.$add('Add')
+	;  popup our menu at the given location
+	Popup menu from list $root.pList at pX,pY
+	If not(pList.$line)     ;; do nothing
+	Else If pList.$line<=wordCount
+		;  a word has been selected, replace
+		Do $cfield.$startundo()
+		Do $cfield.$::insert(kWriObjTypeText,pList.Word)
+		Do $cfield.$endundo("Correct Spelling")
+	Else
+		;  one of the other options has been picked
+		If not(wordCount)
+			Calculate wordCount as 1     ;; account for 'No suggestion'
+		End If
+		Switch pList.$line-wordCount
+			Case 2     ;; Ignore
+				Do $cfield.$spell(kWriSpllIgnoreWord)
+			Case 3     ;; Ignore all - Note: Tell OWrite and add word to ignore dictionary
+				Do $cfield.$spell(kWriSpllIgnoreAll)
+				Do Spll.$addword(Spll.$getignorelexid(),ivSpllSession.$badword,'',kSpllActIgnore)
+			Case 4     ;; Add - Note: Add word to user dictionary and tell OWrite to ignore it
+				Do $cfield.$spell(kWriSpllIgnoreAll)
+				Do Spll.$addword(0,ivSpllSession.$badword,'',kSpllActIgnore)
+		End Switch
+	End If

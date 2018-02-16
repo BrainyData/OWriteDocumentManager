@@ -1,0 +1,7 @@
+Switch pFieldRef().$name
+	Case 'DataGrid'
+		Do method $cinst.$setlistcell (ivList.$ref,pUserData,pSpellData)
+		Do pFieldRef.$redraw()
+		Quit method
+End Switch
+Do inherited

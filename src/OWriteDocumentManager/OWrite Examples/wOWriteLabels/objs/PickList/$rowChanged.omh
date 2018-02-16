@@ -1,0 +1,9 @@
+Do $cfield.$clearexceptions()
+Calculate $cfield.$objs.PickListSelected.[refPickListData.$line].$backcolor as kGray
+Calculate $cfield.$objs.PickListDescription.[refPickListData.$line].$backcolor as kGray
+Calculate $cfield.$objs.PickListDescription.[refPickListData.$line].$fontstyle as kBold
+Calculate $cfield.$objs.PickListLineFeed.[refPickListData.$line].$backcolor as kGray
+Calculate $cfield.$objs.PickListRight.[refPickListData.$line].$backcolor as kGray
+Calculate $cfield.$objs.PickListBold.[refPickListData.$line].$backcolor as kGray
+Calculate $cfield.$bobjs.1117.[refPickListData.$line].$backcolor as kGray
+Do $cinst.$setButtons()

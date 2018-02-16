@@ -1,0 +1,167 @@
+[
+	{
+		"name": "seq",
+		"order": 1,
+		"desc": "Record #;Unique record number",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "title",
+		"order": 2,
+		"desc": "Title;The client's title i.e. Mr, Mrs, Ms,Dr.",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 10,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "name",
+		"order": 3,
+		"desc": "Name;The client's full name",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "address",
+		"order": 4,
+		"desc": "Address;The client's full address",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 10000,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "picture",
+		"order": 5,
+		"desc": "Picture;The client's picture",
+		"type": "kPicture",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "address1",
+		"order": 6,
+		"desc": "Address1;The client's house number and street name",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "address2",
+		"order": 7,
+		"desc": "Address2;The client's address continued, i.e. estate name",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "city",
+		"order": 8,
+		"desc": "City;The client's home city/town",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "state",
+		"order": 9,
+		"desc": "State;The client's home state/county",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "postcode",
+		"order": 10,
+		"desc": "Postal Code;The client's home zip/postal code",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 10,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "country",
+		"order": 11,
+		"desc": "Country;The client's home country",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "invoice_items",
+		"order": 12,
+		"desc": "Invoice Items;List of sample invoice items for Invoice table example",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "company",
+		"order": 13,
+		"desc": "Company;The client's company name",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 60,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "phone",
+		"order": 14,
+		"desc": "Phone #;The client's/company phone number",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "fax",
+		"order": 15,
+		"desc": "Fax #;The client's/company's fax number",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 30,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	}
+]

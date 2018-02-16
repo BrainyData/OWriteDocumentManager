@@ -1,0 +1,48 @@
+;  PURPOSE:     ;; main method for exporting style information
+;  USAGE:     ;; called by ...$writedoc and ...$writeobjs_para
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for the export of style information
+;  IMPLEMENTS:     ;; iterates a list of document objects and calls the appropriate export methods based on object type
+
+
+;  write document style info
+;  ----- Style Properties -----
+;  StyleSuper (C1)     ;; UTF8 - name of inherited document-style
+;  StyleName (C2)     ;; UTF8 - name of this document-style (only applies to document styles)
+;  StyleAfter (C3)     ;; UTF8 - name of document-style that is used after this document-style when user hits return (only applies to document styles)
+Do method $cinst.$writestyles_info (pStyles.C1,pStyles.C2,pStyles.C3,pIsDocument) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+;  write style pairs     ;; styles that effect an entire object (i.e. paragraph) are stored as identifier/value pairs in a list
+Calculate StylePairsList as pStyles.C6
+For StylePairsList.$line from 1 to StylePairsList.$linecount step 1
+	;  ----- font/text related styles (kWriStyTxt_first to kWriStyTxt_last)-----
+	;  StyleId (C1)     ;; int - numeric identifyer of the style to be applied (one of the kWriSty... constants)
+	;  StyleValue (C2)     ;; varied - value of the style to be applied (data type depends on the style)
+	Do method $cinst.$writestyles_pair (StylePairsList.C1,StylePairsList.C2,StylePairsList.$line=1,StylePairsList.$line=StylePairsList.$linecount,pIsDocument)
+	If flag false
+		Quit method kFalse
+	End If
+End For
+
+;  write style runs     ;; style runs only effect portions of text within an object such as a paragraph
+If not(pIsDocument)     ;; document styles do not have style runs
+	Calculate StyleRunsList as pStyles.C5
+	For StyleRunsList.$line from 1 to StyleRunsList.$linecount step 1
+		;  ----- Style Run Properties -----
+		;  StyleRunStart (C1)     ;; int - character position at which style-run starts
+		;  StyleRunEnd (C2)     ;; int - character position at which style-run ends
+		;  StyleId (C3)     ;; int - numeric identifyer of the style to be applied (one of the kWriStyTxt... constants)
+		;  StyleValue (C4)     ;; varied - value of the style to be applied (data type depends on the style)
+		Do method $cinst.$writestyles_run (StyleRunsList.C1,StyleRunsList.C2,StyleRunsList.C3,StyleRunsList.C4,StyleRunsList.$line=1,StyleRunsList.$line=StyleRunsList.$linecount,pIsDocument) Returns #F
+		If flag false
+			Quit method kFalse
+		End If
+	End For
+End If
+
+Quit method kTrue
+
+;  copy and paste line to your method to inherit parameters
+Send to trace log {[pStyles], [pIsDocument]}

@@ -1,0 +1,8 @@
+On evBefore     ;; CHANGE_2014_06_11__1 begins
+	Do method setFields
+On evClick
+	If $cobj.$objtype=kCheckbox|$cobj.$objtype=kRadio
+		Calculate ivModified as kTrue
+		Send to trace log {evClick received (ivModified=[ivModified])}
+	End If
+	Do method setFields     ;; CHANGE_2014_06_11__1 ends

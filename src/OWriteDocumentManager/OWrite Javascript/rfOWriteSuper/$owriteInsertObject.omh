@@ -1,0 +1,70 @@
+
+
+Switch pObjType
+	
+	Case kWriObjTypeCalc
+		;  prep params for inserting a calculated field
+		Do $cinst.$objs.jsOWrite.$initparams(pObjType) Returns params
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjName","fldCustName","ObjCalc","$cinst.$eval('Name')","ObjFillColor",rgb(196,196,196))
+		
+	Case kWriObjTypeInfo
+		;  prep params for inserting a doc info object
+		Do $cinst.$objs.jsOWrite.$initparams(pObjType) Returns params
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjInfoType",pObjSubtype,"ObjFillColor",rgb(200,255,200))
+		
+	Case kWriObjTypePict
+		;  limit image size
+		Calculate origWidth as int(ivSampleImage.width*25400/72)     ;; convert 72/inch (pts) to 1000/mm
+		Calculate origHeight as int(ivSampleImage.height*25400/72)     ;; convert 72/inch (pts) to 1000/mm
+		If (ivSampleImage.maxWidth/origWidth)<factor
+			Calculate factor as ivSampleImage.maxWidth/origWidth
+		End If
+		If (ivSampleImage.maxHeight/origHeight)<factor
+			Calculate factor as ivSampleImage.maxHeight/origHeight
+		End If
+		Calculate displayWidth as int(origWidth*factor)
+		Calculate displayHeight as int(origHeight*factor)
+		;  prep params for inserting a picture object
+		Do $cinst.$objs.jsOWrite.$initparams(pObjType) Returns params
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjFormat",pick(pCurObjType=kWriObjTypeNone,kWriObjFmtInline,kWriObjFmtWrap),"ObjFlags",'LockAspect',"ObjWidth",displayWidth,"ObjHeight",displayHeight)
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjOrigWidth",origWidth,"ObjOrigHeight",origHeight,"ObjData",ivSampleImage.pngImage)
+		
+	Case kWriObjTypeCalcPict
+		;  prep params for inserting a calculated picture object
+		Do $cinst.$objs.jsOWrite.$initparams(pObjType) Returns params
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjCalc","$cinst.$eval('Picture')","ObjToolTip","Will be populated during data merging","ObjFormat",kWriObjFmtWrap,"ObjFlags",'LockAspect')
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjWidth",25400,"ObjHeight",25400,"ObjOrigWidth",25400,"ObjOrigHeight",25400)
+		
+	Case kWriObjTypeTable
+		;  tables are inserted as a series of rows (the first row contains info about the table)
+		;  that contain a number of cell objects each, each cell containing at least a single empty paragraph
+		
+		;  initialize table data
+		Do $cinst.$objs.jsOWrite.$initparams(kWriObjTypeTable) Returns params
+		Do $cinst.$objs.jsOWrite.$addparams(params,"ObjName","table1","ObjCalc","$cinst.$eval('List','fClients')","ObjTableCellSpacing",2000,"ObjTableFlags",'PageHeaders,PageFooters')     ;; NOTE: valid table flags are (PageHeaders,PageFooters,AutoExtend,MultiDataRows)
+		
+		;  add each table row and their cells
+		;       ;; header row
+		Do $cinst.$objs.jsOWrite.$addparamstblrow(params,0,"ObjTableRowType",kWriTblRowHeader,"ObjTableRowFlags",'') Returns rowNo     ;; NOTE: valid ObjTableRowFlags are (CanSplit)
+		For cellNo from 1 to 3 step 1
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjWidth",40000,"ObjHeight",5000,"ObjFlags",'') Returns cellNo     ;; NOTE: valid ObjFlags are (LockAspect,AutoSize,GenClick,StripEmpty,NoEnter,UseClickCalc)
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjBordStyle",kBorderPlain,"ObjBordLnStyle",kWriLineSolid,"ObjBordLnSize",100,"ObjBordColor",rgb(128,0,0),"ObjBorderSides",kWriFrameLeft+kWriFrameRight+kWriFrameTop+kWriFrameBottom) Returns cellNo
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjFillColor",rgb(200,200,200),"ObjTopMargin",0,"ObjLeftMargin",1000,"ObjBottomMargin",0,"ObjRightMargin",1000) Returns cellNo
+			Do $cinst.$objs.jsOWrite.$addparamstblcellcontent(params,rowNo,cellNo,con("Title C",cellNo),"StyleSuper","Normal","Bold",kTrue,"TextColor",rgb(0,128,0),"SpaceBefore",0,"SpaceAfter",0)
+		End For
+		;       ;; data row
+		Do $cinst.$objs.jsOWrite.$addparamstblrow(params,0,"ObjTableRowType",kWriTblRowNormal,"ObjTableRowFlags",'') Returns rowNo
+		For cellNo from 1 to 3 step 1
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjWidth",40000,"ObjHeight",8000,"ObjFlags",'AutoSize') Returns cellNo     ;; NOTE: valid ObjFlags are (LockAspect,AutoSize,GenClick,StripEmpty,NoEnter,UseClickCalc)
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjBordStyle",kBorderPlain,"ObjBordLnStyle",kWriLineSolid,"ObjBordLnSize",100,"ObjBordColor",rgb(128,0,0),"ObjBorderSides",kWriFrameLeft+kWriFrameRight+kWriFrameTop+kWriFrameBottom) Returns cellNo
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjFillColor",rgb(255,255,255),"ObjTopMargin",0,"ObjLeftMargin",1000,"ObjBottomMargin",0,"ObjRightMargin",1000) Returns cellNo
+			Do $cinst.$objs.jsOWrite.$addparamstblcellcontent(params,rowNo,cellNo,"a","StyleSuper","Normal","Bold",kTrue,"TextColor",rgb(0,0,0),"SpaceBefore",0,"SpaceAfter",0)
+		End For
+		
+	Case kWriObjTypeText
+		Calculate params as ivSamplePlainText
+		
+End Switch
+
+Do $cinst.$objs.jsOWrite.$insert(pObjType,params,kWriInsertOver,con("Insert",pObjType)) Returns ok
+Quit method ok

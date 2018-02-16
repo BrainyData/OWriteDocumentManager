@@ -1,0 +1,5 @@
+Calculate r as int(mod(pColor,256))
+Calculate g as int(mod(pColor,256*256)/256)
+Calculate b as int(mod(pColor,256*256*256)/65536)
+Do pList.$add(pColor,con(style(kEscColor,pColor),'Custom ','(',r,',',g,',',b,')'))
+Calculate pList.$line as pList.$linecount

@@ -1,0 +1,16 @@
+;  this example prints the first OWrite document in the data file
+;  we are using the OWrite non visual object so we do not have to open a window
+Prompt for destination
+If flag true
+	Begin reversible block
+		Set read-only files {fOWriteDoc}
+		Set main file {fOWriteDoc}
+	End reversible block
+	Find first on fOWriteDoc.seq
+	Next      ;; first doc is our template, skip it
+	If flag true
+		Working message Printing/-1073735819,-1073735815;10;0;0 {Printing OWrite document using non-visual object...}
+		Do OWrite.$loaddata(fOWriteDoc.data)
+		Do OWrite.$::print(con('NV Example - ',fOWriteDoc.name),kTrue)
+	End If
+End If

@@ -1,0 +1,22 @@
+{
+	"ident": 1020,
+	"order": 1,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 0,
+		"macshortcutkey": "Cmnd+B",
+		"text": {
+			"type": 0,
+			"calc": "Bold"
+		},
+		"unixshortcutkey": "Ctrl+B",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": "Ctrl+B"
+	}
+}

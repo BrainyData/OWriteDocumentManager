@@ -1,0 +1,5 @@
+;  strip all invalid path characters
+Calculate pPath as replaceall(pPath,'.','')
+Calculate pPath as replaceall(pPath,':','')
+Calculate pPath as replaceall(pPath,'\','')
+Calculate pPath as replaceall(pPath,'/','')

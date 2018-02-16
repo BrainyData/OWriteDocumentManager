@@ -1,0 +1,2 @@
+;  display a list of objects in the document
+Do method BuildList (pEditObjRef)

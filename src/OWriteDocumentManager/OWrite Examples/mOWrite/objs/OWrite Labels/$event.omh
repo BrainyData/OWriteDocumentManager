@@ -1,0 +1,11 @@
+;  get our sample data, our label table class provides it
+;  we can use the methods directly using
+Do code method tOWriteLabels/$getLabelSampleData Returns refData
+Do code method tOWriteLabels/$getLabelSamplePickList Returns refPickList
+Test for window open {wOWriteLabels}
+If flag true
+	Bring window instance to front wOWriteLabels
+Else
+	Do $topwind.$close()
+	Open window instance wOWriteLabels (refData.$ref,refPickList.$ref)
+End If

@@ -1,0 +1,5 @@
+If pList.$line
+	Calculate pButtRef.$contents as pList.C1
+Else
+	Calculate pButtRef as kColorDefault
+End If

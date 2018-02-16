@@ -1,0 +1,8 @@
+;  PURPOSE:     ;; export style for a paragraph
+;  USAGE:     ;; called by ...$writestyles
+;  SUB-CLASSING:     ;; sub-class this method to implement the export
+
+
+;  write style pair to XML
+Do method $cinst.$buffer_style (pStyleId,pStyleValue)
+Quit method kTrue

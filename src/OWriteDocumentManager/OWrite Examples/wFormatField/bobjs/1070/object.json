@@ -1,0 +1,27 @@
+{
+	"ident": 1070,
+	"order": 16394,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 6,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 13,
+		"left": 26,
+		"objlink": 131073,
+		"text": "Data (database field or calculation)",
+		"textcolor": "kColorWindowText",
+		"top": 156,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 200
+	}
+}

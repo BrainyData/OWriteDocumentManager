@@ -1,0 +1,4 @@
+On evClick,evDoubleClick
+	Calculate $cinst.$objs.ctrlEmbedPdf.$visible as kFalse
+	Calculate $cinst.$objs.ctrlEmbedPdf.$html as "<div></div>"     ;; Safari does not hide PDF viewer
+	Calculate $cinst.$objs.ctrlEmbedPdfPanel.$visible as kFalse

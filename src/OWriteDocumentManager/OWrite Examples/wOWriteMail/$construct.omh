@@ -1,0 +1,3 @@
+;  store reference to OWrite control in instance var
+Set reference ivEdit to pEditRef
+Calculate cvSubject as con(pGroupName,' - ',pDocName)

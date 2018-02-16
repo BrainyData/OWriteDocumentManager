@@ -1,0 +1,5 @@
+Calculate savedModified as ivEdit.$modified
+Do ivEdit.$savedata(pOutData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+Calculate pOutName as ivDocumentsList.name
+Calculate ivEdit.$modified as savedModified
+Quit method kTrue

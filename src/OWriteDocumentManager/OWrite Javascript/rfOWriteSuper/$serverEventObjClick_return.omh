@@ -1,0 +1,7 @@
+Do $cinst.$objs.overlayFetchingData.$visible.$assign(kFalse)
+If pResult='load'     ;; instruction to reload document
+	Do $cinst.$objs.jsOWrite.$loaddata()
+	Do $cinst.$setButtonStates()
+Else If pos('http://',pResult)     ;; instruction to open an url
+	Do method $cinst.$showpdf (pResult)
+End If

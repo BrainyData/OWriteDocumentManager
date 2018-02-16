@@ -1,0 +1,41 @@
+;  PURPOSE:     ;; export calculated field object
+;  USAGE:     ;; called by ...$writeobjs
+;  SUB-CLASSING:     ;; sub-class this method to export calculated field data
+
+;  export calculated field data ---
+
+;  --- start Omnis TEXT buffer
+Do method $cinst.$buffer_start Returns #F
+If flag true
+	
+	;  --- open calculated field dictionary
+	Text: {[ivIndent]<key>[$cinst.$objtype_tostring(pObjType)]</key>} (Linefeed)
+	Text: {[ivIndent]<dict>} (Linefeed)
+	Do method Indent (kTrue)
+	
+	;  --- export calculated field properties
+	Do method $cinst.$buffer_property ("ObjPos",'integer',pObjPos)
+	Do method $cinst.$buffer_property ("ObjWidth",'pridim',pObjWidth)
+	Do method $cinst.$buffer_property ("ObjHeight",'pridim',pObjHeight)
+	Do method $cinst.$buffer_property ("ObjGenClick",'bool',pObjGenClick)
+	Do method $cinst.$buffer_property ("ObjStripEmpty",'bool',pObjStripEmpty)
+	Do method $cinst.$buffer_property ("ObjShowRTF",'bool',pObjShowRTF)
+	Do method $cinst.$buffer_property ("ObjShowingRTF",'bool',pObjShowingRTF)
+	Do method $cinst.$buffer_property ("ObjFillColor",'color',pObjFillColor)
+	Do method $cinst.$buffer_property ("ObjName",'utf8',pObjName)
+	Do method $cinst.$buffer_property ("ObjDisplay",'utf8',pObjDisplay)
+	Do method $cinst.$buffer_property ("ObjCalc",'utf8',pObjCalc)
+	Do method $cinst.$buffer_property ("ObjToolTip",'utf8',pObjToolTip)
+	Do method $cinst.$buffer_property ("ObjClickCalc",'utf8',pObjClickCalc)
+	Do method $cinst.$buffer_property ("ObjUserData",'data',pObjUserData)
+	
+	;  --- close calculated field dictionary
+	Do method Indent (kFalse)
+	Text: {[ivIndent]</dict>} (Linefeed)
+	
+	;  --- close Omnis text buffer     ;; if not nested, writes buffer to output
+	Do method $cinst.$buffer_end Returns #F
+	
+End If
+
+Quit method #F

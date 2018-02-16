@@ -1,0 +1,2 @@
+Do ivEdit.$readonly.$assign(ivReadOnly)
+Do ivWRefTools.$setreadonly(ivReadOnly)

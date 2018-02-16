@@ -1,0 +1,25 @@
+{
+	"ident": 1043,
+	"order": 7,
+	"objtype": "kRect3D",
+	"properties": {
+		"backcolor": "RGB(221,255,221)",
+		"backpattern": 1,
+		"bordercolor": "RGB(0,0,0)",
+		"desgroup": 0,
+		"deslock": false,
+		"effect": "kBorderEmbossedChisel",
+		"fieldstyle": "",
+		"floating": true,
+		"forecolor": "kColorForeFill",
+		"height": 1.374,
+		"left": 5.057,
+		"lineno": 16,
+		"lineoffset": 0.069,
+		"linestyle": 1,
+		"printontop": false,
+		"userinfo": "",
+		"vertextend": false,
+		"width": 3.564
+	}
+}

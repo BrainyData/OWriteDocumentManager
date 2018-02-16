@@ -1,0 +1,52 @@
+{
+	"classtype": "kRemoteTask",
+	"internalversion": 21,
+	"nextident": 1,
+	"tvardefs": [
+		{
+			"name": "OWRITE_TMP_VAR",
+			"order": 1,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000,
+			"desc": "Variable required by OWrite to use Omnis image conversion functions and evaluate tables"
+		}
+	],
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivPdfBin",
+			"order": 1,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000
+		}
+	],
+	"properties": {
+		"basehttpresponseheaders": "",
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2015-09-03 09:42:46",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"localtestdata": "",
+		"localtime": false,
+		"maxtime": 0,
+		"maxusers": 0,
+		"moddate": "2017-09-05 08:22:46",
+		"restful": false,
+		"restfulapiname": "",
+		"showascheckedout": true,
+		"stringtable": "JSOWriteStrings.tsv",
+		"timeout": 15,
+		"userinfo": "",
+		"version": "",
+		"webservice": ""
+	}
+}

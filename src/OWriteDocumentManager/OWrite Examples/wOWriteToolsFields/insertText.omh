@@ -1,0 +1,23 @@
+If mid(iWRefOWrite().$name,1,7)='wOWrite'
+	If iFieldList.$line>0
+		Switch iType
+			Case cTypeDataBase
+				Calculate lDisplayName as con(iFileCategoryList.iFileDescription,"/",iFieldList.iFieldDescription)
+				Calculate lCalculation as con(iFileCategoryList.iFile,".",iFieldList.iFieldName)
+				Calculate lToolTip as iFieldList.iFieldDefinition
+				Set reference lFldRef to $clib.$files.[iFieldList.iFileName].$objs.[iFieldList.iFieldName].$ref
+				Calculate lPicture as lFldRef.$objtype=kPicture|lFldRef.$objtype=kBinary     ;; CHANGE_1014_07_18__1 only appears in list if intended so binary is typically raw image JPEG or PNG
+			Case cTypeOther
+				Calculate lDisplayName as iFieldList.iFileName
+				Calculate lCalculation as iFieldList.iFieldName
+				Calculate lToolTip as iFieldList.iFieldDefinition
+				Calculate lStripEmptyLines as iFieldList.iStripEmptyLines
+		End Switch
+		Do pDestRef.$insertfield(lDisplayName,lCalculation,lToolTip,lStripEmptyLines,lPicture)
+	Else
+		Do $cinst().$displayError(kTrue,"Must select a field to insert")
+	End If
+Else
+	Do $cinst().$displayError(kTrue,"Sorry, the text editor has been closed.  You can not add another field")
+End If
+Do $cwind.$setFocusOWrite

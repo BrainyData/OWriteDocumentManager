@@ -1,0 +1,39 @@
+;  before we can evaluate we must build the content text template so that
+;  our eval method does not have to do so much work. It is good for performance
+;  doing this here once. The template text will contain simple RTF for formatting
+;  and calculations to fill in the data. We will construct a calculation that can be
+;  used with evalf().
+Calculate rowNo as refPickListData.$line     ;; save the current line
+Begin text block
+Text: {con(}
+For refPickListData.$line from 1 to refPickListData.$linecount step 1
+	If refPickListData.Selected
+		Text: {pick(len(refDataList.[refPickListData.C2])=0,}
+		If refPickListData.LineFeed|refPickListData.Right
+			If refPickListData.Bold
+				If refPickListData.Right
+					Text: {con('\tab\b1 ',refDataList.[refPickListData.C2],'\b0\par ')}
+				Else
+					Text: {con('\b1 ',refDataList.[refPickListData.C2],'\b0\par ')}
+				End If
+			Else
+				If refPickListData.Right
+					Text: {con('\tab ',refDataList.[refPickListData.C2],'\par ')}
+				Else
+					Text: {con(refDataList.[refPickListData.C2],'\par ')}
+				End If
+			End If
+		Else
+			If refPickListData.Bold
+				Text: {con('\b1 ',refDataList.[refPickListData.C2],' \b0 ')}
+			Else
+				Text: {con(refDataList.[refPickListData.C2],' ')}
+			End If
+		End If
+		Text: {,''),}     ;; close pick()
+	End If
+End For
+Text: {'')}     ;; close outer con()
+End text block
+Get text block cInfoED.ContentCalc
+Calculate refPickListData.$line as rowNo

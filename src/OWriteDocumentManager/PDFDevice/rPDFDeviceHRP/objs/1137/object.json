@@ -1,0 +1,29 @@
+{
+	"ident": 1137,
+	"order": 69,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 18,
+		"fontstyle": "kBold",
+		"height": -1,
+		"left": 0.813,
+		"lineno": 3,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "Omnis Background Objects"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 18.486
+	}
+}

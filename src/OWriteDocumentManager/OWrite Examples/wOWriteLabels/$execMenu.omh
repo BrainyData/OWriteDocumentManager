@@ -1,0 +1,18 @@
+;  "Start Here`StartHere,Remove Duplicate &patrons`RemoveDuplicate,Remove this &patron`RemovePatron,Edit Details`EditDetails"
+If iPopupMenu.$doExecute
+	If pos("RestorePatron#",pMenuItem)
+		Calculate action as strtok(nam(pAction),'#')
+		Calculate seqNo as pAction
+		Do $cinst.$execAction(action,seqNo)
+	Else
+		Do $cinst.$execAction(pMenuItem)
+	End If
+	Quit method kTrue
+Else
+	Switch pMenuItem
+		Case 'StartHere'
+			Quit method iEvalStartPage=0
+		Default
+			Quit method kTrue
+	End Switch
+End If

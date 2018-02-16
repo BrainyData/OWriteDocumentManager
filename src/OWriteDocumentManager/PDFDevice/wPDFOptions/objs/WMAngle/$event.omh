@@ -1,0 +1,4 @@
+On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
+	If not(#CANCEL)
+		Do method checkRange ($cobj.$ref,ivParams.WMAngle,-90,90)
+	End If

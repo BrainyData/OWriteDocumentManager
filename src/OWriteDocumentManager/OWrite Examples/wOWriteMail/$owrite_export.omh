@@ -1,0 +1,68 @@
+;  this method is called by OWrite when objects need to be resolved for the given export format
+;  -- we can query $curobj... properties during this call
+If pExpFormat='html'     ;; resolve links and images for HTML export
+	Switch pExpType
+		Case 'href'
+			;  our links may contain calculations that evaluate to bookmarks in other documents
+			;  unless our calculation evaluates to a website url we shall ignore it
+			;       ;; get the click calculation from the calculated field
+			Calculate linkCalc as ivEdit.$curobjclickcalc     ;; CHANGE_V3A10 - we can now directly access the click calculation directly
+			;       ;; evaluate the calculation
+			Calculate linkResult as eval(linkCalc)
+			;       ;; is the result a proper url
+			If pos('http://',linkResult)
+				Quit method linkResult
+			Else
+				Quit method ''     ;; return empty href
+			End If
+		Case 'src'
+			;  the document contains a picture
+			;  get the image from the current object
+			Calculate pictData as ivEdit.$curobjresult     ;; $curobjresult always Returnｓ the data of the object , calculation or not
+			;  convert the image to JPEG (or other suitable format)
+			Calculate pictFormat as pictformat(pictData)
+			Calculate pictData as pictconvto(pictFormat,pictData,"JPEG")
+			;  check if we already have exported an identical image
+			;       ;; there is no need for duplicates we can simply return the src ref from a previous image if they are identical
+			;
+			;       ;; calculate our image checksum for a quick check
+			Calculate pictChecksum as binchecksum(pictData)
+			;       ;; check our list of image checksums
+			If ivPictChecksumList.$linecount
+				Do ivPictChecksumList.$search($ref.pictChecksum=pictChecksum,kTrue,kFalse,kFalse,kFalse) Returns ivPictChecksumList.$line
+				While ivPictChecksumList.$line
+					;  we found one that may match, now compare the actual image data
+					If bincompare(pictData,ivMimeList.[ivPictChecksumList.pictLineNo].lBinData)
+						;  the images match, return previous src reference
+						Quit method con('cid:',ivPictChecksumList.pictCID)
+					End If
+					;  see if there is another image with identical checksum
+					Do ivPictChecksumList.$search($ref.pictChecksum=pictChecksum,kFalse,kFalse,kFalse,kFalse) Returns ivPictChecksumList.$line
+				End While
+			Else
+				Do ivPictChecksumList.$define(pictChecksum,pictLineNo,pictCID)
+			End If
+			;  decide on a name
+			Calculate cvPictNum as cvPictNum+1
+			Calculate pictName as con('pict',cvPictNum,'.jpg')
+			;  make up a content id
+			;       ;; for in-lining images in an e-mail so it will work with all mail clients,
+			;       ;; our src tag must specify a content id and location instead of the image name
+			Calculate pictCID as con(int(#D),int(#T),'_',#CT,cvPictNum,"@local")     ;; the CID must be unique across all the clients mails
+			;  add info to our checksum list
+			Do ivPictChecksumList.$add(pictChecksum,ivMimeList.$linecount+1,pictCID)
+			;  now add the picture to our mime list
+			;       ;; the Omnis MIME list does not give as a column for the 'Content-ID' and 'Content-Location',
+			;       ;; so we need to squeeze it into the subtype column
+			;  we must seperate the content tags with chr(10)
+			If tvStudio4
+				Calculate pictSubType as con('jpeg',chr(13,10),'Content-ID: <',pictCID,'>')
+				Do ivMimeList.$add(1,'image',pictSubType,pictName,'',pictData,'','','inline')
+			Else
+				Calculate pictSubType as con('jpeg',chr(13,10),'Content-ID: <',pictCID,'>',chr(13,10),'Content-Location: <',pictName,'>')
+				Do ivMimeList.$add(1,'image',pictSubType,pictName,'',pictData,'','')
+			End If
+			;  return the content ID to OWrite for embedding in the src tag
+			Quit method con('cid:',pictCID)
+	End Switch
+End If

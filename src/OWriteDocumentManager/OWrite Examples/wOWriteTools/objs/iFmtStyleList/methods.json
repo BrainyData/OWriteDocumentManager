@@ -1,0 +1,59 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 16384,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "curProp",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "line",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "newStyleName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "redefinePropsRead",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"initval": "redefinePropsWrite",
+				"desc": "list of properties that are used when redefining a style from selection (used when reading properties)"
+			},
+			{
+				"name": "redefinePropsWrite",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"initval": "\"curalign,curbold,curfont,curfontsize,curhighlight,curitalic,curstrikethrough,curtextcolor,curunderline\"",
+				"desc": "list of properties that are used when redefining a style from selection (used when writing properties)"
+			},
+			{
+				"name": "redefineValues",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"desc": "variable for storing list of values during redefining a style "
+			}
+		]
+	}
+]

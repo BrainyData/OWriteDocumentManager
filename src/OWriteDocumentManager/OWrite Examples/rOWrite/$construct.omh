@@ -1,0 +1,21 @@
+If pOWrite
+	;  transfer pagesetup info from our document to the report instance
+	Do method loadPagesetupInfo (pOWrite.$ref)
+	If $cdevice().$name='Printer'
+		Do $cinst.$openjobsetup()
+	End If
+	;  load our instance vars for printing     ;; make sure we do not clear the modified flag
+	Calculate savedModified as pOWrite.$modified
+	Do pOWrite.$savedata(ivDocData,kWriFmtDefault,kTrue)     ;; last parameter tells OWrite to save results of calculations
+	Calculate pOWrite.$modified as savedModified
+	Calculate ivWatermarks as pOWrite.$watermarks
+	
+Else
+	Calculate ivDocData as pDocData
+	Do nvOWrite.$loaddata(ivDocData)
+	Do method loadPagesetupInfo (nvOWrite.$ref)
+End If
+Calculate ivDocName as pDocName
+;  print our document
+Do $cinst.$printrecord()
+Do $cinst.$endprint()

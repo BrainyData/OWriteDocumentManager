@@ -1,0 +1,43 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 2,
+	"designtaskname": "Startup_Task",
+	"nextident": 1027,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivFrmtObjText",
+			"order": 1,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "'Object'"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:46",
+		"desc": "OWrite: format menu for document manager example",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": false,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2015-09-03 11:32:05",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Format"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": "4.32.00"
+	}
+}

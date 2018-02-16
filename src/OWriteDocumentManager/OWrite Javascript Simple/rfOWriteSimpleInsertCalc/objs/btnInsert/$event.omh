@@ -1,0 +1,2 @@
+On evClick
+	Do $cwind.$objs.formInsertField.$insert(ivCalc,ivName,ivDisplay)

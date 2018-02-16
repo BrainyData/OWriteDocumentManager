@@ -1,0 +1,7 @@
+Test for window open {wTabPane}
+If flag true
+	Bring window instance to front wTabPane
+Else
+	Do $topwind.$close()
+	Open window instance wTabPane/CEN
+End If

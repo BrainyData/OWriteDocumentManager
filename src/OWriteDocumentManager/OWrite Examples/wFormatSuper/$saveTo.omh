@@ -1,0 +1,12 @@
+
+;  CHANGE_V3A12     ;; new method
+
+;  apply current properties to specified OWrite field
+Set reference saved_ref to $cinst.ivEditObjRef
+Set reference ivEditObjRef to pOWriteRef
+
+Calculate ivAlwaysSave as kTrue
+Do $cinst.$save()
+Calculate ivAlwaysSave as kFalse
+
+Set reference ivEditObjRef to saved_ref

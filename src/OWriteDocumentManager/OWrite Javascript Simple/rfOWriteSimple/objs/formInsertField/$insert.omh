@@ -1,0 +1,12 @@
+Calculate cfield as $cfield.$name
+JavaScript: console.log('$insert '+cfield);
+Calculate $cinst.$objs.formInsertField.$visible as kFalse
+
+;  prepare our object parameters for the call to OWrite.$insert
+Do $cinst.$objs.OWrite.$initparams(kWriObjTypeCalc) Returns params     ;; start a new set of parameters for inserting a calculated field
+;  specify the fields attributes
+Do $cinst.$objs.OWrite.$addparams(params,"ObjName",pName,"ObjCalc",pCalc,"ObjDisplay",pDisplay,"ObjFillColor",rgb(196,196,196))
+;  insert the object at current position
+JavaScript: console.log(params);
+Do $cinst.$objs.OWrite.$insert(kWriObjTypeCalc,params,kWriInsertOver,con("Insert",kWriObjTypeCalc)) Returns ok
+Quit method ok

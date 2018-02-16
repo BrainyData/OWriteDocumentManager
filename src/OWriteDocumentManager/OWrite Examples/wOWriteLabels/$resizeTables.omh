@@ -1,0 +1,5 @@
+;  put all code in here that can be used to resize objects and tables on a window when the window is resized
+;  should include a call to $resizeTable for at least 'iDataList' on this window
+
+Do method previewScale
+Do inherited

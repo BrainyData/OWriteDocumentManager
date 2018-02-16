@@ -1,0 +1,29 @@
+{
+	"ident": 1117,
+	"order": 46,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 12,
+		"fontstyle": "kPlain",
+		"height": 1.128,
+		"left": 2.54,
+		"lineno": 126,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "To reduce the overall size of PDF files, all page content streams and embedded font streams are compressed using “Deflate” compression."
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

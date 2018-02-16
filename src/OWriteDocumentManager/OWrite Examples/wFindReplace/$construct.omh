@@ -1,0 +1,17 @@
+;  IMPORTANT! This class requires the classes
+;       ;; mFormatFind, oOWriteSearch, wFindStyle, wFormatFont, wFormatParagraph and wFormatBullets
+
+;  transfer OWrite reference to our instance variable
+Set reference ivOWriteRef to pOWriteRef
+;  tell our menu instances which relates to find data, and which relates to replace data
+Do $cinst.$objs.Panes.$objs.FormatFind.$menuinst().$setisfind(kTrue)
+Do $cinst.$objs.Panes.$objs.FormatReplace.$menuinst().$setisfind(kFalse)
+;  tell our object classes which objects are to displace the find and replace strings
+Do cvFindObj.$setdisplay($cinst.$objs.Panes.$bobjs.1031.$ref)
+Do cvReplaceObj.$setdisplay($cinst.$objs.Panes.$bobjs.1032.$ref)
+;  set the current tab to the tab that was shown the last time the window was closed
+If pReadOnly
+	Do method $setreadonly (pReadOnly)
+Else
+	Calculate $cinst.$objs.Panes.$currenttab as cvCurrentTab
+End If

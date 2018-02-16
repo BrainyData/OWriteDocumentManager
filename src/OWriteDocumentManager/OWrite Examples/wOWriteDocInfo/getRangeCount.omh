@@ -1,0 +1,2 @@
+Do pOWriteRef.$convselection(selStart,selEnd,0,kWriSRDefault,pConvTo,kTrue)
+Quit method selEnd-selStart

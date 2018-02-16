@@ -1,0 +1,29 @@
+{
+	"ident": 1220,
+	"order": 42,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 3,
+		"fontextra": 0,
+		"fontsize": 12,
+		"fontstyle": "kPlain",
+		"height": 1.552,
+		"left": 2.504,
+		"lineno": 107,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "The security options allow the user to specify Owner and User passwords and control document permissions such as, can the document be printed or modified, can content be copied or extracted, etc.\r"
+		},
+		"textcolor": "kColorWindowText",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 16.299
+	}
+}

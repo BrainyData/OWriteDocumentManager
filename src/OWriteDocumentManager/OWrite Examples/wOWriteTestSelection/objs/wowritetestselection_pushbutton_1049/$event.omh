@@ -1,0 +1,5 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Calculate #1 as kWriSelectStart
+	Calculate #2 as kWriSelectEnd
+	Do ivOWrite.$convselection(#1,#2,0,kWriSRDefault,kWriSRRows) Returns #1
+	OK message  {[#2] rows}

@@ -1,0 +1,7 @@
+;  save template document to binary field
+Calculate savedModified as ivEdit.$modified
+Do ivEdit.$savedata(templateData)
+Calculate ivEdit.$modified as savedModified
+;  print the report, pass it the template document
+Set report name rOWriteMailMerge
+Print report {OWriteMailMerge (templateData,"Mail Merge Example")}

@@ -1,0 +1,27 @@
+Calculate savedPage as iEvalStartPage
+Calculate savedStatus as $root.$prefs.$macosprintstatus
+Set reference savedDevice to $cdevice()
+Calculate $cdevice as kDevPrinter
+Calculate $root.$prefs.$macosprintstatus as kFalse
+
+Calculate endPage as iEvalPageCount-1
+For iEvalStartPage from 0 to endPage step 1
+	Do method previewEval
+	Do method showMessage (con("Printing page ",iEvalStartPage+1," of ",iEvalPageCount))
+	Do refPreview.$::print("Address Labels",kTrue,iEvalStartPage<endPage) Returns err
+	If err
+		Break to end of loop
+	End If
+End For
+
+Calculate $root.$prefs.$macosprintstatus as savedStatus
+Calculate $cdevice as savedDevice
+Calculate iEvalStartPage as savedPage
+Do method previewEval
+
+If err
+	Quit method kFalse
+Else
+	Do method showMessage (con(iEvalPageCount," pages printed"))
+	Quit method kTrue
+End If

@@ -1,0 +1,23 @@
+{
+	"classtype": "kRemoteMenu",
+	"internalversion": 11,
+	"nextident": 1017,
+	"properties": {
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2015-12-16 08:27:57",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": false,
+		"moddate": "2016-10-03 12:54:49",
+		"showascheckedout": true,
+		"title": {
+			"type": 0,
+			"calc": "Insert"
+		},
+		"userinfo": "",
+		"version": ""
+	}
+}

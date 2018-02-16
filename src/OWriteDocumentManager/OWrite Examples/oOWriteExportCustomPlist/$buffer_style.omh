@@ -1,0 +1,65 @@
+
+If (pStyleNum>=kWriStyTxt_first)&(pStyleNum<=kWriStyTxt_last)
+	;  flags 1-11: text styles
+	Switch pStyleNum
+		Case kWriStyTxtFont
+			Quit method $cinst.$buffer_property("TxtFont","utf8",pStyleValue)
+		Case kWriStyTxtFontSize
+			Quit method $cinst.$buffer_property("TxtFontSize","integer",pStyleValue)
+		Case kWriStyTxtItalic
+			Quit method $cinst.$buffer_property("TxtItalic","bool",pStyleValue)
+		Case kWriStyTxtBold
+			Quit method $cinst.$buffer_property("TxtBold","bool",pStyleValue)
+		Case kWriStyTxtUnderline
+			Quit method $cinst.$buffer_property("TxtUnderline","bool",pStyleValue)
+		Case kWriStyTxtSuperscript
+			Quit method $cinst.$buffer_property("TxtSuperscript","bool",pStyleValue)
+		Case kWriStyTxtSubscript
+			Quit method $cinst.$buffer_property("TxtSubscript","bool",pStyleValue)
+		Case kWriStyTxtColor
+			Quit method $cinst.$buffer_property("TxtColor","color",pStyleValue)
+		Case kWriStyTxtStrike
+			Quit method $cinst.$buffer_property("TxtStrike","integer",pStyleValue)
+		Case kWriStyTxtHighlight
+			Quit method $cinst.$buffer_property("TxtHighlight","color",pStyleValue)
+		Case kWriStyTxtBookmark
+			Quit method $cinst.$buffer_property("TxtBookmark","utf8",pStyleValue)
+	End Switch
+Else If (pStyleNum>=kWriStyPara_first)&(pStyleNum<=kWriStyPara_last)
+	;  flags 33-42: paragraph styles
+	Switch pStyleNum
+		Case kWriStyParaLeftIndent
+			Quit method $cinst.$buffer_property("ParaLeftIndent","pridim",pStyleValue)
+		Case kWriStyParaRightIndent
+			Quit method $cinst.$buffer_property("ParaRightIndent","pridim",pStyleValue)
+		Case kWriStyParaFirstIndent
+			Quit method $cinst.$buffer_property("ParaFirstIndent","pridim",pStyleValue)
+		Case kWriStyParaLineSpacing
+			Quit method $cinst.$buffer_property("ParaLineSpacing","points",pStyleValue)
+		Case kWriStyParaJustification
+			Quit method $cinst.$buffer_property("ParaJustification",pickJustification,pStyleValue)
+		Case kWriStyParaTabs
+			Quit method $cinst.$buffer_property("ParaTabs","utf8",pStyleValue)
+		Case kWriStyParaSpaceBefore
+			Quit method $cinst.$buffer_property("ParaSpaceBefore","points",pStyleValue)
+		Case kWriStyParaSpaceAfter
+			Quit method $cinst.$buffer_property("ParaSpaceAfter","points",pStyleValue)
+		Case kWriStyParaListType
+			Quit method $cinst.$buffer_property("ParaListType",pickListType,pStyleValue)
+		Case kWriStyParaListStart
+			Quit method $cinst.$buffer_property("ParaListStart","integer",pStyleValue)
+	End Switch
+Else
+	;  flags 30-32: special style-run place holders
+	Switch pStyleNum
+		Case kWriStyObject
+			Quit method $cinst.$buffer_property("ObjMarker","data",pStyleValue)
+		Case kWriStyResult
+			Quit method $cinst.$buffer_property("ObjResult","data",pStyleValue)
+		Case kWriStySpell
+			Quit method $cinst.$buffer_property("SpellMarker","data",pStyleValue)
+	End Switch
+End If
+
+;  if we get here we have an unknown style
+Quit method $cinst.$buffer_property(con("unknown(",pStyleNum,")"),"data",pStyleValue)

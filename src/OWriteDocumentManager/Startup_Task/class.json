@@ -1,0 +1,173 @@
+{
+	"classtype": "kTask",
+	"internalversion": 21,
+	"tvardefs": [
+		{
+			"name": "OWRITE_TMP_VAR",
+			"order": 15,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000,
+			"desc": "Variable required by OWrite to use Omnis image conversion functions and evaluate tables"
+		},
+		{
+			"name": "tvCanDoBackgroundImage",
+			"order": 11,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "tvCanDoCustomExport",
+			"order": 12,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, OWrite supports saving document as list data for custom exports (requires version 3.5.0) CHANGE_2013_11_27_1"
+		},
+		{
+			"name": "tvCanDoOWriteWeb",
+			"order": 9,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, OWrite web component is available"
+		},
+		{
+			"name": "tvCanDoPDF",
+			"order": 8,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, PDF component is available"
+		},
+		{
+			"name": "tvCanDoSpell",
+			"order": 7,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, OSpell component is available"
+		},
+		{
+			"name": "tvDebug",
+			"order": 4,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "tvFontmapIsV2",
+			"order": 14,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse",
+			"desc": "if true, the loaded fontmap is pre-V3  ;; CHANGE_V3A12"
+		},
+		{
+			"name": "tvFontmapPath",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "tvIsUnicode",
+			"order": 10,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "bintoint32(bitand(binfromint32(sys(2)),binfromint32(16)))=16",
+			"desc": "if true, we are running unicode omnis"
+		},
+		{
+			"name": "tvOSpellChecker",
+			"order": 1,
+			"type": "kObjectref",
+			"subtype": "OSpell2.oSpellChecker",
+			"sublen": 0
+		},
+		{
+			"name": "tvOSpellGlossary",
+			"order": 17,
+			"type": "kObjectref",
+			"subtype": "OSpell2.oSpellGlossary",
+			"sublen": 0,
+			"desc": "global glossary object, must only have only one of those CHANGE_2014_06_11__1"
+		},
+		{
+			"name": "tvOSpellHandler",
+			"order": 2,
+			"type": "kObjectref",
+			"subtype": "OSpell2.oSpellHandler",
+			"sublen": 0
+		},
+		{
+			"name": "tvOWriteWebSupported",
+			"order": 5,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "tvStudio4",
+			"order": 6,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, we are running studio 4 or higher CHANGE_V3A8"
+		},
+		{
+			"name": "tvStudio5",
+			"order": 13,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, we are running stuido 5 or higher CHANGE_V3A8"
+		},
+		{
+			"name": "tvStudio6",
+			"order": 16,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, we are running studio 6 or higher CHANGE_2014_02_11__1"
+		}
+	],
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivExamplesName",
+			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivExamplesPath",
+			"order": 1,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:45",
+		"desc": "Startup:",
+		"editor": "",
+		"editordata": "",
+		"external": false,
+		"issupercomponent": false,
+		"moddate": "2018-02-16 07:36:40",
+		"showascheckedout": true,
+		"userinfo": "",
+		"version": "4.66.00"
+	}
+}

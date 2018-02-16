@@ -1,0 +1,26 @@
+
+On evFirstLoad     ;; load the document when the control is ready after initialization
+	Do $cinst.$objs.OWrite.$loaddata()
+	
+On evModified
+	Do $cinst.$objs.btnSaveChanges.$enabled.$assign(kTrue)
+	
+On evSaveData     ;; the save data task has been completed and all data is stored in ivDocument
+	;  see evAsyncDone for next action
+	;       ;; saving data is an async operation which generates an async event with the async id that was specified when $savedata was called
+	
+On evSaveDataError     ;; an error occured during the save data task
+	OK message Error {[pMessage] // [pStack]}
+	
+On evAsyncDone
+	Switch pAsyncId
+		Case 'save'
+			Do method $cinst.$serverSaveData
+		Case 'merge'
+			Do method $cinst.$serverMergeData
+		Case 'clear'
+			Do method $cinst.$serverClearData
+		Case 'print'
+			Do method $cinst.$serverPrintData
+	End Switch
+	Do $cinst.$objs.OWrite.$setfocus()     ;; new function to set focus to document in iframe

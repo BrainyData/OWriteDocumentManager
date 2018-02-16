@@ -1,0 +1,10 @@
+;  the list of styles has changed, update our styles list
+Do iFmtStyleList.$define(StyleName,Action)
+Do iFRefOWrite.$getstylelist(iFmtStyleList)
+Do iFmtStyleList.$sort($ref.C1,kFalse)
+;  add additional options
+Do iFmtStyleList.$add('',kStyleActionNone)
+Do iFmtStyleList.$add('Reformat Paragraph...',kStyleActionReformatParagraph)
+Do iFmtStyleList.$add('Redefine Style from Selection...',kStyleActionRedefineStyle)
+Do iFmtStyleList.$add('Create New Style...',kStyleActionAddNewStyle)
+Redraw (Refresh now) {iFmtStyleList}     ;; CHANGE_V3

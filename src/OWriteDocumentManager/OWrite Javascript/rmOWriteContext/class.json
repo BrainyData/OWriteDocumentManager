@@ -1,0 +1,23 @@
+{
+	"classtype": "kRemoteMenu",
+	"internalversion": 5,
+	"nextident": 1006,
+	"properties": {
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2015-12-16 21:36:25",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": false,
+		"moddate": "2017-03-03 13:49:11",
+		"showascheckedout": true,
+		"title": {
+			"type": 0,
+			"calc": "OWrite Context"
+		},
+		"userinfo": "",
+		"version": ""
+	}
+}

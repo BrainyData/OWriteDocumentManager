@@ -1,0 +1,13 @@
+If not(isnull(pValue))
+	If not(len(pOutText))
+		Calculate pOutText as con(pGroupText,' ')
+	End If
+	Calculate pValue as truergb(pValue)
+	Calculate red as bitand(pValue,255)
+	Calculate green as bitand(pValue,65280)/256
+	Calculate blue as bitand(pValue,16711680)/65536
+	Begin text block
+	Text: {[pOutText][pPrefix]rgb([red],[green],[blue])[pPostfix][', ']}
+	End text block
+	Get text block pOutText
+End If

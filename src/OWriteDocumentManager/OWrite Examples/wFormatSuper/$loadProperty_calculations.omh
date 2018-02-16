@@ -1,0 +1,28 @@
+
+;  CHANGE_V3A10 begins
+;  $curobjdata is now obsolete and has been replaced by seperate properties
+;  there are also now seperate calculations for data and clicking so a field can have both
+If pRefName.$ident
+	Do $cinst.$loadProperty(ivEditObjRef.$curobjname.$ref,pRefName)
+End If
+If pRefDisplay.$ident
+	Do $cinst.$loadProperty(ivEditObjRef.$curobjdisplay.$ref,pRefDisplay)
+End If
+If pRefGenClicks.$ident
+	Do $cinst.$loadProperty(ivEditObjRef.$curobjclicks.$ref,pRefGenClicks)
+End If
+;  convert old calculations at this point
+;  unconverted calcs return the same calculation for $curobjcalc and $curobjclickcalc
+;  so if both $curobjcalc and $curobjclickcalc return the same value we only load the
+;  click calc and ensure it is saved
+Calculate needsConversion as ivEditObjRef.$curobjcalc=ivEditObjRef.$curobjclickcalc
+If pRefDataCalc.$ident&not(needsConversion)
+	Do $cinst.$loadProperty(ivEditObjRef.$curobjcalc.$ref,pRefDataCalc)
+End If
+If pRefClickCalc.$ident
+	Do $cinst.$loadProperty(ivEditObjRef.$curobjclickcalc.$ref,pRefClickCalc)
+	If needsConversion     ;; make sure this property is forced to save
+		Calculate pFieldRef.$userinfo as '#NULL'
+	End If
+End If
+;  CHANGE_V3A10 ends

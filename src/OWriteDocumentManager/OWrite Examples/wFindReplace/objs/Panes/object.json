@@ -1,0 +1,84 @@
+{
+	"ident": 1019,
+	"order": 2,
+	"objtype": "kTabPane",
+	"properties": {
+		"active": true,
+		"alpha": 255,
+		"backcolor": "kColorWindow",
+		"backgroundtheme": "kBGThemeNone",
+		"backpattern": 0,
+		"candropcursor": 0,
+		"contextmenu": "",
+		"cursor": 0,
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"dragborder": false,
+		"dragiconid": 0,
+		"dragmode": "kNoDragging",
+		"dragrange": "kRangeAll",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"enabled": true,
+		"fieldstyle": "CtrlTabPane",
+		"font": 4,
+		"fontsize": 9,
+		"fontstyle": "kPlain",
+		"forecolor": "kColor3DFace",
+		"height": 251,
+		"helpfile": 0,
+		"imagenoroom": false,
+		"keyevents": false,
+		"left": 16,
+		"mouseevents": false,
+		"multirow": false,
+		"nodropcursor": 0,
+		"objlink": 0,
+		"rmouseevents": false,
+		"selectedtabcolor": "kColorDefault",
+		"showfocus": false,
+		"showimages": false,
+		"statusevents": false,
+		"tabcolor": "kColorDefault",
+		"taborient": "kTopTabs",
+		"tabstyle": "kDefaultPanes",
+		"textcolor": "kColorWindowText",
+		"tooltip": "",
+		"top": 14,
+		"userinfo": "",
+		"visible": true,
+		"width": 392
+	},
+	"multivalueproperties": {
+		"properties": [
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Find"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			},
+			{
+				"tabcaption": {
+					"type": 0,
+					"calc": "Replace"
+				},
+				"tabiconid": 0,
+				"tabtooltip": ""
+			}
+		]
+	},
+	"allpanes": [
+		1016,
+		1031,
+		1018,
+		1022,
+		1026,
+		1027,
+		1033,
+		1034,
+		1037
+	]
+}

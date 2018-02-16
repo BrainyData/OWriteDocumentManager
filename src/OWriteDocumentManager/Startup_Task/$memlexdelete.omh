@@ -1,0 +1,8 @@
+Begin reversible block
+	Set read/write files {fDictionaries}     ;; CHANGE_2014_10_16__1
+	Set main file {fDictionaries}
+End reversible block
+Single file find on fDictionaries.name (Exact match) {pLexName}
+If flag true
+	Delete
+End If

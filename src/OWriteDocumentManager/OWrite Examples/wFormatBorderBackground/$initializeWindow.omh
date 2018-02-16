@@ -1,0 +1,5 @@
+;  overide this method to initialize the window     ;; called by $construct
+;       ;; you must call the inherited method
+
+Do inherited
+Do method buildLists (kWriTblApplyCells)

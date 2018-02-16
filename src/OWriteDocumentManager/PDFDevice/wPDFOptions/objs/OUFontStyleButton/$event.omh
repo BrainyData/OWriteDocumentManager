@@ -1,0 +1,7 @@
+On evMouseDown     ;; Event Parameters - pRow( Itemreference )
+	Calculate rowsHeight as 24*($cinst.$objs.TabPane.$objs.OUInfo.$line-$cinst.$objs.TabPane.$objs.OUInfo.$vscroll)
+	Calculate left as $cinst.$left+296
+	Calculate top as $cinst.$top+138+rowsHeight
+	Open window instance wPDFPickStyle/PDFPickStyle/[left]/[top] (ivParams.Outlines.FontStyle)
+	Do $cinst.$objs.TabPane.$objs.OUInfo.$bobjs.1112.$redraw()
+	Quit event handler (Discard event)

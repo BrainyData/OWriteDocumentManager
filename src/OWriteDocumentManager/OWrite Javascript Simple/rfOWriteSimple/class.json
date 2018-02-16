@@ -1,0 +1,137 @@
+{
+	"classtype": "kRemoteForm",
+	"internalversion": 486,
+	"designtaskname": "rtOWriteSimple",
+	"nextident": 1023,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cvFontList",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvSavedDocument",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Last save action will store document here for loading on a refresh"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivDocument",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivFontList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivOWriteSimple",
+			"order": 3,
+			"type": "kObject",
+			"subtype": "objOWriteSimple",
+			"sublen": 0
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"alwaysenabledobject": "",
+		"animatelayouttransitions": false,
+		"backalpha": 255,
+		"backcolor": "RGB(255,255,255)",
+		"backpattern": 0,
+		"cancelkeyobject": "",
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2017-09-04 11:51:22",
+		"defaultappearance": "kAppearanceiOS",
+		"desc": "",
+		"designshowmobiletitle": true,
+		"disabledefaultcontextmenu": false,
+		"editor": "",
+		"editordata": "",
+		"events": "",
+		"external": true,
+		"forecolor": "RGB(255,255,255)",
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issupercomponent": false,
+		"layouttype": "kLayoutTypeScreen",
+		"left": 138,
+		"moddate": "2018-02-08 22:29:01",
+		"okkeyobject": "",
+		"resizemode": "kJSformResizeModeNone",
+		"screensize": "kSSZDesktop",
+		"serverlessclient": false,
+		"showascheckedout": true,
+		"showgrid": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"title": {
+			"type": 0,
+			"calc": "Simple OWrite Form"
+		},
+		"top": 143,
+		"userinfo": "",
+		"version": "",
+		"vertgrid": 8,
+		"vertscroll": false
+	},
+	"screensizes": [
+		{
+			"name": "kSSZDesktop",
+			"width": 1024,
+			"height": 521
+		},
+		{
+			"name": "kSSZjs320x480Portrait",
+			"width": 320,
+			"height": 460
+		},
+		{
+			"name": "kSSZjs320x480Landscape",
+			"width": 480,
+			"height": 300
+		},
+		{
+			"name": "kSSZjs768x1024Portrait",
+			"width": 768,
+			"height": 1004
+		},
+		{
+			"name": "kSSZjs768x1024Landscape",
+			"width": 1024,
+			"height": 748
+		},
+		{
+			"name": "kSSZjs345x345",
+			"width": 345,
+			"height": 325
+		},
+		{
+			"name": "kSSZjs360x640Portrait",
+			"width": 360,
+			"height": 620
+		},
+		{
+			"name": "kSSZjs360x640Landscape",
+			"width": 640,
+			"height": 340
+		}
+	]
+}

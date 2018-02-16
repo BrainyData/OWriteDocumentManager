@@ -1,0 +1,2 @@
+;  remember the current tab
+Calculate cvCurrentTab as $cinst.$objs.Panes.$currenttab

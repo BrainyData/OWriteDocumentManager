@@ -1,0 +1,30 @@
+{
+	"ident": 1016,
+	"order": 16386,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFleftRight",
+		"fieldstyle": "stdPromptField",
+		"font": 5,
+		"fontsize": 13,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 16,
+		"left": 429,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#Label Content"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 6,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 101
+	}
+}

@@ -1,0 +1,19 @@
+;  build list of documents in our database
+Begin reversible block
+	Set main file {fOWriteDoc}
+	Set current list ivDocumentsList
+End reversible block
+Do ivDocumentsList.$define(fOWriteDoc.seq,fOWriteDoc.order,fOWriteDoc.name)
+If len(pGroup)
+	Set search as calculation {fOWriteDoc.group=pGroup}
+	Build list from file on fOWriteDoc.order (Use search)
+Else
+	Build list from file on fOWriteDoc.order
+End If
+;  load requested record
+If pSeq
+	Do ivDocumentsList.$search($ref.seq=pSeq,kTrue,kFalse,kFalse,kFalse) Returns ivDocumentsList.$line
+Else
+	Calculate ivDocumentsList.$line as 1
+End If
+Redraw {DocumentList}

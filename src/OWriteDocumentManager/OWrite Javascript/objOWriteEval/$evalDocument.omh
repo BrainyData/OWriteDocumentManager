@@ -1,0 +1,19 @@
+;  called by remote form when a document requires evaluating (merging with Omnis data)
+;  this object implements various notation methods that may have been embeded in documents as calculations
+
+;  load some sample data
+Do method loadSampleData
+
+;  load the document data (clears the $modified flag)
+Do $cinst.$loaddata(pInOutOWriteData,kWriFmtDefault,kFalse,kWriSaveAsList,pSaveAsList,kWriSaveRawPicts,pSaveRawPicts)
+
+;  evaluate the document
+Do $cinst.$evalcalcs.$assign(kTrue)
+
+;  see if the document was altered
+If $cinst.$modified
+	Do $cinst.$savedata(pInOutOWriteData,kWriFmtDefault,pMakeDataPermanent,kWriSaveAsList,pSaveAsList,kWriSaveRawPicts,pSaveRawPicts)
+	Quit method kTrue
+Else
+	Quit method kFalse
+End If

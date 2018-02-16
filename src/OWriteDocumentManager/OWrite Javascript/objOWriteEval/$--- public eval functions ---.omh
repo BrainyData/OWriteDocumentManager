@@ -1,0 +1,4 @@
+;  --- these methods are typically called by the interface, i.e. remote form or desktop window ---
+
+;  $evalClickCalc
+;       ;; this method is typically called when a user clicks a clickable field in an OWrite document

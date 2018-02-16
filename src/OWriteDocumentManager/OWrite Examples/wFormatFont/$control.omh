@@ -1,0 +1,11 @@
+
+On evClick,evAfter
+	Do inherited
+	If $cobj.$objtype=kCombo
+		Calculate [$cobj.$dataname] as $cobj.$contents
+	End If
+	Do refPreview.$update()
+	Quit event handler (Pass to next handler)
+On default
+	Do inherited
+	Quit event handler (Pass to next handler)

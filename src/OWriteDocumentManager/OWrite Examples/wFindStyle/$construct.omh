@@ -1,0 +1,6 @@
+;  Enter your initialization code here
+Set reference ivEditObjRef to pEditObjRef.$ref
+Do ivStyleList.$define(ivStyleName)
+Do pOWriteRef.$getstylelist(ivStyleList)
+Do ivStyleList.$sort($ref.ivStyleName,kFalse)
+Do method load

@@ -1,0 +1,20 @@
+If ivFmtStyle=kWriObjFmtWrap|ivFmtStyle=kWriObjFmtSplit
+	Enable fields {WDTop,WDBottom}
+	If ivFmtStyle=kWriObjFmtWrap
+		Enable fields {WDLeft,WDRight}
+		Calculate refWDLeft.$fieldstyle as 'CtrlEditText'
+		Calculate refWDRight.$fieldstyle as 'CtrlEditText'
+	Else
+		Disable fields {WDLeft,WDRight}
+		Calculate refWDLeft.$fieldstyle as 'CtrlEditTextDis'
+		Calculate refWDRight.$fieldstyle as 'CtrlEditTextDis'
+	End If
+	Calculate refWDTop.$fieldstyle as 'CtrlEditText'
+	Calculate refWDBottom.$fieldstyle as 'CtrlEditText'
+Else
+	Disable fields {WDLeft,WDTop,WDRight,WDBottom}
+	Calculate refWDLeft.$fieldstyle as 'CtrlEditTextDis'
+	Calculate refWDTop.$fieldstyle as 'CtrlEditTextDis'
+	Calculate refWDRight.$fieldstyle as 'CtrlEditTextDis'
+	Calculate refWDBottom.$fieldstyle as 'CtrlEditTextDis'
+End If

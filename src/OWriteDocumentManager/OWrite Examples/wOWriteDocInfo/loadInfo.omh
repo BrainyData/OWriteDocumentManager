@@ -1,0 +1,12 @@
+Calculate ivDocName as pDocName
+
+Do method getRangeCount (pOWriteRef,kWriSRChars) Returns ivCharCount
+Do method getRangeCount (pOWriteRef,kWriSRWords) Returns ivWordCount
+Do method getRangeCount (pOWriteRef,kWriSRRows) Returns ivRowCount
+Do method getRangeCount (pOWriteRef,kWriSRSentences) Returns ivSentenceCount
+Do method getRangeCount (pOWriteRef,kWriSRParagraphs) Returns ivParagraphCount
+Do method getRangeCount (pOWriteRef,kWriSRPages) Returns ivPageCount
+
+Calculate ivCharsPerWord as ivCharCount/ivWordCount
+Calculate ivWordsPerSentence as ivWordCount/ivSentenceCount
+Calculate ivSentencePerParagraph as ivSentenceCount/ivParagraphCount

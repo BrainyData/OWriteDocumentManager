@@ -1,0 +1,101 @@
+;  clear the document and insert a new table
+
+Do method enablePreview
+
+Do refPreview.$evalcalcs.$assign(kFalse)
+Do refPreview.$loaddata(empty_bin)     ;; this clears the document
+
+;  apply our mode of measure from our label data
+Calculate savedCms as $root.$prefs.$usecms
+Calculate $root.$prefs.$usecms as cInfoED.PaperCms
+Calculate refPreview.$showcms as cInfoED.PaperCms
+
+;  setup our style     ;; by default "Arial 12pt"
+Do refPreview.$curstylename.$assign("Normal")
+Do refPreview.$editstylename.$assign("Normal")
+Do refPreview.$curfont.$assign(cInfoED.FontName)
+Do refPreview.$curfontsize.$assign(cInfoED.FontSize)
+Do refPreview.$curbold.$assign(cInfoED.FontBold)
+Do refPreview.$curitalic.$assign(cInfoED.FontItalic)
+Do refPreview.$editstylename.$assign("")
+
+;  apply paper and margins
+Calculate refPreview.$::paper as cInfoED.PaperType
+If cInfoED.PaperType=kPaCustom
+	Calculate refPreview.$::paperwidth as cInfoED.PaperWidth
+	Calculate refPreview.$::paperlength as cInfoED.PaperHeight
+End If
+Calculate refPreview.$::orientation as cInfoED.PaperOrient+1
+Calculate refPreview.$::leftmargin as cInfoED.PaperMarginLeft
+Calculate refPreview.$::topmargin as cInfoED.PaperMarginTop
+Calculate refPreview.$::rightmargin as cInfoED.PaperMarginRight
+Calculate refPreview.$::bottommargin as 0     ;; no need to have a bottom margin, solves issues with last row
+
+;  disable updates while we work on the table
+Do refPreview.$holdupdates.$assign(kTrue)
+
+;  insert the table
+Calculate tableCalc as "Labels;$cinst.$evalGetLabelList"
+Calculate rowCount as pick(cInfoED.LabelGutterVert>0,cInfoED.LabelsDown,cInfoED.LabelsDown*2-1)     ;; only q row
+Calculate colCount as pick(cInfoED.LabelGutterHorz>0,cInfoED.LabelsAcross,cInfoED.LabelsAcross*2-1)
+Calculate rowHeight as cInfoED.LabelHeight
+Calculate colWidth as cInfoED.LabelWidth
+Do refPreview.$::insert(kWriObjTypeTable,tableCalc,kWriBordNone,kWriLineSolid,kBlack,1.00,colCount,rowCount,0.5,0.5)     ;; specify zero col width&height, we will set the proper size below
+;  remember selection for the first cell
+Do refPreview.$getselection(selFirst,selLast,selObjID)
+
+;  set the column width
+;  Do ref_Preview.$setselection(selFirst,selLast,selObjID)
+For colNo from 1 to colCount step 1
+	If cInfoED.LabelGutterHorz>0&mod(colNo,2)=0
+		;  this is a gutter
+		Do refPreview.$curtblcolumnwidth.$assign(cInfoED.LabelGutterHorz)
+	Else
+		Do refPreview.$curtblcolumnwidth.$assign(cInfoED.LabelWidth)
+	End If
+	Do refPreview.$tableaction(kWriTblActNextCell,kTrue)
+End For
+;  set the row height
+Do refPreview.$setselection(selFirst,selLast,selObjID)
+For rowNo from 1 to rowCount step 1
+	If cInfoED.LabelGutterVert>0&mod(rowNo,2)=0
+		;  this is a gutter
+		Calculate refPreview.$curfontsize as 1     ;; this allows us to make the row height small
+		Calculate refPreview.$curtblrowheight as cInfoED.LabelGutterVert
+	Else
+		Calculate refPreview.$curtblrowheight as cInfoED.LabelHeight
+	End If
+	Do refPreview.$tableaction(kWriTblActNextRow,kTrue)
+End For
+;  assign the cell calculations and margins
+Do refPreview.$setselection(selFirst,selLast,selObjID)
+Calculate labelNo as 1
+For rowNo from 1 to rowCount step 1
+	For colNo from 1 to colCount step 1
+		If (cInfoED.LabelGutterVert>0&mod(rowNo,2)=0)|(cInfoED.LabelGutterHorz>0&mod(colNo,2)=0)
+			;  skip gutter
+		Else
+			Calculate refPreview.$curstylename as "Normal"
+			Calculate refPreview.$curobjdata as con('Col',colNo,';$cinst.$evalGetLabelData(',labelNo,')')
+			Calculate refPreview.$curobjtopmargin as cInfoED.ContentMargin
+			Calculate refPreview.$curobjleftmargin as cInfoED.ContentMargin
+			Calculate refPreview.$curobjbottommargin as cInfoED.ContentMargin
+			Calculate refPreview.$curobjrightmargin as cInfoED.ContentMargin
+			Calculate refPreview.$curobjautosize as kFalse     ;; labels must not resize to fit data
+			Calculate labelNo as labelNo+1
+		End If
+		Do refPreview.$tableaction(kWriTblActNextCell,kTrue)
+	End For
+End For
+Do refPreview.$holdupdates.$assign(kFalse)
+
+Calculate iEvalLabelsPerPage as cInfoED.LabelsDown*cInfoED.LabelsAcross
+Calculate iEvalPageCount as int((refDataList.$linecount*cInfoED.ContentCopies+iEvalStartLabel+iEvalLabelsPerPage-1)/iEvalLabelsPerPage)
+Do $cinst.$setButtons()
+
+;  restore cms
+Calculate $root.$prefs.$usecms as savedCms
+
+;  evaluate
+Do method previewEval
+Do method disablePreview

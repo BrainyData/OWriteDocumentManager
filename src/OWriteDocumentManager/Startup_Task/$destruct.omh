@@ -1,0 +1,5 @@
+;  destruct our examples and components
+Do method destruct_OWrite
+Do method destruct_OSpell2
+Do method destruct_PDFDevice
+Do method destruct_examples

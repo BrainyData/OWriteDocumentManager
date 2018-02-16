@@ -1,0 +1,30 @@
+{
+	"ident": 1021,
+	"order": 16390,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColor3DFace",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlInfo",
+		"font": 10,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 73,
+		"left": 214,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "This window changes the default PDF creator and producer.\rDefault is for example\r/Creator (Omnis Studio)\r/Producer (Brainy Data PDFDevice v2.1.5 for MacOSX)"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 7,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 390
+	}
+}

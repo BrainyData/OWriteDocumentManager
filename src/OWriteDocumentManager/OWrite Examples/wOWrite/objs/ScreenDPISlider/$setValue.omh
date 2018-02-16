@@ -1,0 +1,1 @@
+Calculate refScreenDPISlider.$val as pick(ivScreenDPIList.ivScreenDPI=kWriScrDPIDefault,ivScreenDPIList.ivScreenDPI,sys(87))

@@ -1,0 +1,6 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	If cvPrintSelected
+		Do method loadSelected
+	End If
+	Do method print
+	Queue close [$cwind().$name]

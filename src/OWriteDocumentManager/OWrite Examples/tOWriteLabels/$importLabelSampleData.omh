@@ -1,0 +1,34 @@
+;  import label data from a tab delimited text file
+;  the first line must contain the field names
+
+Do theFile.$openfile(pFilePath,kTrue) Returns #F
+If flag true
+	Do theFile.$readfile(theData)
+	Do theFile.$closefile()
+	
+	Do cvSamplePickList.$define(Description,ColumnName,Selected,LineFeed,Right,Bold,LongDescription)
+	Do cvSampleData.$define()
+	Calculate theData as replaceall(theData,chr(13,10),chr(13))
+	Calculate theData as replaceall(theData,chr(10,13),chr(13))
+	;  get the record column names and define the lists
+	Calculate theRec as strtok('theData',chr(13))
+	While len(theRec)
+		Calculate theValue as strtok('theRec',chr(kTab))
+		Calculate theDescription as cap(replaceall(theValue,'_',' '))
+		Do cvSamplePickList.$add(theDescription,theValue,_Selected_,_LF_,_Left_,_Plain_,theDescription)
+		Do cvSampleData.$cols.$add('col_name',kCharacter,kSimplechar,100) Returns refCol
+		Calculate refCol.$name as theValue
+	End While
+	;  load the data
+	While len(theData)
+		Calculate theRec as strtok('theData',chr(13))
+		Calculate cnt as 1
+		Do cvSampleData.$add()
+		Calculate cvSampleData.$line as cvSampleData.$linecount
+		While len(theRec)
+			Calculate theValue as strtok('theRec',chr(kTab))
+			Calculate cvSampleData.C[cnt] as theValue
+			Calculate cnt as cnt+1
+		End While
+	End While
+End If

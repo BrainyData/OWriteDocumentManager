@@ -1,0 +1,12 @@
+Calculate firstSel as min(ivEdit.$firstsel,ivEdit.$lastsel)
+Calculate lastSel as max(ivEdit.$firstsel,ivEdit.$lastsel)
+Calculate selID as ivEdit.$curobjid
+If firstSel<>lastSel
+	Do ivEdit.$savedata(txt,kWriFmtText,kFalse,kWriSaveSelection,kTrue)
+	Calculate txt1 as con(txt,";~'undefined'")     ;; CHANGE_V3A10
+Else
+	Calculate txt1 as "{noname};~'undefined'"     ;; CHANGE_V3A10
+End If
+Do ivEdit.$::insert(kWriObjTypeCalc,txt1)
+Do ivEdit.$setselection(firstSel,firstSel+1,selID)     ;; make sure the object is selected for formatting
+Open window instance wFormatDocLink/CEN (ivEdit,txt,ivDocumentsList)

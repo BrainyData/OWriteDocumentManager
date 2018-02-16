@@ -1,0 +1,7 @@
+
+Set reference iWRefOWrite to pOWriteWindow
+Set reference iFRefOWrite to pOWriteField
+Calculate iType as pType
+Do iFieldList.$define(iFileName,iFieldName,iFieldDescription,iStripEmptyLines,iFieldDefinition,iSimpleCriteria)
+Do method buildCategoryList (iType)
+Do method buildFieldList (iType)

@@ -1,0 +1,13 @@
+Find first
+While flag true
+	If binlength(fOWriteDoc.data)
+		If binlength(fOWriteDoc.listData)
+			Prepare for edit
+			Calculate fOWriteDoc.listData as #NULL
+			Update files
+		End If
+	Else
+		Delete
+	End If
+	Next
+End While

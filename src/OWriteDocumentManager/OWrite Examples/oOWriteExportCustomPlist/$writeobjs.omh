@@ -1,0 +1,51 @@
+;  PURPOSE:     ;; main method for exporting document objects
+;  USAGE:     ;; called by ...$writedoc and ...$writeobjs_para
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for the export of document objects
+;  IMPLEMENTS:     ;; iterates a list of document objects and calls the appropriate export methods based on object type
+
+
+;  write object array ---
+If pObjs.$linecount
+	
+	;  --- start Omnis TEXT buffer
+	Do method $cinst.$buffer_start Returns #F
+	If flag true
+		
+		;  --- write the array header
+		Text: {[ivIndent]<key>[pick(pGroupType,'Children','HFObjects','DocObjects','BoxObjects','CellObjects','RowObjects')]</key>} (Linefeed)
+		Text: {[ivIndent]<array>} (Linefeed)
+		Do method Indent (kTrue)
+		
+		;  --- close Omnis text buffer     ;; writes buffer to output
+		Do method $cinst.$buffer_end Returns #F
+	End If
+	
+	
+	;  call superclass to iterate and export objects ---
+	Do $inherited.$writeobjs(pObjs,pGroupType) Returns #F
+	If flag false
+		Quit method kFalse
+	End If
+	
+	
+	;  close our XML object array ---
+	
+	;  --- start Omnis TEXT buffer
+	Do method $cinst.$buffer_start Returns #F
+	If flag true
+		
+		;  --- close array
+		Do method Indent (kFalse)
+		Text: {[ivIndent]</array>} (Linefeed)
+		
+		;  --- close Omnis text buffer     ;; writes buffer to output
+		Do method $cinst.$buffer_end Returns #F
+	End If
+	
+	Quit method #F
+	
+Else
+	
+	Quit method kTrue
+	
+End If

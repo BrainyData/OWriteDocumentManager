@@ -1,0 +1,1 @@
+Quit method totc(OWRITE_TMP_VAR,pick($ref.$ident<=OWRITE_TMP_VAR.$line,0,OWRITE_TMP_VAR.seq))

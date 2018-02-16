@@ -1,0 +1,14 @@
+;  this shows the record count in the first help pane.  Replace if you want something else in that pane
+
+Calculate cnt as refDataList.$linecount*cInfoED.ContentCopies
+If cnt>0
+	Calculate fst as pick(iEvalStartPage>0,1,iEvalStartPage*iEvalLabelsPerPage-iEvalStartLabel+1)
+	Calculate lst as fst+pick(iEvalStartPage>0,iEvalLabelsPerPage-iEvalStartLabel,iEvalLabelsPerPage)-1
+	If lst>cnt
+		Calculate lst as cnt
+	End If
+	Calculate refRecordCountPane.$text as con('Page ',iEvalStartPage+1,' of ',iEvalPageCount,' (Labels ',fst,'-',lst,' of ',cnt,')')
+Else
+	Calculate refRecordCountPane.$text as 'no labels to print'
+End If
+;  Do $cinst.$setRecordPaneWidth

@@ -1,0 +1,38 @@
+[
+	{
+		"name": "name",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "name",
+				"fieldlength": 30,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "order",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "order",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "group",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "group",
+				"fieldlength": 30,
+				"uppercase": false
+			}
+		]
+	}
+]

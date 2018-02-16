@@ -1,0 +1,17 @@
+;  PURPOSE:     ;; main method for exporting document styles (super styles)
+;  USAGE:     ;; this method is called by ...$writedoc
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for document styles
+;  IMPLEMENTS:     ;; iterates the list of document styles and calls ...$writestyles for each
+
+
+For pDocStyles.$line from 1 to pDocStyles.$linecount step 1
+	Do method $cinst.$writestyles (pDocStyles,kTrue) Returns #F
+	If flag false
+		Quit method kFalse
+	End If
+End For
+
+Quit method kTrue
+
+;  copy and paste line to your method to inherit parameters
+Send to trace log {[pDocStyles]}

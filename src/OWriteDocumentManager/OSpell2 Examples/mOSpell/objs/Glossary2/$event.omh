@@ -1,0 +1,7 @@
+Test for window open {wGlossary}
+If flag true
+	Bring window instance to front wGlossary
+Else
+	Do $topwind.$close()
+	Open window instance wGlossary/CEN
+End If

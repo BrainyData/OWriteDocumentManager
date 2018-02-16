@@ -1,0 +1,2 @@
+;  start our glossary demonstration
+Do tvOSpellGlossary.$setfield(ivEdit)     ;; CHANGE_2014_06_11__1

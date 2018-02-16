@@ -1,0 +1,30 @@
+{
+	"ident": 1031,
+	"order": 16388,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 6,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 39,
+		"left": 138,
+		"objlink": 65538,
+		"text": {
+			"type": 14,
+			"calc": "[cvFindFormatText]"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 32,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 235
+	}
+}

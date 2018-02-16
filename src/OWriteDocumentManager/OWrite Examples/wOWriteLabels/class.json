@@ -1,0 +1,335 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 3,
+	"designtaskname": "Startup_Task",
+	"nextident": 1123,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cCurLabel",
+			"order": 3,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "cFontList",
+			"order": 6,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cFontSizeList",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cInfo",
+			"order": 1,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Master label info (label type, size etc)"
+		},
+		{
+			"name": "cInfoED",
+			"order": 2,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Edit label info, the fields are linked to columns in this row"
+		},
+		{
+			"name": "cPaperList",
+			"order": 4,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "kLabelTypeCustom",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 30,
+			"initval": "'Custom'"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "iEvalCurLabel",
+			"order": 12,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "the true data index into iDataList"
+		},
+		{
+			"name": "iEvalLabelsPerPage",
+			"order": 19,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "21"
+		},
+		{
+			"name": "iEvalPageCount",
+			"order": 16,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "1"
+		},
+		{
+			"name": "iEvalStartLabel",
+			"order": 13,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0",
+			"desc": "zero = start at first label on first page"
+		},
+		{
+			"name": "iEvalStartPage",
+			"order": 18,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0",
+			"desc": "zero = start with first page"
+		},
+		{
+			"name": "iFontName",
+			"order": 14,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFontSize",
+			"order": 15,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iImportDataList",
+			"order": 9,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iImportPickList",
+			"order": 22,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iInModTest",
+			"order": 17,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "iLabelsList",
+			"order": 24,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iPaper",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iPaperDesc",
+			"order": 6,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iPopupMenu",
+			"order": 20,
+			"type": "kObject",
+			"subtype": "oPopupMenu",
+			"sublen": 0
+		},
+		{
+			"name": "refDataList",
+			"order": 2,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "refHelpPane",
+			"order": 7,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cwind.$statusbar.$panes.2"
+		},
+		{
+			"name": "refPickList",
+			"order": 10,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.PickList"
+		},
+		{
+			"name": "refPickListData",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "refPickListDown",
+			"order": 21,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.PickListDown"
+		},
+		{
+			"name": "refPickListUp",
+			"order": 11,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.PickListUp"
+		},
+		{
+			"name": "refPreview",
+			"order": 4,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Preview"
+		},
+		{
+			"name": "refRecordCountPane",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cwind.$statusbar.$panes.1"
+		},
+		{
+			"name": "refToolbar",
+			"order": 8,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cwind.$toolbars.tbOWriteLabels"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2010-04-23 14:07:52",
+		"desc": "OWrite: *** Label Example ***",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": true,
+		"forecolor": "kColor3DFace",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": true,
+		"height": 617,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 118,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2018-02-08 23:05:52",
+		"modelessdata": true,
+		"showascheckedout": true,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": {
+			"type": 0,
+			"calc": "OWrite Label Example"
+		},
+		"toolbarnames": "tbOWriteLabels",
+		"toolbaroptions": "kTBOptionShowText",
+		"toolbarpos": "kDockingAreaTop",
+		"top": 587,
+		"userinfo": "",
+		"usesheets": true,
+		"version": "4.00.09",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 746,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": -1
+		},
+		"panes": [
+			{
+				"align": "kLeftJst",
+				"effect": "kBorderPlain",
+				"hasborder": false,
+				"hassep": false,
+				"sizing": "kFixed",
+				"width": 295
+			},
+			{
+				"align": "kLeftJst",
+				"effect": "kBorderInset",
+				"hasborder": false,
+				"hassep": false,
+				"sizing": "kElastic",
+				"width": 395
+			}
+		]
+	}
+}

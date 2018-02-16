@@ -1,0 +1,9 @@
+;  enable/disable our menu lines
+Calculate $cinst.$objs.Style.$enabled as $topwind.$canformat('Style')
+Calculate $cinst.$objs.Font.$enabled as $topwind.$canformat('Font')
+Calculate $cinst.$objs.Paragraph.$enabled as $topwind.$canformat('Para')
+Calculate $cinst.$objs.Numbering.$enabled as $topwind.$canformat('Num')
+Calculate $cinst.$objs.PageSize.$enabled as $topwind.$canformat('Page')
+;  Setup our Format object line
+Do $topwind.$getcurobjmenuname(ivFrmtObjText) Returns $cinst.$objs.Object.$enabled
+Calculate $cinst.$objs.Object.$text as con('Format ',ivFrmtObjText)

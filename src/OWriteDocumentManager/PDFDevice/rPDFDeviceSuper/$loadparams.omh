@@ -1,0 +1,19 @@
+;  load PDF parameters into instance variable
+Calculate ivPDFParams as $devices.[kDevPdf].$getparam(kDevPdfAll)
+;  we can now change our device parameters for this report instance without affecting global settings
+;  for this example we will set the destination name and outline details
+;       ;; set destination name
+If pAssignFileName     ;; this indicates that we are printing multiple reports, file name must have been calculated prior
+	Do FileOps.$splitpathname($clib.$pathname,_drive,_dir,_file,_ext)
+	Calculate ivFileName as con(_drive,_dir,$cinst().$name,'.pdf')
+	Calculate ivPDFParams.[kDevPdfFileName] as ivFileName
+	Calculate ivPrompt as kTrue
+End If
+;       ;; set outline details for our report
+Calculate outlines as ivPDFParams.[kDevPdfOutlines]     ;; get the defined list from device parms
+Do outlines.$clear()     ;; clear out existing settings
+Do outlines.$add('Times New Roman',18,kBold)     ;; text settings for Root level bookmarks
+Do outlines.$add('Times New Roman',15,kBold)     ;; text settings for level 2 bookmarks
+Calculate ivPDFParams.[kDevPdfOutlines] as outlines
+;  we can also change our watermarks for individual pages if our parameter object is in the page header
+;  - see Page header.$print
