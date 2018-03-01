@@ -15,7 +15,7 @@ Do $cinst.$print("",kFalse)
 TCPGetMyAddr  Returns addr
 Do $modes.$dotoolmethod(kEnvToolBrowser,160) Returns port     ;; Returnｓ the port Omnis is listening on ($prefs.$serverport is unreliable as it can be zero in which case Omnis chooses a port)
 Calculate addr as "127.0.0.1"
-Calculate url as con("http://",addr,":",port,"/ultra?OmnisServer='",addr,":",port,"'&OmnisLibrary=example&OmnisClass=rtGetPDF&PDFOwner=",$ctask().$name)
+Calculate url as con("http://",addr,":",port,"/ultra?OmnisServer='",addr,":",port,"'&OmnisLibrary=",$clib().$name,"&OmnisClass=rtGetPDF&PDFOwner=",$ctask().$name)
 ;  show the url
 ;  Send to trace log {$showpdf([url])}
 Quit method url

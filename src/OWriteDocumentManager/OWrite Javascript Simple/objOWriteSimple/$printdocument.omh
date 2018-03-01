@@ -18,5 +18,5 @@ Calculate addr as "127.0.0.1"     ;; only when testing
 Do $modes.$dotoolmethod(kEnvToolBrowser,160) Returns port     ;; Returnｓ the port Omnis is listening on ($prefs.$serverport is unreliable as it can be zero in which case Omnis chooses a port)
 
 ;  create the URL with the connection ID of our ctask
-Calculate url as con("http://",addr,":",port,"/ultra?OmnisServer='",addr,":",port,"'&OmnisLibrary=example&OmnisClass=rtOWriteSimple&PDFOwner=",$ctask().$name)
+Calculate url as con("http://",addr,":",port,"/ultra?OmnisServer='",addr,":",port,"'&OmnisLibrary=",$clib().$name,"&OmnisClass=rtOWriteSimple&PDFOwner=",$ctask().$name)
 Quit method url
