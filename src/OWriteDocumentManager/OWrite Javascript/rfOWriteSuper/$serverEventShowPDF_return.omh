@@ -1,3 +1,3 @@
 ;  display the PDF
-Do $cinst.$objs.overlayFetchingData.$visible.$assign(kFalse)
+Do $cinst.$showOverlay(kFalse)
 Do method $cinst.$showpdf (pResult)

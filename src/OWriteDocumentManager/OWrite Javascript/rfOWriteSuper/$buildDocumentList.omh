@@ -1,12 +1,18 @@
 Do ivDocumentList.$define(fOWriteDoc.name)
 Set search as calculation {fOWriteDoc.group=ivGroupList.group}
-Find first  (Use search)
+Find first on fOWriteDoc.order (Use search)
 While flag true
 	Do ivDocumentList.$add(fOWriteDoc.name)
 	Next  (Use search)
 End While
 
-If ivGroupList.group="OWrite"
+If pLine
+	If pLine>ivDocumentList.$linecount
+		Calculate ivDocumentList.$line as ivDocumentList.$linecount
+	Else
+		Calculate ivDocumentList.$line as pLine
+	End If
+Else If ivGroupList.group="OWrite"
 	Calculate ivDocumentList.$line as ivDocumentList.$search($ref.name="Welcome",kTrue,kFalse,kFalse,kFalse)
 Else
 	Calculate ivDocumentList.$line as 1

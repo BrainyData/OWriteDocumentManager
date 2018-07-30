@@ -1,0 +1,23 @@
+If rpos(']',pPath)=len(pPath)     ;; test if our final path item is a row-number which we would like to subtract from the main link
+	Calculate lnkDataList as mid(pPath,1,rpos('.',pPath)-1)
+	Calculate lnkDataRow as mid(pPath,rpos('[',pPath)+1,rpos(']',pPath)-rpos('[',pPath)-1)
+End If
+If pos('[',pMessage)
+	Calculate lnkDataColumn as mid(pMessage,pos('[',pMessage)+1,pos(']',pMessage)-pos('[',pMessage)-1)
+End If
+
+Begin text block
+Text: {inspect~inspect;~$cinst.$inspect("[lnkDataList]",[lnkDataRow],"[lnkDataColumn]")}
+End text block
+Get text block lnkData
+
+Do refTraceLog.$::insert(kWriObjTypeChar,kWriCharTab)
+Do refTraceLog.$::insert(kWriObjTypeCalc,lnkData,kTrue)
+Do refTraceLog.$curobjclicks.$assign(kTrue)
+Do refTraceLog.$setselection(kWriSelectEnd,kWriSelectEnd,0)
+Do refTraceLog.$::insert(kWriObjTypeText,"  ")
+Do refTraceLog.$::insert(kWriObjTypeText,pPath)
+Do refTraceLog.$::insert(kWriObjTypeChar,kWriCharReturn)
+
+Calculate #S1 as "abc"
+Calculate #1 as rpos('c',#S1)

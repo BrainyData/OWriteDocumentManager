@@ -73,7 +73,7 @@
 		"papercolor": "kWhite",
 		"papercontinuous": true,
 		"pasterawpicts": false,
-		"printdpi": 96,
+		"printdpi": 0,
 		"rmouseevents": false,
 		"screendpi": "kWriScrDPI96",
 		"showcms": true,

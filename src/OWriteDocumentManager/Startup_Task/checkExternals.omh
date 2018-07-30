@@ -38,17 +38,17 @@ Calculate error_message as ''
 
 ;  temp additional check for custom export (will be removed once new feature is released)
 ;  Breakpoint
-Do method checkExternalVersionNew ("OWrite",con("OWrite",file_ext_xcomp),391,ignore) Returns tvCanDoCustomExport     ;; CHANGE_2013_11_27_1
+Do method checkExternalVersionNew ("OWrite",con("OWrite",file_ext_xcomp),400,ignore) Returns tvCanDoCustomExport     ;; CHANGE_2013_11_27_1
 
 ;  check OWrite version
-Do method checkExternalVersionNew ("OWrite",con("OWrite",file_ext_xcomp),360,error_message)     ;; CHANGE_2014_09_01__1
+Do method checkExternalVersionNew ("OWrite",con("OWrite",file_ext_xcomp),402,error_message)     ;; CHANGE_2018_07_13__1
 ;  check OSpell2 version
 If tvCanDoSpell
-	Do method checkExternalVersion ("Spll",con("OSpell2",file_ext_xcomp),"3.2.1",error_message) Returns tvCanDoSpell
+	Do method checkExternalVersionNew ("Spll",con("OSpell2",file_ext_xcomp),324,error_message) Returns tvCanDoSpell     ;; CHANGE_2018_07_13__1
 End If
 ;  check PDFDevice version
 If tvCanDoPDF
-	Do method checkExternalVersionNew ("PDF Device",con("PDFDevice",file_ext_xcomp),314,error_message) Returns tvCanDoPDF     ;; CHANGE_2014_02_11__1
+	Do method checkExternalVersionNew ("PDF Device",con("PDFDevice",file_ext_xcomp),330,error_message) Returns tvCanDoPDF     ;; CHANGE_2018_07_13__1
 	Calculate tvCanDoBackgroundImage as tvCanDoPDF
 End If
 ;  check OWrite Web version

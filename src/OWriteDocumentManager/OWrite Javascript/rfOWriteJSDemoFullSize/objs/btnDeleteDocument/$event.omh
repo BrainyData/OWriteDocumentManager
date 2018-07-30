@@ -1,0 +1,5 @@
+On evClick
+	JavaScript: ok = confirm("Delete the current document? You cannot undo this!");
+	If ok
+		Do method $cinst.$serverDeleteDocument
+	End If

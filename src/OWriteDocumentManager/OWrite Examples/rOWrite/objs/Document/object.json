@@ -1,6 +1,6 @@
 {
 	"ident": 1003,
-	"order": 8,
+	"order": 7,
 	"objtype": "kComponent",
 	"componentlib": "OWrite",
 	"componentctrl": "OWrite Report Object",

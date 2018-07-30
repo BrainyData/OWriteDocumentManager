@@ -1,6 +1,6 @@
 {
 	"classtype": "kTask",
-	"internalversion": 21,
+	"internalversion": 24,
 	"tvardefs": [
 		{
 			"name": "OWRITE_TMP_VAR",
@@ -165,7 +165,7 @@
 		"editordata": "",
 		"external": false,
 		"issupercomponent": false,
-		"moddate": "2018-02-16 07:36:40",
+		"moddate": "2018-07-14 00:49:26",
 		"showascheckedout": true,
 		"userinfo": "",
 		"version": "4.66.00"

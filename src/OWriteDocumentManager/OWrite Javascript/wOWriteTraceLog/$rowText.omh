@@ -1,0 +1,4 @@
+For col from 1 to pRow.$cols.$count step 1
+	Calculate txt as con(txt,pRow.$cols.[col].$name,'=',pRow.C[col],'    ')
+End For
+Quit method txt

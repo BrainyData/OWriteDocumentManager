@@ -1,6 +1,6 @@
 {
 	"ident": 1156,
-	"order": 10,
+	"order": 6,
 	"objtype": "kComponent",
 	"componentlib": "jsButton",
 	"componentctrl": "Button Control",
@@ -27,21 +27,21 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"iconid": "k48x48+1706",
+		"iconid": "k48x48+1710",
 		"objlink": 0,
 		"preventlayoutanimation": false,
 		"text": "",
 		"textbeforeicon": false,
 		"textcolor": "kColorDefault",
 		"textishtml": false,
-		"tooltip": "Clear Preview",
+		"tooltip": "Clear Merged Data",
 		"userinfo": "",
 		"visible": false
 	},
 	"screensizes": [
 		{
 			"name": "kSSZDesktop",
-			"left": 1088,
+			"left": 987,
 			"top": 1038,
 			"width": 48,
 			"height": 48,

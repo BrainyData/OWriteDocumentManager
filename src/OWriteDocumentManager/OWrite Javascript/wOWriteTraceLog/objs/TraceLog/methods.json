@@ -1,0 +1,91 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 1,
+		"pvardefs": [
+			{
+				"name": "pPath",
+				"order": 11,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "findText",
+				"order": 7,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "fstSel0",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "fstSel1",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "inspectText",
+				"order": 8,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lnkDataList",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"initval": "pPath"
+			},
+			{
+				"name": "lnkDataRow",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "lstSel0",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lstSel1",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "objSel0",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "objSel1",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	}
+]

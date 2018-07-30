@@ -10,6 +10,8 @@ Do objOWrite.$savedata(ivDocumentData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue
 
 Do ivDocumentList.$add(ivNewName)
 Calculate ivDocumentList.$line as ivDocumentList.$linecount
+Find last on fOWriteDoc.order
+Calculate %order as fOWriteDoc.order+1
 Prepare for insert
 Calculate fOWriteDoc.name as ivNewName
 Calculate fOWriteDoc.group as ivGroupList.group

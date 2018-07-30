@@ -1,0 +1,47 @@
+Calculate savedPath as ivPath
+Calculate savedLink as ivLink
+Calculate ivLink as ivPath
+;  do we need to sort our list?
+;       ;; we sort style run lists according to pos and styleid
+If pMasterList.$cols.$findname("StyleRunStart")
+	Do
+	Do pMasterList.$sort($ref.StyleRunStart,kFalse,$ref.StyleId,kFalse)
+	Do pClientList.$sort($ref.StyleRunStart,kFalse,$ref.StyleId,kFalse)
+End If
+;       ;; we sort child object lists according to pos and offset
+If pMasterList.$cols.$findname("ObjPos")
+	Do pMasterList.$sort($ref.ObjPos,kFalse,$ref.ObjHorzOffset,kFalse,$ref.ObjVertOffset)
+	Do pClientList.$sort($ref.ObjPos,kFalse,$ref.ObjHorzOffset,kFalse,$ref.ObjVertOffset)
+End If
+
+Calculate maxCount as pick(pMasterList.$linecount>pClientList.$linecount,pMasterList.$linecount,pClientList.$linecount)
+Calculate refProgressBar.$::max as refProgressBar.$::max+maxCount
+For pMasterList.$line from 1 to maxCount step 1
+	Do pClientList.$line.$assign(pMasterList.$line)
+	Calculate ivPath as con(savedPath,'.',pMasterList.$line)
+	Do $cinst.$compareListRow(pMasterList,pClientList) Returns ok
+	Calculate refProgressBar.$val as refProgressBar.$val+1
+End For
+
+If pMasterList.$linecount>pClientList.$linecount
+	Do $cinst.$addtraceline("ERROR extra lines in master.%%:",savedPath)
+	Do $cinst.$inc_indent
+	For pMasterList.$line from pClientList.$linecount+1 to pMasterList.$linecount step 1
+		Do $cinst.$addtraceline("row %%: >>>%%<<<",pMasterList.$line,$cinst.$rowText(pMasterList))
+	End For
+	Do $cinst.$addtraceline("")
+	Do $cinst.$dec_indent
+	Calculate ok as kFalse
+Else If pMasterList.$linecount<pClientList.$linecount
+	Do $cinst.$addtraceline("ERROR extra lines in client.%%:",savedPath)
+	Do $cinst.$inc_indent
+	For pClientList.$line from pMasterList.$linecount+1 to pClientList.$linecount step 1
+		Do $cinst.$addtraceline("row %%: >>>%%<<<",pClientList.$line,$cinst.$rowText(pClientList))
+	End For
+	Do $cinst.$addtraceline("")
+	Do $cinst.$dec_indent
+	Calculate ok as kFalse
+End If
+Calculate ivPath as savedPath
+Calculate ivLink as savedLink
+Quit method ok

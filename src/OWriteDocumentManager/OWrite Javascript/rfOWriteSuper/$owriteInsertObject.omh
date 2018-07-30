@@ -58,7 +58,8 @@ Switch pObjType
 			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjWidth",40000,"ObjHeight",8000,"ObjFlags",'AutoSize') Returns cellNo     ;; NOTE: valid ObjFlags are (LockAspect,AutoSize,GenClick,StripEmpty,NoEnter,UseClickCalc)
 			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjBordStyle",kBorderPlain,"ObjBordLnStyle",kWriLineSolid,"ObjBordLnSize",100,"ObjBordColor",rgb(128,0,0),"ObjBorderSides",kWriFrameLeft+kWriFrameRight+kWriFrameTop+kWriFrameBottom) Returns cellNo
 			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjFillColor",rgb(255,255,255),"ObjTopMargin",0,"ObjLeftMargin",1000,"ObjBottomMargin",0,"ObjRightMargin",1000) Returns cellNo
-			Do $cinst.$objs.jsOWrite.$addparamstblcellcontent(params,rowNo,cellNo,"a","StyleSuper","Normal","Bold",kTrue,"TextColor",rgb(0,0,0),"SpaceBefore",0,"SpaceAfter",0)
+			Do $cinst.$objs.jsOWrite.$addparamstblcell(params,rowNo,cellNo,"ObjName",con("cell",cellNo),"ObjCalc",con("$ref.C",cellNo),"ObjDisplay",con("C",cellNo),"ObjToolTip",con("Tooltip for cell ",cellNo)) Returns cellNo
+			Do $cinst.$objs.jsOWrite.$addparamstblcellcontent(params,rowNo,cellNo,con("C",cellNo),"StyleSuper","Normal","Bold",kTrue,"TextColor",rgb(0,0,0),"SpaceBefore",0,"SpaceAfter",0)
 		End For
 		
 	Case kWriObjTypeText

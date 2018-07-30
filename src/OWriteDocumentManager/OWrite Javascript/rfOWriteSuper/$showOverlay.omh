@@ -1,0 +1,9 @@
+If pShow
+	Do $cinst.$objs.overlayFetchingData.$left.$assign($cinst.$objs.jsOWrite.$left)
+	Do $cinst.$objs.overlayFetchingData.$top.$assign($cinst.$objs.jsOWrite.$top)
+	Do $cinst.$objs.overlayFetchingData.$width.$assign($cinst.$objs.jsOWrite.$width)
+	Do $cinst.$objs.overlayFetchingData.$height.$assign($cinst.$objs.jsOWrite.$height)
+	Do $cinst.$objs.overlayFetchingData.$visible.$assign(kTrue)
+Else
+	Do $cinst.$objs.overlayFetchingData.$visible.$assign(kFalse)
+End If

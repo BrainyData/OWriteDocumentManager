@@ -1,0 +1,32 @@
+On evCompareDocs
+	Calculate ivErrorCount as ivErrorCount+1
+	Do $cinst.$addtraceline(pCompareMessage)
+	Do $cinst.$addtracelink(pComparePath,pCompareMessage)     ;; pCompareMessage contains column name
+	Do $cinst.$addtraceline("")
+	
+On evProgress
+	Send to trace log {evProgress([pProgressPercent])}
+	Calculate refProgressBar.$val as pProgressPercent
+	
+On evKey
+	If #COMMAND
+		If pKey='g'
+			Open trace log
+			Do refTraceLog.$savedata(findText,kWriFmtText,kFalse,kWriSaveSelection,kFalse)
+			If ivObjFind.$text<>findText
+				Calculate ivObjFind.$text as findText
+				Do $cinst.$objs.TraceLog.$findinit(ivObjFind.$owriteobj,kTrue)
+			End If
+			Do $cinst.$objs.TraceLog.$findnext(ivObjFind.$owriteobj) Returns #F
+			If flag false
+				Calculate ivObjFind.$text as ''
+			End If
+		Else If pKey='i'
+			Do refTraceLog.$savedata(inspectText,kWriFmtText,kFalse,kWriSaveSelection,kTrue)
+			If rpos(']',inspectText)=len(inspectText)     ;; test if our final path item is a row-number which we would like to subtract from the main link
+				Calculate lnkDataList as mid(inspectText,1,rpos('.',inspectText)-1)
+				Calculate lnkDataRow as mid(inspectText,rpos('[',inspectText)+1,rpos(']',inspectText)-rpos('[',inspectText)-1)
+			End If
+			Do $cinst.$inspect(lnkDataList,lnkDataRow)
+		End If
+	End If

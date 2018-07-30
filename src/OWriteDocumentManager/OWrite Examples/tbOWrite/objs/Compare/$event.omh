@@ -1,0 +1,3 @@
+On evClick
+	Do $windows.wOWriteTraceLog.$openonce('*',kWindowCenter) Returns refTraceLog
+	Do refTraceLog.$compare(fOWriteDoc.data,fOWriteDoc.listData,con(fOWriteDoc.group,'-',fOWriteDoc.name))

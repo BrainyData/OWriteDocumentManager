@@ -1,9 +1,9 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 991,
+	"internalversion": 1045,
 	"superclass": "rfOWFormatSuper",
 	"designtaskname": "",
-	"nextident": 1037,
+	"nextident": 1038,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -66,8 +66,8 @@
 		"inheritedorder": 1,
 		"issupercomponent": false,
 		"layouttype": "kLayoutTypeScreen",
-		"left": 601,
-		"moddate": "2017-03-07 22:41:30",
+		"left": 115,
+		"moddate": "2018-06-15 09:25:01",
 		"okkeyobject": "",
 		"resizemode": "kJSformResizeModeNone",
 		"screensize": "kSSZDesktop",
@@ -80,7 +80,7 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 489,
+		"top": 316,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,

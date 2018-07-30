@@ -1,0 +1,7 @@
+Set search as calculation {fOWriteDoc.name=ivDocumentList.name&fOWriteDoc.group=ivGroupList.group}
+Find first  (Use search)
+If flag true
+	Delete
+	Do $cinst.$buildDocumentList(ivDocumentList.$line)
+	Do $cinst.$serverLoadData()
+End If

@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 484,
+	"internalversion": 525,
 	"designtaskname": "rtOWriteJS",
 	"nextident": 1004,
 	"lastgroupident": 0,
@@ -37,6 +37,13 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivDocumentDisabled",
+			"order": 15,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
 			"name": "ivDocumentID",
 			"order": 12,
 			"type": "kCharacter",
@@ -57,6 +64,14 @@
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "ivFontSizeList",
+			"order": 14,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "The list of font heights to be used by client for calculating line heights CHANGE_JSTextMeasure"
 		},
 		{
 			"name": "ivGroupList",
@@ -149,7 +164,7 @@
 		"issupercomponent": false,
 		"layouttype": "kLayoutTypeScreen",
 		"left": 812,
-		"moddate": "2017-09-05 20:55:06",
+		"moddate": "2018-06-15 09:03:15",
 		"okkeyobject": "",
 		"resizemode": "kJSformResizeModeNone",
 		"screensize": "kSSZDesktop",

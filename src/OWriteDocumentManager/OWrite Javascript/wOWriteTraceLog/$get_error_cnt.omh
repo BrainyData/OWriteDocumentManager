@@ -1,0 +1,5 @@
+Calculate cnt as ivErrorCount
+If pClear
+	Calculate ivErrorCount as 0
+End If
+Quit method cnt

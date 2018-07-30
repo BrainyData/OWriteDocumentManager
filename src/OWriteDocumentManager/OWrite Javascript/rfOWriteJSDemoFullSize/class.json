@@ -1,15 +1,29 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 4890,
+	"internalversion": 5325,
 	"superclass": "rfOWriteSuper",
 	"designtaskname": "rtOWriteJS",
-	"nextident": 1170,
+	"nextident": 1175,
 	"lastgroupident": 0,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-
+		{
+			"name": "ivInSaveForPDF",
+			"order": 1,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "ivInSaveForPreview",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		}
 	],
 	"properties": {
 		"aligntogrid": false,
@@ -39,8 +53,8 @@
 		"inheritedorder": 2,
 		"issupercomponent": false,
 		"layouttype": "kLayoutTypeScreen",
-		"left": 111,
-		"moddate": "2018-02-08 22:28:41",
+		"left": 62,
+		"moddate": "2018-07-16 12:08:11",
 		"okkeyobject": "",
 		"resizemode": "kJSformResizeModeNone",
 		"screensize": "kSSZDesktop",
@@ -53,7 +67,7 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 28,
+		"top": 96,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,

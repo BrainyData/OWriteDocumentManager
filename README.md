@@ -2,7 +2,9 @@
 
 The library implements a working document manager to demonstrate the features of the Brainy Data external components OWrite, PDFDevice and OSpell2. The document manager is used by Brainy Data to manage external component documentation. The library demonstrates many features such as desktop and javascript document management and editing, desktop label printing, data merging, mailing, PDF and HTML production, library-wide spell checking, and much more.
 
-To build the library you will require the following external components by Brainy Data; OWrite, jsOWrite, PDFDevice and OSpell2. If you do not have them, demo versions are available at https://www.brainydata.com/demos. Furthermore, additional files and libraries are required which can also be downloaded from the same location.
+## Additional Requirements
+
+To build the library you will require the following external components by Brainy Data; OWrite (v4.1), jsOWrite (v4.1), PDFDevice (v3.3) and OSpell2 (v3.2.4). If you do not have them, demo versions are available at https://www.brainydata.com/demos. Furthermore, additional files and libraries are required which can also be downloaded from the same location.
 
 The specific downloads are:
 

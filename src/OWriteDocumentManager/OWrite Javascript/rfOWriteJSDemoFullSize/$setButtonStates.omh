@@ -2,12 +2,14 @@
 Do inherited
 ;  set enabled state for our save button
 Calculate $cinst.$objs.btnSave.$visible as $cinst.$objs.jsOWrite.$modified
+;  set enable state for our delete button
+Calculate $cinst.$objs.btnDeleteDocument.$visible as ivDocumentList.$line>0
 ;  set enabled state for our preview buttons (they only apply to some documents)
 Switch ivDocumentList.name
 	Case "Example: Tables - Pictures","Example: Tables - Invoice"
-		Calculate $cinst.$objs.btnPreview.$visible as not($cinst.$objs.jsOWrite.$evalcalcs)
-		Calculate $cinst.$objs.btnClearPreview.$visible as $cinst.$objs.jsOWrite.$evalcalcs
+		Calculate $cinst.$objs.btnMergeData.$visible as not($cinst.$objs.jsOWrite.$evalcalcs)
+		Calculate $cinst.$objs.btnClearMergedData.$visible as $cinst.$objs.jsOWrite.$evalcalcs
 	Default
-		Calculate $cinst.$objs.btnPreview.$visible as kFalse
-		Calculate $cinst.$objs.btnClearPreview.$visible as kFalse
+		Calculate $cinst.$objs.btnMergeData.$visible as kFalse
+		Calculate $cinst.$objs.btnClearMergedData.$visible as kFalse
 End Switch

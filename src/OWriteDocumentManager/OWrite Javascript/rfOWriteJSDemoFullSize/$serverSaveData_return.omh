@@ -1,0 +1,13 @@
+;  handles case when data was saved for a PDF preview request
+
+;  call super-class method for standard behaviour after a save
+Do inherited
+;  now test if we saved for a click on btnShowPDF
+If ivInSaveForPDF
+	Calculate ivInSaveForPDF as kFalse
+	Do $cinst.$showOverlay(kTrue)
+	Do $cinst.$serverEventShowPDF()
+Else If ivInSaveForPreview
+	Calculate ivInSaveForPreview as kFalse
+	Do $cinst.$serverEventPreview(kTrue)
+End If

@@ -1,0 +1,26 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 16384,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "compareObj",
+				"order": 1,
+				"type": "kObject",
+				"subtype": "oOWriteJSCompare",
+				"sublen": 0
+			},
+			{
+				"name": "refTraceLog",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

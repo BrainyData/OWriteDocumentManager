@@ -1,0 +1,19 @@
+While pos('%%',pFormatText)
+	Calculate pFormatText as replace(pFormatText,'%%',fld(con("pParam",parm)))
+	Calculate parm as parm+1
+End While
+;
+;  If pos('ERROR',pFormatText)
+;  Calculate ivErrorCount as ivErrorCount+1
+;  Calculate lnkData as con("$cinst.$inspect('",ivLink,"')")
+;  Send to trace log {lnkdata}
+;  Do refTraceLog.$::insert(kWriObjTypeCalc,'inspect;',kTrue)
+;  Do refTraceLog.$curobjdisplay.$assign('inspect')
+;  Do refTraceLog.$curobjclicks.$assign(kTrue)
+;  Do refTraceLog.$curobjclickcalc.$assign(lnkData)
+;  Do refTraceLog.$setselection(kWriSelectEnd,kWriSelectEnd,0)
+;  Do refTraceLog.$::insert(kWriObjTypeText,"  ")
+;  End If
+
+Do refTraceLog.$::insert(kWriObjTypeText,pFormatText)
+Do refTraceLog.$::insert(kWriObjTypeChar,kWriCharReturn)

@@ -23,5 +23,17 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "$serverSaveData_return",
+		"ident": 1,
+		"order": 3,
+		"clientexec": true,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

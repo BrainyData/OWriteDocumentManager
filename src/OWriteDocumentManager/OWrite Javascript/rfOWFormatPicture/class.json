@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 99,
+	"internalversion": 108,
 	"superclass": "rfOWFormatSuper",
 	"designtaskname": "",
 	"nextident": 1017,
@@ -40,7 +40,7 @@
 		"issupercomponent": false,
 		"layouttype": "kLayoutTypeScreen",
 		"left": 1114,
-		"moddate": "2016-10-07 15:00:01",
+		"moddate": "2018-06-15 09:06:58",
 		"okkeyobject": "",
 		"resizemode": "kJSformResizeModeNone",
 		"screensize": "kSSZDesktop",

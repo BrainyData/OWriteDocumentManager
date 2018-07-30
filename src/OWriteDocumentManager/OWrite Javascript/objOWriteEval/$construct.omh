@@ -1,6 +1,7 @@
 
 ;  make sure all loaded documents are evaluated local to this object and its methods that evaluated them
 Calculate $cinst.$evallocal as kTrue
+Calculate $cinst.$printdpi as 0     ;; new Word compatible mode (requires OWrite version 4.1.0 or better)
 
 ;  prep file classes that may feature in document calculations
 Set read-only files {fClients,fDictionaries,fDocuments,fPDFPicts}

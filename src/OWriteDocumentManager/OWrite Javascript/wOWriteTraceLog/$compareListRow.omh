@@ -1,0 +1,57 @@
+;  test if list row belongs to a page break or object (we ignore page breaks and object runs)
+If pMasterList.$cols.$findname("ObjIsPageBreak")&pMasterList.ObjIsPageBreak=1&pClientList.ObjIsPageBreak=1
+	Quit method kTrue
+Else If pMasterList.$cols.$findname("StyleId")&pMasterList.StyleId=30&pClientList.StyleId=30
+	Quit method kTrue     ;; ignore style runs that point at objects
+End If
+Calculate savedPath as ivPath
+For col from 1 to pMasterList.$cols.$count step 1
+	Calculate colName as pMasterList.$cols.[col].$name
+	Calculate ivPath as con(savedPath,'.',colName)
+	Redraw {ivPath}
+	Switch pMasterList.$cols.[col].$coltype
+		Case kList     ;; must compare nested lists
+			Calculate masterSubList as pMasterList.C[col]
+			Calculate clientSubList as pClientList.C[col]
+			Do $cinst.$inc_indent
+			Calculate ok as $cinst.$compareList(masterSubList,clientSubList)
+			Do $cinst.$dec_indent
+		Case kPicture,kBinary
+			If isColorStyle
+				;  must convert to true colors to compare
+				Calculate isColorStyle as kFalse
+				Calculate rgb0 as truergb(pMasterList.C[col])
+				Calculate rgb1 as truergb(pClientList.C[col])
+				Calculate ok as pick(rgb0=rgb1,kFalse,kTrue)
+			Else
+				Calculate ok as bincompare(pMasterList.C[col],pClientList.C[col])
+			End If
+			If not(ok)
+				Do $cinst.$addtraceline("ERROR comparing binary '%%':",ivPath)
+				Do $cinst.$inc_indent
+				Do $cinst.$addtraceline(">>>%%<<<",$cinst.$rowText(pMasterList))
+				Do $cinst.$addtraceline(">>>%%<<<",$cinst.$rowText(pClientList))
+				Do $cinst.$addtraceline("")
+				Do $cinst.$dec_indent
+				Calculate exit as kTrue
+			End If
+		Default     ;; compare simple values
+			Calculate ok as pick(pMasterList.C[col]=pClientList.C[col],kFalse,kTrue)
+			If not(ok)
+				Do $cinst.$addtraceline("ERROR comparing '%%':",ivPath)
+				Do $cinst.$inc_indent
+				Do $cinst.$addtraceline(">>>%%<<<",$cinst.$rowText(pMasterList))
+				Do $cinst.$addtraceline(">>>%%<<<",$cinst.$rowText(pClientList))
+				Do $cinst.$addtraceline("")
+				Do $cinst.$dec_indent
+				Calculate exit as kTrue
+			Else If colName="StyleId"&(pMasterList.C[col]=8|pMasterList.C[col]=10)
+				Calculate isColorStyle as kTrue     ;; "StyleId" preceeds "StyleValue"
+			End If
+	End Switch
+	If exit
+		Break to end of loop
+	End If
+End For
+Calculate ivPath as savedPath
+Quit method ok

@@ -1,0 +1,39 @@
+
+Set reference document to ivMasterData
+Calculate cvInspectMasterData as eval(pNotation)
+Calculate cvInspectMasterData.$line as pRow
+If len(pColumn)
+	Do $cinst.$addinspectvalue(con(">>>",eval(columnNotation),"<<<"))
+End If
+Set reference document to ivClientData
+Calculate cvInspectClientData as eval(pNotation)
+Calculate cvInspectClientData.$line as pRow
+If len(pColumn)
+	Do $cinst.$addinspectvalue(con(">>>",eval(columnNotation),"<<<"))
+End If
+
+;  lists may be sorted differently which the compare would have accounted for
+;  to make it easier on our eyes we must sort them the same as the compare function
+;  in order to do so we must now the list name (the final notation item)
+Calculate listName as mid(pNotation,rpos('.',pNotation)+1,255)
+Switch listName
+	Case 'ObjChildList'
+		If cvInspectMasterData.[1].ObjType<>kWriObjTypePara
+			;  only sort non-pargraph objects by their pos and offsets
+			Do cvInspectMasterData.$sort($ref.ObjPos,kFalse,$ref.ObjHorzOffset,kFalse,$ref.ObjVertOffset,kFalse)
+			Do cvInspectClientData.$sort($ref.ObjPos,kFalse,$ref.ObjHorzOffset,kFalse,$ref.ObjVertOffset,kFalse)
+		End If
+	Case 'ObjStylesList'
+		Do cvInspectMasterData.$sort($ref.StyleName,kFalse)
+		Do cvInspectClientData.$sort($ref.StyleName,kFalse)
+	Case 'StyleRunsList'
+		Do cvInspectMasterData.$sort($ref.StyleRunStart,kFalse,$ref.StyleId,kFalse)
+		Do cvInspectClientData.$sort($ref.StyleRunStart,kFalse,$ref.StyleId,kFalse)
+	Case 'StylePairsList'
+		Do cvInspectMasterData.$sort($ref.StyleId,kFalse)
+		Do cvInspectClientData.$sort($ref.StyleId,kFalse)
+End Switch
+
+Redraw {InpsectorMasterList,InpsectorClientList}
+;  Variable menu command: Open Value Window {cvInspectMasterData}
+;  Variable menu command: Open Value Window {cvInspectClientData}

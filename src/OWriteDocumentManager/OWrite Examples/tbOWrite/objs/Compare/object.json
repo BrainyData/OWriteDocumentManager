@@ -1,0 +1,21 @@
+{
+	"ident": 1034,
+	"order": 22,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": "k32x32+1611",
+		"text": {
+			"type": 0,
+			"calc": "Compare"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Compare Master document with saved JS-Document"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

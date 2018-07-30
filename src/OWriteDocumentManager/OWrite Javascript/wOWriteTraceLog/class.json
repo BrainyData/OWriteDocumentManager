@@ -1,0 +1,189 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 152,
+	"designtaskname": "Startup_Task",
+	"nextident": 1025,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cvInspectClientData",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvInspectMasterData",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "isColor",
+			"order": 7,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivClientData",
+			"order": 3,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivErrorCount",
+			"order": 2,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivLink",
+			"order": 6,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivMasterData",
+			"order": 4,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivObjFind",
+			"order": 9,
+			"type": "kObject",
+			"subtype": ".OWrite.OWriteSearch",
+			"sublen": 0
+		},
+		{
+			"name": "ivPath",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "refInspectorClientList",
+			"order": 12,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.InspectorGroup.$objs.InspectorClientList"
+		},
+		{
+			"name": "refInspectorMasterList",
+			"order": 11,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.InspectorGroup.$objs.InspectorMasterList"
+		},
+		{
+			"name": "refInspectorText",
+			"order": 10,
+			"type": "kItemref",
+			"subtype": "$iwindows.window.$objs.owritewindowobject",
+			"sublen": 0,
+			"initval": "$cinst.$objs.InspectorGroup.$objs.InspectorText"
+		},
+		{
+			"name": "refProgressBar",
+			"order": 8,
+			"type": "kItemref",
+			"subtype": "$iwindows.window.$objs.progress",
+			"sublen": 0,
+			"initval": "$cinst.$objs.ProgressBar"
+		},
+		{
+			"name": "refTraceLog",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "$iwindows.window.$objs.owritewindowobject",
+			"sublen": 0,
+			"initval": "$cinst.$objs.TraceLog"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2018-06-10 14:35:37",
+		"desc": "",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": true,
+		"forecolor": "kColor3DFace",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 1085,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 876,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2018-06-20 14:13:53",
+		"modelessdata": true,
+		"showascheckedout": true,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": "",
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionNone",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 201,
+		"userinfo": "",
+		"usesheets": false,
+		"version": "",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 1127,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

@@ -1,0 +1,16 @@
+On evClick
+	Do $cinst.$objs.overlayFetchingData.$left.$assign($cinst.$objs.jsOWrite.$left)
+	Do $cinst.$objs.overlayFetchingData.$top.$assign($cinst.$objs.jsOWrite.$top)
+	Do $cinst.$objs.overlayFetchingData.$width.$assign($cinst.$objs.jsOWrite.$width)
+	Do $cinst.$objs.overlayFetchingData.$height.$assign($cinst.$objs.jsOWrite.$height)
+	Do $cinst.$objs.overlayFetchingData.$visible.$assign(kTrue)
+	If $cinst.$objs.jsOWrite.$modified
+		JavaScript: ok = confirm("Document requires saving first. Save document?");
+		If ok
+			;  trigger an async save operation, our overidden $serverSaveData_return method will pick up the PDF display
+			Calculate ivInSaveForPreview as kTrue
+			Do $cinst.$objs.jsOWrite.$savedata()
+		End If
+	Else
+		Do $cinst.$serverEventPreview(kTrue)
+	End If

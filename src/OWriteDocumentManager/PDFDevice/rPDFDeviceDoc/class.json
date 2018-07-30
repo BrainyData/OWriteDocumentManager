@@ -1,6 +1,6 @@
 {
 	"classtype": "kReport",
-	"internalversion": 7,
+	"internalversion": 9,
 	"superclass": "rPDFDeviceSuper",
 	"designtaskname": "Startup_Task",
 	"nextident": 1224,
@@ -52,7 +52,7 @@
 		"macosdesttype": "kPrinter",
 		"mainfile": "",
 		"mainlist": "",
-		"moddate": "2018-02-08 19:59:48",
+		"moddate": "2018-06-20 09:45:16",
 		"orientation": "kOrientDefault",
 		"pagesetupdata": {
 			"$base64": ""
@@ -65,7 +65,7 @@
 		"repeatfactor": 1,
 		"rightmargin": 0.5,
 		"scale": 0,
-		"showascheckedout": false,
+		"showascheckedout": true,
 		"showgrid": true,
 		"shownames": false,
 		"sizetogrid": false,

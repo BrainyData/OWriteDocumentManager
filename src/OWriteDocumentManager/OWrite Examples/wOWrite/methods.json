@@ -1331,6 +1331,13 @@
 		],
 		"lvardefs": [
 			{
+				"name": "compareObj",
+				"order": 5,
+				"type": "kObject",
+				"subtype": "oOWriteJSCompare",
+				"sublen": 0
+			},
+			{
 				"name": "modified",
 				"order": 3,
 				"type": "kBoolean",

@@ -7,7 +7,7 @@ Do $cdevice.$assign(kDevPdf)
 Do $cdevice.$setparam(kDevPdfFileName,con("$iremotetasks.",$ctask().$name,".$pdfoutput(#)"))
 
 ;  load and print the document
-Do $cinst.$loaddata(ivCallerRef.ivDocumentData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+Do $cinst.$loaddata(ivCallerRef.ivDocumentData,kWriFmtDefault,kFalse,kWriLoadRawPicts,kTrue)
 Do $cinst.$pageview.$assign(kWriViewPageLayout)
 Do $cinst.$print("",kFalse)
 

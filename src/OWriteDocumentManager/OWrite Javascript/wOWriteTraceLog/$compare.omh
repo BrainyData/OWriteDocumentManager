@@ -1,0 +1,60 @@
+
+;  clear log
+Do $cinst.$clear
+;  makse sure data is saved as lists
+Do $cinst.$addtraceline("...loading '%%'",pDocumentName)
+Do OWriteDocObj.$loaddata(pMasterData)
+Do OWriteDocObj.$savedata(ivMasterData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue,kWriSaveAsList,kTrue)
+Do OWriteDocObj.$loaddata(pClientData)
+Do OWriteDocObj.$savedata(ivClientData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue,kWriSaveAsList,kTrue)
+;  prep progress
+Do $cinst.$addtraceline("...comparing document '%%'",pDocumentName)
+Do $cinst.$inc_indent
+Calculate refProgressBar.$val as 0
+Calculate refProgressBar.$::min as 0
+Calculate refProgressBar.$::max as 100
+;  compare
+Do refTraceLog.$comparedocs(nam(ivMasterData),nam(ivClientData),kFalse)
+;  finish
+Do $cinst.$addtraceline("total errors %%",$cinst.$get_error_cnt(kTrue))
+Do $cinst.$addtraceline("")
+Do $cinst.$dec_indent
+Quit method
+
+
+
+
+
+Do refTraceLog.$nocursor.$assign(kTrue)
+Calculate refProgressBar.$val as 0
+Calculate refProgressBar.$::max as 0
+
+Do $cinst.$clear
+Do $cinst.$addtraceline("*** comparing document %% ***",pDocumentName)
+Do $cinst.$inc_indent
+
+If not(pClientData.$linecount)
+	Do $cinst.$addtraceline("ERROR: Client document missing. Save document on JS-Client first.")
+	Quit method
+End If
+
+Do OWriteDocObj.$loaddata(pMasterData)
+Do OWriteDocObj.$savedata(ivMasterData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue,kWriSaveAsList,kTrue)
+Do OWriteDocObj.$loaddata(pClientData)
+Do OWriteDocObj.$savedata(ivClientData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue,kWriSaveAsList,kTrue)
+
+
+
+
+
+Do $cinst.$inc_indent
+Calculate ivPath as 'data'
+Do $cinst.$compareList(ivMasterData,ivClientData) Returns ok
+Do $cinst.$dec_indent
+
+;  output error count
+Do $cinst.$addtraceline("")
+Do $cinst.$addtraceline("total errors %%",$cinst.$get_error_cnt())
+
+Do refTraceLog.$nocursor.$assign(kFalse)
+Quit method

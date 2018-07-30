@@ -1,6 +1,6 @@
 {
 	"ident": 1168,
-	"order": 12,
+	"order": 7,
 	"objtype": "kComponent",
 	"componentlib": "jsButton",
 	"componentctrl": "Button Control",
@@ -41,7 +41,7 @@
 	"screensizes": [
 		{
 			"name": "kSSZDesktop",
-			"left": 986,
+			"left": 1038,
 			"top": 1038,
 			"width": 48,
 			"height": 48,

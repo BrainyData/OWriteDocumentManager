@@ -1,1 +1,4 @@
-Do OWrite.$getfontlist(ivFontList,0,0,0,kTrue)
+;  get list of fonts for display on client
+
+Do OWrite.$getfontlist(ivFontList,0,0,0,kTrue,kTrue,ivFontSizeList)     ;; CHANGE_JSTextMeasure added additional parameter
+;  Breakpoint

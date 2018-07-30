@@ -85,7 +85,14 @@
 		"order": 6,
 		"clientexec": false,
 		"pvardefs": [
-
+			{
+				"name": "pLine",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
 		],
 		"lvardefs": [
 			{
@@ -161,9 +168,28 @@
 		]
 	},
 	{
+		"name": "$showOverlay",
+		"ident": 41,
+		"order": 11,
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pShow",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
 		"name": "$--- doc loading/saving ---",
 		"ident": 25,
-		"order": 11,
+		"order": 12,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -176,7 +202,7 @@
 	{
 		"name": "$serverNewDocument",
 		"ident": 34,
-		"order": 12,
+		"order": 13,
 		"clientexec": false,
 		"pvardefs": [
 			{
@@ -208,7 +234,7 @@
 	{
 		"name": "$serverNewDocument_return",
 		"ident": 35,
-		"order": 13,
+		"order": 14,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -220,7 +246,7 @@
 	{
 		"name": "$serverLoadData",
 		"ident": 0,
-		"order": 14,
+		"order": 15,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -238,7 +264,7 @@
 	{
 		"name": "$serverLoadData_return",
 		"ident": 5,
-		"order": 15,
+		"order": 16,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -250,7 +276,7 @@
 	{
 		"name": "$serverSaveData",
 		"ident": 4,
-		"order": 16,
+		"order": 17,
 		"clientexec": false,
 		"pvardefs": [
 			{
@@ -317,7 +343,7 @@
 	{
 		"name": "$serverSaveData_return",
 		"ident": 6,
-		"order": 17,
+		"order": 18,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -329,7 +355,7 @@
 	{
 		"name": "$serverDeleteCopies",
 		"ident": 19,
-		"order": 18,
+		"order": 19,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -341,7 +367,31 @@
 	{
 		"name": "$serverDeleteCopies_return",
 		"ident": 21,
-		"order": 19,
+		"order": 20,
+		"clientexec": true,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$serverDeleteDocument",
+		"ident": 39,
+		"order": 21,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$serverDeleteDocument_return",
+		"ident": 40,
+		"order": 22,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -353,7 +403,7 @@
 	{
 		"name": "$clientDeleteCopies",
 		"ident": 20,
-		"order": 20,
+		"order": 23,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -365,7 +415,7 @@
 	{
 		"name": "$reformatDocument",
 		"ident": 32,
-		"order": 21,
+		"order": 24,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -377,7 +427,7 @@
 	{
 		"name": "$--- obj inserting ---",
 		"ident": 26,
-		"order": 22,
+		"order": 25,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -390,7 +440,7 @@
 	{
 		"name": "loadSampleImage",
 		"ident": 12,
-		"order": 23,
+		"order": 26,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -443,7 +493,7 @@
 	{
 		"name": "$owriteInsertObject",
 		"ident": 13,
-		"order": 24,
+		"order": 27,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -541,7 +591,7 @@
 	{
 		"name": "$owriteInsert",
 		"ident": 16,
-		"order": 25,
+		"order": 28,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -574,7 +624,7 @@
 	{
 		"name": "$--- context menu ---",
 		"ident": 15,
-		"order": 26,
+		"order": 29,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -587,7 +637,7 @@
 	{
 		"name": "$handleOpenContextMenu",
 		"ident": 30,
-		"order": 27,
+		"order": 30,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -641,7 +691,7 @@
 	{
 		"name": "$handleExecContextMenu",
 		"ident": 14,
-		"order": 28,
+		"order": 31,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -709,7 +759,7 @@
 	{
 		"name": "$handleFormatChanged",
 		"ident": 31,
-		"order": 29,
+		"order": 32,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -727,7 +777,7 @@
 	{
 		"name": "$--- field evaluation/clicking ---",
 		"ident": 22,
-		"order": 30,
+		"order": 33,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -740,7 +790,7 @@
 	{
 		"name": "$serverEventPreview",
 		"ident": 27,
-		"order": 31,
+		"order": 34,
 		"clientexec": false,
 		"pvardefs": [
 			{
@@ -766,7 +816,7 @@
 	{
 		"name": "$serverEventPreview_return",
 		"ident": 28,
-		"order": 32,
+		"order": 35,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -785,7 +835,7 @@
 	{
 		"name": "$serverEventObjClick",
 		"ident": 7,
-		"order": 33,
+		"order": 36,
 		"clientexec": false,
 		"pvardefs": [
 			{
@@ -820,7 +870,7 @@
 	{
 		"name": "$serverEventObjClick_return",
 		"ident": 8,
-		"order": 34,
+		"order": 37,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -859,7 +909,7 @@
 	{
 		"name": "$serverEventShowPDF",
 		"ident": 36,
-		"order": 35,
+		"order": 38,
 		"clientexec": false,
 		"pvardefs": [
 			{
@@ -894,7 +944,7 @@
 	{
 		"name": "$serverEventShowPDF_return",
 		"ident": 37,
-		"order": 36,
+		"order": 39,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -913,7 +963,7 @@
 	{
 		"name": "$showpdf",
 		"ident": 38,
-		"order": 37,
+		"order": 40,
 		"clientexec": true,
 		"pvardefs": [
 			{
@@ -945,7 +995,7 @@
 	{
 		"name": "$opendocument",
 		"ident": 9,
-		"order": 38,
+		"order": 41,
 		"clientexec": false,
 		"pvardefs": [
 			{
@@ -970,7 +1020,7 @@
 	{
 		"name": "$openurl",
 		"ident": 23,
-		"order": 39,
+		"order": 42,
 		"clientexec": false,
 		"pvardefs": [
 			{

@@ -1,14 +1,14 @@
 {
 	"classtype": "kSystemtable",
-	"internalversion": 1201,
-	"iconversion": 398,
-	"nextident": 46,
+	"internalversion": 1233,
+	"iconversion": 407,
+	"nextident": 49,
 	"properties": {
 		"componenttype": "kCompStoreHidden",
 		"createdate": "2010-04-23 14:07:43",
 		"desc": "",
 		"external": false,
-		"moddate": "2017-08-25 13:13:00",
+		"moddate": "2018-06-15 10:50:58",
 		"showascheckedout": true,
 		"userinfo": "",
 		"version": "4.41.00"
@@ -1357,6 +1357,20 @@
 			"iconpos": 1,
 			"defaultsize": 1,
 			"flags": 0
+		},
+		{
+			"iconid": 14001,
+			"pageid": 46,
+			"iconpos": 6,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 15000,
+			"pageid": 49,
+			"iconpos": 1,
+			"defaultsize": 1,
+			"flags": 0
 		}
 	],
 	"pages": [
@@ -1599,6 +1613,12 @@
 			"name": "jsOWriteMisc",
 			"bitmapid": 40,
 			"flags": 1829
+		},
+		{
+			"pageid": 49,
+			"name": "jsNoGo",
+			"bitmapid": 41,
+			"flags": 1856
 		}
 	],
 	"bitmaps": [
@@ -1903,6 +1923,15 @@
 			},
 			"alpha": {
 				"$png": "alpha40.png"
+			}
+		},
+		{
+			"bitmapid": 41,
+			"solid": {
+				"$png": "solid41.png"
+			},
+			"alpha": {
+				"$png": "alpha41.png"
 			}
 		}
 	]
