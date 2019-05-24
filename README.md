@@ -4,7 +4,7 @@ The library implements a working document manager to demonstrate the features of
 
 ## Additional Requirements
 
-To build the library you will require the following external components by Brainy Data; OWrite (v4.1), jsOWrite (v4.1), PDFDevice (v3.3) and OSpell2 (v3.2.4). If you do not have them, demo versions are available at https://www.brainydata.com/demos. Furthermore, additional files and libraries are required which can also be downloaded from the same location.
+To build the library you will require the following external components by Brainy Data; OWrite (v4.3), jsOWrite (v4.3), PDFDevice (v3.3) and OSpell2 (v3.2.4). If you do not have them, demo versions are available at https://www.brainydata.com/demos. Furthermore, additional files and libraries are required which can also be downloaded from the same location.
 
 The specific downloads are:
 
