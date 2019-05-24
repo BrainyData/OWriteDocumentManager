@@ -1,0 +1,9 @@
+;  overide this method to initialize the window     ;; called by $construct
+;       ;; you must call the inherited method
+;  we like to operate in same measure as OWrite is displaying
+Do inherited
+Calculate ivUndoText as "Format Picture"
+
+Calculate ivIsCalc as ivEditObjRef.$curobjtype=kWriObjTypeCalcPict
+Do $cinst.$objs.Pages.$showpane(3,ivIsCalc)
+Calculate $cinst.$objs.Pages.$currenttab as cvCurTab

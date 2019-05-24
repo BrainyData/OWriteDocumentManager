@@ -1,8 +1,0 @@
-;  add a line to the list, make it current and set default values
-Do $cinst.$add()
-Do $cinst.$line.$assign($cinst.$linecount)
-
-Calculate $cinst.OL_SEQ as 0
-Calculate $cinst.OL_NAME as "New Label"
-Calculate $cinst.OL_NAME_UPPER as upp($cinst.OL_NAME)
-Calculate $cinst.OL_DESCRIPTION as "empty label"

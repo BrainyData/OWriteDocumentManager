@@ -1,0 +1,17 @@
+;  Enter your initialization code here
+Set reference ivOWrite to pOWrite
+Calculate ivDocName as pDocName
+Calculate ivGroupName as pGroupName
+
+Calculate cvDocsList as pDocsList
+
+If $components.$findname("PDF Device")
+	Enable fields {DirectToPDF,OmnisToPDF}
+Else
+	Disable fields {DirectToPDF,OmnisToPDF}
+End If
+
+Do method setButtons
+
+;  fetch PDF device parameters     ;; CHANGE_2014_06_11__4
+Do $devices.[kDevPdf].$getparam(kDevPdfAll) Returns ivPDFParams

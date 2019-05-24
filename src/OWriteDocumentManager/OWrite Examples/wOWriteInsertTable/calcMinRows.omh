@@ -1,5 +1,0 @@
-Calculate min as ivHeaderRow+ivFooterRow+1
-If ivRows<min
-	Calculate ivRows as min
-	Redraw {Rows}
-End If

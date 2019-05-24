@@ -1,0 +1,13 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do ivEditRef.$startundo()
+	Calculate ivEditRef.$holdupdates as kTrue
+	;  CHANGE_V3A10     ;; use new calc properties and removed assignment of underline and color now specified via $link properties
+	Calculate ivEditRef.$curobjname as replaceall(con('lnk_',ivDisplayText),' ','')     ;; CHANGE_2014_07_15__1
+	Calculate ivEditRef.$curobjdisplay as ivDisplayText
+	Calculate ivEditRef.$curobjtooltip as ivTooltip
+	Calculate ivEditRef.$curobjclicks as kTrue
+	Calculate ivEditRef.$curobjcalc as ''
+	Calculate ivEditRef.$curobjclickcalc as con('"',ivURLText,'"')     ;; CHANGE_2014_07_15__1
+	Calculate ivEditRef.$holdupdates as kFalse
+	Do ivEditRef.$endundo("Format Link")
+	Queue close [$cwind().$name]

@@ -1,0 +1,195 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 6,
+	"designtaskname": "Startup_Task",
+	"nextident": 1027,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "kCancelButtonTopAdj",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "pick(sys(6)='M'|sys(6)='X',26,34)",
+			"desc": "adjustment value of the cancel button for fields inside containers (mainly tab pane)"
+		},
+		{
+			"name": "kNullCheckbox",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "#NULL"
+		},
+		{
+			"name": "kNullColorPicker",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "-2147483599"
+		},
+		{
+			"name": "kNullCombo",
+			"order": 7,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "''"
+		},
+		{
+			"name": "kNullEntry",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "#NULL"
+		},
+		{
+			"name": "kNullList",
+			"order": 6,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0",
+			"desc": "Line is zero for null values in a list"
+		},
+		{
+			"name": "kNullRadio",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "-1"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivAlwaysSave",
+			"order": 3,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if true, the dataChanged state is ignored and properties are always applied ;; CHANGE_V3A12"
+		},
+		{
+			"name": "ivEditObjRef",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivIsForFind",
+			"order": 7,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivIsSubWindow",
+			"order": 5,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivOWriteRef",
+			"order": 6,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRefList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivUndoText",
+			"order": 8,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "\"Formatting\""
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2010-04-23 14:07:51",
+		"desc": "OWrite: formatting window used by all examples",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": false,
+		"forecolor": "kColor3DFace",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 580,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 33,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2019-02-18 15:04:45",
+		"modelessdata": true,
+		"showascheckedout": false,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": "",
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionNone",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 79,
+		"userinfo": "",
+		"usesheets": false,
+		"version": "4.33.00",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 640,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

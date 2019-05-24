@@ -1,9 +1,16 @@
 {
 	"classtype": "kRemoteTask",
-	"internalversion": 12,
+	"internalversion": 14,
 	"nextident": 1,
 	"tvardefs": [
-
+		{
+			"name": "OWRITE_TMP_VAR",
+			"order": 1,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000,
+			"desc": "change20190123_1 This task variable is required to evaluate images and tables"
+		}
 	],
 	"cvardefs": [
 
@@ -32,10 +39,10 @@
 		"localtime": false,
 		"maxtime": 0,
 		"maxusers": 0,
-		"moddate": "2017-09-05 09:42:22",
+		"moddate": "2019-02-18 15:04:45",
 		"restful": false,
 		"restfulapiname": "",
-		"showascheckedout": true,
+		"showascheckedout": false,
 		"stringtable": "",
 		"timeout": 0,
 		"userinfo": "",

@@ -1,5 +1,0 @@
-On evShown
-	Do method SetFieldBackground
-	Queue set current field {fldSearchText}
-On evHidden
-	Do method CancelSearch

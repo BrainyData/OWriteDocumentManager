@@ -69,9 +69,62 @@
 		]
 	},
 	{
+		"name": "$serverBuildHeaderBanner",
+		"ident": 18,
+		"order": 5,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "height",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lmargin",
+				"order": 4,
+				"type": "kNumber",
+				"subtype": "k4dp",
+				"sublen": 0
+			},
+			{
+				"name": "omImage",
+				"order": 6,
+				"type": "kPicture",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "pngImage",
+				"order": 1,
+				"type": "kBinary",
+				"subtype": 0,
+				"sublen": 100000000
+			},
+			{
+				"name": "rmargin",
+				"order": 5,
+				"type": "kNumber",
+				"subtype": "k4dp",
+				"sublen": 0
+			},
+			{
+				"name": "width",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
 		"name": "$serverSaveData",
 		"ident": 4,
-		"order": 5,
+		"order": 6,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -83,7 +136,7 @@
 	{
 		"name": "$serverSaveData_return",
 		"ident": 5,
-		"order": 6,
+		"order": 7,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -95,7 +148,7 @@
 	{
 		"name": "$serverMergeData",
 		"ident": 6,
-		"order": 7,
+		"order": 8,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -107,7 +160,7 @@
 	{
 		"name": "$serverMergeData_return",
 		"ident": 7,
-		"order": 8,
+		"order": 9,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -119,7 +172,7 @@
 	{
 		"name": "$serverClearData",
 		"ident": 8,
-		"order": 9,
+		"order": 10,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -131,7 +184,7 @@
 	{
 		"name": "$serverClearData_return",
 		"ident": 9,
-		"order": 10,
+		"order": 11,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -143,7 +196,7 @@
 	{
 		"name": "$serverPrintData",
 		"ident": 10,
-		"order": 11,
+		"order": 12,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -161,7 +214,7 @@
 	{
 		"name": "$serverPrintData_return",
 		"ident": 11,
-		"order": 12,
+		"order": 13,
 		"clientexec": true,
 		"pvardefs": [
 
@@ -170,5 +223,319 @@
 
 		],
 		"empty": true
+	},
+	{
+		"name": "$clientReplaceAll",
+		"ident": 15,
+		"order": 14,
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pSearchText",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pReplaceText",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "asyncData",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$serverReplaceAll",
+		"ident": 16,
+		"order": 15,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pSearchText",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pReplaceText",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$handleOpenContextMenu",
+		"ident": 12,
+		"order": 16,
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pContextMenu",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pOWrite",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "curObjNone",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "curObjNoneCellOrHF",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "curObjNoneOrCell",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "remoteMenu",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$handleExecContextMenu",
+		"ident": 13,
+		"order": 17,
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pCommandID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pCurObjType",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "action",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "ok",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "selEnd",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "selStart",
+				"order": 8,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "subtype",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "type",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$owriteInsertObject",
+		"ident": 14,
+		"order": 18,
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pObjType",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pObjSubtype",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pCurObjType",
+				"order": 12,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "cellInfo",
+				"order": 14,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "cellNo",
+				"order": 11,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "maxWidth",
+				"order": 17,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objCalc",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objDisplay",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objLabel",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objName",
+				"order": 7,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objTooltip",
+				"order": 13,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "objWidth",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "ok",
+				"order": 8,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "origHeight",
+				"order": 16,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "origWidth",
+				"order": 15,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "params",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "rowNo",
+				"order": 10,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
 	}
 ]

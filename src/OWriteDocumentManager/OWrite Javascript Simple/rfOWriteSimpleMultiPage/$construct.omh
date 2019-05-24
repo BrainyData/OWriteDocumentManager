@@ -1,0 +1,8 @@
+;  load some test documents
+Do objServerOWrite.$loaddata("Test document one",kWriFmtText)
+Do objServerOWrite.$savedata(ivDocOne,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+
+Do objServerOWrite.$loaddata("Test document two",kWriFmtText)
+Do objServerOWrite.$savedata(ivDocTwo,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
+
+Do OWrite.$getfontlist(ivFontList,'',0,0,0,0,ivFontSizeList)

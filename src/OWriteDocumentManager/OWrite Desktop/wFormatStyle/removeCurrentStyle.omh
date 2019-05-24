@@ -1,0 +1,14 @@
+Do ivEditObjRef.$removestyle(ivStyleList.ivStyleName,kTrue) Returns error     ;; first just test if the style can be removed
+If not(error)
+	Yes/No message Remove Style (Icon,Sound bell) {Remove the style '[ivStyleList.ivStyleName]'. This action cannot be undone. Are you sure?}
+	If flag true
+		Do ivEditObjRef.$removestyle(ivStyleList.ivStyleName)     ;; remove for real
+		Do ivStyleList.$remove(ivStyleList.$line)
+		If not(ivStyleList.$line)
+			Calculate ivStyleList.$line as 1
+		End If
+		Do method styleChanged
+	End If
+Else
+	OK message Remove Style {The style is in use. Unable to continue.}
+End If

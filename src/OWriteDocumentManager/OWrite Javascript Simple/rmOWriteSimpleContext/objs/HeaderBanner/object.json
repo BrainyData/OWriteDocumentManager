@@ -1,0 +1,16 @@
+{
+	"ident": 1019,
+	"order": 9,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 1001,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Insert Header Banner"
+		},
+		"userinfo": "change20190207_1"
+	}
+}

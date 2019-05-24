@@ -1,3 +1,0 @@
-;  disable preview after making changes
-Calculate refPreview.$readonly as kTrue
-;  Calculate ref_Preview.$active as kFalse

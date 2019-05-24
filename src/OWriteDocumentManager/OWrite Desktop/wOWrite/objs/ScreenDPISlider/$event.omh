@@ -1,0 +1,4 @@
+On evNewValue
+	Calculate ivEdit.$screendpi as $cobj.$val
+	Calculate ivScreenDPIList.$line as 0
+	Redraw {ScreenDPI}

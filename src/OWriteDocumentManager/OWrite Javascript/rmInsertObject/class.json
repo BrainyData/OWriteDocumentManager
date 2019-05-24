@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteMenu",
-	"internalversion": 11,
+	"internalversion": 12,
 	"nextident": 1017,
 	"properties": {
 		"componenticon": 0,
@@ -11,8 +11,8 @@
 		"editordata": "",
 		"enabled": true,
 		"external": false,
-		"moddate": "2016-10-03 12:54:49",
-		"showascheckedout": true,
+		"moddate": "2018-07-31 14:51:46",
+		"showascheckedout": false,
 		"title": {
 			"type": 0,
 			"calc": "Insert"

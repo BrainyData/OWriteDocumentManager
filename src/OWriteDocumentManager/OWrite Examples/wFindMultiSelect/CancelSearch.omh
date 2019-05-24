@@ -1,9 +1,0 @@
-If not(inCancelSearch)
-	Calculate inCancelSearch as kTrue
-	Do $cinst.$visible.$assign(kFalse)
-	Do ivFindList.$clear()
-	Do ivFindObj.$setresultlist(#NULL)
-	Calculate ivLastFindText as ''
-	Calculate refStatusLabel.$text as ivDefaultStatusText
-	Calculate inCancelSearch as kFalse
-End If

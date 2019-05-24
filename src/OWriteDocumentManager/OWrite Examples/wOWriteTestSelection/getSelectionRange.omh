@@ -1,2 +1,0 @@
-Do ivOWrite.$getselection(ivStartSel,ivEndSel,ivSelObjID,ivRangeType)
-Redraw {ivSelObjID,ivStartSel,ivEndSel}

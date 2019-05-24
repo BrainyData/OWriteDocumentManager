@@ -1,4 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	Calculate ivEdit.$screendpi as pRow.ivScreenDPI
-	Do refScreenDPISlider.$setValue()
-	Calculate $cinst.$ctarget as ivEdit

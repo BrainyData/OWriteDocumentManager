@@ -1,0 +1,239 @@
+{
+	"classtype": "kReport",
+	"internalversion": 20,
+	"designtaskname": "Startup_Task",
+	"nextident": 1023,
+	"lastgroupident": 0,
+	"usecms": true,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivBotMargin",
+			"order": 2,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "ivDocData",
+			"order": 3,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000
+		},
+		{
+			"name": "ivDocName",
+			"order": 4,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivTopMargin",
+			"order": 1,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "ivWatermarks",
+			"order": 5,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"backcolor": "RGB(0,0,0)",
+		"backiconid": 0,
+		"backpattern": 15,
+		"backpicture": {
+			"$base64": ""
+		},
+		"bordercolor": "RGB(0,0,0)",
+		"borderpos": "kBordPosMargins",
+		"bottommargin": 0.0,
+		"callprintonexport": false,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"copies": 0,
+		"createdate": "2010-04-23 14:07:48",
+		"desc": "OWrite: document manager example report",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"exportformat": "kEXnone",
+		"external": false,
+		"forecolor": "RGB(0,0,0)",
+		"horzdpi": 0,
+		"horzgrid": 0.508,
+		"horzoffset": 0.0,
+		"horzpages": false,
+		"islabel": false,
+		"islist": false,
+		"issupercomponent": false,
+		"labelcount": 0,
+		"labelwidth": 0.0,
+		"leftmargin": 0.0,
+		"linestyle": 1,
+		"loadpagesetup": false,
+		"macosdestname": "",
+		"macosdesttype": "kPrinter",
+		"mainfile": "",
+		"mainlist": "",
+		"moddate": "2018-07-31 14:51:46",
+		"orientation": "kOrientDefault",
+		"pagesetupdata": {
+			"$base64": ""
+		},
+		"paper": "kPaDefault",
+		"paperlength": 0.0,
+		"paperwidth": 0.0,
+		"picturealign": "kPALtopLeft",
+		"recordspacing": 0.0,
+		"repeatfactor": 1,
+		"rightmargin": 0.0,
+		"scale": 0,
+		"showascheckedout": false,
+		"showgrid": true,
+		"shownames": false,
+		"sizetogrid": false,
+		"topmargin": 0.0,
+		"userinfo": "",
+		"version": "4.32.00",
+		"vertdpi": 0,
+		"vertoffset": 0.0
+	},
+	"sortfields": [
+		{
+			"order": 1,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 2,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 3,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 4,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 5,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 6,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 7,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 8,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 9,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		}
+	]
+}

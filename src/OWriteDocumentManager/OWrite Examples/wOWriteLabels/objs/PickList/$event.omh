@@ -1,2 +1,0 @@
-On evRowChange
-	Do $cfield.$rowChanged

@@ -1,0 +1,50 @@
+{
+	"classtype": "kObjectclass",
+	"internalversion": 48,
+	"superclass": ".OWrite.OWriteDoc",
+	"designtaskname": "Startup_Task",
+	"cvardefs": [
+		{
+			"name": "cvHeaderBannerCached",
+			"order": 1,
+			"type": "kPicture",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "cvHeaderBannerHeight",
+			"order": 3,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "height in 1000/mm (OWrite units)"
+		},
+		{
+			"name": "cvHeaderBannerWidth",
+			"order": 2,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "width in 1000/mm (OWrite units)"
+		}
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2019-02-04 13:28:10",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"moddate": "2019-02-18 15:04:45",
+		"selfcontained": false,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	}
+}

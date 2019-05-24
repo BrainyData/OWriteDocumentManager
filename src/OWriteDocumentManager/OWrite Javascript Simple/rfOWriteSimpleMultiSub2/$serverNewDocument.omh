@@ -1,0 +1,7 @@
+;  see if we have a previously saved document (makes testing easier)
+If cvSavedDocument.$linecount
+	Calculate ivDocument as cvSavedDocument
+	Quit method
+End If
+;  otherwise call superclass method to load new document with default content
+Do $inherited.$serverNewDocument('This document is managed by rfOWriteSimpleMultiSub2','Document Subform Two')

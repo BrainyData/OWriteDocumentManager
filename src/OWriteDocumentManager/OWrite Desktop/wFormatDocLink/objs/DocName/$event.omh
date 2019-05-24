@@ -1,0 +1,6 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	Do method LoadBookmarks
+On evAfter
+	If #MODIFIED
+		Do method LoadBookmarks
+	End If

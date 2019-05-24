@@ -1,4 +1,0 @@
-On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
-	Do method calcCellWidth
-	Calculate ivColumnDetailsList.$linecount as ivColumns
-	Redraw {ColumnDetails}

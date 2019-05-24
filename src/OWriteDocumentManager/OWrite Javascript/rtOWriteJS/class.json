@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteTask",
-	"internalversion": 21,
+	"internalversion": 22,
 	"nextident": 1,
 	"tvardefs": [
 		{
@@ -39,10 +39,10 @@
 		"localtime": false,
 		"maxtime": 0,
 		"maxusers": 0,
-		"moddate": "2017-09-05 08:22:46",
+		"moddate": "2018-07-31 14:51:46",
 		"restful": false,
 		"restfulapiname": "",
-		"showascheckedout": true,
+		"showascheckedout": false,
 		"stringtable": "JSOWriteStrings.tsv",
 		"timeout": 15,
 		"userinfo": "",

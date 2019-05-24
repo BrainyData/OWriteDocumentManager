@@ -1,0 +1,14 @@
+;       ;; change20181218_1 - added method for rmOWriteSimpleContext menu (implements subset of options taken from document manager example)
+
+If pCommandID>=10000&pCommandID<=19999
+	;  insert special chars and opbjects (final two digids are data, prior two digids are object type)
+	Calculate type as int((pCommandID-10000)/100)     ;; calculate kWriObjType... from command id
+	Calculate subtype as mod(pCommandID,100)     ;; calculate kWriObjTypeInfo... subtype from command id
+	Do $cinst.$owriteInsertObject(type,subtype,pCurObjType) Returns ok
+Else
+	;  special menu cases
+	Switch pCommandID
+		Case 1001
+			Do $cinst.$owriteInsertObject(kWriObjTypePict,'HEADER_BANNER',pCurObjType) Returns ok
+	End Switch
+End If

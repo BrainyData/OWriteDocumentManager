@@ -1,2 +1,0 @@
-On evClick
-	Calculate $topwind.$ctarget.$curitalic as not($cobj.$checked)

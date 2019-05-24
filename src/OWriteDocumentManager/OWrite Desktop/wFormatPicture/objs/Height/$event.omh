@@ -1,0 +1,11 @@
+On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
+	If #MODIFIED
+		Calculate ivHeight_perc as ivHeight*100/ivEditObjRef.$curobjorigheight
+		If ivLockAspectRatio
+			Calculate ivWidth_perc as ivHeight_perc
+			Calculate ivWidth as ivEditObjRef.$curobjorigwidth*ivWidth_perc/100
+		End If
+		Calculate ivFixedSize as (ivWidth+ivHeight)<>0
+		Redraw {Height,Width,Hight%,Width%,FixedSize}
+	End If
+	Quit event handler (Pass to next handler)

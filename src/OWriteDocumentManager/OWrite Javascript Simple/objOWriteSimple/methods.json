@@ -1,6 +1,6 @@
 [
 	{
-		"name": "$construct",
+		"name": "$=== objOWriteSimple",
 		"ident": 1,
 		"order": 1,
 		"pvardefs": [
@@ -8,23 +8,13 @@
 		],
 		"lvardefs": [
 
-		]
-	},
-	{
-		"name": "$destruct",
-		"ident": 2,
-		"order": 2,
-		"pvardefs": [
-
 		],
-		"lvardefs": [
-
-		]
+		"empty": true
 	},
 	{
 		"name": "$mergedata",
 		"ident": 0,
-		"order": 3,
+		"order": 2,
 		"pvardefs": [
 			{
 				"name": "pDocumentData",
@@ -51,7 +41,7 @@
 	{
 		"name": "$printdocument",
 		"ident": 3,
-		"order": 4,
+		"order": 3,
 		"pvardefs": [
 			{
 				"name": "pDocumentData",
@@ -89,7 +79,7 @@
 	{
 		"name": "$getData",
 		"ident": 4,
-		"order": 5,
+		"order": 4,
 		"pvardefs": [
 			{
 				"name": "pFileName",
@@ -118,6 +108,52 @@
 		],
 		"lvardefs": [
 
+		]
+	},
+	{
+		"name": "$getDataList",
+		"ident": 5,
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pDataTable",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 1
+			},
+			{
+				"name": "pDataColumns",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "defineString",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "fieldName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "theList",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
 		]
 	}
 ]

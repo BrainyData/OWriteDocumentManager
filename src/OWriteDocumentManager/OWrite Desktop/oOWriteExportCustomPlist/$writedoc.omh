@@ -1,0 +1,47 @@
+;  PURPOSE:     ;; main method for exporting entire document
+;  USAGE:     ;; this method is called by the example export window when custom export is selected
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for the export
+;  IMPLEMENTS:     ;; prepares output and calls a number of export methods for exporting various document data
+
+
+;  write our property list XML header ---
+
+;  --- start Omnis TEXT buffer
+Do method $cinst.$buffer_start Returns #F
+If flag true
+	;  --- write the XML header
+	Text: {<?xml version="1.0" encoding="UTF-8"?>} (Linefeed)     ;; XML version and encoding
+	Text: {<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">} (Linefeed)     ;; document type definition
+	Text: {<plist version="1.0">} (Linefeed)     ;; document type and version
+	Text: {<dict>} (Linefeed)     ;; root collection
+	Do method Indent (kTrue)     ;; all subsequent tags indented
+	
+	;  --- close Omnis text buffer     ;; writes buffer to output
+	Do method $cinst.$buffer_end Returns #F
+End If
+If flag false
+	Quit method kFalse
+End If
+
+
+;  call superclass to export document data ---
+Do $inherited.$writedoc(pDocData) Returns #F
+If flag false
+	Quit method kFalse
+End If
+
+
+;  write our property list XML footer ---
+
+;  --- start Omnis TEXT buffer
+Do method $cinst.$buffer_start Returns #F
+If flag true
+	;  --- write the XML footer
+	Do method Indent (kFalse)
+	Text: {</dict>} (Linefeed)     ;; close root collection
+	Text: {</plist>} (Linefeed)     ;; close property list
+	
+	;  --- close Omnis text buffer     ;; writes buffer to output
+	Do method $cinst.$buffer_end Returns #F
+End If
+Quit method #F

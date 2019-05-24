@@ -1,0 +1,7 @@
+On evMouseDown     ;; Event Parameters - pRow ( Itemreference )
+	If ivStrikeThrough=1
+		Calculate ivStrikeThrough as 0
+		Do $cfield.$redraw()
+		Do refPreview.$update()     ;; CHANGE_V3A12
+		Quit event handler (Discard event)
+	End If

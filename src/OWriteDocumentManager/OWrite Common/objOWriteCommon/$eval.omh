@@ -1,0 +1,43 @@
+;  calculated fields in some documents reference this method to fetch data for merging
+Switch pDataID
+	Case 'BuildList'     ;; pDataParam1 = Data Table ; pDataParam2 = Data Columns ; pDataParam3 = search calculation
+		Calculate defineString as con('theList.$define(',pDataParam2,')')
+		Do eval(defineString)
+		Begin reversible block
+			Set read-only files {[pDataParam1]}
+			Set main file {[pDataParam1]}
+			Set current list theList
+		End reversible block
+		If len(pDataParam3)
+			Set search as calculation {[pDataParam3]}
+			Build list from file  (Use search)
+		Else
+			Build list from file
+		End If
+		;  check if we have included the pictures from fPDFPicts
+		;       ;; they are in RAW jpeg format so we must convert them to color shared
+		If pos('fPDFPicts.pict',pDataParam2)
+			For theList.$line from 1 to theList.$linecount step 1
+				Calculate theList.pict as pictconvto('JPEG',theList.pict,'CS24')
+			End For
+		End If
+		Quit method theList
+	Case 'CompanyName'
+		Quit method "Brainy Data Limited"
+	Case 'CompanyAddress'
+		Quit method con("19 Queens Road",chr(kWriCharReturn),"Clacton-on-sea",chr(kWriCharReturn),"Essex CO15 1AA")
+	Case 'CompanyPhone'
+		Quit method "0870 474 0708"
+	Case 'CompanyWebsite'
+		Quit method "www.brainydata.com"
+	Case 'CompanyLogo'
+		;  our logo is hard-coded in the _HeaderBanner template, but it could easaly be referencing an image on the internet or an image in the database
+		;  see documentation for $curobjdatasrc and calculated picture fields
+		Begin reversible block
+			Set read-only files {fPDFPicts}
+		End reversible block
+		Single file find on fPDFPicts.name {'logo'}
+		Quit method pictconvto('JPEG',fPDFPicts.pict,'CS24')
+	Default
+		Quit method "(null)"
+End Switch

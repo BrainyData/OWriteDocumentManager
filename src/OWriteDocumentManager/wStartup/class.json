@@ -1,6 +1,6 @@
 {
 	"classtype": "kWindow",
-	"internalversion": 44,
+	"internalversion": 46,
 	"designtaskname": "Startup_Task",
 	"nextident": 1019,
 	"lastgroupident": 0,
@@ -39,7 +39,7 @@
 		"growbox": true,
 		"hasmenus": false,
 		"hasstatusbar": false,
-		"height": 613,
+		"height": 686,
 		"helpbutton": false,
 		"helpfile": 0,
 		"horzgrid": 8,
@@ -53,7 +53,7 @@
 		"menunames": "",
 		"minimizebox": false,
 		"minimizeiconid": 2006,
-		"moddate": "2018-07-06 10:49:30",
+		"moddate": "2019-02-04 13:03:11",
 		"modelessdata": true,
 		"showascheckedout": true,
 		"showcommands": false,
@@ -74,7 +74,7 @@
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false,
-		"width": 699,
+		"width": 726,
 		"zoombox": false
 	},
 	"statusbar": {

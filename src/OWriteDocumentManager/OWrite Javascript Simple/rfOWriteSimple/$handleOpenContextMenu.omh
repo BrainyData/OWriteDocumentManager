@@ -1,0 +1,18 @@
+;       ;; change20181218_1 - added method for rmOWriteSimpleContext menu (implements subset of options taken from document manager example)
+
+
+;  our simple context menu consists of basic insert options only
+Calculate curObjNone as pOWrite.$curobjtype=kWriObjTypeNone
+Calculate curObjNoneOrCell as pOWrite.$curobjtype=kWriObjTypeNone|pOWrite.$curobjtype=kWriObjTypeTableCell
+Calculate curObjNoneCellOrHF as pOWrite.$curobjtype=kWriObjTypeNone|pOWrite.$curobjtype=kWriObjTypeTableCell|pOWrite.$curobjtype=kWriObjTypeHeadFoot
+
+Calculate pContextMenu.$objs.PageBreak.$enabled as curObjNone
+Calculate pContextMenu.$objs.CalculatedField.$enabled as curObjNoneCellOrHF
+Calculate pContextMenu.$objs.CalculatedPicture.$enabled as curObjNone
+Calculate pContextMenu.$objs.SamplePicture.$enabled as curObjNoneCellOrHF
+Calculate pContextMenu.$objs.Table.$enabled as curObjNone
+Calculate pContextMenu.$objs.Date.$enabled as curObjNoneCellOrHF
+Calculate pContextMenu.$objs.Time.$enabled as curObjNoneCellOrHF
+Calculate pContextMenu.$objs.PageNumber.$enabled as curObjNoneCellOrHF
+Calculate pContextMenu.$objs.PageCount.$enabled as curObjNoneCellOrHF
+Calculate pContextMenu.$objs.HeaderBanner.$enabled as curObjNoneCellOrHF

@@ -1,3 +1,0 @@
-Do fClients.invoice_items.$define(code,description,units,unit_price)
-Do fClients.invoice_items.$add()
-Redraw {InvoiceItems}

@@ -1,6 +1,6 @@
 {
 	"classtype": "kReport",
-	"internalversion": 9,
+	"internalversion": 11,
 	"superclass": "rPDFDeviceSuper",
 	"designtaskname": "Startup_Task",
 	"nextident": 1224,
@@ -52,7 +52,7 @@
 		"macosdesttype": "kPrinter",
 		"mainfile": "",
 		"mainlist": "",
-		"moddate": "2018-06-20 09:45:16",
+		"moddate": "2019-04-08 23:13:06",
 		"orientation": "kOrientDefault",
 		"pagesetupdata": {
 			"$base64": ""

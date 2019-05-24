@@ -1,3 +1,0 @@
-;  build list of font sizes
-Do $cinst.$buildFontSizeList(ivFontSizeList)
-Do ivFontSizeList.$redefine(ivFontSize)

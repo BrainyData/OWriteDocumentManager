@@ -1,0 +1,20 @@
+{
+	"classtype": "kFile",
+	"internalversion": 3,
+	"estrecords": 1000,
+	"properties": {
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:45",
+		"desc": "OWrite: stores documents for document manager example",
+		"editor": "",
+		"editordata": "",
+		"external": false,
+		"filemode": "kClosed",
+		"moddate": "2019-02-18 15:04:45",
+		"odbcaccessmask": 0,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": "4.00.08"
+	}
+}

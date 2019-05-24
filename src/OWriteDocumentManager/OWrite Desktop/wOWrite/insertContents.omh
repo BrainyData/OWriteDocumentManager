@@ -1,0 +1,55 @@
+;  extract headers from the given document and insert table of content
+;  entries in the current document
+
+;  define our content list
+Do contentList.$define(contentPos,contentHeadingNum,contentText)
+
+;  load the data into our local OWrite object
+Do owriteDocObj.$loaddata(pDocData)
+
+;  build a list of heading styles, their text and global positions
+For curStyleNum from pick(pExcludeHeading1,1,2) to 5 step 1
+	Switch curStyleNum
+		Case 1,2,3
+			Calculate owriteSearchObj.$curstylename as con("Heading ",curStyleNum)
+			Calculate curStyleLevel as curStyleNum
+		Case 4
+			Calculate owriteSearchObj.$curstylename as "Property Name"
+			Calculate curStyleLevel as 3
+		Case 5
+			Calculate owriteSearchObj.$curstylename as "Constant Name"
+			Calculate curStyleLevel as 4
+	End Switch
+	Do owriteDocObj.$setselection(0,0)     ;; make sure we have no selection, otherwise we will search the selection only
+	Do owriteDocObj.$findinit(owriteSearchObj.$owriteobj)
+	Do owriteDocObj.$findnext(owriteSearchObj.$owriteobj) Returns #F
+	While flag true
+		Do owriteDocObj.$savedata(contentText,kWriFmtText,kFalse,kWriSaveSelection,kTrue)
+		Calculate contentText as trim(trim(contentText),kTrue,kTrue,chr(13))     ;; trim spaces and Returnｓ
+		If len(contentText)
+			Do contentList.$add(owriteDocObj.$globalpos(owriteDocObj.$firstsel),curStyleLevel,contentText)
+		End If
+		Do owriteDocObj.$findnext(owriteSearchObj.$owriteobj) Returns #F
+	End While
+End For
+
+;  get object ID, we may be inserting in a container
+Calculate insertObjId as ivEdit.$curobjid
+;  sort our list on contentPos
+Do contentList.$sort($ref.contentPos,kFalse)
+;  insert our content table in the current document
+For contentList.$line from 1 to contentList.$linecount step 1
+	;  insert link
+	Calculate contentCalc as "#;$cinst.$opendocument('#','#','')"
+	Calculate contentCalc as replace(contentCalc,'#',contentList.contentText)
+	Calculate contentCalc as replace(contentCalc,'#',pDocName)
+	Calculate contentCalc as replace(contentCalc,'#',contentList.contentText)
+	Do ivEdit.$::insert(kWriObjTypeCalc,contentCalc)     ;; this will leave the object selected
+	;  set link properties
+	Do ivEdit.$curobjclicks.$assign(kTrue)
+	;  apply formatting
+	Do ivEdit.$curstylename.$assign(con("TOC ",contentList.contentHeadingNum))
+	;  insert return
+	Do ivEdit.$setselection(ivEdit.$lastsel,ivEdit.$lastsel,insertObjId)
+	Do ivEdit.$::insert(kWriObjTypeChar,13)
+End For

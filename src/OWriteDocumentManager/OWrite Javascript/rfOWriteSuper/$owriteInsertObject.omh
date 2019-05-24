@@ -65,6 +65,9 @@ Switch pObjType
 	Case kWriObjTypeText
 		Calculate params as ivSamplePlainText
 		
+	Case kWriObjTypeChar     ;; CHANGE_20181130_1:added this case (insert page-break was not working)
+		Calculate params as pObjSubtype
+		
 End Switch
 
 Do $cinst.$objs.jsOWrite.$insert(pObjType,params,kWriInsertOver,con("Insert",pObjType)) Returns ok

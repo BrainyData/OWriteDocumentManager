@@ -1,0 +1,43 @@
+{
+	"ident": 1004,
+	"order": 4,
+	"objtype": "kSubwindow",
+	"properties": {
+		"alpha": 255,
+		"backalpha": 255,
+		"backcolor": "RGB(255,255,255)",
+		"bordercolor": "kColorDefault",
+		"classname": "rfOWriteSimple",
+		"cssclassname": "",
+		"dataname": "",
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"disablesystemfocus": false,
+		"effect": "kJSborderInset",
+		"enabled": true,
+		"events": "",
+		"horzscroll": false,
+		"linestyle": 1,
+		"multipleclasses": true,
+		"objlink": 131074,
+		"parameters": "",
+		"preventlayoutanimation": false,
+		"tooltip": "",
+		"userinfo": "",
+		"vertscroll": false,
+		"visible": true
+	},
+	"screensizes": [
+		{
+			"name": "kSSZDesktop",
+			"left": 12,
+			"top": 12,
+			"width": 965,
+			"height": 533,
+			"edgefloat": "kEFnone",
+			"dragborder": false,
+			"errortextpos": "kJSErrorTextPosUnder"
+		}
+	]
+}

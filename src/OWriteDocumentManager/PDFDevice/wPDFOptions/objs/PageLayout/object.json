@@ -19,7 +19,7 @@
 		"designactive": true,
 		"deslock": false,
 		"disablefocus": false,
-		"disablesystemfocus": false,
+		"disablesystemfocus": true,
 		"dragborder": false,
 		"dragiconid": 0,
 		"dragmode": "kNoDragging",

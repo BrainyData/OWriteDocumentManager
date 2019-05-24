@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Calculate cvFindObj as empty
-	Calculate cvFindText as ''
-	Do cvFindObj.$setdisplay($cinst.$objs.Panes.$bobjs.1031.$ref)
-	Do $cinst.$redraw(kTrue,kTrue)

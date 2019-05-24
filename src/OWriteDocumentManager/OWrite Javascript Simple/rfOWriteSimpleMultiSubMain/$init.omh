@@ -1,0 +1,1 @@
+Do $cinst.$setform($cinst.$objs.Tabs.$currenttab)

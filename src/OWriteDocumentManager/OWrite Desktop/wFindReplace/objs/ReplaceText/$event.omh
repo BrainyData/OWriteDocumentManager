@@ -1,0 +1,2 @@
+On evAfter     ;; Event Parameters - pRow ( Itemreference )
+	Calculate cvReplaceObj.$text as cvReplaceText

@@ -1,0 +1,2 @@
+Set reference ivOWrite to pOWrite
+Do $cinst.$installowrite(ivOWrite.$framehwnd)

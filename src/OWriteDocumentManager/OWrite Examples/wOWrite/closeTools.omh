@@ -1,4 +1,0 @@
-Close window instance wOWriteTools
-If refToolsHF.$close.$cando     ;; CHANGE_V3A8 begins
-	Do refToolsHF.$close()
-End If     ;; CHANGE_V3A8 ends

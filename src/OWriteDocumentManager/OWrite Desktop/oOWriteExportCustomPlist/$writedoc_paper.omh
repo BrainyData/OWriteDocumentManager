@@ -1,0 +1,36 @@
+;  PURPOSE:     ;; export document paper info
+;  USAGE:     ;; called by ...$writedoc
+;  SUB-CLASSING:     ;; sub-class this method to export document paper info
+
+;  export paper document info as XML properties ---
+
+;  --- start Omnis TEXT buffer
+Do method $cinst.$buffer_start Returns #F
+If flag true
+	
+	;  --- start paper info dictionary
+	Text: {[ivIndent]<key>DocPaper</key>} (Linefeed)
+	Text: {[ivIndent]<dict>} (Linefeed)
+	
+	;  --- write document paper properties
+	Do method Indent (kTrue)
+	Do method $cinst.$buffer_property ("PaperOrientation","string",$cinst.$orientation_tostring(pPaperOrientation))
+	Do method $cinst.$buffer_property ("PaperSize","integer",pPaperSize)
+	Do method $cinst.$buffer_property ("PaperLength","pridim",pPaperLength)
+	Do method $cinst.$buffer_property ("PaperWidth","pridim",pPaperWidth)
+	Do method $cinst.$buffer_property ("PaperLeftMargin","pridim",pPaperLeftMargin)
+	Do method $cinst.$buffer_property ("PaperRightMargin","pridim",pPaperRightMargin)
+	Do method $cinst.$buffer_property ("PaperTopMargin","pridim",pPaperTopMargin)
+	Do method $cinst.$buffer_property ("PaperBottomMargin","pridim",pPaperBottomMargin)
+	Do method $cinst.$buffer_property ("PaperContinues","bool",pPaperContinues)
+	Do method Indent (kFalse)
+	
+	;  --- close paper info dictionary
+	Text: {[ivIndent]</dict>} (Linefeed)
+	
+	;  --- close Omnis text buffer     ;; if not nested, writes buffer to output
+	Do method $cinst.$buffer_end Returns #F
+	
+End If
+
+Quit method #F

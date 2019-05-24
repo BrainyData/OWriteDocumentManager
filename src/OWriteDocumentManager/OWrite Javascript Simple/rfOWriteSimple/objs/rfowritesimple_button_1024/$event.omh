@@ -1,0 +1,7 @@
+On evClick
+	Do method $clientReplaceAll ('OWrite','XYZ')
+	;  Calculate x as $cinst.$objs.OWrite.$curleftindent
+	;  JavaScript: console.log("x = "+x)
+	;
+	;  Calculate $cinst.$objs.OWrite.$curleftindent as '-2.0'     ;; 0.5-$cinst.$objs.OWrite.$leftmargin
+	;  Calculate $cinst.$objs.OWrite.$currightindent as -2     ;; 0.5-$cinst.$objs.OWrite.$rightmargin

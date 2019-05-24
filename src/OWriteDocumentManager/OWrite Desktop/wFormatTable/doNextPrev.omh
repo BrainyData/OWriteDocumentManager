@@ -1,0 +1,7 @@
+
+Do $cinst.$save
+Do ivEditObjRef.$tableaction(pAction) Returns result
+If result=1
+	Do $cinst.$load(kTrue)
+	Do method setButtons
+End If

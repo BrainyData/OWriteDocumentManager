@@ -1,0 +1,15 @@
+If not(cvSamplePickList.$linecount)
+	Do cvSamplePickList.$define(Description,ColumnName,Selected,LineFeed,Right,Bold,LongDescription)
+	Do cvSamplePickList.$add("Customer Code","C_CODE",_NotSelected_,_LF_,_Right_,_Plain_,"The customers unique code")
+	Do cvSamplePickList.$add("Title","C_TITLE",_Selected_,_SP_,_Left_,_Bold_,"The customers title (i.e. Mr.,Mrs.)")
+	Do cvSamplePickList.$add("First Name","C_FIRST_NAME",_Selected_,_SP_,_Left_,_Bold_,"The customers first name")
+	Do cvSamplePickList.$add("Other Names","C_OTHER_NAMES",_NotSelected_,_SP_,_Left_,_Bold_,"The customers other name(s)")
+	Do cvSamplePickList.$add("Last Name","C_LAST_NAME",_Selected_,_LF_,_Left_,_Bold_,"The customers last name")
+	Do cvSamplePickList.$add("Address 1","C_ADDRESS_1",_Selected_,_LF_,_Left_,_Plain_,"First line of the address")
+	Do cvSamplePickList.$add("Address 2","C_ADDRESS_2",_Selected_,_LF_,_Left_,_Plain_,"Second line of the address (may be empty)")
+	Do cvSamplePickList.$add("City/Town","C_CITY_TOWN",_Selected_,_LF_,_Left_,_Plain_,"The city or town")
+	Do cvSamplePickList.$add("State/County","C_STATE_COUNTY",_Selected_,_SP_,_Left_,_Plain_,"The state or county")
+	Do cvSamplePickList.$add("Zip/Post-Code","C_ZIP_POST_CODE",_Selected_,_LF_,_Left_,_Plain_,"The zip or post-code")
+	Do cvSamplePickList.$add("Country","C_COUNTRY",_NotSelected_,_LF_,_Left_,_Plain_,"The country")
+End If
+Quit method cvSamplePickList.$ref

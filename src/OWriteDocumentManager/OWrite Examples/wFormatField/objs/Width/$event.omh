@@ -1,4 +1,0 @@
-On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
-	Calculate ivFixedSize as ivWidth<>0|ivHeight<>0
-	Redraw (Refresh now) {FixedSize}
-	Quit event handler (Pass to next handler)

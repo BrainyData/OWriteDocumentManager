@@ -1,6 +1,0 @@
-If not(isnull(pValue))
-	If not(len(pOutText))
-		Calculate pOutText as con(pGroupText,' ')
-	End If
-	Calculate pOutText as con(pOutText,pick(pValue,pNoText,pYesText),', ')
-End If

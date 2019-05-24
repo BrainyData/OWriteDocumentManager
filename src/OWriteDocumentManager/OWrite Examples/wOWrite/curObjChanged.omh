@@ -1,8 +1,0 @@
-
-;  open or close our header/footer tools palette
-If ivEdit.$curobjtype=kWriObjTypeHeadFoot
-	Do $windows.wOWriteToolsHF.$openonce('*',kWindowCenterRelative,$cwind,$cwind,ivEdit) Returns refToolsHF
-	Do $cwind.$bringtofront()
-Else
-	Do refToolsHF.$close()
-End If

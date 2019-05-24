@@ -1,0 +1,63 @@
+{
+	"ident": 1004,
+	"order": 4,
+	"objtype": "kComponent",
+	"componentlib": "jsOWrite",
+	"componentctrl": "OWrite Property Object",
+	"properties": {
+		"alpha": 255,
+		"backalpha": 255,
+		"backcolor": "kColorDefault",
+		"contextmenu": "",
+		"cssclassname": "",
+		"ctrliconid": "k32x32+13002",
+		"ctrltooltip": "Italic",
+		"ctrlvalue": "",
+		"ctrlwidth": 0,
+		"dataname": "ivFontList",
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"disabledefaultcontextmenu": false,
+		"disablesystemfocus": false,
+		"dropmode": "kAcceptNone",
+		"enabled": true,
+		"events": "",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"labelleft": "",
+		"labelleftwidth": 0,
+		"labelright": "",
+		"objlink": 0,
+		"preventlayoutanimation": false,
+		"property": "$curitalic",
+		"textcolor": "kColorDefault",
+		"tooltip": "",
+		"userinfo": "",
+		"visible": true
+	},
+	"layout": {
+		"768": {
+			"left": 320,
+			"top": 504,
+			"width": 32,
+			"height": 32,
+			"dragborder": false,
+			"edgefloat": "kEFnone",
+			"errortextpos": "kJSErrorTextPosUnder",
+			"visible": true
+		},
+		"1024": {
+			"left": 58,
+			"top": 17,
+			"width": 32,
+			"height": 32,
+			"dragborder": false,
+			"edgefloat": "kEFnone",
+			"errortextpos": "kJSErrorTextPosUnder",
+			"visible": true
+		}
+	}
+}

@@ -1,0 +1,52 @@
+;  PURPOSE:     ;; main method for exporting document objects
+;  USAGE:     ;; called by ...$writedoc and ...$writeobjs_para
+;  SUB-CLASSING:     ;; only sub-class this method if there is a need to write a prefix or suffix for the export of document objects
+;  IMPLEMENTS:     ;; iterates a list of document objects and calls the appropriate export methods based on object type
+
+
+For pObjs.$line from 1 to pObjs.$linecount step 1
+	Switch pObjs.C1
+		Case kWriObjTypePara
+			;  ----- Paragraph Properties -----
+			;  ObjChildList (C2)     ;; list - paragraph's embeded/anchored objects, i.e images, calculations, etc.
+			;  ObjData (C3)     ;; utf8 - raw text data (includes place holder chars for embeded/anchored objects)
+			;  ObjStylesList (C4)     ;; list - style information for paragraph
+			;  ObjIsPageBreak (C5)     ;; bool - if true, paragraph is a page-break
+			Calculate objChildList as pObjs.C2     ;; NOTE: must directly calculate local list from columns in an untyped external list
+			Calculate objStylesList as pObjs.C4     ;; NOTE: must directly calculate local list from columns in an untyped external list
+			Do method $cinst.$writeobjs_para (kWriObjTypePara,objChildList,pObjs.C3,objStylesList,pObjs.C5) Returns #F
+		Case kWriObjTypeCalc
+			;  ----- Calculated Field Properties -----
+			;  ObjPos (C4)     ;; int - objects character position within paragraph
+			;  ObjWidth (C9)     ;; int - fixed width value in micrometres (0.001 mm), if zero no fixed width
+			;  ObjHeight (C10)     ;; int - fixed height value in micrometres (0.001 mm), if zero no fixed height
+			;  ObjFlags:GenClick (C18:3)     ;; flag - if true click calculation will be executed when user click the field
+			;  ObjFlags:StripEmpty (C18:4)     ;; flag - if true, empty lines are stripped from result
+			;  ObjFlags:ShowRTF (C18:5)     ;; flag - if true, field will show RTF based calculation in marked-up format
+			;  ObjFlags:ShowingRTF (C18:9)     ;; flag - if true, field is currently showing RTF based calculation in marked-up format
+			;  ObjFillColor (C23)     ;; int - fill color used in un-evaluated state
+			;  ObjName (C28)     ;; UTF8 - object's name
+			;  ObjDisplay (C29)     ;; UTF8 - text displayed in un-evaluated state
+			;  ObjCalc (C30)     ;; UTF8 - the object's calculation
+			;  ObjToolTip (C31)     ;; UTF8 - object's tool-tip text
+			;  ObjClickCalc (C32)     ;; UTF8 - calculation that is executed when user clicks the field
+			;  ObjUserData (C38)     ;; varied - user data for developer's use
+			Calculate objUserData as pObjs.C38
+			Do method $cinst.$writeobjs_calc (kWriObjTypeCalc,pObjs.C4,pObjs.C9,pObjs.C10,$cinst.$getflag(pObjs.C18,3),$cinst.$getflag(pObjs.C18,4),$cinst.$getflag(pObjs.C18,5),$cinst.$getflag(pObjs.C18,9),pObjs.C23,pObjs.C28,pObjs.C29,pObjs.C30,pObjs.C31,pObjs.C32,objUserData) Returns #F
+		Case kWriObjTypeInfo
+			
+		Case kWriObjTypePict
+			
+		Case kWriObjTypeCalcPict
+			
+		Case kWriObjTypeTextbox
+			
+		Case kWriObjTypeHeadFoot
+			
+		Case kWriObjTypeTableRow
+			;  first row of table includes table data, we will not be returning here until entire table is written
+			;  Do method $cinst.$writeobj_table (pObjs,pGroupType) Returns pObjs.$line
+	End Switch
+End For
+
+Quit method #F

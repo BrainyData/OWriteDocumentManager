@@ -1,9 +1,0 @@
-;  disable all items if an object is selected
-Do $cwind.$getcurobjmenuname(temp) Returns objSelected
-If objSelected
-	Calculate $cinst.$objs.$sendall($ref.$enabled.$assign(kFalse)) as kFalse
-Else
-	Calculate $cinst.$objs.$sendall($ref.$enabled.$assign(kTrue)) as kFalse
-End If
-;  check if we can insert a page break
-Calculate $cinst.$objs.PageBreak.$enabled as $cwind.$caninsert('PageBreak')

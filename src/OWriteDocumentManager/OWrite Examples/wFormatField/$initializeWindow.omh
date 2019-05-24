@@ -1,6 +1,0 @@
-;  overide this method to initialize the window     ;; called by $construct
-;       ;; you must call the inherited method
-;  we like to operate in same measure as OWrite is displaying
-Do inherited
-Calculate ivUndoText as "Format Field"
-Calculate $cinst.$objs.Pages.$currenttab as cvCurTab

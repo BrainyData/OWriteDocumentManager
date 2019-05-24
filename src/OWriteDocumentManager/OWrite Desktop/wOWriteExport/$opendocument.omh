@@ -1,0 +1,21 @@
+;  this method is called by document links
+;  here instead of opening a document we simply return the html link
+If len(pDocName)
+	Do method validateNameForURL (pDocName)     ;; CHANGE_2013_09_24_1
+	Calculate link as con(pDocName,".html")
+End If
+If len(pSubHeader)
+	Do method validateNameForURL (pSubHeader)     ;; CHANGE_2013_09_24_1
+	Calculate link as con(link,"#",pSubHeader)
+End If
+If len(pBookmark)     ;; CHANGE_2014_07_15__1 begins
+	Do method validateNameForURL (pBookmark)
+	Calculate link as con(link,"#",pBookmark)
+End If     ;; CHANGE_2014_07_15__1 ends
+If pos('/',link)     ;; if document link includes a group name we must append with "../" so we go up a level so we enter the other document group folder CHANGE_V306
+	Calculate link as con("../",link)
+End If
+If len(cvHtmlBaseTarget)     ;; CHANGE_V306
+	Calculate link as con('<a href="',link,'" target="',cvHtmlBaseTarget,'">')
+End If
+Quit method link

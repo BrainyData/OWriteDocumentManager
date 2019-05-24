@@ -6,6 +6,7 @@ Do $cdevice.$assign(kDevPdf)
 Do $cdevice.$setparam(kDevPdfFileName,con("$iremotetasks.",$ctask().$name,".$pdfoutput(#)"))
 
 ;  load the document data
+Do $cinst.$evallocal.$assign(kTrue)     ;; change20190123_1
 Do $cinst.$loaddata(pDocumentData,kWriFmtDefault,kFalse,kWriSaveAsList,kTrue,kWriSaveRawPicts,kTrue)
 Do $cinst.$pageview.$assign(kWriViewPageLayout)     ;; for printing must be in page layout mode
 

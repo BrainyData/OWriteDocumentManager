@@ -1,9 +1,0 @@
-;  PURPOSE:     ;; export text-style for specified run of text within a paragraph
-;  USAGE:     ;; called by ...$writestyles
-;  SUB-CLASSING:     ;; sub-class this method to implement the export
-
-;  super-class does nothing
-Quit method kTrue
-
-;  copy and paste line to your method to inherit parameters
-Send to trace log {[pStyleRunStart], [pStyleRunEnd], [pStyleId], [pStyleValue], [pIsFirst], [pIsLast], [pIsDocument]}

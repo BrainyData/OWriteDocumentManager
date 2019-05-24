@@ -39,8 +39,8 @@ If iref
 				If (studio_version>=81)&(studio_version<90)
 					Quit method kTrue
 				End If
-			Case 90
-				If (studio_version>=90)
+			Case 100
+				If (studio_version>=100)
 					Quit method kTrue
 				End If
 		End Switch

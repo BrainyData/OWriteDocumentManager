@@ -1,0 +1,12 @@
+If not(cvSampleData.$linecount)
+	Do cvSampleData.$define(C_CODE,C_TITLE,C_FIRST_NAME,C_LAST_NAME,C_OTHER_NAMES,C_ADDRESS_1,C_ADDRESS_2,C_CITY_TOWN,C_STATE_COUNTY,C_COUNTRY,C_ZIP_POST_CODE)
+	Do cvSampleData.$add("C20053478","Mr.","Michael","Monschau","Peter","19 Queens Road","","Clacton-on-Sea","Essex","England","CO15 1AA")
+	Do cvSampleData.$add("C20027339","Mrs.","Mary","Shelley","Jane","120 Bingo Road","","Hampton","Suffolk","England","HA5 3QT")
+	Do cvSampleData.$add("C20036142","Master","Perry","Hull","Robert","1A Cringle Close","","Nork","Midlands","England","NO7 2DD")
+	Do cvSampleData.$add("C20019972","Mr","Harry","Jenkings","","53 Water Way","","Southwold","Suffolk","England","SO1 8BH")
+	Do cvSampleData.$add("C20019972","Mr","Paul","Right","","Apartment 5A","1 Riverside View","Ipswich","Suffolk","England","IP3 5LK")
+	Do cvSampleData.$add("C20042312","Mrs.","Jane","Goody","","15 Howards Way","","Ipswich","Suffolk","England","IP2 1TY")
+	Do cvSampleData.$add("C20042345","Mrs.","Isabel","Friday","","29 Prison Drive","","Chelmsford","Essex","England","CH1 8SG")
+	Do cvSampleData.$add("C20078236","Mr.","Heinrich","Wembly","","47 Mill Lane","","Woodbridge","Suffolk","England","IP15 3HJ")
+End If
+Quit method cvSampleData.$ref

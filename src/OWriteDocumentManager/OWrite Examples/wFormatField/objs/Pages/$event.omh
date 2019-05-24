@@ -1,2 +1,0 @@
-On evTabSelected     ;; Event Parameters - pTabNumber ( integer )
-	Calculate cvCurTab as pTabNumber

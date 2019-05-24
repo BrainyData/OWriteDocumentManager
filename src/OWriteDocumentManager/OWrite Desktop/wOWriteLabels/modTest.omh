@@ -1,0 +1,47 @@
+;  deal with our pick lists
+Switch pObj().$name
+	Case 'PickListSelected','PickListLineFeed','PickListRight','PickListBold','PickListUp','PickListDown'
+		Do method contentCalcRebuild
+		Calculate dataName as 'ContentCalculation'
+	Case 'Preview'
+		;  don't do anything for clicks and afters on preview window
+		Quit method
+	Case 'iLabelsList'
+		Do method updateLabel
+		Calculate cCurLabel as iLabelsList.$line
+		Calculate cInfoED as iLabelsList.OL_DATA
+		Calculate dataName as 'LabelType'
+	Case 'cPaperList'
+		Calculate cInfoED.PaperType as cPaperList.C1
+		Calculate dataName as 'PaperType'
+	Case 'PaperOrientPortrait','PaperOrientLandscape'
+		Calculate dataName as 'PaperOrient'
+	Case 'cFontList'
+		Calculate iFontName as pObj.$contents
+		Calculate cInfoED.FontName as pObj.$contents
+		Calculate dataName as 'FontName'
+	Case 'cFontSizeList'
+		Calculate iFontSize as pObj.$contents
+		Calculate cInfoED.FontSize as pObj.$contents
+		Calculate dataName as 'FontSize'
+	Default
+		Calculate dataName as pObj().$name
+End Switch
+;  test if data is changed
+If cInfo.[dataName]=cInfoED.[dataName]
+	Quit method kFalse
+End If
+
+;  now update depending on the data group that was changed
+Switch dataName
+	Case 'LabelType','LabelsAcross','LabelsDown','LabelWidth','LabelHeight','LabelGutterHorz','LabelGutterVert'
+		Do method modLabelChanged (dataName)
+	Case 'PaperType','PaperWidth','PaperHeight','PaperOrient','PaperMarginLeft','PaperMarginTop','PaperMarginRight','PaperMarginBottom'
+		Do method modPaperChanged (dataName)
+	Default
+		Do method modContentChanged (dataName)
+End Switch
+
+;  update our master data
+Calculate cInfo as cInfoED
+Do $cinst.$redraw()

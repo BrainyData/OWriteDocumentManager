@@ -1,7 +1,0 @@
-
-Calculate refPreview.$readonly as kTrue
-Do refPickList.$rowChanged
-
-Do method loadLabels
-
-Do $cinst.$setRecordCount

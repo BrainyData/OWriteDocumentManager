@@ -1,0 +1,131 @@
+[
+	{
+		"name": "$=== objOWriteCommon ===",
+		"ident": 1,
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$eval",
+		"ident": 3,
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pDataID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 1,
+				"desc": "simple ID, i.e. special or instructions such as BuildList, etc"
+			},
+			{
+				"name": "pDataParam1",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2,
+				"desc": "depends on pDataID"
+			},
+			{
+				"name": "pDataParam2",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3
+			},
+			{
+				"name": "pDataParam3",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 4
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "defineString",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "theList",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$getHeaderBanner",
+		"ident": 0,
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "evalObj",
+				"order": 2,
+				"type": "kObject",
+				"subtype": ".OWrite.OWriteDoc",
+				"sublen": 0
+			},
+			{
+				"name": "picture",
+				"order": 1,
+				"type": "kPicture",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "pixel_height",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "pixel_width",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$getHeaderBannerWidth",
+		"ident": 2,
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$getHeaderBannerHeight",
+		"ident": 4,
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	}
+]

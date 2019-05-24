@@ -1,0 +1,41 @@
+[
+	{
+		"name": "$serverNewDocument",
+		"ident": 0,
+		"order": 1,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pDefaultContentText",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pDefaultHeaderText",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$serverSaveData",
+		"ident": 1,
+		"order": 2,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	}
+]

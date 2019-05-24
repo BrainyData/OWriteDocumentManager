@@ -1,0 +1,17 @@
+On evFirstLoad
+	JavaScript: console.log("evFirstLoad:two")
+	Do $cfield.$loaddata('one',1,#NULL,ivFontSizeList)
+	
+On evSaveData     ;; the save data task has been completed and all data is stored in ivDocument
+	;  see evAsyncDone for next action
+	;       ;; saving data is an async operation which generates an async event with the async id that was specified when $savedata was called
+	
+On evSaveDataError     ;; an error occured during the save data task
+	OK message Error {[pMessage] // [pStack]}
+	
+On evAsyncDone
+	Switch pAsyncId
+		Case 'save'
+			Do method server_saveData ('one')
+	End Switch
+	Do $cfield.$setfocus()     ;; new function to set focus to document in iframe

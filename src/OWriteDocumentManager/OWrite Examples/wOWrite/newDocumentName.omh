@@ -1,8 +1,0 @@
-;  prompt for a new name
-If tvStudio4
-	Do $windows.wOWriteInsertDocument.$open('*',kWindowCenterRelative,$cwind,pName,pGroup,pCanChangeGroup)
-Else
-	Do $windows.wOWriteInsertDocument.$open('*',kWindowCenter,pName,pGroup,pCanChangeGroup)
-End If
-Calculate ok as len(pName)>0
-Quit method ok

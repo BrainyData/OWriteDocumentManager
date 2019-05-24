@@ -1,0 +1,4 @@
+Do ivLineSpacingList.$define(ivLineSpacing,ivText)
+Do ivLineSpacingList.$add(0,'Single')
+Do ivLineSpacingList.$add(1,'1.5 Lines')
+Do ivLineSpacingList.$add(2,'Double')

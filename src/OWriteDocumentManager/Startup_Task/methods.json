@@ -804,16 +804,5 @@
 				"sublen": 10000
 			}
 		]
-	},
-	{
-		"name": "New Method",
-		"ident": 26,
-		"order": 29,
-		"pvardefs": [
-
-		],
-		"lvardefs": [
-
-		]
 	}
 ]

@@ -1,4 +1,0 @@
-If not(cFontList.$linecount)
-	Do cFontList.$define(iFontName)
-	Do FontOps.$replistfonts(cFontList)
-End If

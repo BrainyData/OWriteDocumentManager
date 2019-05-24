@@ -1,0 +1,30 @@
+{
+	"ident": 1027,
+	"order": 16388,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFleftRight",
+		"fieldstyle": "CtrlLabel",
+		"font": 3,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 41,
+		"left": 291,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "Document Name:\r\u001B\u000200000001#[ivDocumentName]"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 104,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 134
+	}
+}

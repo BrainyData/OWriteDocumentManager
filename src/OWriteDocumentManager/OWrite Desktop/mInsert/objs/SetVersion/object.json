@@ -1,0 +1,22 @@
+{
+	"ident": 1035,
+	"order": 12,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 0,
+		"macshortcutkey": "Cmnd+Shift+V",
+		"text": {
+			"type": 0,
+			"calc": "Set Style \"Version\""
+		},
+		"unixshortcutkey": "Ctrl+Shift+V",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": "Ctrl+Shift+V"
+	}
+}

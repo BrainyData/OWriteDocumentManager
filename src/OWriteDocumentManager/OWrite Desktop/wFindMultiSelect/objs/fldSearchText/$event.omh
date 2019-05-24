@@ -1,0 +1,21 @@
+On evKey
+	If pSystemKey
+		Switch pSystemKey
+			Case kReturn,kEnter
+				Calculate ivFindText as $cfield.$contents
+				Do method DoSearch (#SHIFT)
+			Case kUp
+				Do method DoSearch (kTrue)
+				Quit event handler (Discard event)
+			Case kDown
+				Do method DoSearch (kFalse)
+				Quit event handler (Discard event)
+			Case kEscape
+				Do method CancelSearch
+		End Switch
+	End If
+	Process event and continue
+	Do method SetFieldBackground
+On evAfter,evBefore
+	Process event and continue
+	Do method SetFieldBackground

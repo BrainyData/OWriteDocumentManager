@@ -1,0 +1,8 @@
+If isnull(pColor)
+	Calculate pColor as kNullColorPicker
+End If
+Calculate pButtRef.$contents as pColor
+Do pListRef.$search($ref.ivColor=pColor,kTrue,kFalse,kFalse,kFalse) Returns pListRef.$line
+If not(pListRef.$line)
+	Do method addCustomColor (pListRef,pColor)
+End If

@@ -1,0 +1,7 @@
+Test for window open {wFindReplace}
+If flag true
+	Bring window instance to front wFindReplace
+	Do $iwindows.wFindReplace.$setreadonly(ivReadOnly)
+Else
+	Open window instance wFindReplace/CEN (ivEdit.$ref,ivReadOnly)
+End If

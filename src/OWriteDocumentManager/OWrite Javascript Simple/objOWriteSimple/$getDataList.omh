@@ -1,0 +1,14 @@
+;  build sample list for OWrite Tables
+;  define our list from the supplied columns     ;; change20190123_1
+;       ;; we will prepare a string that defines our list by evaluating it using eval()
+Calculate defineString as con('theList.$define(',pDataColumns,')')
+Do eval(defineString)
+;  build the list and return it
+Begin reversible block
+	Set read/write files {[pDataTable]}
+	Set main file {[pDataTable]}
+	Set current list theList
+End reversible block
+Calculate fieldName as con(pDataTable,'.seq')
+Build list from file on [fieldName]
+Quit method theList

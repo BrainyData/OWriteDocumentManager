@@ -1,0 +1,4 @@
+;  Enter your initialization code here
+Set reference ivOWrite to pOWriteRef
+Calculate $cwind.$title as con("Document '",pDocName,"'")
+Do method getSelectionRange

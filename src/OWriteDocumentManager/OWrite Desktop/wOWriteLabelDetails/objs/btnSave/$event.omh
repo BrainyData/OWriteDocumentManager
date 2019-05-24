@@ -1,0 +1,3 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do ivCallingWindow.$execAction('ApplyDetails',ivData.$ref)
+	Do $cwind.$close()

@@ -1,3 +1,4 @@
 ;  Enter your initialization code here
 Do $cinst.$serverNewDocument()
 Do $cinst.$serverBuildFontList()
+Do $cinst.$serverBuildHeaderBanner()     ;; change20190207_1

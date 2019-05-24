@@ -1,0 +1,30 @@
+;  set appearance of our find field
+If $ctarget().$name="fldSearchText"
+	If refFindText.$contents=''
+		Calculate refFindBkgFocusNoCancel.$visible as kTrue
+		Calculate refFindBkgFocusCancel.$visible as kFalse
+		Calculate refFindBkgNoFocusNoCancel.$visible as kFalse
+		Calculate refFindBkgNoFocusCancel.$visible as kFalse
+		Calculate refFindClear.$visible as kFalse
+	Else
+		Calculate refFindBkgFocusCancel.$visible as kTrue
+		Calculate refFindBkgFocusNoCancel.$visible as kFalse
+		Calculate refFindBkgNoFocusNoCancel.$visible as kFalse
+		Calculate refFindBkgNoFocusCancel.$visible as kFalse
+		Calculate refFindClear.$visible as kTrue
+	End If
+Else
+	If refFindText.$contents=''
+		Calculate refFindBkgNoFocusNoCancel.$visible as kTrue
+		Calculate refFindBkgNoFocusCancel.$visible as kFalse
+		Calculate refFindBkgFocusNoCancel.$visible as kFalse
+		Calculate refFindBkgFocusCancel.$visible as kFalse
+		Calculate refFindClear.$visible as kFalse
+	Else
+		Calculate refFindBkgNoFocusCancel.$visible as kTrue
+		Calculate refFindBkgNoFocusNoCancel.$visible as kFalse
+		Calculate refFindBkgFocusNoCancel.$visible as kFalse
+		Calculate refFindBkgFocusCancel.$visible as kFalse
+		Calculate refFindClear.$visible as kTrue
+	End If
+End If

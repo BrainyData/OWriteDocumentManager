@@ -1,6 +1,6 @@
 {
 	"classtype": "kFolder",
-	"internalversion": 1,
+	"internalversion": 2,
 	"properties": {
 		"componenttype": "kCompStoreHidden",
 		"createdate": "2017-09-04 11:50:27",
@@ -8,8 +8,8 @@
 		"editor": "",
 		"editordata": "",
 		"external": false,
-		"moddate": "2017-09-04 11:51:51",
-		"showascheckedout": true,
+		"moddate": "2019-02-18 15:04:45",
+		"showascheckedout": false,
 		"userinfo": "",
 		"version": ""
 	}

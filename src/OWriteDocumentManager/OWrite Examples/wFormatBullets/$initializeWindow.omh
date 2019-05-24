@@ -1,9 +1,0 @@
-;  overide this method to initialize the window     ;; called by $construct
-;       ;; you must call the inherited method
-Do inherited
-
-Calculate ivUndoText as "Format Bullets and Numbering"
-
-If ivIsForFind
-	Calculate $cinst.$title as 'Find Bullets and Numbering'
-End If

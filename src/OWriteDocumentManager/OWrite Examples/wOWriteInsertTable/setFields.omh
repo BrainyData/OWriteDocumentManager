@@ -1,2 +1,0 @@
-Calculate refColWidth.$enabled as not(ivSizeToFit)
-Calculate refColWidth.$fieldstyle as pick(ivSizeToFit,'CtrlEditText','CtrlEditTextDis')

@@ -1,0 +1,19 @@
+;  initialize variables
+Do ivRefList.$define(ref)
+;  are we a subwindow
+Calculate ivIsSubWindow as $cwind().$name<>$cinst().$name
+If ivIsSubWindow
+	;  hide our buttons if we are a subwindow
+	Hide fields {buttRevert,buttCancel,buttApply}
+Else
+	Calculate $root.$prefs.$usecms as pOWriteRef.$showcms     ;; CHANGE_V3 fixed notation error
+	Set reference ivEditObjRef to pEditObjRef.$ref
+	Set reference ivOWriteRef to pOWriteRef.$ref
+	Calculate ivIsForFind as pIsForFind
+End If
+
+If not(ivIsSubWindow)
+	Do $cinst.$loadParams(pParams)
+	Do $cinst.$initializeWindow(pEditObjRef.$ref,pOWriteRef,pIsForFind)
+	Do $cinst.$load(kFalse)
+End If

@@ -1,8 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	If $cinst.$modified     ;; CHANGE_28JUL08_1
-		Yes/No message  (Icon,Sound bell) {Save changes?}
-		If flag true
-			Do method apply
-		End If
-	End If
-	Do method styleChanged

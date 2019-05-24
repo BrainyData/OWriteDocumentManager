@@ -1,13 +1,13 @@
 {
 	"classtype": "kSystemtable",
-	"internalversion": 1,
+	"internalversion": 2,
 	"properties": {
 		"componenttype": "kCompStoreHidden",
 		"createdate": "2010-04-23 14:07:43",
 		"desc": "",
 		"external": false,
-		"moddate": "2016-02-23 06:26:57",
-		"showascheckedout": true,
+		"moddate": "2019-02-18 15:04:45",
+		"showascheckedout": false,
 		"userinfo": "",
 		"version": "4.00.00"
 	},

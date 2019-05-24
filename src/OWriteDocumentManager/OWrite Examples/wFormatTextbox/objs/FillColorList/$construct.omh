@@ -1,2 +1,0 @@
-Do $cinst.$buildColorList(ivFillColorList)
-Do ivFillColorList.$redefine(ivColor,ivColorTxt)

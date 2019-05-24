@@ -1,0 +1,97 @@
+;       ;; change20181218_1 - added method for rmOWriteSimpleContext menu (implements subset of options taken from document manager example)
+
+Switch pObjType
+	
+	Case kWriObjTypeInfo
+		;  prep params for inserting a doc info object
+		Do $cinst.$objs.OWrite.$initparams(pObjType) Returns params
+		Do $cinst.$objs.OWrite.$addparams(params,"ObjInfoType",pObjSubtype,"ObjFillColor",rgb(200,255,200))
+		
+	Case kWriObjTypeChar     ;; CHANGE_20181130_1:added this case (insert page-break was not working)
+		Calculate params as pObjSubtype
+		
+	Case kWriObjTypeTable     ;; change20190123_1 - added inserting of simple table that displays client data
+		;  to insert a table we have to prepare params with
+		;       ;; details for each cell in each row, i.e. calculation for populating the cell when evaluating the document
+		;       ;; details for each row, i.e. the row type (header, footer or data row)
+		;       ;; details for the actual table, i.e. the calculation that fetches the Omnis list containing the data for the cells
+		;
+		;  To prepare params for table rows and cells, OWrite provides a number of specific methods
+		
+		;  when inserting table cells, most information for the cells in the row will be the same
+		;       ;; where it differs we will use a JS object with arrays for the specific cell properties that vary
+		JavaScript: cellInfo = {};
+		JavaScript: cellInfo.ObjWidth = [15000,25000,50000,80000];
+		JavaScript: cellInfo.ObjLabel = ["Seq","Title","Name","Address"];
+		JavaScript: cellInfo.ObjName = cellInfo.ObjLabel;
+		;  JavaScript: cellInfo.ObjCalc = ["$ref.seq","$ref.title","$ref.name","con($ref.address1,$constants.kWriCharReturn,$ref.address2,$constants.kWriCharReturn,$ref.city,$constants.kWriCharReturn,$ref.state,$constants.kWriCharTab,$ref.postcode,$constants.kWriCharReturn,$ref.country)"];
+		JavaScript: cellInfo.ObjCalc = ["$ref.seq","$ref.title","$ref.name","con($ref.address1,chr(13),$ref.city,chr(13),$ref.state,chr(13),$ref.postcode,chr(13),$ref.country)"];
+		JavaScript: cellInfo.ObjDisplay = cellInfo.ObjLabel;
+		JavaScript: cellInfo.ObjTooltip = ["Unique record number","The client's title","The client's full name","The client's full address"];
+		
+		;  add table specific details
+		Do $cinst.$objs.OWrite.$initparams(pObjType) Returns params
+		Do $cinst.$objs.OWrite.$addparams(params,"ObjName","table1","ObjTableCellSpacing",2000,"ObjTableFlags",'PageHeaders')     ;; NOTE: valid table flags are (PageHeaders,PageFooters,AutoExtend,MultiDataRows)
+		Do $cinst.$objs.OWrite.$addparams(params,"ObjCalc","$cinst.$getDataList('fClients','fClients.seq,fClients.title,fClients.name,fClients.address1,fClients.address2,fClients.city,fClients.state,fClients.postcode,fClients.country')")
+		
+		;  add header row and it's cells (we shall have four columns: seq - title - name - full address)
+		Do $cinst.$objs.OWrite.$addparamstblrow(params,0,"ObjTableRowType",kWriTblRowHeader,"ObjTableRowFlags",'') Returns rowNo     ;; NOTE: valid ObjTableRowFlags are (CanSplit)
+		;  all header cell details are the same except for the width and label for which we use a JS array     ;; NOTE: Measurements are in 1/1000 millimetre
+		For cellNo from 1 to 4 step 1
+			;  add cell properties
+			JavaScript: objWidth = cellInfo.ObjWidth[cellNo-1];
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjWidth",objWidth,"ObjHeight",5000,"ObjFlags",'') Returns cellNo     ;; NOTE: valid ObjFlags are (LockAspect,AutoSize,GenClick,StripEmpty,NoEnter,UseClickCalc)
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjBordStyle",kBorderPlain,"ObjBordLnStyle",kWriLineSolid,"ObjBordLnSize",100,"ObjBordColor",rgb(128,0,0),"ObjBorderSides",kWriFrameLeft+kWriFrameRight+kWriFrameTop+kWriFrameBottom) Returns cellNo
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjFillColor",rgb(200,200,200),"ObjTopMargin",0,"ObjLeftMargin",1000,"ObjBottomMargin",0,"ObjRightMargin",1000) Returns cellNo
+			;  add cell content (i.e. label)
+			JavaScript: objLabel = cellInfo.ObjLabel[cellNo-1];
+			Do $cinst.$objs.OWrite.$addparamstblcellcontent(params,rowNo,cellNo,objLabel,"StyleSuper","Normal","Bold",kTrue,"TextColor",rgb(0,128,0),"SpaceBefore",0,"SpaceAfter",0)
+		End For
+		
+		;  add data row and it's cells: data rows will be populated from the Omnis list data during evaluation so each cell has a calculation to reference a list column
+		Do $cinst.$objs.OWrite.$addparamstblrow(params,0,"ObjTableRowType",kWriTblRowNormal,"ObjTableRowFlags",'') Returns rowNo     ;; NOTE: valid ObjTableRowFlags are (CanSplit)
+		;  all data cell details are the same except for the width, name and calculation for which we use a JS array     ;; NOTE: Measurements are in 1/1000 millimetre
+		For cellNo from 1 to 4 step 1
+			;  add cell properties
+			JavaScript: objWidth = cellInfo.ObjWidth[cellNo-1];
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjWidth",objWidth,"ObjHeight",8000,"ObjFlags",'AutoSize') Returns cellNo     ;; NOTE: valid ObjFlags are (LockAspect,AutoSize,GenClick,StripEmpty,NoEnter,UseClickCalc)
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjBordStyle",kBorderPlain,"ObjBordLnStyle",kWriLineSolid,"ObjBordLnSize",100,"ObjBordColor",rgb(128,0,0),"ObjBorderSides",kWriFrameLeft+kWriFrameRight+kWriFrameTop+kWriFrameBottom) Returns cellNo
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjFillColor",rgb(255,255,255),"ObjTopMargin",0,"ObjLeftMargin",1000,"ObjBottomMargin",0,"ObjRightMargin",1000) Returns cellNo
+			JavaScript: objName = cellInfo.ObjLabel[cellNo-1];
+			JavaScript: objCalc=cellInfo.ObjCalc[cellNo-1];
+			JavaScript: objDisplay=cellInfo.ObjDisplay[cellNo-1];
+			JavaScript: objTooltip=cellInfo.ObjTooltip[cellNo-1];
+			Do $cinst.$objs.OWrite.$addparamstblcell(params,rowNo,cellNo,"ObjName",objName,"ObjCalc",objCalc,"ObjDisplay",objDisplay,"ObjToolTip",objTooltip) Returns cellNo
+			;  add cell content (for calculated cells we insert the value we specified for ObjDisplay above)
+			Do $cinst.$objs.OWrite.$addparamstblcellcontent(params,rowNo,cellNo,objDisplay,"StyleSuper","Normal","Bold",kTrue,"TextColor",rgb(0,0,0),"SpaceBefore",0,"SpaceAfter",0)
+		End For
+		
+	Case kWriObjTypePict     ;; change20190207_1 added for adding header banner to document
+		If pObjSubtype='HEADER_BANNER'
+			;  Insert picture with external source to evaluate and fetch image of the _HeaderBanner template document
+			
+			;  Do $cinst.$objs.OWrite.$insert(kWriObjTypeText,"12345",kWriInsertAfter,con("Insert",kWriObjTypeText)) Returns ok
+			;  calculate image size from sample header banner row     ;; (size must be in 1000/mm)
+			Calculate origWidth as ivSampleHeaderBanner.width
+			Calculate origHeight as ivSampleHeaderBanner.height
+			
+			;  prepare paragraph for banner     ;; (if we are inside the header)
+			Calculate $cinst.$objs.OWrite.$curleftindent as -2     ;; 0.5-$cinst.$objs.OWrite.$leftmargin
+			Calculate $cinst.$objs.OWrite.$currightindent as -2     ;; 0.5-$cinst.$objs.OWrite.$rightmargin
+			Calculate $cinst.$objs.OWrite.$::topmargin as 5.0
+			Calculate $cinst.$objs.OWrite.$headermargin as 0.5
+			Do $cinst.$objs.OWrite.$updatedocprops.$assign(kTrue)
+			;  Do $cinst.$objs.OWrite.$setselection("h0.p0.c0","h0.p0.c5")
+			
+			;  prep params for inserting a picture object     ;; Note: we use the external image src feature so the image data is not stored in document data
+			Do $cinst.$objs.OWrite.$initparams(kWriObjTypePict) Returns params
+			Do $cinst.$objs.OWrite.$addparams(params,"ObjFormat",kWriObjFmtInline,"ObjAlign",kWriObjAlignCenter,"ObjFlags",'LockAspect')
+			Do $cinst.$objs.OWrite.$addparams(params,"ObjOrigWidth",origWidth,"ObjOrigHeight",origHeight,"ObjWidth",origWidth,"ObjHeight",origHeight)
+			Do $cinst.$objs.OWrite.$addparams(params,"ObjDataSource","$cinst.$getHeaderBanner()","ObjName","HeaderBanner")
+			
+		End If
+		
+End Switch
+
+Do $cinst.$objs.OWrite.$insert(pObjType,params,kWriInsertOver,con("Insert",pObjType)) Returns ok
+Quit method ok

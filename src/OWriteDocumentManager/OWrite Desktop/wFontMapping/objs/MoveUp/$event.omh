@@ -1,0 +1,11 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	;  CHANGE_V3A12 changes throughout
+	If ivEditList.$line>1
+		Calculate names as ivEditList.[ivEditList.$line].C1
+		Calculate ivEditList.[ivEditList.$line].C1 as ivEditList.[ivEditList.$line-1].C1
+		Calculate ivEditList.[ivEditList.$line-1].C1 as names
+		Calculate ivEditList.$line as ivEditList.$line-1
+		Do refEditList.$redraw(kTrue,kTrue)
+	Else
+		Sound bell
+	End If

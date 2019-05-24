@@ -1,0 +1,16 @@
+{
+	"ident": 1018,
+	"order": 8,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 10900,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Insert Clients List"
+		},
+		"userinfo": "change20190123_1"
+	}
+}

@@ -1,0 +1,64 @@
+;  this method is called by OWrite when objects need to be resolved for the given export format
+;  -- we can query $curobj... properties during this call
+If pExpFormat='html'     ;; resolve links and images for HTML export
+	Switch pExpType
+		Case 'href'
+			;  our links contain calculations that evaluate to bookmarks in other documents
+			;  we need to evaluate our calculation (it calls the method $opendocument)
+			;  - first get the click calculation from the current owrite object
+			Calculate calc as ivOWrite.$curobjclickcalc     ;; CHANGE_V3A10 - we can now directly access the click calculation directly
+			;  now evaluate our calculation
+			If pos("$opendocument",calc)|pos("$openurl",calc)     ;; only evaluate actual links to documents
+				Calculate ivIsExport as kTrue     ;; let $opendocument know that we are calling it for export
+				Calculate result as eval(calc)
+				Calculate ivIsExport as kFalse
+			Else
+				Calculate result as ''
+			End If
+			Quit method result     ;; as a test
+		Case 'src'
+			;  get the image from the current object
+			Calculate pictData as ivEdit.$curobjresult     ;; $curobjresult always Returnｓ the data of the object , calculation or not
+			;  convert the image to JPEG (or other suitable format)
+			;  - the following is implementation specific
+			Calculate pictFormat as pictformat(pictData)
+			Calculate pictData as OWrite.$pictconvto(pictFormat,pictData,"JPEG")     ;; use OWrite conversion function. It can handle non-shared formats such as Mac PICTs and Windows Meta Files
+			;  check if we already have exported an identical image
+			;       ;; there is no need for duplicates, we can simply return the src ref from a previous image if they are identical
+			;
+			;       ;; calculate our image checksum for a quick check
+			Calculate pictChecksum as binchecksum(pictData)
+			If ivPictChecksumList.$linecount
+				Do ivPictChecksumList.$search($ref.pictChecksum=pictChecksum,kTrue,kFalse,kFalse,kFalse) Returns ivPictChecksumList.$line
+				While ivPictChecksumList.$line
+					;  we found one that may match, now compare the actual image data
+					Do theFile.$openfile(ivPictChecksumList.fileName) Returns err
+					Do theFile.$readfile(pictData2) Returns err
+					Do theFile.$closefile()
+					If bincompare(pictData,pictData2)
+						;  the images match, return previous src reference
+						Quit method ivPictChecksumList.pictName
+					End If
+					;  see if there is another image with identical checksum
+					Do ivPictChecksumList.$search($ref.pictChecksum=pictChecksum,kFalse,kFalse,kFalse,kFalse) Returns ivPictChecksumList.$line
+				End While
+			Else
+				Do ivPictChecksumList.$define(pictChecksum,fileName,pictName)
+			End If
+			;  calculate our pict name for the src reference (use a unique name)
+			Calculate cvUnique as cvUnique+1
+			Calculate pictName as con("pict",cvUnique,".jpg")
+			;  create file name for disk write (same location as HTML file)
+			Do FileOps.$splitpathname(ivExportPath,_drive,_dir,_file,_ext)
+			Calculate fileName as con(_drive,_dir,pictName)
+			;  add checksum info to list
+			Do ivPictChecksumList.$add(pictChecksum,fileName,pictName)
+			;  create and write the file
+			Do FileOps.$deletefile(fileName)
+			Do theFile.$createfile(fileName) Returns err
+			Do theFile.$writefile(pictData) Returns err
+			Do theFile.$closefile()
+			;  return the picture file name for the 'src' tag
+			Quit method pictName
+	End Switch
+End If

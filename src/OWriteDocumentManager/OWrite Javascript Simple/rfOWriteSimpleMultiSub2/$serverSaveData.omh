@@ -1,0 +1,3 @@
+;  called by OWrite.$event on an evSaveData event
+Send to trace log {rfOWriteSimpleMultiSub2.[$cmethod().$name]}
+Calculate cvSavedDocument as ivDocument

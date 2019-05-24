@@ -1,5 +1,0 @@
-;  Enter your initialization code here
-Set reference ivOwnerWindow to pOwnerWindow
-Set reference ivOWriteRef to pOWriteRef
-
-Do method setButtonStates

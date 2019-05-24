@@ -1,5 +1,0 @@
-;  fix radio button groups inside a container
-Calculate dataname as con(iFRefOWrite.$fullname,'.$curstrikethrough')
-Calculate $cfield.$objs.FmtStrikeThroughNone.$dataname as dataname
-Calculate $cfield.$objs.FmtStrikeThroughSingle.$dataname as dataname
-Calculate $cfield.$objs.FmtStrikeThroughDouble.$dataname as dataname

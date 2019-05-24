@@ -1,0 +1,19 @@
+If pOWriteRef
+	Set reference ivOWriteRef to pOWriteRef.$ref
+	Calculate ivDocumentName as pDocumentName
+Else
+	Set reference ivOWriteRef to $iwindows.wOWrite.$objs.Edit.$ref
+End If
+
+;  build our page list
+Calculate cnt as ivOWriteRef.$::pagecount
+Do ivPageList.$define(ivPage)
+For i from 1 to cnt step 1
+	Do ivPageList.$add(i)
+End For
+Calculate ivPageList.$line as 1
+
+;  inititialize size list
+Calculate refSizeList.$line as 5     ;; change20190215_1
+
+Do method TakeSnapshot

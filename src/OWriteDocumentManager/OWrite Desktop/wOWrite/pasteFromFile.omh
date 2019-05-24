@@ -1,0 +1,42 @@
+;  CHANGE_07FEB2008     ;; various changes throughout
+If sys(6)='M'|sys(6)='X'
+	If tvIsUnicode
+		Do FileOps.$getfilename(theFileName,"Select file","Text Files|TEXT|Text Files (*.txt)|*.txt|Unicode Text Files (*.utxt)|*.utxt|RTF Files (*.rtf)|*.rtf|JPEG Image (*.jpg)|*.jpg|JPEG Image (*.jpeg)|*.jpeg|Portable Network Graphic (*.png)|*.png|PCX Image (*.pcx)|*.pcx") Returns ok
+	Else
+		Do FileOps.$getfilename(theFileName,"Select file","Text Files|TEXT|Text Files (*.txt)|*.txt|RTF Files (*.rtf)|*.rtf|JPEG Image (*.jpg)|*.jpg|JPEG Image (*.jpeg)|*.jpeg|Portable Network Graphic (*.png)|*.png|PCX Image (*.pcx)|*.pcx") Returns ok
+	End If
+Else
+	If tvIsUnicode
+		Do FileOps.$getfilename(theFileName,"Select file","Text Files (*.txt)|*.txt|Unicode Text Files (*.utxt)|*.utxt|RTF Files (*.rtf)|*.rtf|JPEG Image (*.jpg)|*.jpg|JPEG Image (*.jpeg)|Portable Network Graphic (*.png)|*.png|PCX Image (*.pcx)|*.pcx") Returns ok
+	Else
+		Do FileOps.$getfilename(theFileName,"Select file","Text Files (*.txt)|*.txt|RTF Files (*.rtf)|*.rtf|JPEG Image (*.jpg)|JPEG Image (*.jpeg)|*.jpg|Portable Network Graphic (*.png)|*.png|PCX Image (*.pcx)|*.pcx") Returns ok
+	End If
+End If
+If ok
+	Do theFile.$openfile(theFileName,kTrue)
+	Do FileOps.$splitpathname(low(theFileName),_drive,_dir,_fname,_fext)
+	Calculate theFileName as low(theFileName)
+	If sys(6)='M'|sys(6)='X'
+		Do theFile.$getfileinfo(kFileOpsInfoTypeCode) Returns theFileInfo
+		Calculate theFileInfo.$line as 1
+		If theFileInfo.type='TEXT'&len(_fext)=0
+			Calculate _fext as '*.txt'
+		End If
+	End If
+	If pos('.txt',theFileName)>0|pos('.utxt',theFileName)>0|pos('.rtf',theFileName)>0
+		Do theFile.$readfile(theTextData)
+		Do ivEdit.$::insert(kWriObjTypeText,theTextData)
+	Else
+		Do theFile.$readfile(thePictData)
+		If pos('.jpg',theFileName)>0|pos('.jpeg',theFileName)>0|pos('.png',theFileName)>0     ;; CHANGE_2014_07_10__1 begins  (raw pict support)
+			;  OWrite can now handle raw data for PNGs and JPEGs
+			Do ivEdit.$::insert(kWriObjTypePict,thePictData)
+		Else
+			If pos('.pcx',theFileName)>0
+				Calculate thePict as pictconvfrom('PCX',thePictData)
+			End If
+			Do ivEdit.$::insert(kWriObjTypePict,thePict)
+		End If     ;; CHANGE_2014_07_10__1 ends  (raw pict support)
+	End If
+	Do theFile.$closefile()
+End If

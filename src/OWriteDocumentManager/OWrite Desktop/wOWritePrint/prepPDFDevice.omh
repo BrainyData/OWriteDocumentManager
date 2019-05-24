@@ -1,0 +1,23 @@
+;  when printing newsletters to PDFDevice, we require certain settings     ;; change_2019_02_28__1
+Do $cdevice.$assign(kDevPdf)
+Do $cdevice.$setparam(kDevPdfAll,ivPDFParams)     ;; CHANGE_2014_06_11__4
+If pPrep
+	If cvPrintToMemory&cvOption=cDestDirectPDF     ;; CHANGE_PDF_MEM_DEST begins
+		;  provide full notation to our method to be called upon completion
+		Do $cdevice.$setparam(kDevPdfFileName,con($cinst().$fullname,".$printToMemory(#)"))
+	Else
+		;  by clearing the name we force PDF Device to prompt the user with a put file dialog
+		Do $cdevice.$setparam(kDevPdfFileName,"")
+	End If
+	
+	If ivGroupName="Newsletters"     ;; we require special settings for newsletters to PDF
+		;  we only have one outline
+		Do $cdevice.$getparam(kDevPdfOutlines) Returns outlines
+		Calculate outlines.$linecount as 2
+		Calculate outlines.[1].FontSize as 14
+		Calculate outlines.[2].FontSize as 12
+		Do $cdevice.$setparam(kDevPdfOutlines,outlines)
+		;  position watermark differently
+		Do $cdevice.$setparam(kDevPdfWMAngle,0,kDevPdfWMHorzPos,0.5,kDevPdfWMVertPos,28)
+	End If
+End If

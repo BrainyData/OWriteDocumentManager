@@ -1,0 +1,36 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 9,
+	"designtaskname": "Startup_Task",
+	"nextident": 1039,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2010-04-23 14:07:46",
+		"desc": "OWrite: insert menu for document manager example",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": false,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2019-05-24 11:32:08",
+		"showascheckedout": true,
+		"title": {
+			"type": 0,
+			"calc": "Insert"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": "4.30.00"
+	}
+}

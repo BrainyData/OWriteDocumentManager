@@ -1,0 +1,19 @@
+;  this method is called by $format when the current object is to be formated
+Switch ivEdit.$curobjtype
+	Case kWriObjTypeNone
+		Quit method kFalse
+	Case kWriObjTypePict,kWriObjTypeCalcPict
+		Do method openFormatWindow ("wFormatPicture")
+	Case kWriObjTypeCalc
+		If pos("$opendocument",ivEdit.$curobjclickcalc)
+			Open window instance wFormatDocLink/CEN (ivEdit,'',ivDocumentsList)     ;; CHANGE_2014_07_15__1
+		Else If pos("http",ivEdit.$curobjclickcalc)=2     ;; change20190420_1
+			Open window instance wFormatWebLink/CEN (ivEdit,'',ivDocumentsList)
+		Else
+			Do method openFormatWindow ("wFormatField")
+		End If
+	Case kWriObjTypeTextbox
+		Do method openFormatWindow ("wFormatTextbox")
+	Case kWriObjTypeTableCell,kWriObjTypeTableRow,kWriObjTypeTable
+		Do method openFormatWindow ("wFormatTable")
+End Switch

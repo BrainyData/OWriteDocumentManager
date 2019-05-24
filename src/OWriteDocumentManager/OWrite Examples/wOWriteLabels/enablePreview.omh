@@ -1,3 +1,0 @@
-;  enable preview for changes
-Calculate refPreview.$readonly as kFalse
-;  Calculate ref_Preview.$active as kTrue

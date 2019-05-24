@@ -1,0 +1,43 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	Do method saveData Returns #F
+	If flag true
+		Do method $navigateSave
+		Do method loadData
+	Else
+		Do ivDocumentsList.$search($ref.seq=ivLoadedSeq,kTrue,kFalse,kFalse,kFalse) Returns ivDocumentsList.$line
+		Redraw {DocumentList}
+		Quit event handler (Discard event)
+	End If
+On evDrop     ;; Event Parameters - pRow ( Itemreference )
+	Calculate dragRow as ivDocumentsList.$line
+	Calculate dropRow as mouseover(kMLine)
+	If ivDocumentsList.[dropRow].seq<>pDragValue.seq
+		;  swap the document order
+		Calculate tmpOrder as ivDocumentsList.[dropRow].order
+		Calculate ivDocumentsList.[dropRow].order as ivDocumentsList.[dragRow].order
+		Calculate ivDocumentsList.[dragRow].order as tmpOrder
+		;  update the data base
+		Single file find on fOWriteDoc.seq (Exact match) {ivDocumentsList.[dropRow].seq}
+		If flag true
+			Prepare for edit
+			Calculate fOWriteDoc.order as ivDocumentsList.[dropRow].order
+			Update files
+		End If
+		Single file find on fOWriteDoc.seq (Exact match) {ivDocumentsList.[dragRow].seq}
+		If flag true
+			Prepare for edit
+			Calculate fOWriteDoc.order as ivDocumentsList.[dragRow].order
+			Update files
+		End If
+		;  swap list lines
+		Do ivDocumentsList.$line.$assign(dropRow)
+		Do dropRowData.$copydefinition(ivDocumentsList)
+		Do dropRowData.$assignrow(ivDocumentsList)
+		Do ivDocumentsList.$line.$assign(dragRow)
+		Do dragRowData.$copydefinition(ivDocumentsList)
+		Do dragRowData.$assignrow(ivDocumentsList)
+		Do ivDocumentsList.$assignrow(dropRowData)
+		Do ivDocumentsList.$line.$assign(dropRow)
+		Do ivDocumentsList.$assignrow(dragRowData)
+		Redraw {DocumentList}
+	End If

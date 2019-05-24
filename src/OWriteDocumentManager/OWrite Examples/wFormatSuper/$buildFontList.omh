@@ -1,2 +1,0 @@
-Do pList.$define(FontName)
-Do FontOps.$winlistfonts(pList)

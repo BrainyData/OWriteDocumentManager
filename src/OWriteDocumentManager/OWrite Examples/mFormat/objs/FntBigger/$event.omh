@@ -1,2 +1,0 @@
-On evClick
-	Calculate $topwind.$ctarget.$curfontsize as $topwind.$ctarget.$curfontsize+1

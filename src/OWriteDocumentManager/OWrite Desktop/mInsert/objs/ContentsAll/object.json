@@ -1,0 +1,22 @@
+{
+	"ident": 1029,
+	"order": 10,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 0,
+		"macshortcutkey": "",
+		"text": {
+			"type": 0,
+			"calc": "Table of Contents for all Documents..."
+		},
+		"unixshortcutkey": "",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": ""
+	}
+}

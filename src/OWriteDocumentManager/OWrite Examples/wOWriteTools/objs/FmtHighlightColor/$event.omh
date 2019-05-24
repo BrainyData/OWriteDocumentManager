@@ -1,4 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	;  CHANGE_V3A8 new feature
-	Calculate iFRefOWrite.$curhighlight as $cobj.$contents
-	Quit event handler (Pass to next handler)

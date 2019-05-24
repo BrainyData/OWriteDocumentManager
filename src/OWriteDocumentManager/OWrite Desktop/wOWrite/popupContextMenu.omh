@@ -1,0 +1,175 @@
+;  use OWrite to popup our context menu from a list
+
+;  build our menu list
+;  custom IDs must be 100 or more, IDs below 100 are reserved by OWrite
+Calculate canFormat as pick(ivEdit.$readonly,kWriMenuItemEnabled,kWriMenuItemNone)
+Do menuList.$define(Text,ID,Flags,SubMenuList)
+Do menuList.$add('Style Gallery...',101,canFormat)
+Do menuList.$add('Font...',102,canFormat)
+Do menuList.$add('Paragraph...',103,canFormat)
+Do menuList.$add('Bullets and Numbering...',104,canFormat)
+Do menuList.$add('Page Size...',105,canFormat)
+Switch ivEdit.$curobjtype
+	Case kWriObjTypeCalc
+		Do menuList.$add('Format Field...',106,canFormat)
+	Case kWriObjTypeCalcPict,kWriObjTypePict
+		Do menuList.$add('Format Picture...',107,canFormat)
+	Case kWriObjTypeTextbox
+		Do menuList.$add('Format Text Box...',108,canFormat)
+	Case kWriObjTypeTableCell,kWriObjTypeTableRow,kWriObjTypeTable
+		Do SubMenuList.$define(Text,ID,Flags)
+		Do SubMenuList.$add('Table Properties...',109,kTrue)
+		Do SubMenuList.$add('Borders And Shading...',110,kTrue)
+		Do SubMenuList.$add('',0,kFalse)
+		Do SubMenuList.$add('Insert Row Above',201,ivEdit.$tableaction(kWriTblActInsertRowAbove,kFalse))
+		Do SubMenuList.$add('Insert Row Below',202,ivEdit.$tableaction(kWriTblActInsertRowBelow,kFalse))
+		Do SubMenuList.$add('Insert Column to the Left',203,ivEdit.$tableaction(kWriTblActInsertColLeft,kFalse))
+		Do SubMenuList.$add('Insert Column to the Right',204,ivEdit.$tableaction(kWriTblActInsertColRight,kFalse))
+		Do SubMenuList.$add('Insert Cell to the Left',205,ivEdit.$tableaction(kWriTblActInsertCellLeft,kFalse))
+		Do SubMenuList.$add('Insert Cell to the Right',206,ivEdit.$tableaction(kWriTblActInsertCellRight,kFalse))
+		Do SubMenuList.$add('',0,kFalse)
+		Do SubMenuList.$add('Delete Selected Cells',207,ivEdit.$tableaction(kWriTblActDeleteCells,kFalse))
+		Do SubMenuList.$add('Merge Selected Cells',208,ivEdit.$tableaction(kWriTblActMergeCells,kFalse))
+		Do SubMenuList.$add('Split Current Cell',209,ivEdit.$tableaction(kWriTblActSplitCellHorz,kFalse))     ;; CHANGE_2018_02_08__1 (fixed constant)
+		Do SubMenuList.$add('',0,kFalse)
+		Do SubMenuList.$add('Align Left',210,ivEdit.$tableaction(kWriTblActAlignLeft,kFalse))
+		Do SubMenuList.$add('Align Right',211,ivEdit.$tableaction(kWriTblActAlignRight,kFalse))
+		
+		Do menuList.$add('Table Options',-1,canFormat,SubMenuList)
+End Switch
+;  add edit menu items     ;; OWrite recognizes ID's 1 to 7 as edit menu item IDs and sets them accordingly
+Do menuList.$add('',0,kWriMenuItemNone)
+Do menuList.$add(ivEdit.$undotext,kWriMenuItemEditUndo,kWriMenuItemEnabled)
+Do menuList.$add(ivEdit.$redotext,kWriMenuItemEditRedo,kWriMenuItemEnabled)
+Do menuList.$add('',0,kWriMenuItemNone)
+Do menuList.$add('Cut',kWriMenuItemEditCut,kWriMenuItemEnabled)
+Do menuList.$add('Copy',kWriMenuItemEditCopy,kWriMenuItemEnabled)
+Do menuList.$add('Paste',kWriMenuItemEditPaste,kWriMenuItemEnabled)
+Do menuList.$add('Clear',kWriMenuItemEditClear,kWriMenuItemEnabled)
+Do menuList.$add('Select All',kWriMenuItemEditSelectAll,kWriMenuItemEnabled)
+Do menuList.$add('',0,kWriMenuItemNone)
+Do menuList.$add('Show Invisible Characters',400,pick(ivEdit.$showinvisibles,kWriMenuItemEnabled,kWriMenuItemEnabled+kWriMenuItemChecked))     ;; CHANGE_V3A7
+Do menuList.$add('',0,kWriMenuItemNone)
+;  CHANGE_V3A10 begins (bookmarks)
+If len(ivEdit.$curbookmark)
+	Do menuList.$add(con("Remove Bookmark '",ivEdit.$curbookmark,"'"),401,kWriMenuItemEnabled)
+Else
+	Do menuList.$add('Add Bookmark',402,pick(ivEdit.$firstsel<>ivEdit.$lastsel,kWriMenuItemNone,kWriMenuItemEnabled))
+End If
+Do ivEdit.$getbookmarks(BookmarkList)
+Do SubMenuList.$define(Text,ID,Flags)     ;; CHANGE_2014_07_15__1: moved here from inside next If
+If BookmarkList.$linecount
+	For BookmarkList.$line from 1 to BookmarkList.$linecount step 1
+		Do SubMenuList.$add(BookmarkList.C1,10000+BookmarkList.$line,kWriMenuItemEnabled)
+	End For
+End If
+Do menuList.$add('Bookmarks',-1,kWriMenuItemEnabled,SubMenuList)
+Do menuList.$add('',0,kWriMenuItemNone)
+;  CHANGE_V3A10 ends
+Do menuList.$add('View Objects',300,kWriMenuItemEnabled)
+Do menuList.$add('View Document Info',301,kWriMenuItemEnabled)
+Do menuList.$add('Take Snap Shot',302,kWriMenuItemEnabled)
+Do menuList.$add('Test Set/Get/Conv Selection',303,kWriMenuItemEnabled)
+Do menuList.$add('Get Selection Bounds',304,kWriMenuItemEnabled)
+;  popup the menu
+Do ivEdit.$popupmenu(menuList,kFalse,0,0) Returns result
+;  execute result
+Switch result
+	Case kWriMenuItemEditUndo
+		Do ivEdit.$editundo()
+	Case kWriMenuItemEditRedo
+		Do ivEdit.$editredo()
+	Case kWriMenuItemEditCut
+		Do ivEdit.$editcut()
+	Case kWriMenuItemEditCopy
+		Do ivEdit.$editcopy()
+	Case kWriMenuItemEditPaste
+		Do ivEdit.$editpaste()
+	Case kWriMenuItemEditClear
+		Do ivEdit.$editclear()
+	Case kWriMenuItemEditSelectAll
+		Do ivEdit.$editselectall()
+	Case 101
+		Do method $format ('Style')
+	Case 102
+		Do method $format ('Font')
+	Case 103
+		Do method $format ('Para')
+	Case 104
+		Do method $format ('Num')
+	Case 105
+		Do method $format ('Page')
+	Case 106,107,108,109
+		Do method $format ('Object')
+	Case 110
+		Do method $format ('Borders')
+	Case 201
+		Do ivEdit.$tableaction(kWriTblActInsertRowAbove,kTrue)
+	Case 202
+		Do ivEdit.$tableaction(kWriTblActInsertRowBelow,kTrue)
+		Do ivEdit.$curobjdata.$assign('')
+		Do ivEdit.$lastsel.$assign(ivEdit.$firstsel)
+	Case 203
+		Do ivEdit.$tableaction(kWriTblActInsertColLeft,kTrue)
+	Case 204
+		Do ivEdit.$tableaction(kWriTblActInsertColRight,kTrue)
+	Case 205
+		Do ivEdit.$tableaction(kWriTblActInsertCellLeft,kTrue)
+	Case 206
+		Do ivEdit.$tableaction(kWriTblActInsertCellRight,kTrue)
+	Case 207
+		Do ivEdit.$tableaction(kWriTblActDeleteCells,kTrue)
+	Case 208
+		Do ivEdit.$tableaction(kWriTblActMergeCells,kTrue)
+	Case 209
+		Do ivEdit.$tableaction(kWriTblActSplitCellHorz,kTrue)     ;; CHANGE_2018_02_08__1 (fixed constant)
+	Case 210
+		Do ivEdit.$tableaction(kWriTblActAlignLeft,kTrue)
+	Case 211
+		Do ivEdit.$tableaction(kWriTblActAlignRight,kTrue)
+	Case 300
+		If tvStudio4
+			Do $windows.wOWriteViewDocObjects.$open('*',kWindowCenterRelative,$cwind,ivEdit)
+		Else
+			Do $windows.wOWriteViewDocObjects.$open('*',kWindowCenter,ivEdit)
+		End If
+	Case 301
+		If tvStudio4
+			Do $windows.wOWriteDocInfo.$open('*',kWindowCenterRelative,$cwind,ivEdit,ivDocumentsList.name)
+		Else
+			Do $windows.wOWriteDocInfo.$open('*',kWindowCenter,ivEdit,ivDocumentsList.name)
+		End If
+	Case 302
+		If tvStudio4
+			Do $windows.wOWriteSnapShot.$open('*',kWindowCenterRelative,$cwind,ivEdit,ivDocumentsList.name)
+		Else
+			Do $windows.wOWriteSnapShot.$open('*',kWindowCenter,ivEdit,ivDocumentsList.name)
+		End If
+	Case 303
+		If tvStudio4
+			Do $windows.wOWriteTestSelection.$open('*',kWindowCenterRelative,$cwind,ivEdit,ivDocumentsList.name)
+		Else
+			Do $windows.wOWriteTestSelection.$open('*',kWindowCenter,ivEdit,ivDocumentsList.name)
+		End If
+	Case 304
+		Do ivEdit.$getselbounds(top,left,bottom,right)
+		OK message  {top=[top] left=[left] bottom=[bottom] right=[right]}
+	Case 400
+		Calculate ivEdit.$showinvisibles as not(ivEdit.$showinvisibles)     ;; CHANGE_V3A7
+	Case 401     ;; Clear current bookmark    CHANGE_V3A10 (bookmarks)
+		Do ivEdit.$startundo()
+		Calculate ivEdit.$curbookmark as ''
+		Do ivEdit.$endundo("Remove Bookmark")
+	Case 402     ;; Add a new bookmark    CHANGE_V3A10 (bookmarks)
+		Prompt for input Enter name for bookmark Returns Text (Cancel button,Prompt above entry)
+		If flag true
+			Do ivEdit.$curbookmark.$assign(Text) Returns ok
+			If not(ok)
+				OK message Error (Icon,Sound bell) {A bookmark with the name '[Text]' already exists}
+			End If
+		End If
+	Default     ;; CHANGE_V3A10 (bookmarks)
+		If result>10000     ;; a bookmark was selected, use $setselection with bookmark name and constant kWriSRBookmark
+			Do ivEdit.$setselection(BookmarkList.[result-10000].C1,0,0,kWriSRBookmark)
+		End If
+End Switch

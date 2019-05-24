@@ -1,0 +1,21 @@
+Calculate propWasNull as con(pFieldRef.$userinfo)='#NULL'     ;; CHANGE_2008_08_01(1)
+Switch pFieldRef.$objtype
+	Case kEntry,kMultilineEntry
+		Calculate changed as pick(propWasNull,$cinst.[pFieldRef.$dataname]<>pFieldRef.$userinfo,not(isnull($cinst.[pFieldRef.$dataname])))
+	Case kCombo
+		Calculate changed as pick(propWasNull,$cinst.[pFieldRef.$dataname]<>pFieldRef.$userinfo,$cinst.[pFieldRef.$dataname]<>kNullCombo)
+	Case kCheckbox
+		Calculate changed as pick(propWasNull,$cinst.[pFieldRef.$dataname]<>pFieldRef.$userinfo,not(isnull($cinst.[pFieldRef.$dataname])))
+	Case kRadio
+		Calculate changed as pick(propWasNull,$cinst.[pFieldRef.$dataname]<>pFieldRef.$userinfo,$cinst.[pFieldRef.$dataname]<>kNullRadio)
+	Case kPushbutton     ;; this will have a button mode set to one of the pickers
+		Switch pFieldRef.$buttonmode
+			Case kBMcolorpicker     ;; that is all we use at the moment
+				Calculate changed as pick(propWasNull,pFieldRef.$contents<>pFieldRef.$userinfo,pFieldRef.$contents<>kNullColorPicker)
+		End Switch
+	Case kDroplist,kListBox,kPoplist
+		;  OWrite property values handled by a list control are stored in column 1 of the list
+		Set reference listRef to $cinst.[pFieldRef.$dataname]
+		Calculate changed as pick(propWasNull,listRef.C1<>pFieldRef.$userinfo,listRef.$line>0)     ;; CHANGE_V3
+End Switch
+Quit method changed

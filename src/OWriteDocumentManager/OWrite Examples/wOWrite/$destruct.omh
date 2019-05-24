@@ -1,5 +1,0 @@
-;  if the glossary is in use, terminate it
-If ivUseGlossary
-	Do method stopGlossary
-End If
-Do method closeTools

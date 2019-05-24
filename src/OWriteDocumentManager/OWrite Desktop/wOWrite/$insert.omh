@@ -1,0 +1,60 @@
+;  this method is called from the windows Insert menu
+;  it inserts the specified object at the current cursor position
+Do ivEdit.$startundo()
+Switch pWhat
+	Case 'Custom'
+		Do method insertCustom
+		Calculate undoText as "Insert Custom Field"
+	Case 'DocLink'
+		Do method insertDocLink
+		Calculate undoText as "Insert Document Link"
+	Case 'WebLink'     ;; change20190420_1
+		Do method insertWebLink
+		Calculate undoText as "Insert Web Link"
+	Case 'Textbox'
+		Do method insertTextbox
+		Calculate undoText as "Insert Text Box"
+	Case 'PageBreak'
+		Do ivEdit.$::insert(kWriObjTypeChar,chr(kWriCharPageBreak))
+		Calculate undoText as "Insert Page Break"
+	Case 'Table'
+		Do ivEdit.$disablescreenupdates()
+		Do #L1.$define(#S1,#S2,#S3,#S4,#S5,#1)
+		For rowNo from 1 to 50 step 1
+			Do #L1.$add("","","","","",1)
+			For colNo from 1 to 5 step 1
+				Calculate #L1.[rowNo].C[colNo] as con("row ",rowNo," col ",colNo)
+			End For
+		End For
+		Do ivEdit.$::insert(kWriObjTypeTable,"Table;#L1",kWriBordLine3,kWriLineSolid,kRed,1.00,5,3)
+		;  set first rows content     ;; the first row is to be our header
+		Calculate rowNo as 1*65536
+		For colNo from 1 to 5 step 1
+			Do ivEdit.$setselection(rowNo+colNo,rowNo+colNo,ivEdit.$curtblid)
+			Do ivEdit.$::insert(kWriObjTypeText,con("COL ",colNo))
+		End For
+		;  set first rows attributes
+		Do ivEdit.$setselection(rowNo+0,rowNo+0,ivEdit.$curtblid)     ;; select all columns in first row
+		Do ivEdit.$curobjfillcolor.$assign(kGray)     ;; set first rows background to gray
+		Do ivEdit.$curbold.$assign(kTrue)     ;; make first rows text bold
+		Do ivEdit.$curtblrowtype.$assign(kWriTblRowHeader)     ;; mark first row as a header
+		;  set second rows calculations     ;; the second row onwards is to display the list content
+		Calculate rowNo as 2*65536
+		For colNo from 1 to 5 step 1
+			Do ivEdit.$setselection(rowNo+colNo,rowNo+colNo,ivEdit.$curtblid)
+			Do ivEdit.$curobjdata.$assign(con("S",colNo,";$ref.#S",colNo))
+		End For
+		;  set footer row properties
+		Calculate rowNo as 3*65536
+		Do ivEdit.$setselection(rowNo+0,rowNo+0,ivEdit.$curtblid)     ;; select all columns in first row
+		Do ivEdit.$curobjfillcolor.$assign(kYellow)     ;; set first rows background to gray
+		Do ivEdit.$curbold.$assign(kTrue)     ;; make first rows text bold
+		Do ivEdit.$curtblrowtype.$assign(kWriTblRowFooter)     ;; mark first row as a header
+		;  set focus to the first cell in the table
+		Calculate rowNo as 1*65536
+		Calculate colNo as 1
+		Do ivEdit.$setselection(rowNo+colNo,rowNo+colNo,ivEdit.$curtblid)
+		Do OWrite.$enablescreenupdates()
+		Calculate undoText as "Insert Table"
+End Switch
+Do ivEdit.$endundo(undoText)

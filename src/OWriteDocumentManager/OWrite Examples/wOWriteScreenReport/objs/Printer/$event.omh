@@ -1,3 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do $cdevice.$assign(kDevPrinter)
-	Do refScreenReport.$redirect(kTrue)

@@ -1,0 +1,6 @@
+Switch pForm
+	Case 1
+		Calculate $cinst.$objs.OWriteSubForm.$classname as "rfOWriteSimpleMultiSub1"
+	Case 2
+		Calculate $cinst.$objs.OWriteSubForm.$classname as "rfOWriteSimpleMultiSub2"
+End Switch

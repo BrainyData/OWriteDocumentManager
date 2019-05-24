@@ -1,0 +1,59 @@
+
+;  write property name in key tag
+Text: {[ivIndent]<key>[pPropName]</key>} (Linefeed)
+
+;  write property data in type tag
+Switch pPropType
+	
+	Case 'integer'
+		Text: {[ivIndent]<integer>[pick(isnull(pPropData),pPropData,0)]</integer>} (Linefeed)
+		
+	Case 'pridim'     ;; micrometres (0.001 mm)
+		Text: {[ivIndent]<string>[jst(pPropData/1000,'N3')]mm</string>} (Linefeed)
+		
+	Case 'color'
+		Text: {[ivIndent]<string>[bintohex(binfromint32(pPropData))]</string>} (Linefeed)
+		
+	Case 'points'
+		Text: {[ivIndent]<string>[pPropData]pts</string>} (Linefeed)
+		
+	Case 'string','utf8'
+		If pPropType='utf8'
+			Calculate data as utf8tochar(pPropData)     ;; convert to omnis char for processing
+		Else
+			Calculate data as pPropData
+		End If
+		Calculate data as replaceall(data,chr(1),"&#1;")
+		Calculate data as replaceall(data,chr(9),"&#9;")
+		Calculate data as replaceall(data,chr(13),"&#13;")
+		Calculate data as replaceall(data,'<',"&#60;")
+		Calculate data as replaceall(data,'>',"&#62;")
+		Calculate data as replaceall(data,'/',"&#47;")
+		Calculate data as replaceall(data,'&',"&#38;")
+		Text: {[ivIndent]<string>[data]</string>} (Linefeed)
+		
+	Case 'bool'
+		Text: {[ivIndent][pick(pPropData,"<false/>","<true/>")]} (Linefeed)
+		
+	Case 'data'
+		Calculate data as bintohex(pPropData)
+		Text: {[ivIndent]<string>[data]</string>} (Linefeed)
+		;  Text: [ivIndent]<data>[data]</data> (Linefeed)
+		
+	Default
+		If pos('pick',pPropType)=1
+			;  we have a pick function which will look similar to this     ;; pick(#,val1,val2,val3)
+			
+			;  insert our value parameter and surround with con() function to force number to string conversion
+			Calculate pPropType as con('con(',replace(pPropType,'#','pPropData'),')')
+			;  evaluate
+			Calculate data as eval(pPropType)
+			Text: {[ivIndent]<string>[data]</string>} (Linefeed)
+		End If
+		If pos('enum',pPropType)=1
+			;  should not get here
+			Breakpoint {encountered enum()}
+		End If
+End Switch
+
+Quit method kTrue

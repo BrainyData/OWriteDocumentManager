@@ -1,0 +1,8 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	If not(ivFixedSize)
+		Calculate ivWidth as ivEditObjRef.$curobjorigwidth
+		Calculate ivHeight as ivEditObjRef.$curobjorigheight
+		Calculate ivWidth_perc as 100
+		Calculate ivHeight_perc as 100
+		Redraw {Height,Width,Hight%,Width%}
+	End If

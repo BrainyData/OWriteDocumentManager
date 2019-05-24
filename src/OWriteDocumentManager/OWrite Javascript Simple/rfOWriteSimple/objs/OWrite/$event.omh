@@ -22,5 +22,20 @@ On evAsyncDone
 			Do method $cinst.$serverClearData
 		Case 'print'
 			Do method $cinst.$serverPrintData
+		Case 'replace_all'
+			Do method $serverReplaceAll (pAsyncData.C1,pAsyncData.C2)
+			;  JavaScript: console.log("async done");console.log(objCalc);
 	End Switch
 	Do $cinst.$objs.OWrite.$setfocus()     ;; new function to set focus to document in iframe
+	
+On evOpenContextMenu     ;; change20181218_1
+	Do method $cinst.$handleOpenContextMenu (pContextMenu,$cfield)
+	
+On evExecuteContextMenu     ;; change20181218_1
+	Do method $cinst.$handleExecContextMenu (pCommandID,$cfield.$curobjtype)
+	
+On evGetDataFromSrc     ;; (parameters are (pObjID, pObjName and pObjCalc which comes from the ObjDataSrc property) change20190207_1
+	If pObjName="HeaderBanner"
+		;  if external source is the header banner, we have already cached the image data (no need to evaluate pObjCalc)
+		Do $cinst.$objs.OWrite.$setdatafromsrc(pObjID,ivSampleHeaderBanner.pngImage)
+	End If

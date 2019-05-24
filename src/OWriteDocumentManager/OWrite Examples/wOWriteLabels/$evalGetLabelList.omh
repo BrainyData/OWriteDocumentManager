@@ -1,5 +1,0 @@
-;  we just return an empty list here, so just that we can force the OWrite table to display the correct number cells.
-;  the number of rows required are equal to the rows in the OWrite table (number of labels down + gutter rows)
-Do tempList.$define(#S1)
-Do tempList.$linecount.$assign(pick(cInfoED.LabelGutterVert>0,cInfoED.LabelsDown,cInfoED.LabelsDown*2-1))
-Quit method tempList

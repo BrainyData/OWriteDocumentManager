@@ -1,0 +1,2 @@
+;  code now moved to common object class for use by desktop and JS server apps
+Quit method ivObjEvalCommon.$eval('BuildList',pDataTable,pDataColumns)     ;; change20190215_1

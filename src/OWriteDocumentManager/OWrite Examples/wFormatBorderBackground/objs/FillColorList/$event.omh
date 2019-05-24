@@ -1,3 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	Calculate $cinst.$objs.CustomFillColor.$contents as ivFillColorList.ivColor
-On evDoubleClick     ;; Event Parameters - pRow ( Itemreference )

@@ -1,0 +1,36 @@
+
+;  this method is called to do any manual conversion that may be required
+If OWrite.$docversion(pDocData)<vsn_v3a10
+	;  prior to this version the examples inserted clickable calculations with underline turned on
+	;  and the current text color set to blue. Version 3 implements the properties $linktextcolor
+	;  and $linktextstyle for clickable calculations. This means we can strip all our in-line style
+	;  changes that are no longer required and control our link appearance via the new properties.
+	
+	;  load our document
+	Do $cinst.$loaddata(pDocData)
+	;  get a list of calculated fields
+	Do objsList.$define(Type,Ident,FirstSel,LastSel)
+	Do $cinst.$getobjslist(objsList,kWriObjTypeCalc)
+	;  iterate through the fields and clear current text color and style
+	For objsList.$line from 1 to objsList.$linecount step 1
+		Working message /-1073735809,-1073735808;50;[objsList.$linecount];30 {Converting Document}
+		Do $cinst.$setselection(0,0,objsList.Ident)
+		If $cinst.$curobjclicks
+			;  first get the preceeding text color and style
+			;  we can do this by setting the selection to the position in front of the link
+			Do $cinst.$getselection(FirstSel,LastSel,Ident)
+			Do $cinst.$setselection(FirstSel,FirstSel,Ident)
+			Calculate textUnderline as $cinst.$curunderline
+			Calculate textColor as $cinst.$curtextcolor
+			;  now select the field again and apply the settings
+			Do $cinst.$setselection(0,0,objsList.Ident)
+			Calculate $cinst.$curunderline as textUnderline
+			Calculate $cinst.$curtextcolor as textColor
+			Calculate conversionDone as kTrue
+		End If
+	End For
+	Close working message
+	;  return our converted document
+	Do $cinst.$savedata(pDocData)
+End If
+Quit method conversionDone

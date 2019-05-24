@@ -1,0 +1,311 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 5,
+	"designtaskname": "Startup_Task",
+	"nextident": 1187,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cInIntialize",
+			"order": 5,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "cShowGroupAlignment",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "cShowGroupDocument",
+			"order": 3,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "cShowGroupFields",
+			"order": 4,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue"
+		},
+		{
+			"name": "cShowGroupFont",
+			"order": 1,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue"
+		},
+		{
+			"name": "cShowGroupInitAdj",
+			"order": 6,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "cShowGroupOtherFields",
+			"order": 7,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "kStyleActionAddNewStyle",
+			"order": 12,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "3",
+			"desc": "Add New Style action constant, used by style list popup ;; CHANGE_V3"
+		},
+		{
+			"name": "kStyleActionNone",
+			"order": 9,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "-1",
+			"desc": "Style no action constant, used by style list popup ;; CHANGE_V3"
+		},
+		{
+			"name": "kStyleActionRedefineStyle",
+			"order": 11,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "2",
+			"desc": "Redefine Style action constant, used by style list popup ;; CHANGE_V3"
+		},
+		{
+			"name": "kStyleActionReformatParagraph",
+			"order": 10,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "1",
+			"desc": "Reformat Paragraph Style action constant, used by style list popup ;; CHANGE_V3"
+		},
+		{
+			"name": "kStyleActionSetStyleName",
+			"order": 8,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0",
+			"desc": "Set Style Name action constant, used by style list popup ;; CHANGE_V3"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "iFmtFontFamilyList",
+			"order": 20,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Font family list CHANGE_V3"
+		},
+		{
+			"name": "iFmtFontName",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFmtFontSize",
+			"order": 8,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iFmtFontSizeList",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iFmtFontTypefaceList",
+			"order": 21,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "Font typeface list CHANGE_V3"
+		},
+		{
+			"name": "iFmtStyleList",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iFRefFmtHighlightColor",
+			"order": 19,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.GroupFont.$objs.FmtHighlightColor",
+			"desc": "CHANGE_V3A8"
+		},
+		{
+			"name": "iFRefFmtTextColor",
+			"order": 11,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.GroupFont.$objs.FmtTextColor"
+		},
+		{
+			"name": "iFRefGroupLast",
+			"order": 17,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.GroupOtherFields"
+		},
+		{
+			"name": "iFRefOWrite",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$iwindows.wOWrite.$objs.Edit",
+			"desc": "Reference to OWrite control"
+		},
+		{
+			"name": "iFRefViewPaperColor",
+			"order": 15,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.GroupDocument.$objs.ViewPaperColor"
+		},
+		{
+			"name": "iMeasure",
+			"order": 14,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iUseCount",
+			"order": 16,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iViewScale",
+			"order": 10,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iViewScaleList",
+			"order": 9,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iWRefOWrite",
+			"order": 12,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$iwindows.wOWrite",
+			"desc": "Reference to OWrite window"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": true,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2010-04-23 14:07:53",
+		"desc": "OWrite: main formatting palette",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": true,
+		"forecolor": "kColor3DFace",
+		"growbox": false,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 100,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 840,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2019-02-18 15:04:45",
+		"modelessdata": true,
+		"showascheckedout": false,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": true,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kPalette",
+		"title": {
+			"type": 0,
+			"calc": "Formatting Palette"
+		},
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionNone",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 198,
+		"userinfo": "",
+		"usesheets": false,
+		"version": "4.32.00",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 213,
+		"zoombox": false
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do ivOWriteRef.$startundo()
-	Do method fixOmnisBug
-	Do method doFindReplace (kTrue,kFalse)
-	Do ivOWriteRef.$endundo("Replace")

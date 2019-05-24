@@ -1,4 +1,0 @@
-Do ivStyleList.$loadcols()
-Do method load
-Calculate $cinst.$title as con('Format Style ',ivStyleName)
-Do $cinst.$redraw(kTrue,kTrue)

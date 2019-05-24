@@ -1,0 +1,33 @@
+;  update the paper info in the preview
+Do method enablePreview
+Switch pDataName
+	Case 'PaperType'
+		Calculate refPreview.$::paper as cInfoED.PaperType
+		;  also set the orientation
+		Calculate cInfoED.PaperOrient as pick(pos('Envelope',cPaperList.C2)=0,kOrientLandscape,kOrientPortrait)-1
+		Calculate refPreview.$::orientation as cInfoED.PaperOrient+1
+		;  get paper size for display
+		Calculate cInfoED.PaperWidth as refPreview.$::paperwidth
+		Calculate cInfoED.PaperHeight as refPreview.$::paperlength
+		Do method previewScale
+		Do $cinst.$setButtons()     ;; on a paper change we must enable/disable appropriate buttons
+	Case 'PaperWidth'
+		Calculate refPreview.$::paperwidth as cInfoED.PaperWidth
+		Do method previewScale
+	Case 'PaperHeight'
+		Calculate refPreview.$::paperlength as cInfoED.PaperHeight
+		Do method previewScale
+	Case 'PaperOrient'
+		Calculate refPreview.$::orientation as cInfoED.PaperOrient+1
+		Do method previewScale
+	Case 'PaperMarginLeft'
+		Calculate refPreview.$::leftmargin as cInfoED.PaperMarginLeft
+	Case 'PaperMarginTop'
+		Calculate refPreview.$::topmargin as cInfoED.PaperMarginTop
+	Case 'PaperMarginRight'
+		Calculate refPreview.$::rightmargin as cInfoED.PaperMarginRight
+	Case 'PaperMarginBottom'
+		;  Calculate ref_Preview.$::bottommargin as cInfoED.PaperMarginBottom
+		Calculate refPreview.$::bottommargin as 0     ;; no need to have a bottom margin, solves issues with last row
+End Switch
+Do method disablePreview

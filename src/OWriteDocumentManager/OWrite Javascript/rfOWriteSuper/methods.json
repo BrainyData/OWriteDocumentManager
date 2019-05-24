@@ -552,6 +552,13 @@
 				"initval": "1"
 			},
 			{
+				"name": "kWriAlign",
+				"order": 13,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
 				"name": "ok",
 				"order": 8,
 				"type": "kCharacter",

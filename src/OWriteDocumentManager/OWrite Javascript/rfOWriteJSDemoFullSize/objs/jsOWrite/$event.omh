@@ -17,7 +17,6 @@ On evSaveDataError
 	
 On evOpenContextMenu
 	Do method $cinst.$handleOpenContextMenu (pContextMenu,$cfield)
-	Quit method
 	
 On evExecuteContextMenu
 	Do method $cinst.$handleExecContextMenu (pCommandID,$cfield.$curobjtype)
@@ -26,7 +25,7 @@ On evModified
 	Calculate $cinst.$objs.btnSave.$visible as kTrue
 	
 On evAsyncDone
-	OK message  {async operation '[pAsyncId]' completed. Success = [pAsyncSuccess]}
+	;  OK message  {async operation '[pAsyncId]' completed. Success = [pAsyncSuccess]}
 	
 On evGetDataFromSrc
-	OK message  {[pObjID] - [pObjName] - [pObjCalc]}
+	;  OK message  {[pObjID] - [pObjName] - [pObjCalc]}

@@ -1,7 +1,0 @@
-Test for window open {wOWrite}
-If flag true
-	Bring window instance to front wOWrite
-Else
-	Do $topwind.$close()
-	Open window instance wOWrite
-End If

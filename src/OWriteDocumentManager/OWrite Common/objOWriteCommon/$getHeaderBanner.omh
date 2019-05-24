@@ -1,0 +1,47 @@
+Send to trace log {$getHeaderBanner called}
+;  see if we have cached it already
+If binlength(cvHeaderBannerCached)
+	Quit method cvHeaderBannerCached
+End If
+
+;  Our database contains a document for producing an image for a header that contains both
+;  company details and company logo
+Begin reversible block
+	Set read-only files {fOWriteDoc}
+End reversible block
+Single file find on fOWriteDoc.name (Exact match) {"_HeaderBanner"}
+If flag true
+	;  prepare object basic settings
+	Do evalObj.$screendpi.$assign(288)     ;; note most accurate painting happens in native resolution (common factor between 96 and 72 is 288)
+	Do evalObj.$printdpi.$assign(evalObj.$screendpi)     ;; make print dpi the same as we are producing an image based on screen dpi (this will measure text at screen dpi)
+	
+	;  load the document     ;; IMPORTANT! Must use seperate local NV OWrite object as we may be called as part of evaluating document within $cinst
+	Do evalObj.$loaddata(fOWriteDoc.data)
+	Do evalObj.$nohilite.$assign(kTrue)
+	
+	;  evaluate the document (will call $eval method of this)
+	Do evalObj.$evallocal.$assign(kTrue)
+	Do evalObj.$evalcalcs.$assign(kTrue)
+	Do evalObj.$picturefrompage(1,0,0,evalObj.$curtblid,picture)     ;; take picture of table object
+	Do evalObj.$evalcalcs.$assign(kFalse)
+	
+	;  cache the image and sizes
+	Do pictsize(picture,pixel_width,pixel_height)
+	Calculate cvHeaderBannerCached as picture
+	If sys(87)=144|sys(87)=196     ;; test for retina (image will be double the size in pixels)
+		Calculate cvHeaderBannerWidth as pixel_width*25400/evalObj.$screendpi/2
+		Calculate cvHeaderBannerHeight as pixel_height*25400/evalObj.$screendpi/2
+	Else
+		Calculate cvHeaderBannerWidth as pixel_width*25400/evalObj.$screendpi
+		Calculate cvHeaderBannerHeight as pixel_height*25400/evalObj.$screendpi
+	End If
+	
+	Copy to clipboard cvHeaderBannerCached
+	
+	;  return the picture
+	Quit method picture
+Else
+	Quit method #NULL
+End If
+
+Calculate #1 as sys(87)

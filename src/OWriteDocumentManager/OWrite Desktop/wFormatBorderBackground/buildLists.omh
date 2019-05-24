@@ -1,0 +1,33 @@
+;  build line color list
+Do ivLineColorList.$define(ivColor,ivColorTxt)
+Do ivLineColorList.$add(0,con(style(kEscBmp,10021),'Default'))
+Do ivLineColorList.$add(kBlack,con(style(kEscBmp,10021),'Black'))
+Do ivLineColorList.$add(kDarkBlue,con(style(kEscBmp,10022),'Dark Blue'))
+Do ivLineColorList.$add(kDarkGreen,con(style(kEscBmp,10023),'Dark Green'))
+Do ivLineColorList.$add(kDarkCyan,con(style(kEscBmp,10024),'Dark Cyan'))
+Do ivLineColorList.$add(kDarkRed,con(style(kEscBmp,10025),'Dark Red'))
+Do ivLineColorList.$add(kDarkMagenta,con(style(kEscBmp,10026),'Dark Magenta'))
+Do ivLineColorList.$add(kDarkYellow,con(style(kEscBmp,10027),'Dark Yellow'))
+Do ivLineColorList.$add(kBlue,con(style(kEscBmp,10028),'Blue'))
+Do ivLineColorList.$add(kGreen,con(style(kEscBmp,10029),'Green'))
+Do ivLineColorList.$add(kCyan,con(style(kEscBmp,10030),'Cyan'))
+Do ivLineColorList.$add(kRed,con(style(kEscBmp,10031),'Red'))
+Do ivLineColorList.$add(kMagenta,con(style(kEscBmp,10032),'Magenta'))
+Do ivLineColorList.$add(kYellow,con(style(kEscBmp,10033),'Yellow'))
+Do ivLineColorList.$add(kWhite,con(style(kEscBmp,10034),'White'))
+Do ivLineColorList.$add(kDarkGray,con(style(kEscBmp,10035),'Dark Gray'))
+Do ivLineColorList.$add(kGray,con(style(kEscBmp,10036),'Gray'))
+
+;  build fill color list     ;; :-) easy
+Calculate ivFillColorList as ivLineColorList
+
+;  build apply to list
+Do ivApplyToList.$define(ivApplyToText,ivApplyTo)
+Do ivApplyToList.$add("Current Selection",kWriTblApplyCells)
+Do ivApplyToList.$add("Entire Rows",kWriTblApplyRows)
+Do ivApplyToList.$add("Entire Columns",kWriTblApplyCols)
+Do ivApplyToList.$add("Entire Table",kWriTblApplyTable)
+Do ivApplyToList.$search($ref.ivApplyTo=pApplyMode,kTrue,kFalse,kFalse,kFalse) Returns ivApplyToList.$line
+If not(ivApplyToList.$line)
+	Calculate ivApplyToList.$line as 1
+End If

@@ -1,8 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	Redraw {iFieldDefinition}
-	
-On evDoubleClick     ;; Event Parameters - pRow ( Itemreference )
-	Do method insertText
-	
-On evDragFinished
-	Do $cwind.$setFocusOWrite

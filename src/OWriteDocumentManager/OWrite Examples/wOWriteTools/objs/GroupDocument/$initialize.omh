@@ -1,5 +1,0 @@
-;  fix radio button groups inside a container
-Calculate dataname as con(iFRefOWrite.$fullname,'.$pageview')
-Calculate $cfield.$objs.ViewNormal.$dataname as dataname
-Calculate $cfield.$objs.ViewPageLayout.$dataname as dataname
-Calculate $cfield.$objs.ViewField.$dataname as dataname

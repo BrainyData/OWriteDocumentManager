@@ -1,0 +1,17 @@
+;  Enter your initialization code here
+Set reference ivEditRef to pEditRef
+If len(pDisplayText)
+	Calculate ivDisplayText as pDisplayText
+	Calculate ivURLText as "http://<address>"
+	Calculate $cinst.$title as 'Insert Web Link'
+	Calculate ivDoUndoOnCancel as kTrue
+Else
+	;  get the info from the objects calculation
+	;  we do this by getting the calculation and evaluating it against this class
+	Calculate ivDisplayText as ivEditRef.$curobjdisplay
+	Calculate ivURLText as eval(ivEditRef.$curobjclickcalc)
+	Calculate ivTooltip as ivEditRef.$curobjtooltip
+	Calculate $cinst.$title as 'Format Web Link'
+	Calculate $cinst.$objs.Insert.$text as 'Update'
+	Calculate ivDoUndoOnCancel as kFalse
+End If

@@ -1,8 +1,0 @@
-Switch pDataName
-	Case 'ContentMargin','ContentCopies','FontName','FontSize','FontBold','FontItalic'
-		;  here we must rebuild the table
-		Do method previewRebuild
-	Default
-		;  for all others we can simply evaluate
-		Do method previewEval
-End Switch

@@ -1,0 +1,21 @@
+;  overide this method to load all the properties     ;; called by $construct and revert button
+;  after loading your properties call the inherited method
+;  example:
+;  Do $cinst.$loadProperty(ivEditObjRef.$property_name.$ref,window_object_reference)
+;  Do inherited
+
+;  CHANGE_V3A10 begins
+;  $curobjdata is now obsolete and has been replaced by seperate properties
+Do $cinst.$loadProperty_calculations(refName,refDisplayName,refCalculation,refGenClicks,refClickCalculation)
+;  CHANGE_V3A10 ends
+
+Do $cinst.$loadProperty(ivEditObjRef.$curobjtooltip.$ref,refTooltip)
+Do $cinst.$loadProperty(ivEditObjRef.$curobjstripempty.$ref,refStripEmpty)
+
+Do $cinst.$loadProperty(ivEditObjRef.$curobjwidth.$ref,refWidth)
+Do $cinst.$loadProperty(ivEditObjRef.$curobjheight.$ref,refHeight)
+
+Calculate ivFixedSize as ivWidth<>0|ivHeight<>0
+Calculate $cinst.$title as con('Format Field ',ivName)
+
+Do inherited

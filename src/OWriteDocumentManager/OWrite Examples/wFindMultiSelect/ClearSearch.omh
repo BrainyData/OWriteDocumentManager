@@ -1,9 +1,0 @@
-
-Do ivFindList.$clear()
-Do ivFindObj.$setresultlist(#NULL)
-Calculate ivFindText as ''
-Calculate ivLastFindText as ''
-Calculate refStatusLabel.$text as ivDefaultStatusText
-Do refSearchText.$redraw()
-Do method SetFieldBackground
-;  Queue set current field {fldSearchText}

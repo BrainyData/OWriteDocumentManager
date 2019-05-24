@@ -1,7 +1,0 @@
-On evClick     ;; Event Parameters - pRow ( Itemreference )
-	If ivWidth_perc<>ivHeight_perc
-		Calculate ivHeight_perc as ivWidth_perc
-		Calculate ivHeight as ivEditObjRef.$curobjorigheight*ivWidth_perc/100
-		Redraw {Height,Hight%}
-	End If
-	Quit event handler (Pass to next handler)

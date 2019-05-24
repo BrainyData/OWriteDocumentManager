@@ -1,0 +1,16 @@
+{
+	"ident": 1013,
+	"order": 1,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 10803,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Insert Page Break"
+		},
+		"userinfo": ""
+	}
+}

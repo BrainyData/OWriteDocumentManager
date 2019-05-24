@@ -1,6 +1,6 @@
 {
 	"classtype": "kObjectclass",
-	"internalversion": 84,
+	"internalversion": 85,
 	"superclass": ".OWrite.OWriteDoc",
 	"designtaskname": "rtOWriteJS",
 	"cvardefs": [
@@ -42,9 +42,9 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2018-06-28 18:12:10",
+		"moddate": "2018-07-31 14:51:46",
 		"selfcontained": false,
-		"showascheckedout": true,
+		"showascheckedout": false,
 		"userinfo": "",
 		"version": ""
 	}

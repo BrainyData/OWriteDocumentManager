@@ -1,0 +1,16 @@
+{
+	"ident": 1007,
+	"order": 5,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 11302,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Insert Page Number"
+		},
+		"userinfo": ""
+	}
+}

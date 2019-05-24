@@ -5,7 +5,7 @@ If tvCanDoPDF
 	
 	;  provide a window for setting the advanced PDF Device properties
 	;  this must be an Omnis command line that is valid to execute from the $root as its context
-	Calculate deviceParms.Advanced as "$root.$libs.example.$windows.wPDFOptions.$openonce('PDFAOptions',kWindowCenter)"
+	Calculate deviceParms.Advanced as "$root.$libs.OWriteDocumentManager.$windows.wPDFOptions.$openonce('PDFAOptions',kWindowCenter)"
 	;  set default destination file to prevent unwanted prompting
 	Calculate deviceParms.FileName as con(ivExamplesPath,"untitled.pdf")
 	;  set our Brainy Data watermark

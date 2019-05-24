@@ -1,9 +1,0 @@
-;  PURPOSE:     ;; export document paper info
-;  USAGE:     ;; called by ...$writedoc
-;  SUB-CLASSING:     ;; sub-class this method to export document paper info
-
-;  super-class does nothing
-Quit method kTrue
-
-;  copy and paste line to your method to inherit parameters
-Send to trace log {[pPaperOrientation], [pPaperSize], [pPaperLength], [pPaperWidth], [pPaperLeftMargin],[pPaperRightMargin], [pPaperTopMargin], [pPaperBottomMargin], [pPaperContinues]}

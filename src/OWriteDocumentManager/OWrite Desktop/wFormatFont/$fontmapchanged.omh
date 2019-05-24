@@ -1,0 +1,2 @@
+;  called by fontmap window
+Do $cinst.$load(kTrue)

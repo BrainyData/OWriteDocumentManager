@@ -1,5 +1,0 @@
-On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
-	If #MODIFIED
-		Do method checkPaperSizeValid ($cfield)     ;; 20090810_1_CHANGE
-	End If
-	Quit event handler (Pass to next handler)

@@ -1,0 +1,10 @@
+If ivNavigateHistory.$line
+	If (ivNavigateHistory.$line<ivNavigateHistory.$linecount)
+		Calculate ivNavigateHistory.$line as ivNavigateHistory.$line+1
+	Else
+		Quit method
+	End If
+Else
+	Quit method
+End If
+Do method $navigateLoad

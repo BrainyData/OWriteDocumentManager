@@ -1,0 +1,13 @@
+;  we use our "_HeaderBanner" template document to build a high-res image for the header
+
+;  our OWrite NV object has a method for fetching the image
+Do ivOWriteSimple.$getHeaderBanner() Returns omImage     ;; image will be CS24
+Calculate pngImage as pictconvto(pictformat(omImage),omImage,"PNG")     ;; convert it to PNG
+
+;  we will store the image and additional info in a row variable     ;; Note: width and height are required in 1000/mm
+Do ivSampleHeaderBanner.$define(pngImage,width,height,lmargin,rmargin)
+Calculate ivSampleHeaderBanner.pngImage as bytecon(pngImage,"")
+Calculate ivSampleHeaderBanner.width as ivOWriteSimple.$getHeaderBannerWidth()
+Calculate ivSampleHeaderBanner.height as ivOWriteSimple.$getHeaderBannerHeight()
+Calculate ivSampleHeaderBanner.lmargin as ivOWriteSimple.$leftmargin
+Calculate ivSampleHeaderBanner.rmargin as ivOWriteSimple.$rightmargin

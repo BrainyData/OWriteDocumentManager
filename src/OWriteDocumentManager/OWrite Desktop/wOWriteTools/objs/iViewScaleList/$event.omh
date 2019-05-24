@@ -1,0 +1,12 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	Calculate lScale as $cobj.$contents
+	Calculate iFRefOWrite.$docscale as strtok('lScale','%')
+	Calculate $cobj.$contents as con(iFRefOWrite.$docscale,'%')
+	Quit event handler (Pass to next handler)
+On evAfter
+	If #MODIFIED|#ENTER|#RETURN
+		Calculate lScale as $cobj.$contents
+		Calculate iFRefOWrite.$docscale as strtok('lScale','%')
+		Calculate $cobj.$contents as con(iFRefOWrite.$docscale,'%')
+	End If
+	Quit event handler (Pass to next handler)

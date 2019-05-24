@@ -1,0 +1,2 @@
+On evTabSelected
+	Calculate $cinst.$objs.PagedPane.$currentpage as $cfield.$currenttab

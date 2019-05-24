@@ -1,0 +1,33 @@
+;  get picture of the specified page
+
+
+
+If sz>=0     ;; change20190215_1 rewrite to capture full/high-resolution image of selected object or page
+	Calculate refImage.$noscale as sz>0
+	;  calculate the size, preserving aspect ratio
+	If sz=0     ;; will return image according to screen DPI
+		Calculate height as 0
+		Calculate width as 0
+	Else If ivKeepAspectRatio
+		Calculate ratio as ivOWriteRef.$::paperlength/ivOWriteRef.$::paperwidth
+		If ratio>1
+			Calculate height as sz
+			Calculate width as sz/ratio
+		Else
+			Calculate height as sz*ratio
+			Calculate width as sz
+		End If
+	Else
+		Calculate height as sz
+		Calculate width as sz
+	End If
+	;  get the picture
+	If ivSelectedObject
+		Calculate objIdent as pick(refOWrite.$curtblid>0,refOWrite.$curobjid,refOWrite.$curtblid)
+	End If
+	Do refOWrite.$picturefrompage(ivPageList.ivPage,width,height,objIdent,ivPicture)
+	Calculate ivImageSize as binlength(ivPicture)
+	Do pictsize(ivPicture,ivImageWidth,ivImageHeight)
+	Do refImageInfo.$redraw()
+	Do refImage.$redraw()
+End If

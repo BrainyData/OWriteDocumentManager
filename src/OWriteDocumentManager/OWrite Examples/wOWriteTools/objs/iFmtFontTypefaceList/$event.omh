@@ -1,8 +1,0 @@
-On evClick
-	Do $cinst.$setFocusOWrite()
-	;  simply assign the Omnis font name and styles
-	Do iFRefOWrite.$startundo()
-	Calculate iFRefOWrite.$curfont as iFmtFontTypefaceList.OmnisFontName
-	Calculate iFRefOWrite.$curbold as iFmtFontTypefaceList.OmnisStyleBold
-	Calculate iFRefOWrite.$curitalic as iFmtFontTypefaceList.OmnisStyleItalic
-	Do iFRefOWrite.$endundo("Typeface")

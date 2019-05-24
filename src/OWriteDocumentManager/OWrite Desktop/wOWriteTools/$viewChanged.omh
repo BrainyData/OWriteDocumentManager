@@ -1,0 +1,7 @@
+;  CHANGE_18MAY07_1     ;; fixed measurement display and assignments when OWrite ruler display is switched between cms and inches
+Calculate iMeasure as pick(iFRefOWrite.$showcms,'inches','cms')
+Calculate iFRefViewPaperColor.$contents as iFRefOWrite.$papercolor
+Do $cwind.$redraw()
+;  CHANGE_18MAY07_1     ;; we now display the units of measure as part of these two labels
+Do $cinst.$objs.GroupAlignment.$bobjs.1060.$redraw()
+Do $cinst.$objs.GroupDocument.$bobjs.1078.$redraw()

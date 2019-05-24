@@ -1,6 +1,0 @@
-;  This is generically built to call the routines as follows.   You should really never have to override this routine
-;  it will read records on first open if the value of iLoadDataOnOpen is ktrue (the default).  Only in a few circumstances,
-;  will you need to over-ride this and set it ti kFalse (eg patron window, city lookup, etc.) - where there is a lot of data
-;
-Do method previewScale
-Do method previewRebuild

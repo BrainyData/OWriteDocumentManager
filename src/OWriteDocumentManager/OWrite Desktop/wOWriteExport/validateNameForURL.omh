@@ -1,0 +1,7 @@
+;  replace '/' and '&' chars with HTML sequence to prevent broken URLs     ;; CHANGE_2013_09_24_1
+Calculate pURLComponent as replaceall(pURLComponent,'/','%2F')
+Calculate pURLComponent as replaceall(pURLComponent,'&','%26')
+Calculate pURLComponent as replaceall(pURLComponent,'%','%25')
+Calculate pURLComponent as replaceall(pURLComponent,'#','%23')
+Calculate pURLComponent as replaceall(pURLComponent,' ','%20')
+;  Send to trace log {[pURLComponent]}
